@@ -1,0 +1,260 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::HealthModel</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::HealthModel</p>
+<p class="NDLRefParentage">: public <span class="NDLSystemFont"><a href="egmSpark__IBuiltinModelBase.htm">egmSpark::IBuiltinModelBase</a></span></p>
+
+
+<p class="NDLRefHeaderFile">&lt;HealthModel.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_health_model.gif" alt="Inheritance graph for egmSpark::HealthModel"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::HealthModel</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">The <span class="NDLSystemFont">HealthModel</span> is a centralized place where health can be set and tracked. </p>
+<p class="NDLNormal">It automatically handles damage events and sends out useful events to notify the entity of death and health changes. </p>
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_health_model_1a79484e6b9223ae9066c701d82edfa8a2"></a>
+<p class="NDLRefMemberFunction">HealthModel()</p>
+<p class="NDLRefMemberDetailedDescription">Constructor </p>
+
+<a name="classegm_spark_1_1_health_model_1a76d6c242a23e00d4e0ad510fa27aee5b"></a>
+<p class="NDLRefMemberFunction">void  SetEnableDamage(efd::Bool bEnable)</p>
+<p class="NDLRefMemberDescription">Sets whether this entity can be damaged or not. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">bEnable</span></td>
+    <td>True to enable damage. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_health_model_1a84cb0e7819cc995e5f5d6e98aa2879b3"></a>
+<p class="NDLRefMemberFunction">efd::Bool  GetEnableDamage()</p>
+<p class="NDLRefMemberDescription">Queries whether this entity can currently be damaged or not. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>bEnable True if damage is enabled. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_health_model_1a572a8d29b1ae494c8121ef53416a639b"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetHealth()</p>
+<p class="NDLRefMemberDescription">Gets the entity's current health. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The current value. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_health_model_1a5694866e49356cb3e60a65df5ec5eab5"></a>
+<p class="NDLRefMemberFunction">void  SetHealth(efd::Float32 health)</p>
+<p class="NDLRefMemberDescription">Sets the entity's health. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The new value. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_health_model_1a93b8338e3658aa537f37633eac1dcbba"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetMaxHealth()</p>
+<p class="NDLRefMemberDescription">Gets the entity's maximum health. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>the current value. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_health_model_1a86c9f80cadaad218055b4c1faa4e7115"></a>
+<p class="NDLRefMemberFunction">void  SetMaxHealth(efd::Float32 maxHealth)</p>
+<p class="NDLRefMemberDescription">Gets the entity's maximum health. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>the current value. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_health_model_1ad6c97127a5f50061ef34df0f48bc3f90"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetHealthPCT()</p>
+<p class="NDLRefMemberDescription">Gets the entity's maximum health. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>the current value. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_health_model_1a44813f67888e6b7195e51c773cb12045"></a>
+<p class="NDLRefMemberFunction">void  ApplyDamage(efd::Float32 howMuch)</p>
+<p class="NDLRefMemberDescription">Applies damage to this entity. </p>
+<p class="NDLRefMemberDetailedDescription">Damage can be negative to restore health. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">howMuch</span></td>
+    <td>The amount of damage to apply. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

@@ -1,0 +1,672 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>SparkMovement Namespace</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">SparkMovement Namespace</p>
+
+
+
+
+
+<a name="private_attributes"></a>
+<p class="NDLRefHead1">Private Attributes</p>
+<a name="namespace_spark_movement_1a3cdd88b97868fc786cd9e991481b76d0"></a>
+<p class=NDLRefHead2>SparkMovement::MovementType</p>
+
+
+<p class="NDLRefMemberDescription">Enum describing the available movement types. </p>
+
+<p class="NDLRefMemberDetailedDescription">Movement types are used to allow the movement speed to be set.</p>
+<p class="NDLRefMemberDetailedDescription">Idle - the actor will not change position even if the target is set Walking - the actor will move at its walking speed as directed by the target mode Running - the actor will move at its running speed as directed by the target mode Invalid - the actor will not change position or rotation under any circumstance. </p>
+
+<!--(Table)=========================================================-->
+<div class="ReferenceTable">
+<table>
+  <thead>
+	<tr>
+        <th>Name</th>
+	    <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">Idle</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">Walking</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">Running</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">Invalid</span></td>
+    <td>&nbsp;</td>
+</tr>
+
+  </tbody>
+</table>
+</div>
+
+<a name="namespace_spark_movement_1ae345065e6fb238030e0686e59616fd59"></a>
+<p class=NDLRefHead2>SparkMovement::TargetMode</p>
+
+
+<p class="NDLRefMemberDescription">Enum describing the ways to specify how the entity determines where it moves. </p>
+
+<p class="NDLRefMemberDetailedDescription">The MovementHandler will move the actor according to the model's target mode.</p>
+<p class="NDLRefMemberDetailedDescription">TargetNone - does not move the actor TargetDirection - moves the actor based on the direction provided TargetPoint - moves the actor to a specified point TargetEntity - moves the actor to the position of a specified entity. </p>
+
+<!--(Table)=========================================================-->
+<div class="ReferenceTable">
+<table>
+  <thead>
+	<tr>
+        <th>Name</th>
+	    <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">TargetNone</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">TargetDirection</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">TargetPoint</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">TargetEntity</span></td>
+    <td>&nbsp;</td>
+</tr>
+
+  </tbody>
+</table>
+</div>
+
+
+<a name="private_methods"></a>
+<p class="NDLRefHead1">Private Methods</p>
+
+
+<a name="namespace_spark_movement_1a4118706c15476683ae600c3e4c3ff455"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetCurrentSpeed(egf::EntityID entityID)</p>
+<p class="NDLRefMemberDescription">Returns the speed, in units per second, that the specified entityis moving. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>ID of the entity.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The current speed. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_movement_1aecb086a4f12369c08f5211570918f854"></a>
+<p class="NDLRefMemberFunction">efd::Point3  GetCurrentDirection(egf::EntityID entityID)</p>
+<p class="NDLRefMemberDescription">Returns the direction that the specified entity is facing. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>ID of the entity.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The current direction. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_movement_1a9e7e061c33e58ccc53267c8547cd8f6e"></a>
+<p class="NDLRefMemberFunction"><span class="NDLSystemFont"><a href="../Namespaces/SparkMovement.htm#namespace_spark_movement_1a3cdd88b97868fc786cd9e991481b76d0">MovementType</a></span>  GetCurrentMovementType(egf::EntityID entityID)</p>
+<p class="NDLRefMemberDescription">Returns the MovementType that the specified entity is using when moving. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>ID of the entity.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The current movement type. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_movement_1ac72f81790b5ae87f48e078f86ef13ad0"></a>
+<p class="NDLRefMemberFunction">efd::Point3  GetTargetPoint(egf::EntityID entityID)</p>
+<p class="NDLRefMemberDescription">Returns the point towards which the specified entity is moving. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>ID of the entity.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The target point. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_movement_1a51307c3ad59687564bc88356a2822f49"></a>
+<p class="NDLRefMemberFunction">efd::Bool  SetTargetPoint(<br/>egf::EntityID entityID, <br/>efd::Point3 targetPoint)</p>
+<p class="NDLRefMemberDescription">Sets the point to which the specified entity should go. </p>
+<p class="NDLRefMemberDetailedDescription">Note that the entity will hit the target point before stopping so it will likely not be exactly on that point by the time it stops. This sets the target mode to TargetPoint. </p>
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>ID of the entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">targetPoint</span></td>
+    <td>point to which the entity will go.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if it succeeds, false if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_movement_1af5da696f5d200368a447c7e2d07a546f"></a>
+<p class="NDLRefMemberFunction">efd::Point3  GetTargetDirection(egf::EntityID entityID)</p>
+<p class="NDLRefMemberDescription">Returns the direction that the specified entity is moving. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>ID of the entity.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The target direction. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_movement_1a4a66ff540e887dc71f4dfc909864ae0f"></a>
+<p class="NDLRefMemberFunction">efd::Bool  SetTargetDirection(<br/>egf::EntityID entityID, <br/>efd::Point3 targetDirection, <br/>efd::Point3 relativeRotation = efd::Point3::ZERO)</p>
+<p class="NDLRefMemberDescription">Sets the direction that the specified entity will move. </p>
+<p class="NDLRefMemberDetailedDescription">The movement direction will be based on the relative rotation provided. If the relative rotation is efd::Point3::ZERO, then the direction will be based on WORLD_UP_VECTOR and WORLD_FORWARD_VECTOR. This sets the target mode to TargetDirection. </p>
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>ID of the entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">targetDirection</span></td>
+    <td>direction to make the entity move. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">relativeRotation</span></td>
+    <td>the rotation to use to establish targetDirection's origin.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if it succeeds, false if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_movement_1ab8754969f3ca056f195f41a90cdaa0e6"></a>
+<p class="NDLRefMemberFunction">efd::Point3  GetTargetRotation(egf::EntityID entityID)</p>
+<p class="NDLRefMemberDescription">Returns the rotation of the specified entity when it moves forward. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>ID of the entity.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The target rotation. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_movement_1ad62412f717ab8ce61d05ed62ffe5a303"></a>
+<p class="NDLRefMemberFunction">efd::Bool  SetTargetRotation(<br/>egf::EntityID entityID, <br/>efd::Point3 targetRotation, <br/>efd::Point3 relativeRotation = efd::Point3::ZERO)</p>
+<p class="NDLRefMemberDescription">Sets the facing rotation of the specified entity. </p>
+<p class="NDLRefMemberDetailedDescription">The facing rotation will be based on the relative rotation provided. This sets the target mode to TargetDirection. </p>
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>ID of the entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">targetRotation</span></td>
+    <td>facing rotation for the entity to move. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">relativeRotation</span></td>
+    <td>the rotation to use to establish targetRotation's origin.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if it succeeds, false if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_movement_1a17fd23559394497f10063ad997cfea4f"></a>
+<p class="NDLRefMemberFunction">egf::EntityID  GetTargetEntityID(egf::EntityID entityID)</p>
+<p class="NDLRefMemberDescription">Returns the entity ID of the entity that the specified entity is following. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity following the target entity</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The target entity identifier. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_movement_1adc65bda75a23ff863e5323da14d257e3"></a>
+<p class="NDLRefMemberFunction">efd::Bool  SetTargetEntityID(<br/>egf::EntityID entityID, <br/>egf::EntityID targetEntityID)</p>
+<p class="NDLRefMemberDescription">Sets the entity ID for the specified entity to follow. </p>
+<p class="NDLRefMemberDetailedDescription">This sets the target mode to TargetEntity. </p>
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>ID of the entity that will be following the target entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">targetEntityID</span></td>
+    <td>ID of the entity to follow.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if it succeeds, false if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_movement_1aa1dd20e925aab5d0f2a8bb7ecf632221"></a>
+<p class="NDLRefMemberFunction"><span class="NDLSystemFont"><a href="../Namespaces/SparkMovement.htm#namespace_spark_movement_1a3cdd88b97868fc786cd9e991481b76d0">MovementType</a></span>  GetTargetMovementType(egf::EntityID entityID)</p>
+<p class="NDLRefMemberDescription">Returns the MovementType that the specified entity should use when moving. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>ID of the entity.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The target movement type. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_movement_1aba7a7423dd7d0a3d9962874c78510acc"></a>
+<p class="NDLRefMemberFunction">efd::Bool  SetTargetMovementType(<br/>egf::EntityID entityID, <br/><span class="NDLSystemFont"><a href="../Namespaces/SparkMovement.htm#namespace_spark_movement_1a3cdd88b97868fc786cd9e991481b76d0">MovementType</a></span> state)</p>
+<p class="NDLRefMemberDescription">Sets the MovementType that the entity specified should use when moving. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>ID of the entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">state</span></td>
+    <td>movement type to use for the entity's movement.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if it succeeds, false if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_movement_1aaca290e107c71930df0fc590632bb420"></a>
+<p class="NDLRefMemberFunction"><span class="NDLSystemFont"><a href="../Namespaces/SparkMovement.htm#namespace_spark_movement_1ae345065e6fb238030e0686e59616fd59">TargetMode</a></span>  GetTargetMode(egf::EntityID entityID)</p>
+<p class="NDLRefMemberDescription">Returns the targeting mode used by the specified entity. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>ID of the entity.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The target mode. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_movement_1a3a1819411c6685a014604fd43dd9028b"></a>
+<p class="NDLRefMemberFunction">void  EnableMovementHandler(<br/>egf::EntityID entityID, <br/><span class="NDLSystemFont"><a href="../Namespaces/SparkMovement.htm#namespace_spark_movement_1a3cdd88b97868fc786cd9e991481b76d0">MovementType</a></span> initialMovementType)</p>
+<p class="NDLRefMemberDescription">Enables the movement handler and sets the movement type to the desired state. </p>
+<p class="NDLRefMemberDetailedDescription">When the movement handlers is enabled it will take control over the animation and movement of the character. New movement handlers start enabled, so it is only necessary to call this if the handler has previously been disabled. </p>
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>ID of the entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">initialMovementType</span></td>
+    <td>The movement type to start the movement handler in. If no type is specified, Idle is used. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_movement_1ac4515b95bca0d23d5034b2194c838236"></a>
+<p class="NDLRefMemberFunction">void  DisableMovementHandler(<br/>egf::EntityID entityID, <br/>efd::utf8string newAnimation)</p>
+<p class="NDLRefMemberDescription">Disables the movement handler and starts the requested animation. </p>
+<p class="NDLRefMemberDetailedDescription">When the movement handlers is disabled, the movement of the character will halt and animation will be handled externally. No processing will be done during the update call. </p>
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>ID of the entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">newAnimation</span></td>
+    <td>The animation to start after the movement handler is disabled. If no animation is specified, the idle animation will be started. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_movement_1a0120a6487ce563f25a3276b8e726107a"></a>
+<p class="NDLRefMemberFunction">efd::Bool  IsMovementHandlerEnabled(egf::EntityID entityID)</p>
+<p class="NDLRefMemberDescription">Used to check whether the movement handler is enabled or not. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>ID of the entity.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>Whether or not the movement handler is enabled. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

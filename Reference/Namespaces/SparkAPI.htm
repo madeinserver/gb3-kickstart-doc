@@ -1,0 +1,2944 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>SparkAPI Namespace</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">SparkAPI Namespace</p>
+
+
+
+
+
+<a name="weapon_functions"></a>
+<p class="NDLRefHead1">Weapon functions</p>
+
+
+<a name="namespace_spark_a_p_i_1a4f3fc530e207bb49bf7ee15397a8f6ca"></a>
+<p class="NDLRefMemberFunction">efd::Bool  SetNextRightWeapon(const egf::EntityID& entityID)</p>
+<p class="NDLRefMemberDescription">Set character to use next weapon in its inventory. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if it succeeds, false if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1acd4d790e8d8f6a150e19ba1a5a20d81c"></a>
+<p class="NDLRefMemberFunction">efd::Bool  SetPrevRightWeapon(const egf::EntityID& entityID)</p>
+<p class="NDLRefMemberDescription">Set character to use previous weapon in its inventory. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if it succeeds, false if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a3491fd0007a0eb3069f2fad31d158cdd"></a>
+<p class="NDLRefMemberFunction">efd::Bool  SetRightWeaponIndex(<br/>const egf::EntityID& entityID, <br/>efd::SInt32 index)</p>
+<p class="NDLRefMemberDescription">Set character to use the indexed weapon. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">index</span></td>
+    <td>Zero-based index of the right weapon.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if it succeeds, false if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1ac4b2e2188f1067df9bc21a394856a359"></a>
+<p class="NDLRefMemberFunction">efd::UInt32  GetWeaponCount(const egf::EntityID& entityID)</p>
+<p class="NDLRefMemberDescription">Returns number of weapons in the character's weapon inventory. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The weapon count. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1afb71a357b14cb62d180298c3ec146254"></a>
+<p class="NDLRefMemberFunction">egf::EntityID  GetCurrentWeapon(const egf::EntityID& entityID)</p>
+<p class="NDLRefMemberDescription">Gets a current weapon. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The current weapon. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a5a1dca5e20fceb23c8b4ceb31e1a72d1"></a>
+<p class="NDLRefMemberFunction">egf::EntityID  GetWeapon(<br/>const egf::EntityID& entityID, <br/>efd::UInt32 weaponIndex)</p>
+<p class="NDLRefMemberDescription">Gets a weapon. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">weaponIndex</span></td>
+    <td>Zero-based index of the weapon.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The weapon. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1aaa4e93dc2eda355849118dce18acdb84"></a>
+<p class="NDLRefMemberFunction">void  EnableRightWeapon(<br/>const egf::EntityID& entityID, <br/>efd::Bool bEnabled)</p>
+<p class="NDLRefMemberDescription">Enable or Disable the right-hand weapon. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">bEnabled</span></td>
+    <td>true to enable, false to disable. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a16eb5f1baa19a71090bb0fa61e98c9a6"></a>
+<p class="NDLRefMemberFunction">efd::Bool  PlayFireRightWeaponSequence(const egf::EntityID& entityID)</p>
+<p class="NDLRefMemberDescription">Play sequence to animate the firing of the weapon in the right hand. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if it succeeds, false if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1aad4482d974717ee8f8189f893e714175"></a>
+<p class="NDLRefMemberFunction">efd::Bool  CanAddAmmo(<br/>const egf::EntityID& entityID, <br/>const efd::utf8string& ammoType)</p>
+<p class="NDLRefMemberDescription">Returns true if the entity is capable of adding the passed ammotype. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">ammoType</span></td>
+    <td>Type of the ammo.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if it succeeds, false if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a855e79d7385226d421d06898ae169084"></a>
+<p class="NDLRefMemberFunction">efd::Bool  CanFillClip(const egf::EntityID& entityID)</p>
+<p class="NDLRefMemberDescription">Returns true if the entity is capable of filling the clip of the current weapon (will return false if there is no ammo or if the clip is full). </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if it succeeds, false if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+<a name="private_methods"></a>
+<p class="NDLRefHead1">Private Methods</p>
+
+
+<a name="namespace_spark_a_p_i_1af2a5afc1e64009d0220bea46c6b4a21d"></a>
+<p class="NDLRefMemberFunction">void  FaceDir2D(<br/>const egf::EntityID& entityID, <br/>const efd::Point3& dir)</p>
+<p class="NDLRefMemberDescription">Face the entity's desired yaw towards the 2d direction vector. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">dir</span></td>
+    <td>The direction. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a56e6d8fe24259647c3b8e69617219b86"></a>
+<p class="NDLRefMemberFunction">void  FaceDir3D(<br/>const egf::EntityID& entityID, <br/>const efd::Point3& dir)</p>
+<p class="NDLRefMemberDescription">Face the entity's desired yaw and pitch towards the 3d direction vector. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">dir</span></td>
+    <td>The direction. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a54a1424a363fc69042e581a26547d4b6"></a>
+<p class="NDLRefMemberFunction">void  SetPhysXDebugging(<br/>const egf::EntityID& entityID, <br/>efd::Bool debug)</p>
+<p class="NDLRefMemberDescription">Turn on PhysX debugging-lines for the specific entity. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">debug</span></td>
+    <td>true to debug. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a93d1c48874591e57d400343e36e2e166"></a>
+<p class="NDLRefMemberFunction">void  SetPhysXDebugging(efd::Bool debug)</p>
+<p class="NDLRefMemberDescription">Globally turn on and off physX debugging. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">debug</span></td>
+    <td>true to debug. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1ae586be9d7299d9258832a029a6281a70"></a>
+<p class="NDLRefMemberFunction">bool  GetPhysXDebugging()</p>
+<p class="NDLRefMemberDescription">Returns true if global debugging is turned on. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if global debugging is turned on, otherwise false. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1ae4174c873eca29de860d67bd0738cbd3"></a>
+<p class="NDLRefMemberFunction">void  TogglePhysXDebugging()</p>
+<p class="NDLRefMemberDescription">Toggle PhysX debugging. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding. </p></p>
+
+<a name="namespace_spark_a_p_i_1acdc3eb12d9026f3f91d275a32bb3dad8"></a>
+<p class="NDLRefMemberFunction">void  LaunchProjectile(<br/>const egf::EntityID& projectile, <br/>const egf::EntityID& owner, <br/>const efd::Point3& rotation)</p>
+<p class="NDLRefMemberDescription">Launch a specific projectile entity id. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">projectile</span></td>
+    <td>The projectile. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">owner</span></td>
+    <td>The owner. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">rotation</span></td>
+    <td>The rotation. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1ae3df29c26fa818b7546d18c879ffc234"></a>
+<p class="NDLRefMemberFunction">void  RemoveDynamicObject(const egf::EntityID& entityID)</p>
+<p class="NDLRefMemberDescription">Remove a dynamically spawned entity from the Spawner service. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1acd60088bac5597636099fc8c52bec783"></a>
+<p class="NDLRefMemberFunction">efd::Bool  SetMovementDirection(<br/>const egf::EntityID& entityID, <br/>const efd::Point3& targetDirection, <br/>const efd::Point3& relativeRotation)</p>
+<p class="NDLRefMemberDescription">Tells the locomotion controller which direction the entity will move. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">targetDirection</span></td>
+    <td>Target direction. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">relativeRotation</span></td>
+    <td>The relative rotation.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if it succeeds, false if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a773691f84e11f05376ae9aabcf694d52"></a>
+<p class="NDLRefMemberFunction">efd::Bool  SetMovementDirection(<br/>const egf::EntityID& entityID, <br/>const efd::Point3& targetDirection)</p>
+<p class="NDLRefMemberDescription">Sets a movement direction. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">targetDirection</span></td>
+    <td>Target direction.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if it succeeds, false if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1aa4fd0e43342c8735c8c7307195251020"></a>
+<p class="NDLRefMemberFunction">efd::Bool  SetFacingDirection(<br/>const egf::EntityID& entityID, <br/>const efd::Point3& targetDirection, <br/>const efd::Point3& relativeRotation)</p>
+<p class="NDLRefMemberDescription">Sets the direction the entity should face relative to a camera's rotation. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">targetDirection</span></td>
+    <td>Target direction. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">relativeRotation</span></td>
+    <td>The relative rotation.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if it succeeds, false if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1aad0d7f43654576dd2df4ff28f0f3505a"></a>
+<p class="NDLRefMemberFunction">efd::Bool  PlayUpperBodySequence(<br/>const egf::EntityID& entityID, <br/>const efd::utf8string& seqName, <br/>bool autoDeactivate = true, <br/>bool useAdditiveAnimation = false)</p>
+<p class="NDLRefMemberDescription">Play a upper body sequence (uses ActivateLayeredSequence). </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p>
+<p class="NDLRefMemberDetailedDescription">This function does not do anything to force the sequence to only behave on the upper body. It is assumed that the actual animation has been setup as an upper body sequence.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">seqName</span></td>
+    <td>Name of sequence to play. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">autoDeactivate</span></td>
+    <td>Set to true for the sequence to be deactivated when done. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">useAdditiveAnimation</span></td>
+    <td>true to use additive animation.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if it succeeds, false if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a8f5b4cfefabbd7f0ae1a643978afb539"></a>
+<p class="NDLRefMemberFunction">efd::Bool  PlayFullBodySequence(<br/>const egf::EntityID& entityID, <br/>const efd::utf8string& seqName, <br/>bool bWantSeqDoneCallback = false, <br/>bool bResetIfNeeded = true, <br/>bool bNotifyOnActivation = false)</p>
+<p class="NDLRefMemberDescription">Play a full body sequence (uses SetTargetAnimation) with optional callback when done. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">seqName</span></td>
+    <td>Name of sequence to play. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">bWantSeqDoneCallback</span></td>
+    <td>Set to true for the system to send OnFullBodySeqDone. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">bResetIfNeeded</span></td>
+    <td>Set to true to have the animation restart from beginning if currently playing. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">bNotifyOnActivation</span></td>
+    <td>true to notify on activation.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if it succeeds, false if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a1fa5b1f9bcad8ce26f385450cc3711fd"></a>
+<p class="NDLRefMemberFunction">efd::Bool  PlayFullBodySequenceLocal(<br/>const egf::EntityID& entityID, <br/>const efd::utf8string& seqName, <br/>bool bWantSeqDoneCallback = false, <br/>bool bResetIfNeeded = true, <br/>bool bNotifyOnActivation = false)</p>
+<p class="NDLRefMemberDescription">Same as PlayFullBodySequence except it does it locally only (without sending view event). </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">seqName</span></td>
+    <td>Name of the sequence. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">bWantSeqDoneCallback</span></td>
+    <td>true to want sequence done callback. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">bResetIfNeeded</span></td>
+    <td>true to reset if needed. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">bNotifyOnActivation</span></td>
+    <td>true to notify on activation.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if it succeeds, false if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a47dd89888b8963177710d36892e10c29"></a>
+<p class="NDLRefMemberFunction">efd::Bool  StopUpperBodySequence(const egf::EntityID& entityID)</p>
+<p class="NDLRefMemberDescription">Stop the current upper-body sequence for the entity. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if it succeeds, false if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a9335e2cd5c22ddf6fe5d4d76f37e163b"></a>
+<p class="NDLRefMemberFunction">efd::Bool  PlaySequence(<br/>const egf::EntityID& entityID, <br/>const efd::utf8string& seqName, <br/>efd::UInt32 priority, <br/>bool autoDeactivate = true, <br/>efd::Float32 easeInOveride = -1.0f, <br/>efd::Bool useAdditiveAnimation = false)</p>
+<p class="NDLRefMemberDescription">Play a layered sequence. </p>
+<p class="NDLRefMemberDetailedDescription">-- Sends a ViewEvent so all clients will play this sequence. </p>
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">seqName</span></td>
+    <td>Name of sequence to play. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">priority</span></td>
+    <td>Priority to play sequence at. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">autoDeactivate</span></td>
+    <td>Set to true for the sequence to be deactivated when done. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">easeInOveride</span></td>
+    <td>The ease in overide. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">useAdditiveAnimation</span></td>
+    <td>true to use additive animation.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if it succeeds, false if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a890ee4fdb208f9b4f2499a95222d9f14"></a>
+<p class="NDLRefMemberFunction">efd::Bool  PlaySequenceLocal(<br/>const egf::EntityID& entityID, <br/>const efd::utf8string& seqName, <br/>efd::UInt32 priority, <br/>bool autoDeactivate = true, <br/>efd::Float32 easeInOveride = -1.0f, <br/>efd::Bool useAdditiveAnimation = false)</p>
+<p class="NDLRefMemberDescription">Play a layed sequence locally only - Does not send an event. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">seqName</span></td>
+    <td>Name of the sequence. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">priority</span></td>
+    <td>The priority. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">autoDeactivate</span></td>
+    <td>true to automatic deactivate. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">easeInOveride</span></td>
+    <td>The ease in overide. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">useAdditiveAnimation</span></td>
+    <td>true to use additive animation.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if it succeeds, false if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a72cf79241977f5c70ce6fd0b4b7bbe5b"></a>
+<p class="NDLRefMemberFunction">efd::Bool  StopSequence(<br/>const egf::EntityID& entityID, <br/>const efd::utf8string& seqName)</p>
+<p class="NDLRefMemberDescription">Abort a playing sequence. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">seqName</span></td>
+    <td>Name of sequence to abort.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if it succeeds, false if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a1965d223ee7214af7ab0909617495bc0"></a>
+<p class="NDLRefMemberFunction">void  PlayHitReaction(<br/>const egf::EntityID& entityID, <br/>const efd::Point3& collisionPoint, <br/>efd::UInt32 priority)</p>
+<p class="NDLRefMemberDescription">Plays a hit reaction determined by the collision point. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">collisionPoint</span></td>
+    <td>The collision point. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">priority</span></td>
+    <td>The priority. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a107a00b8bfba36c0cd482a2f8cb4bf9c"></a>
+<p class="NDLRefMemberFunction">efd::Bool  SetAimingEnable(<br/>const egf::EntityID& entityID, <br/>efd::Bool bEnabled)</p>
+<p class="NDLRefMemberDescription">Enable or disable aiming mode for the character. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">bEnabled</span></td>
+    <td>true to enable, false to disable.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if it succeeds, false if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a1ceb18acd2029509ddc6e8affe6fb8ec"></a>
+<p class="NDLRefMemberFunction">efd::Bool  GetAimingEnable(const egf::EntityID& entityID)</p>
+<p class="NDLRefMemberDescription">Returns true if aiming is enabled for this entity. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if it succeeds, false if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a9b8606477e81da553cbdc4f1015677b1"></a>
+<p class="NDLRefMemberFunction">efd::UInt32  SetMaterialColors(<br/>const egf::EntityID& entityID, <br/>efd::Bool setDiffuse, <br/>const efd::Color& diffuseColor, <br/>efd::Bool setEmissive, <br/>const efd::Color& emissiveColor)</p>
+<p class="NDLRefMemberDescription">Allows to override the material colors of all material properties of the entity (or rather of the scene graph attached to it). </p>
+<p class="NDLRefMemberDetailedDescription">Returns the number of properties that have been changed. </p>
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">setDiffuse</span></td>
+    <td>true to set diffuse. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">diffuseColor</span></td>
+    <td>The diffuse color. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">setEmissive</span></td>
+    <td>true to set emissive. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">emissiveColor</span></td>
+    <td>The emissive color.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The number of properties that have been changed. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a5c79ff8b2fcc7773384a2edbdfcb333d"></a>
+<p class="NDLRefMemberFunction">efd::Bool  IsOwned(const egf::EntityID& entityID)</p>
+<p class="NDLRefMemberDescription">Returns true if the passed entity is owned by this client. </p>
+<p class="NDLRefMemberDetailedDescription">If it returns false, the entity is a replicated entity. </p>
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if owned, false if not. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a4bbe666189d1d6314b7c07b11dce5007"></a>
+<p class="NDLRefMemberFunction">void  SendLocalEvent(<br/>const egf::EntityID& entityID, <br/>const efd::utf8string& eventName, <br/>efd::DataStream* pDataStream = NULL)</p>
+<p class="NDLRefMemberDescription">Sends event, using event name and data stream, to only the local version of this entity regardless of whether it is owned or is replicated. </p>
+<p class="NDLRefMemberDetailedDescription">This is very useful for local, client- side effects. </p>
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">eventName</span></td>
+    <td>Name of the event. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pDataStream</span></td>
+    <td>If non-null, the data stream. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1acfbfb307f2f0bb07edad65e09d7b45b8"></a>
+<p class="NDLRefMemberFunction">void  SendViewEvent(<br/>const egf::EntityID& entityID, <br/>const efd::utf8string& eventName, <br/>efd::DataStream* pDataStream = NULL)</p>
+<p class="NDLRefMemberDescription">This function sends a "ViewEvent" to the specified entity via an event name and data stream A ViewEvent is sent to all instances of the entity regardless of whether the entity is owned or replicated. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">eventName</span></td>
+    <td>Name of the event. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pDataStream</span></td>
+    <td>If non-null, the data stream. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a5820fe5ad0310968045b175191e9d774"></a>
+<p class="NDLRefMemberFunction">void  SendEvent(<br/>const egf::EntityID& entityID, <br/>const efd::utf8string& eventName, <br/>efd::DataStream* pDataStream, <br/>bool sendIfOwnedOnly = true)</p>
+<p class="NDLRefMemberDescription">This send event function is useful for sending event via an event name string with a data stream. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p>
+<p class="NDLRefMemberDetailedDescription">: the event is only sent to the owning entity. That is, it is not sent to replicated versions of the entity.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">eventName</span></td>
+    <td>Name of event to be sent. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pDataStream</span></td>
+    <td>Data stream to be sent with this event. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">sendIfOwnedOnly</span></td>
+    <td>If this parameter is true, the event will only be sent if the entity is "owned" (ie: is not a replicated version of an entity) </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1ae98819f6f99815821bc1d9ad954b0cf3"></a>
+<p class="NDLRefMemberFunction">void  PostEvent(<br/>const egf::EntityID& entityID, <br/>const efd::utf8string& eventName, <br/>efd::DataStream* pDataStream, <br/>efd::Float32 delayTime, <br/>bool sendIfOwnedOnly = true)</p>
+<p class="NDLRefMemberDescription">This function is just like SendEvent above except the event can be delayed by a specified amount of time. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">eventName</span></td>
+    <td>Name of the event. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pDataStream</span></td>
+    <td>The data stream. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">delayTime</span></td>
+    <td>Time of the delay. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">sendIfOwnedOnly</span></td>
+    <td>true to send if owned only. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a7f9d7b44c5643e6b112b696693996dc6"></a>
+<p class="NDLRefMemberFunction">void  SendEvent(<br/>const egf::EntityID& entityID, <br/>const efd::utf8string& eventName, <br/>bool sendIfOwnedOnly = true)</p>
+<p class="NDLRefMemberDescription">This send event function is useful for sending event via an event name string with no parameters. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p>
+<p class="NDLRefMemberDetailedDescription">the event is only sent to the owning entity. That is, it is not sent to replicated versions of the entity.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">eventName</span></td>
+    <td>Name of event to be sent. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">sendIfOwnedOnly</span></td>
+    <td>If this parameter is true, the event will only be sent if the receiving entity is "owned" (ie: is not a replicated version of an entity) </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a6ef507c2401b3980ac60bb00ff7bdd86"></a>
+<p class="NDLRefMemberFunction">efd::Bool  IsHost()</p>
+<p class="NDLRefMemberDescription">This function returns true if this client was setup as the host. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if host, false if not. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a4cda46f3b6c043db3372709e4e1d4b19"></a>
+<p class="NDLRefMemberFunction">efd::Bool  IsSinglePlayer()</p>
+<p class="NDLRefMemberDescription">Returns true if spark has been setup to run in single player mode. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if single player, false if not. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a335ef2c40fb9cfffb585a4c18cdb02da"></a>
+<p class="NDLRefMemberFunction">efd::UInt32  GetPeerID()</p>
+<p class="NDLRefMemberDescription">Returns the network ID for the local client. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The peer identifier. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1ade5d33b8a2942f2264112ffcd68ddeed"></a>
+<p class="NDLRefMemberFunction">efd::Bool  IsValidEntity(const egf::EntityID& entityID)</p>
+<p class="NDLRefMemberDescription">Returns true if the passed entity ID is a valid entity. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if valid entity, false if not. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1ae03f65b8b95e9a235889b0bff51b242d"></a>
+<p class="NDLRefMemberFunction">void  ShutdownEntity(const egf::EntityID& entityID)</p>
+<p class="NDLRefMemberDescription">Shutdown entity. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a49746a7619f8e57cb7ed5e3b5d133739"></a>
+<p class="NDLRefMemberFunction">void  CauseDamage(<br/>const egf::EntityID& damager, <br/>const egf::EntityID& damagerOwner, <br/>const egf::EntityID& damagee, <br/>const efd::Point3& location, <br/>efd::Float32 damage, <br/>const efd::utf8string& damageType = efd::utf8string::NullString())</p>
+<p class="NDLRefMemberDescription">Causes damge to an entity. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">damager</span></td>
+    <td>The entity that causes the damage (typically a projectile or a melee weapon). </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">damagerOwner</span></td>
+    <td>The entity that owns damager (typcally the player or AI that holds the melee weapon or shot the projectile -- Can be same as damager). </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">damagee</span></td>
+    <td>The entity you want to cause damage to. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">location</span></td>
+    <td>Where the damage comes from. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">damage</span></td>
+    <td>How much damage to cause. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">damageType</span></td>
+    <td>An optional description of the type of damage done. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a95417f8167beaf495555216e087d5a29"></a>
+<p class="NDLRefMemberFunction">void  CauseRadiusDamage(<br/>const egf::EntityID& damager, <br/>const egf::EntityID& damagerOwner, <br/>const efd::Point3& location, <br/>efd::Float32 damage, <br/>efd::Float32 minDist, <br/>efd::Float32 maxDist, <br/>bool castRays = true, <br/>const egf::EntityID& ignoreEntity = egf::kENTITY_INVALID, <br/>const efd::utf8string& damageType = efd::utf8string::NullString())</p>
+<p class="NDLRefMemberDescription">Cause damage to all entities within a given radius. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">damager</span></td>
+    <td>The entity that causes the damage (typically a projectile or a melee weapon). </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">damagerOwner</span></td>
+    <td>The entity that owns damager (typcally the player or AI that holds the melee weapon or shot the projectile -- Can be same as damager). </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">location</span></td>
+    <td>The center point of the affected area. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">damage</span></td>
+    <td>How much damage to cause. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">minDist</span></td>
+    <td>Entities closer than this distance will get full damage. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">maxDist</span></td>
+    <td>Entities within this radius will get a percentage of damage based on the distance between min& max distance. Entities beyond this distance will not be damaged. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">castRays</span></td>
+    <td>If this is true, damage can be blocked if the ray collides with something between the damage location and the entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">ignoreEntity</span></td>
+    <td>An entity that should not be damaged even if within the given radius. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">damageType</span></td>
+    <td>An optional description of the type of damage done. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a71f41db07b4a12d1caf12cf352ccda71"></a>
+<p class="NDLRefMemberFunction">void  SetTimeScale(efd::Float32 timeScale)</p>
+<p class="NDLRefMemberDescription">You can speed up or slow down the speed of the simulation with this function. </p>
+<p class="NDLRefMemberDetailedDescription">Note: This should not be used during multiplayer simulation but is designed to be used during development only. </p>
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">timeScale</span></td>
+    <td>The time scale. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1ae8f858cbb3bb33177b053b98d915cb1c"></a>
+<p class="NDLRefMemberFunction">void  StopSceneGraphAnimations(const egf::EntityID& entityID)</p>
+<p class="NDLRefMemberDescription">Stops animations that are tied into the scene graph for this entity. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a8286c5fcbe4ebb848bb3a8f0df2e81cd"></a>
+<p class="NDLRefMemberFunction">void  StartSceneGraphAnimations(<br/>const egf::EntityID& entityID, <br/>efd::Float32 startTime)</p>
+<p class="NDLRefMemberDescription">Starts up scene graph animations at the given starting time. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">startTime</span></td>
+    <td>The start time. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a3a2b9680ad087b88976e820b142d0cff"></a>
+<p class="NDLRefMemberFunction">void  EnableLocomotion(const egf::EntityID& entityID)</p>
+<p class="NDLRefMemberDescription">Enable locomotion. </p>
+<p class="NDLRefMemberDetailedDescription">This allows the specified entity to input movement commands. </p>
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a19ab24e926ec76bcda072f488f9acd67"></a>
+<p class="NDLRefMemberFunction">void  DisableLocomotion(<br/>const egf::EntityID& entityID, <br/>efd::Bool allowMovement = false)</p>
+<p class="NDLRefMemberDescription">Disable locomotion. </p>
+<p class="NDLRefMemberDetailedDescription">This prevents the specified entity from inputing movement commands and can optionally halt all movement. </p>
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">allowMovement</span></td>
+    <td>If false all movement is halted. Otherwise current movement state is maintained but can no longer be changed. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a9c9fc7f94f03c04782deff2e787ec360"></a>
+<p class="NDLRefMemberFunction">void  CameraShake(<br/>efd::Float32 strength, <br/>efd::Float32 duration, <br/>efd::Float32 decayRate, <br/>efd::Bool accumulative = false)</p>
+<p class="NDLRefMemberDescription">Cause the currently active camera to shake (if CameraShake model is present). </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">strength</span></td>
+    <td>How strong to shake the camera (this is in game-units to move the camera. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">duration</span></td>
+    <td>How long to shake the camera until engaging the decayRate. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">decayRate</span></td>
+    <td>Once the duration has elapsed, this is how quickly the shaking will stop. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">accumulative</span></td>
+    <td>Set this true to have this shake accumulate on top of any active shake. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a663aad33d04f604a0ca8f5215ea4b918"></a>
+<p class="NDLRefMemberFunction">efd::Bool  SetMouseExclusive(efd::Bool exclusive)</p>
+<p class="NDLRefMemberDescription">Set the exclusivity of the mouse. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">exclusive</span></td>
+    <td>If true, mouse/cursor will be exclusive to the game window. If false, it will be allowed to move away from the game window.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if it succeeds, false if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1aabdcfa930b2bad71c06808f976c8e2a7"></a>
+<p class="NDLRefMemberFunction">void  PreloadModel(const efd::utf8string& modelName)</p>
+<p class="NDLRefMemberDescription">Preloads a model (and any assets found via the Mesh, Actor, or SceneGraph mixins) so that it can be spawned in dynamically at runtime. </p>
+<p class="NDLRefMemberDetailedDescription">The SparkSpawner service expects all spawned models to be preloaded so they can be spawned more quickly. Failure to preload models can result in noticeable delays when spawning entities.</p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">modelName</span></td>
+    <td>Name of the model. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1ac4649115ab0290c8846ade7e88c75788"></a>
+<p class="NDLRefMemberFunction">void  PreloadModelsByTag(const efd::utf8string& tags)</p>
+<p class="NDLRefMemberDescription">Preloads multiple models matching the given asset tags. </p>
+<p class="NDLRefMemberDetailedDescription">A URN will be constructed by prepending the specified tags with "urn:emergent-flat-model:". You can specify zero or more additional tags using any valid tags as defined by your asset web configuration. Separate each tag with a ':' as is standard for defining a URN. Any assets found via the Mesh, Actor, or SceneGraph mixins on the resulting models will also be preloaded. The SparkSpawner service expects all spawned models to be preloaded so they can be spawned more quickly. Failure to preload models can result in noticeable delays when spawning entities.</p>
+<p class="NDLRefMemberDetailedDescription">The easiest way to tag multiple assets is using the [DirectoryTagger.Labels] configuration options in the DirectoryTagger.ini file from your asset-web-config directory. This can apply a tag to all assets in a specifically named directory.</p>
+<p class="NDLRefMemberDetailedDescription">Examples:</p>
+<ul>
+<li>This tag: gives this URN:</li>
+<li>"" "urn:emergent-flat-models"</li>
+<li>"Level1" "urn:emergent-flat-models:Level1"</li>
+<li>"Tag1:Tag2" "urn:emergent-flat-models:Tag1:Tag2"</li></ul>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">tags</span></td>
+    <td>The tag portion of a URN. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a1736cdc6dd173fa2b3c3289da7347928"></a>
+<p class="NDLRefMemberFunction">void  EnableRagdollCollisions(<br/>const egf::EntityID& entityID, <br/>efd::Bool enable)</p>
+<p class="NDLRefMemberDescription">It is sometimes necessary to enable or disable just the ragdoll physX props on a character, use this utility function to do this more easily. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">enable</span></td>
+    <td>true to enable, false to disable. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a1c505246c9ea48e5e48182ad5354b2d9"></a>
+<p class="NDLRefMemberFunction">efd::Bool  KillEntity(const egf::EntityID& entityID)</p>
+<p class="NDLRefMemberDescription">Apply enough damage to an entity to kill it. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if it succeeds, false if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1af92fc604e99f8780b095fbb857071364"></a>
+<p class="NDLRefMemberFunction">void  AddExplosion(<br/>const efd::Point3& position, <br/>efd::Float32 force, <br/>efd::Float32 radius)</p>
+<p class="NDLRefMemberDescription">Add a physX explosion at a specific position and radius. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">position</span></td>
+    <td>The position. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">force</span></td>
+    <td>The force. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">radius</span></td>
+    <td>The radius. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a6e03b0356584fa02b1e7a57a4f572b50"></a>
+<p class="NDLRefMemberFunction">void  AddImpulse(<br/>const egf::EntityID& entityID, <br/>const efd::Point3& position, <br/>efd::Float32 force, <br/>efd::Float32 radius)</p>
+<p class="NDLRefMemberDescription">Add a physX impulse at a specific position and radius. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">position</span></td>
+    <td>The position. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">force</span></td>
+    <td>The force. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">radius</span></td>
+    <td>The radius. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a03652851aa35ea07b2846662b470211a"></a>
+<p class="NDLRefMemberFunction">void  ApplyForceAtPos(<br/>const egf::EntityID& entityID, <br/>const efd::Point3& force, <br/>const efd::Point3& position)</p>
+<p class="NDLRefMemberDescription">Add a specific physX force coming from a specific position to an entity. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">force</span></td>
+    <td>The force. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">position</span></td>
+    <td>The position. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a74e75d0df213c87226fb4f65cb583170"></a>
+<p class="NDLRefMemberFunction">void  SetLinearVelocity(<br/>const egf::EntityID& entityID, <br/>const efd::Point3& linearVelocity)</p>
+<p class="NDLRefMemberDescription">Set physX linear velocity to an entity. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">linearVelocity</span></td>
+    <td>The linear velocity. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1ab1fe7c0fe646b2f618e9f7a54f2781e9"></a>
+<p class="NDLRefMemberFunction">void  SetAngularVelocity(<br/>const egf::EntityID& entityID, <br/>const efd::Point3& angularVelocity)</p>
+<p class="NDLRefMemberDescription">Set physX angular velocity to an entity. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">angularVelocity</span></td>
+    <td>The angular velocity. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a1882d0e02e0540a2516a9084f00f176c"></a>
+<p class="NDLRefMemberFunction">void  DestroyPhysXCharacterController(const egf::EntityID& entityID)</p>
+<p class="NDLRefMemberDescription">Destroy the PhysX character controller for the entity. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a78c3f89d409b852a61ed5aa82bdb3b85"></a>
+<p class="NDLRefMemberFunction">efd::Bool  CanCrouch(const egf::EntityID& entityID)</p>
+<p class="NDLRefMemberDescription">Queries if we can crouch. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if it succeeds, false if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a2f6fa2d7952c37a6d7fa8765af55d32f"></a>
+<p class="NDLRefMemberFunction">efd::Bool  CanStand(const egf::EntityID& entityID)</p>
+<p class="NDLRefMemberDescription">Queries if we can stand. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if it succeeds, false if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a8a75fa69701035c97df0c24d062869f7"></a>
+<p class="NDLRefMemberFunction">efd::Bool  IsStanding(const egf::EntityID& entityID)</p>
+<p class="NDLRefMemberDescription">Query if 'entityID' is standing. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if standing, false if not. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1aa335480340e05dbb1a787bedc92e3793"></a>
+<p class="NDLRefMemberFunction">efd::Bool  IsCrouched(const egf::EntityID& entityID)</p>
+<p class="NDLRefMemberDescription">Query if 'entityID' is crouched. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if crouched, false if not. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1ae388b61c4baec60d5a244a400d82ef67"></a>
+<p class="NDLRefMemberFunction">efd::Bool  Crouch(const egf::EntityID& entityID)</p>
+<p class="NDLRefMemberDescription">Crouches. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if it succeeds, false if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a5505fb6253c7e2087eac82a985b54ed9"></a>
+<p class="NDLRefMemberFunction">efd::Bool  Stand(const egf::EntityID& entityID)</p>
+<p class="NDLRefMemberDescription">Stands. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if it succeeds, false if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a34265a1e3d606bd60efe00a86eebe41c"></a>
+<p class="NDLRefMemberFunction">efd::Bool  TransitionState(<br/>const egf::EntityID& entityID, <br/>const efd::utf8string& state)</p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Requires SparkStateMachine builtin model to be mixed into the specified entity. </p></p>
+
+<a name="namespace_spark_a_p_i_1ae45b0705e02e9300017b5c30ed671185"></a>
+<p class="NDLRefMemberFunction">void  EnableInputForMap(<br/>const egf::EntityID& entityID, <br/>const efd::utf8string& mapName)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_spark_a_p_i_1ab54d3d4ca857136fba88128a107da0fe"></a>
+<p class="NDLRefMemberFunction">void  AddInputBehavior(<br/>const egf::EntityID& entityID, <br/>const efd::utf8string& input, <br/>const efd::utf8string& behavior)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_spark_a_p_i_1a910c672bd85ec03a055327e3caf79a70"></a>
+<p class="NDLRefMemberFunction">efd::Bool  RegisterStateMachine(const efd::utf8string& modelName)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_spark_a_p_i_1af5c39d56a83a08ab15ae7485077080f3"></a>
+<p class="NDLRefMemberFunction">efd::Bool  RegisterAnimStateManager(const efd::utf8string& modelName)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_spark_a_p_i_1a0eaf63cf2775410ff561a78a11c25a61"></a>
+<p class="NDLRefMemberFunction">efd::UInt32  GetLocomotionMode(const egf::EntityID& entityID)</p>
+<p class="NDLRefMemberDescription">Gets the current movement mode for a given entity. </p>
+<p class="NDLRefMemberDetailedDescription">Can return the following values:</p>
+<p class="NDLRefMemberDetailedDescription">
+<ul>
+<li>0 - idle</li>
+<li>1 - walk</li>
+<li>2 - run</li></ul></p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>The entity to check. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>One of the values listed above describing the locomation mode. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1aa2746433a5f2d4250081af51021f7d7b"></a>
+<p class="NDLRefMemberFunction">efd::UInt32  GetDesiredLocomotionMode(const egf::EntityID& entityID)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_spark_a_p_i_1acbbc6a47a8c18d523e46914d6f7c5fc1"></a>
+<p class="NDLRefMemberFunction">efd::Bool  SetDesiredLocomotionMode(<br/>const egf::EntityID& entityID, <br/>efd::UInt32 mode)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_spark_a_p_i_1ae2cd154184cda538babdd660d12d4f93"></a>
+<p class="NDLRefMemberFunction">efd::Bool  EntityMoveTo(<br/>const egf::EntityID& entityID, <br/>const efd::Point3& destination)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_spark_a_p_i_1a33fc45a4012be42337db2219f176b646"></a>
+<p class="NDLRefMemberFunction">efd::Bool  EntityMoveInDirection(<br/>const egf::EntityID& entityID, <br/>const efd::Point3& direction)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_spark_a_p_i_1abe18304703caa39db028963825bd8a37"></a>
+<p class="NDLRefMemberFunction">efd::Bool  EntityStop(const egf::EntityID& entityID)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_spark_a_p_i_1affb80846e70e9831057fa5b956d31e6b"></a>
+<p class="NDLRefMemberFunction">efd::Bool  SetFirstSwitchNodeIndex(<br/>const egf::EntityID& entityID, <br/>int iIndex)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_spark_a_p_i_1a4d4a407369dfaca01319f3e03cb3fe84"></a>
+<p class="NDLRefMemberFunction">void  SetMovementInputEnabled(<br/>const egf::EntityID& entityID, <br/>efd::Bool enabled)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_spark_a_p_i_1afce9f1497ec99c6ec02bf82861767b34"></a>
+<p class="NDLRefMemberFunction">efd::Bool  GetMovementInputEnabled(const egf::EntityID& entityID)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_spark_a_p_i_1a5dcdf7319ac1612c8b928022cfe6f582"></a>
+<p class="NDLRefMemberFunction">egf::EntityID  GetWeaponOwner(const egf::EntityID& weaponEntityID)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_spark_a_p_i_1af65ec8b53e25a1589c792661e1c6324e"></a>
+<p class="NDLRefMemberFunction">void  StopLocomotionAnimation(const egf::EntityID& entityID)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_spark_a_p_i_1a50bce13783baf4bd0339f49b720a9b2f"></a>
+<p class="NDLRefMemberFunction">efd::Point3  GetCentroid(const egf::EntityID& entityID)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_spark_a_p_i_1a41fbc71cdc6e4fd4dc41ab99db50b69f"></a>
+<p class="NDLRefMemberFunction">void  SetContactNotify(<br/>efd::UInt32 group1, <br/>efd::UInt32 group2, <br/>efd::Bool onStart = true, <br/>efd::Bool onEnd = false, <br/>efd::Bool continuous = false)</p>
+<p class="NDLRefMemberDescription">Enable touch notifies between collision groups. </p>
+
+<a name="namespace_spark_a_p_i_1ae1a312d7a2b7e526775349405326c4dd"></a>
+<p class="NDLRefMemberFunction">void  SetRotateInPlaceAnimsEnabled(<br/>const egf::EntityID& entityID, <br/>efd::Bool enabled)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_spark_a_p_i_1a89eac67ccd2a0bfea56d7f60f6a3d497"></a>
+<p class="NDLRefMemberFunction">efd::Bool  SendEventInDirection(<br/>const egf::EntityID& entityID, <br/>const efd::utf8string& eventName, <br/>efd::DataStream* pStream, <br/>const efd::Point3& pos, <br/>const efd::Point3& dir, <br/>efd::Float32 distance, <br/>efd::Float32 maxAngle, <br/>const efd::utf8string& mixinName, <br/>efd::Bool castRay = false)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_spark_a_p_i_1a626e8b5239e92c979794b25c13011bf4"></a>
+<p class="NDLRefMemberFunction">void  StopRumble(const egf::EntityID& entityID)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_spark_a_p_i_1ac0c707a1b393ccec6e2b8ad38e913ff0"></a>
+<p class="NDLRefMemberFunction">efd::Point3  GetForwardRotationVector(const efd::Point3& eulerRotation)</p>
+<p class="NDLRefMemberDescription">Gets a forward rotation vector. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">eulerRotation</span></td>
+    <td>The euler rotation.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The forward rotation vector. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1ace9e94b383ac770382c3f33cdc1e0467"></a>
+<p class="NDLRefMemberFunction">efd::Point3  GetRightRotationVector(const efd::Point3& eulerRotation)</p>
+<p class="NDLRefMemberDescription">Gets a right rotation vector. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">eulerRotation</span></td>
+    <td>The euler rotation.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The right rotation vector. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a43015a4c1d8dc4add7b6cc84dc0edddd"></a>
+<p class="NDLRefMemberFunction">efd::Point3  GetUpRotationVector(const efd::Point3& eulerRotation)</p>
+<p class="NDLRefMemberDescription">Gets a up rotation vector. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">eulerRotation</span></td>
+    <td>The euler rotation.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The up rotation vector. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1aea482ef0c4076a721764b39c5ac11ab6"></a>
+<p class="NDLRefMemberFunction">void  AddScreenTexture(<br/>efd::utf8string keyName, <br/>efd::utf8string fileName)</p>
+<p class="NDLRefMemberDescription">Adds a screen texture to 'fileName'. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">keyName</span></td>
+    <td>Name of the key. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">fileName</span></td>
+    <td>Filename of the file. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a06dc58599cb984a8ed2e06cb36f726a9"></a>
+<p class="NDLRefMemberFunction">void  RemoveScreenTexture(efd::utf8string keyName)</p>
+<p class="NDLRefMemberDescription">Removes the screen texture described by keyName. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">keyName</span></td>
+    <td>Name of the key. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1afeeb47bcfb36cfe71adcba7b1965f22a"></a>
+<p class="NDLRefMemberFunction">void  RemoveAllScreenTextures()</p>
+<p class="NDLRefMemberDescription">Removes all screen textures. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding. </p></p>
+
+<a name="namespace_spark_a_p_i_1a70eeaa036937c20f053e69fb79a79ded"></a>
+<p class="NDLRefMemberFunction">void  EnableScreenTextures()</p>
+<p class="NDLRefMemberDescription">Enables the screen textures. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding. </p></p>
+
+<a name="namespace_spark_a_p_i_1a1cbe5cea04161aaebe0d9b9b3d29f7b7"></a>
+<p class="NDLRefMemberFunction">void  DisableScreenTextures()</p>
+<p class="NDLRefMemberDescription">Disables the screen textures. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding. </p></p>
+
+<a name="namespace_spark_a_p_i_1a9a798977391d36ba0b57733d6b31bd8b"></a>
+<p class="NDLRefMemberFunction">bool  PropertyHasKey(<br/>const egf::EntityID& entityID, <br/>const efd::utf8string& propertyName, <br/>const efd::utf8string& key)</p>
+<p class="NDLRefMemberDescription">Property has key. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">propertyName</span></td>
+    <td>Name of the property. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">key</span></td>
+    <td>The key.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if it succeeds, false if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a71728a464932f593a3f701d57b18ad2f"></a>
+<p class="NDLRefMemberFunction">efd::Bool  WalkTo(<br/>const egf::EntityID& selfID, <br/>const efd::Point3& destination, <br/>efd::Float32 moveDoneRadius = 0, <br/>efd::Bool faceDest = true, <br/>efd::Float32 moveSpeed = 0)</p>
+<p class="NDLRefMemberDescription">Walk to. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">selfID</span></td>
+    <td>Identifier for the self. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">destination</span></td>
+    <td>Destination for the. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">moveDoneRadius</span></td>
+    <td>The move done radius. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">faceDest</span></td>
+    <td>true to face destination. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">moveSpeed</span></td>
+    <td>The move speed.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if it succeeds, false if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1aa1571dc2e8fcfe266bf2aa24f3630bfb"></a>
+<p class="NDLRefMemberFunction">efd::Bool  WalkTo(<br/>const egf::EntityID& selfID, <br/>const egf::EntityID& destination, <br/>efd::Float32 moveDoneRadius = 0, <br/>efd::Bool faceDest = true, <br/>efd::Float32 moveSpeed = 0)</p>
+<p class="NDLRefMemberDescription">Walk to. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">selfID</span></td>
+    <td>Identifier for the self. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">destination</span></td>
+    <td>Destination for the. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">moveDoneRadius</span></td>
+    <td>The move done radius. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">faceDest</span></td>
+    <td>true to face destination. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">moveSpeed</span></td>
+    <td>The move speed.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if it succeeds, false if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1ae570b0d180f245e59fd4427448ee1cec"></a>
+<p class="NDLRefMemberFunction">efd::Bool  RunTo(<br/>const egf::EntityID& selfID, <br/>const efd::Point3& destination, <br/>efd::Float32 moveDoneRadius = 0, <br/>efd::Bool faceDest = true, <br/>efd::Float32 moveSpeed = 0)</p>
+<p class="NDLRefMemberDescription">Executes to operation. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">selfID</span></td>
+    <td>Identifier for the self. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">destination</span></td>
+    <td>Destination for the. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">moveDoneRadius</span></td>
+    <td>The move done radius. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">faceDest</span></td>
+    <td>true to face destination. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">moveSpeed</span></td>
+    <td>The move speed.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if it succeeds, false if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1ae7b8c2d712bf32abacb2dee36e586950"></a>
+<p class="NDLRefMemberFunction">efd::Bool  RunTo(<br/>const egf::EntityID& selfID, <br/>egf::EntityID& destination, <br/>efd::Float32 moveDoneRadius = 0, <br/>efd::Bool faceDest = true, <br/>efd::Float32 moveSpeed = 0)</p>
+<p class="NDLRefMemberDescription">Executes to operation. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">selfID</span></td>
+    <td>Identifier for the self. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">destination</span></td>
+    <td>Destination for the. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">moveDoneRadius</span></td>
+    <td>The move done radius. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">faceDest</span></td>
+    <td>true to face destination. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">moveSpeed</span></td>
+    <td>The move speed.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if it succeeds, false if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a00c9880b512089d74a2de19c089d32e9"></a>
+<p class="NDLRefMemberFunction">efd::Bool  CanShoot(<br/>const egf::EntityID& selfID, <br/>const egf::EntityID& targetID, <br/>const efd::Point3& position = efd::Point3::ZERO, <br/>efd::Float32 minDistancePct = 0)</p>
+<p class="NDLRefMemberDescription">Queries if we can shoot. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">selfID</span></td>
+    <td>Identifier for the self. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">targetID</span></td>
+    <td>Identifier for the target. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">position</span></td>
+    <td>The position. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">minDistancePct</span></td>
+    <td>The minimum distance pct.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if it succeeds, false if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1aff0c4be62fc23ad28afd481b91724c2f"></a>
+<p class="NDLRefMemberFunction">void  SwapSkinTexture(<br/>const egf::EntityID& entityID, <br/>const efd::utf8string& textureURI, <br/>const efd::utf8string& nodeName)</p>
+<p class="NDLRefMemberDescription">Swap skin texture. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">textureURI</span></td>
+    <td>URI of the texture. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">nodeName</span></td>
+    <td>Name of the node. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1ab0a1ef32e2a900f29dbb25bcb44e7342"></a>
+<p class="NDLRefMemberFunction">efd::Bool  CacheKFMEffect(const efd::utf8string& modelName)</p>
+<p class="NDLRefMemberDescription">Call this function to cache an effect. </p>
+<p class="NDLRefMemberDetailedDescription">Effects must be cached before the SpawnEffect method is called or the SpawnEffect will fail. The specified flat model must already be loaded before calling this function. The given flat model will be examined in order to determine the NIF and KFM file along with related settings that represent the effect.</p>
+<p class="NDLRefMemberDetailedDescription">This is a script binding for the EffectManager::CacheKFMEffect function.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">modelName</span></td>
+    <td>The name of a model which mixes-in SparkKFMEffect. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a26f70a993ca7c0cfc664f166a2ebd4bc"></a>
+<p class="NDLRefMemberFunction">void  DestroyCache(const efd::utf8string& modelName)</p>
+<p class="NDLRefMemberDescription">Call this function to destroy an effect previously cached by calling CacheKFMEffect. </p>
+<p class="NDLRefMemberDetailedDescription">This will free memory and resources consumed by caching the data for the effect.</p>
+<p class="NDLRefMemberDetailedDescription">This is a script binding for the EffectManager::DestroyCache function.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">modelName</span></td>
+    <td>The name of a model which mixes-in SparkKFMEffect that was previous cached. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a088d979e36ba6e537dff8c95a6f72018"></a>
+<p class="NDLRefMemberFunction">efd::Bool  SpawnEffect(<br/>const efd::utf8string& modelName, <br/>const efd::Point3& position, <br/>const efd::Point3& rotation = efd::Point3::ZERO)</p>
+<p class="NDLRefMemberDescription">Spawn an effect at the specified position and rotation. </p>
+<p class="NDLRefMemberDetailedDescription">The effect effect data is defined by the specified flat model, but an entity will not be created. Instead the NIF and/or KFM file specified in the model will be directly created. This prevents sending a single local message and prevents behaviors or lifecycles from existing for the effect. Some people believe skipping these aspects of entity creation provides a performance gain.</p>
+<p class="NDLRefMemberDetailedDescription">This is a script binding for the EffectManager::SpawnEffect function.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">modelName</span></td>
+    <td>The name of a model which mixes-in SparkKFMEffect. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">position</span></td>
+    <td>The position where the effect should be located </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">rotation</span></td>
+    <td>An optional rotation expressed as Euler angles in degrees for orienting the effect. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_a_p_i_1a9dd8f092e63b07d01e816a46e5c9ba9e"></a>
+<p class="NDLRefMemberFunction">efd::Point3  GetEntityPosition(const egf::EntityID& entityID)</p>
+<p class="NDLRefMemberFunction"></p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

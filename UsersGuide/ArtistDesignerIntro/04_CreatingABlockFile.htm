@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>Creating a Block File</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Fresnel" />
+<meta name="Generator" content="Palimpsest by Emergent Game Technologies - http://emergent.net" />
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+    
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+
+<!--(Begin Body)================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript">
+</script><script language="JavaScript1.2" type="text/javascript">
+WriteNavLink(2);
+</script>
+
+<h1>Creating a Block File</h1>
+
+<p>Most games comprise more than one level. When you need to create a new level, you add a new
+.block file to your Game Solution.</p>
+
+<h3>Tutorial at-a-Glance</h3>
+
+<ul>
+    <li><a href="01_RapidIteration.htm">Intro to Rapid Iteration - Modifying AlphaGame</a></li>
+    <li><a href="02_AddingEntityModels.htm">Adding Entity Models</a></li>
+    <li><a href="03_AddingPropstotheLevel.htm">Adding Props to the Level</a></li>
+    <li>Creating a New Block file<b> <-- You are Here</b></li>
+    <li><a href="05_RunningANewBlockFile.htm">Running a New Block file with AlphaGame</a></li>
+</ul>
+
+<h3>Creating a new level</h3>
+
+<ol>
+    <li>If it is not already running, start Toolbench. From the Windows Start menu, select
+        <b>Emergent &gt; Gamebryo LightSpeed &gt; Tools &gt; Toolbench</b>.</li>
+    <li>From the Toolbench menu, select File &gt; Open Content and navigate to the directory
+        that contains the Alpha Game solution file (for example,
+        <i>&lt;AlphaGame&gt;</i>\Application\Data\AlphaGame.gsl).</li>
+    <li>In the Game Solution View, right-click the AlphaGame.gsl file and select <b>Add
+        &gt; New Content</b>.<br />
+        This opens the New Content dialog. </li>
+    <li>In the New Content dialog, click the "Block Document" item in the Content Types
+        listbox.</li>
+    <li>In the <b>Name</b> field, type a name for the .block file and then click <b>OK</b>.
+        (We're using "My New Level" in this example.)<br />
+        A new block file will be created in the game solution with the name that you specified.
+        World Builder may display some prompts about creating required directories. You
+        can accept the defaults. You may experience a slight pause as World Builder switches
+        over to the new block file.
+        <div class="FigureContainer">
+            <img alt="" src="Spark_art_design_add_block.png" border="0" />
+            <p class="FigureCaption">Figure 1</p>
+        </div>
+    </li>
+</ol>
+
+<h3>Preparing the new level for Alpha Game</h3>
+
+<ol>
+    <li>In the next step of this tutorial, you'll be viewing the new level within Alpha
+        Game. So, let's go ahead and drag some entities from the Palette View into the level.
+        For best results, the following are the minimum number of entities to include:
+        <ul>
+            <li>FloorSection</li>
+            <li>DirectionalLight</li>
+            <li>SparkThirdPersonRotatingCamera</li>
+            <li>SoundScene</li>
+            <li>WallSection</li>
+            <li>PlayerCharacter
+                <div class="FigureContainer">
+                    <img alt="" src="Spark_art_design_entities_in_new_level.png" border="0" />
+                    <p class="FigureCaption">Figure 2</p>
+                </div>
+            </li>
+        </ul>
+    </li>
+    <li>From the Toolbench menu, select <b>File &gt; Save All</b>.</li>
+</ol>
+
+<p>Obviously, this is a simplification. But you get the idea: Create entity models, add instances
+of those models in levels, separate game levels into unique .block files.</p>
+
+<h3>Moving on...</h3>
+
+<p>We've walked through the steps to create an entity model, and we've placed instances of that
+entity into the world. We've also created a .block file that encapsulates a new level in our game
+solution. Now we're ready to play around with a bit of "magic" by loading the new level into a
+running instance of Alpha Game. See <a href="05_RunningANewBlockFile.htm">Running a New Block file
+with AlphaGame</a>.</p>
+
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

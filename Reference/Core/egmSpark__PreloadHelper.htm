@@ -1,0 +1,129 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::PreloadHelper</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::PreloadHelper</p>
+<p class="NDLRefParentage">: public IBase</p>
+
+
+<p class="NDLRefHeaderFile">&lt;PreloadHelper.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_preload_helper.gif" alt="Inheritance graph for egmSpark::PreloadHelper"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::PreloadHelper</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">The <span class="NDLSystemFont">PreloadHelper</span> class preloads flat models so they can be created quickly at runtime. </p>
+<p class="NDLNormal">In addition to preloading the flat model, if the flat model refers to NIF or KFM assets that need to be loaded, they will be precached as well. </p>
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_preload_helper_1adfdb18c983052ee0d3f1fdb556422694"></a>
+<p class="NDLRefMemberFunction">PreloadHelper(efd::ServiceManager* pServiceManager)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_preload_helper_1aca9337950a42973aaade6de85eef32e0"></a>
+<p class="NDLRefMemberFunction">virtual ~PreloadHelper()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_preload_helper_1a71890f11ce3b97cee5809f6fb05225b0"></a>
+<p class="NDLRefMemberFunction">void  PreloadFlatModelsByTag(<br/>const efd::utf8string& tags, <br/>efd::Category callback = efd::kCAT_INVALID)</p>
+<p class="NDLRefMemberDescription">Given just the additional tags, this forms a URN for preloading flat models that match the given tags. </p>
+<p class="NDLRefMemberDetailedDescription">Each flat model returned from the resulting asset locate will be preloaded. In addition, if the resulting models are Mesh, Actor or SceneGraph derived models they will have their NIF or KFM assets preloaded.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">tags</span></td>
+    <td>Additional tags to append to the root "urn:emergent-flat-model" in order to form a final URN that is used to locate and preload all matching assets. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">callback</span></td>
+    <td>Category to which a message is sent when preloading is completed. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_preload_helper_1ada950de6021613924be4a7ea007d1be2"></a>
+<p class="NDLRefMemberFunction">void  PreloadFlatModel(<br/>const efd::utf8string& modelName, <br/>efd::Category callback = efd::kCAT_INVALID)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_preload_helper_1a4230308fe7e9113c51d56954470cee2a"></a>
+<p class="NDLRefMemberFunction">void  PreloadFromFile(<br/>const efd::utf8string& fileName, <br/>efd::Category callback = efd::kCAT_INVALID)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_preload_helper_1a1f6209a0f47ffe900ccb9c5d2e1e8066"></a>
+<p class="NDLRefMemberFunction">efd::UInt32  GetPreloadCount()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_preload_helper_1a5c0d9792dd4ece96e7e3690b595b391c"></a>
+<p class="NDLRefMemberFunction">void  SetPreloadCompleteCallback(efd::Category callback)</p>
+<p class="NDLRefMemberFunction"></p>
+<a name="public_static_methods"></a>
+<p class="NDLRefHead1">Public Static Methods</p>
+
+
+<a name="classegm_spark_1_1_preload_helper_1a89870fe622a9753dcddc0326be708f77"></a>
+<p class="NDLRefMemberFunction">static <span class="NDLSystemFont">PreloadHelper</span>*  GetInstance(efd::ServiceManager* pServiceManager)</p>
+<p class="NDLRefMemberDetailedDescription">Get the singleton instance </p>
+
+<a name="classegm_spark_1_1_preload_helper_1acc002c7c53bd0459e0a6953545d82bba"></a>
+<p class="NDLRefMemberFunction">static void  Shutdown()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_preload_helper_1a930160074571bb1cc8d40a804da8fb4b"></a>
+<p class="NDLRefMemberFunction">static efd::Bool  GetAssetIDDefaultValue(<br/>const egf::FlatModel* pFlat, <br/>const egf::FlatModelID requiredMixin, <br/>const egf::PropertyID requiredProperty, <br/>efd::AssetID& aid)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_preload_helper_1ac936820ae02e64b771e232ef087f752c"></a>
+<p class="NDLRefMemberFunction">static efd::Bool  GetAssetIDDefaultValue(<br/>const efd::utf8string& modelName, <br/>const egf::PropertyID propertyID, <br/>efd::AssetID& aid, <br/>const efd::ServiceManager* pServiceManager)</p>
+<p class="NDLRefMemberFunction"></p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

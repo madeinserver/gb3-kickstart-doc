@@ -1,0 +1,492 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::CameraService</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::CameraService</p>
+<p class="NDLRefParentage">: public ISystemService</p>
+
+
+<p class="NDLRefHeaderFile">&lt;CameraService.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_camera_service.gif" alt="Inheritance graph for egmSpark::CameraService"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::CameraService</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">The Spark <span class="NDLSystemFont">CameraService</span> handles in-game cameras. </p>
+<p class="NDLNormal">Cameras are implemented as built-in models and are instantiated in the block file like any other entities, or are created from C++ code at runtime. The <span class="NDLSystemFont">CameraService</span> takes care of ticking the active cameras, tracking which camera is active, and activating/deactivating cameras.</p>
+<p class="NDLNormal">
+<p class="NDLNormal">This is not a replacement for the ecr::CameraService, rather it is an extension that support for the various Ignite specific camera built-in model classes. </p></p>
+
+<a name="construction_and_destruction"></a>
+<p class="NDLRefHead1">Construction and Destruction</p>
+
+
+<a name="classegm_spark_1_1_camera_service_1a3ab07901980854e714cb322bae196466"></a>
+<p class="NDLRefMemberFunction">CameraService()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_camera_service_1a057d66fcd3e7784f1eba4defd9226497"></a>
+<p class="NDLRefMemberFunction">virtual ~CameraService()</p>
+<p class="NDLRefMemberFunction"></p>
+<a name="public_static_methods"></a>
+<p class="NDLRefHead1">Public Static Methods</p>
+
+
+<a name="classegm_spark_1_1_camera_service_1ac410ae5417003c666d9ced7400c5a422"></a>
+<p class="NDLRefMemberFunction">static void  InstallService(<br/>efd::ServiceManager* pServiceManager, <br/>int priority)</p>
+<p class="NDLRefMemberDescription">Allocate a new <span class="NDLSystemFont">CameraService</span> instance and install it. </p>
+<p class="NDLRefMemberDetailedDescription">This is a convenience function that makes it easier to start up the service. </p>
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_camera_service_1a9f162ed2e94be4d3e6e254f2d240bd81"></a>
+<p class="NDLRefMemberFunction">virtual efd::Bool  ActivateCamera(egf::EntityID entityID)</p>
+<p class="NDLRefMemberDescription">Activate a given camera. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Entity ID of the camera to activate </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true on success, false on failure. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_camera_service_1ac79a17902e79364d59402ad1d75433eb"></a>
+<p class="NDLRefMemberFunction">virtual efd::Bool  DeactivateCamera(egf::EntityID entityID)</p>
+<p class="NDLRefMemberDescription">Deactivate a given camera. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>EntityID of the camera to deactivate </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true on success, false on failure. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_camera_service_1a06542e0afa399ac29d66463ecdeaae50"></a>
+<p class="NDLRefMemberFunction"><span class="NDLSystemFont"><a href="egmSpark__ICamera.htm">egmSpark::ICamera</a></span>*  GetActiveCamera() const</p>
+<p class="NDLRefMemberDescription">Get the active camera. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The active camera </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_camera_service_1a5032c14187e2c06ba5ceca97a252433a"></a>
+<p class="NDLRefMemberFunction">const egf::EntityID&  GetActiveCameraEntity() const</p>
+<p class="NDLRefMemberDescription">Get the entity id of the active camera. </p>
+<p class="NDLRefMemberDetailedDescription">Returns egf::kENTITY_INVALID if there is no active camera.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The entity id of the active camera. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_camera_service_1a857e83f111bf5b01fb9c18d7b0783ddf"></a>
+<p class="NDLRefMemberFunction">void  SetDebugCameraModelName(const efd::utf8string& name)</p>
+<p class="NDLRefMemberDescription">Defines the model which should be instantiated as the debug camera. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">name</span></td>
+    <td>The debug camera model name </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_camera_service_1af2a40c527cc396b36a8d1b58438cb082"></a>
+<p class="NDLRefMemberFunction">efd::Bool  ActivateDebugCamera()</p>
+<p class="NDLRefMemberDescription">Activates and if necessary instantiates the debug camera. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true on success, false on failure. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_camera_service_1aafdae89e27366353a4e950759644c704"></a>
+<p class="NDLRefMemberFunction">virtual efd::Bool  DeactivateDebugCamera()</p>
+<p class="NDLRefMemberDescription">Deactivates the debug camera and re-activates the last game camera. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true on success, false on failure. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_camera_service_1a0fc5d8e47eb7b508ed07038ae7a31392"></a>
+<p class="NDLRefMemberFunction">efd::Bool  IsDebugCameraActive() const</p>
+<p class="NDLRefMemberDescription">Returns true if the debug camera is currently active. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if the debug camera is currently active. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_camera_service_1a9da756a62cba5877bfaaa93f1a88f188"></a>
+<p class="NDLRefMemberFunction"><span class="NDLSystemFont"><a href="egmSpark__ICamera.htm">egmSpark::ICamera</a></span>*  GetDebugCamera() const</p>
+<p class="NDLRefMemberDescription">Returns the debug camera or NULL if it hasn't been created yet. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The debug camera or NULL if it hasn't been created yet. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_camera_service_1a212d0b7640871b1ec66457190003ef67"></a>
+<p class="NDLRefMemberFunction">const egf::EntityID&  GetDebugCameraEntity() const</p>
+<p class="NDLRefMemberDescription">Return the entity id of the debug camera. </p>
+<p class="NDLRefMemberDetailedDescription">Returns egf::kENTITY_INVALID if the debug camera hasn't been created yet (or should be unavailable for some other reason). </p>
+
+<a name="classegm_spark_1_1_camera_service_1aa77ada5efefcfc2181fff7e87ead3216"></a>
+<p class="NDLRefMemberFunction">void  SetLongitudinalMovement(<br/>egf::EntityID entityID, <br/>efd::Float32 magnitude)</p>
+<p class="NDLRefMemberDescription">Set longitudinal movement parameters on the camera with the specified EntityID. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>ID of the camera </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">magnitude</span></td>
+    <td>Longitudinal movement parameters. Typically magnitude will vary from -1.0 to 1.0 depending on the position of an input analog stick. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_camera_service_1a10f14cc622c4105b1fdf712721672b31"></a>
+<p class="NDLRefMemberFunction">void  SetLateralMovement(<br/>egf::EntityID entityID, <br/>efd::Float32 magnitude)</p>
+<p class="NDLRefMemberDescription">Set lateral movement parameters on the camera with the specified EntityID. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>ID of the camera </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">magnitude</span></td>
+    <td>Lateral movement parameters. Typically magnitude will vary from -1.0 to 1.0 depending on the position of an input analog stick. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_camera_service_1a51fa638d4e6dd75809df39d0cb91c823"></a>
+<p class="NDLRefMemberFunction">void  SetVerticalMovement(<br/>egf::EntityID entityID, <br/>efd::Float32 magnitude)</p>
+<p class="NDLRefMemberDescription">Set vertical movement parameters on the camera with the specified EntityID. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>ID of the camera </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">magnitude</span></td>
+    <td>Vertical movement parameters. Typically magnitude will vary from -1.0 to 1.0 depending on the position of an input analog stick. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_camera_service_1aabdac3d03a5b0530e69efcdfb985a25c"></a>
+<p class="NDLRefMemberFunction">void  SetSubject(<br/>egf::EntityID entityCamera, <br/>egf::EntityID entitySubject)</p>
+<p class="NDLRefMemberDescription">Set the camera subject. </p>
+<p class="NDLRefMemberDetailedDescription">Each camera type has a different way of treating its subject; for example, a third-person camera will always focus on the subject, and may follow the subject as it moves around. A first-person camera might also follow the subject, but its point of view is that of the subject itself. Some camera types may not have the concept of a subject entity, in which case this function does nothing.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityCamera</span></td>
+    <td>ID of the camera entity </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">entitySubject</span></td>
+    <td>ID of the subject entity </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_camera_service_1a63bee0e9b298eed561a8065b47f50e05"></a>
+<p class="NDLRefMemberFunction">void  EliminateCamera(<span class="NDLSystemFont"><a href="egmSpark__ICamera.htm">egmSpark::ICamera</a></span>* pCamera)</p>
+<p class="NDLRefMemberDescription">Eliminate all references to a given camera. </p>
+<p class="NDLRefMemberDetailedDescription">Basically, if this is the active camera, null out its pointer. No need to deactivate it, though, since it is probably being deleted.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pCamera</span></td>
+    <td>Camera to eliminate </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_camera_service_1a3f805c5f7ecf4cf41a4e353ad840528c"></a>
+<p class="NDLRefMemberFunction"><span class="NDLSystemFont"><a href="egmSpark__ICamera.htm">egmSpark::ICamera</a></span>*  GetCameraFromEntity(<br/>egf::EntityID entityID, <br/>const char* loc = NULL) const</p>
+<p class="NDLRefMemberDescription">Find the C++ camera instance associated with a given entity that mixes in its builtin model. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Entity ID to find the camera of </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">loc</span></td>
+    <td>(optional) A string to print in any error messages to give context. It's fine to leave this parameter off, or you can give a short descriptive string of why you are looking for the camera.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>Camera interface for the associated camera, or NULL. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

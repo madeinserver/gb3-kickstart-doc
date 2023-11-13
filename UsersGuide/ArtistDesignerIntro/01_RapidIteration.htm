@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>Intro to Rapid Iteration - Modifying Alpha Game</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Fresnel" />
+<meta name="Generator" content="Palimpsest by Emergent Game Technologies - http://emergent.net" />
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+    
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+
+<!--(Begin Body)================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript">
+</script><script language="JavaScript1.2" type="text/javascript">
+WriteNavLink(2);
+</script>
+
+<h1>Intro to Rapid Iteration - Modifying Alpha Game</h1>
+
+<p>The main premise of rapid iteration is that artists, designers, and programmers can quickly
+experiment with changes in a meaningful way. In this section, we'll take a look at using the Entity
+Modeling Tool (EMT), World Builder, and a running instance of Alpha Game to get a sense of how
+rapid iteration works.</p>
+
+<h3>Tutorial at-a-Glance</h3>
+
+<ul>
+    <li>Intro to Rapid Iteration - Modifying AlphaGame<b> <-- You are Here</b></li>
+    <li><a href="02_AddingEntityModels.htm">Adding Entity Models</a></li>
+    <li><a href="03_AddingPropstotheLevel.htm">Adding Props to the Level</a></li>
+    <li><a href="04_CreatingABlockFile.htm">Creating a New Block file</a></li>
+    <li><a href="05_RunningANewBlockFile.htm">Running a New Block file with AlphaGame</a></li>
+</ul>
+
+
+<h3>Opening up the game solution and exploring the entity models</h3>
+
+<ol>
+    <li>In Windows Explorer, double-click the Alpha Game solution file:
+    <i>&lt;AlphaGame&gt;</i>\Application\Data\AlphaGame.gsl.<br />
+    This opens the game solutionwithin Toolbench.</li>
+    <li>In the Game Solution View, expand the tree below the Solution node. The solution comprises
+    several EMT projects (.emtproj) and the level file, ?AlphaGame.block.? You can think of EMT
+    projects as collections of re-usable game building blocks. So, for example, since we've
+    included the Standard Model Library within the Alpha Game solution, we are able to leverage the
+    models within it, either indivually or as mix-ins to models in the Alpha Game EMT project.
+    <br />
+    Ideally, as you develop your own models, you would create and categorize them into EMT projects
+    that would make it easy for team members to re-use common building blocks when prototyping and
+    building games.</li>
+    <li>In the Game Solution View, double-click the Spark Library EMT project,
+    ?SparkLibrary.emtproj.?</li>
+    <li>Expand the ?EntityModels? node beneath ?SparkLibrary.emtproj.?</li>
+    <li>Below the EntityModels node, double-click the ?SparkMovementHandler? model.<br />
+    In the entity relationship diagram that displays, note that this model actually derives from
+    the Actor model.<br />
+    And, further still, note that the Actor Model itself is contained within the Standard Model
+    Library (StandardModelLibrary.emtproj)
+        <div class="FigureContainer">
+            <img alt="" src="Spark_art_design_open_sparkmovementhandler.png" border="0" />
+            <p class="FigureCaption">Figure 1: Opening SparkMovementHandler entity model in Toolbench</p>
+        </div>
+    This is a simple
+    example of a mix-in, but it highlights the power of re-using models as recombinant game
+    building blocks.</li>
+</ol>
+
+<h3>Investigating entity instances within World Builder</h3>
+
+<ol>
+    <li>Now let's take a look at the Alpha Game level file. We're especially interested in seeing
+    how instances of entity models are placed in the world. In the Game Solution View, double-click
+    ?AlphaGame.block? (at the bottom of the tree).<br />Toolbench switches to the World Builder
+    window.
+        <div class="FigureContainer">
+            <img alt="" src="Spark_art_design_open_alpha_block.png" border="0" />
+            <p class="FigureCaption">Figure 2: Opening AlphaGame.block in Toolbench</p>
+        </div>
+    </li>
+    <li>Go ahead and take a moment to acquaint yourself with the entities in the world. One way to
+    do this is to double-click entities that are listed in the Entity View (<b>View &gt; Entity
+    View</b>).</li>
+    <li>Within the Entity View, double-click the ?PlayerCharacter0? entity.
+    <div class="FigureContainer">
+        <img alt="" src="Spark_art_design_open_playercharacter0.png" border="0" />
+        <p class="FigureCaption">Figure 3: Viewing PlayerCharacter0 mix-in properties</p>
+    </div>
+    Within Figure 3, note the following:
+        <ul>
+            <li>In the Entity View (1), you can search for entities and you can sort them in a
+            number of ways. This makes it easy to locate models, even if you have hundreds of them.
+            </li>
+            <li>When you double-click the "PlayerCharacter0? entity, it comes into focus within
+            the world. Also, the Entity Editor displays (2).<br />
+            In this particular case, the View shows that the "PlayerCharacter0" entity mixes in a
+            number of other models, including PlayerCharacter, Character, Actor, and so on. By
+            default, the entity mixes-in the properties from these models. Any properties that are
+            overrriden in the "PlayerCharacter0? entity are indicated by a green checkmark.</li>
+            <li> To visualize the "PlayerCharacter0? entity's mix-ins in a different way, you can
+            click the <b>View</b> button (3) within the Entity Editor View. This will show the
+            entity relationship diagram.
+                <div class="FigureContainer">
+                    <img alt=""
+                    src="Spark_art_design_open_playercharacter0_relationship_diagram.png"
+                    border="0" />
+                    <p class="FigureCaption">Figure 4: Viewing PlayerCharacter0 entity relationship
+                    diagram</p>
+                </div>
+            </li>
+        </ul>
+    </li>
+    <li> Within the Entity View, double-click the ?DirectionalLight0? entity.
+        <div class="FigureContainer">
+            <img alt="" src="DirectionalLight-RapidIteration.jpg" border="0" />
+            <p class="FigureCaption">Figure 5: DirectionalLight0</p>
+        </div>
+    This is the light that is casting
+    shadows.</li>
+    <li> Within the Entity Editor View, toggle PSM shadows to off by changing the ?PSSMEnabled?
+    property value from True to False. Note the visual difference. This increases performance, but
+    to get good resolution, you will have to set shadow values manually.</li>
+</ol>
+
+<h3>Viewing World Builder changes within the running game</h3>
+
+<ol>
+    <li>Minimize Toolbench and go back to <i>&lt;AlphaGame&gt;</i>
+    \Application\win32\AlphaGame_Release_<i>&lt;VC80 or VC90&gt;</i>.exe<br />where:
+        <ul>
+            <li><i>&lt;AlphaGame&gt;</i> is the directory that contains your local copy of Alpha
+            Game</li>
+            <li> <i>&lt;VC80 or VC90&gt;</i> is shorthand for the version of Visual Studio that was
+            used to compile the executable</li>
+        </ul>
+    </li>
+    <li>With the game still running, switch back to Toolbench and move a few props using the move
+    tool.</li>
+    <li>In Toolbench, select <b>File &gt; Save All</b> to save everything and then switch back to
+    the already running application to see the changes you just made.</li>
+</ol>
+
+<p>That was a simple taste of rapid iteration. The basic workflow is to create your models, place
+instances of them in your world, and then iterate on them while viewing the changes on PC and
+consoles.</p>
+
+<h3>Moving on...</h3>
+
+<p>Now that you've had a look at how rapid iteration works, let's investigate how to create entity
+models. See <a href="02_AddingEntityModels.htm">Adding Entity Models</a>.</p>
+
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

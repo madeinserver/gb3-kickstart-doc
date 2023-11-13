@@ -1,0 +1,374 @@
+<html>
+<head>
+  <script language="javascript">
+  <!--
+  function CloseNav() {
+    if ((top.right.location == null) || (top.right.location == undefined) || (typeof(top.right.location.href) != "string") || (top.right.location.href == ""))
+      top.location="Home/home_intro.htm";
+    else
+      top.location=top.right.location;
+  }
+  function IndexListOnChange() { //Listbox select -> Put selected text into Entry field
+    var iSelect = document.getElementById("indexcontainer").selectedIndex;
+    var text = document.getElementById("indexcontainer").item(iSelect).text;
+    //Remove leading spaces - &#160; &nbsp; %A0 -- Finding it hard to remove Non-breaking space. JScript does not see %A0 as White space
+    text = escape(text);    text = text.replace(/^(%A0)+/g, "");
+    text = unescape(text);  text = text.replace(/^\s+/g, "");
+    document.getElementById("IndexEntry").value = text;
+  }
+  function IndexEntryOnKeyUp() { //text typed -> select closest listbox entry 
+    var oList = document.getElementById("indexcontainer"); 
+    var ListLen = oList.length; 
+    var iCurSel = oList.selectedIndex; 
+    var text = document.getElementById("IndexEntry").value.toUpperCase(); 
+    var TextLen = text.length; 
+    for (var i = 0; i < ListLen; i++) { 
+      var listitem = oList.item(i).text.substr(0, TextLen).toUpperCase(); 
+      if (listitem == text) { 
+        if (i != iCurSel) { 
+          var iPos = i + oList.size - 1; 
+          if(ListLen > iPos) 
+            oList.selectedIndex = iPos; 
+          else 
+            oList.selectedIndex = ListLen-1; 
+          oList.selectedIndex = i; 
+        } 
+        break; 
+      } 
+    } 
+    return(true); //do not gobble keypress 
+  } 
+  function OpenSelected() {  //open selected list item
+    var iSelect = document.getElementById("indexcontainer").selectedIndex;
+    if (iSelect >= 0) {
+      var URL = document.getElementById("indexcontainer").item(iSelect).value;
+      // BEGIN EMERGENT EDIT
+      // Forcing all links to go through redirection page
+      if (URL.length > 0) top.right.location = 'ee_goto.htm#' + URL;  //right pane has name "right"
+      // END EMERGENT EDIT
+    }
+  }
+  function KeyDownEvent(event) {
+    if ((event.which && event.which==13) || (event.keyCode && event.keyCode==13)) {
+      OpenSelected();
+      IndexListOnChange();  //update entry field to list box selected text
+      return(false);        //gobble text
+      } else return(true);
+  }
+
+  function GetFrameWidth() { 
+    var x = 300; 
+    if (self.innerHeight) // all except Explorer 
+	x = self.innerWidth; 
+    else if (document.documentElement && document.documentElement.clientHeight) // Explorer 6 Strict Mode 
+	x = document.documentElement.clientWidth; 
+    else if (document.body) // other Explorers 
+	x = document.body.clientWidth; 
+    return(x); 
+  } 
+
+  function GetFrameHeight() { 
+    var y = 400; 
+    if (self.innerHeight) // all except Explorer 
+      y = self.innerHeight; 
+    else if (document.documentElement && document.documentElement.clientWidth) // Explorer 6 Strict Mode 
+      y = document.documentElement.clientHeight; 
+    else if (document.body) // other Explorers 
+      y = document.body.clientHeight; 
+    return(y); 
+  } 
+
+  function resizeIndex() {
+    var indexDiv = document.getElementById("indexcontainer");
+    var DivFooter = document.getElementById("DivFooter");
+    var xTop = DivFooter.offsetHeight + indexDiv.offsetTop;
+    var WW = GetFrameWidth() - 10; //working with 5px each side 
+    indexDiv.style.width = WW.toString() + "px"; 
+    var HH = GetFrameHeight() -  xTop; 
+    if (HH > 0) 
+      indexDiv.style.height = HH.toString() + "px"; 
+  }
+  -->
+  </script>
+
+
+<meta HTTP-EQUIV=REFRESH>
+<title>Index</title>
+<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5" />
+
+  <style>
+    .docstyle
+  {
+    font-size: 8pt;
+    font-family: verdana,arial,sans-serif;
+  }
+  </style>
+
+</head>
+
+<body id="docBody" BGCOLOR="#F8FAFA" style="color: Black; margin: 5px 0px 0px 0px;" onload="resizeIndex()" onresize="resizeIndex()">
+
+<div align="center" style="margin: 3 5 15 3;">
+   <span style="cursor: pointer; font-size: 8pt; font-family: verdana,arial,sans-serif; color: #314860; text-decoration: none; background-color: #FFFFFF; padding: 1px 3px 1px 3px; border: solid 1px #96BCD6;" onclick="javascript:location='search.htm';">Search</span>
+|
+   <span style="font-size: 8pt; font-family: verdana,arial,sans-serif; font-weight: bold; color: #314860; text-decoration: none; background-color: #FFFFFF; padding: 1px 3px 1px 3px; border: solid 1px #96BCD6;">Index</span>
+</div>
+
+
+
+  <div style="margin: 11px 0px 0px 0px; padding: 0px 5px 0px 5px;">
+     <input type="text" id="IndexEntry" class="docstyle"
+       style="width:100%;"
+       onkeydown="javascript:return(KeyDownEvent(event));"
+       onkeyup="javascript:return(IndexEntryOnKeyUp());">
+  </div>
+
+<div style="margin: 5px 0px 0px 0px; padding: 0px 5px 0px 5px;">
+<select id="indexcontainer" name="IndexListbox" class="docstyle"
+  style="width:200; height:200;"
+  size="500"
+  onchange="javascript:IndexListOnChange();"
+  onclick="javascript:OpenSelected();return(true);"
+  onkeydown="javascript:return(KeyDownEvent(event));">
+
+<option value="">AlphaGame</option>
+<option value="Reference/AlphaGame/Introduction_to_AlphaGame_Class_Reference.htm">&nbsp;&nbsp;&nbsp;Class Reference</option>
+<option value="Reference/Namespaces/AlphaGameBuiltins.htm">AlphaGameBuiltins</option>
+<option value="Reference/Namespaces/AnimStateAPI.htm">AnimStateAPI</option>
+<option value="Reference/DayDreamer/BlockSelectionState.htm">BlockSelectionState</option>
+<option value="">Core</option>
+<option value="Reference/Core/Introduction_to_Core_Class_Reference.htm">&nbsp;&nbsp;&nbsp;Class Reference</option>
+<option value="">DayDreamer</option>
+<option value="Reference/DayDreamer/Introduction_to_DayDreamer_Class_Reference.htm">&nbsp;&nbsp;&nbsp;Class Reference</option>
+<option value="Reference/Namespaces/DependencyHelper.htm">DependencyHelper</option>
+<option value="Reference/DayDreamer/DoFSettingsScreen.htm">DoFSettingsScreen</option>
+<option value="Reference/Namespaces/egmSpark.htm">egmSpark</option>
+<option value="Reference/Core/egmSpark__AddAmmoEvent.htm">egmSpark::AddAmmoEvent</option>
+<option value="Reference/Core/egmSpark__AddHealthEvent.htm">egmSpark::AddHealthEvent</option>
+<option value="Reference/Core/egmSpark__AimAnims.htm">egmSpark::AimAnims</option>
+<option value="Reference/Core/egmSpark__AimingManager.htm">egmSpark::AimingManager</option>
+<option value="Reference/Core/egmSpark__AnimStateIdle.htm">egmSpark::AnimStateIdle</option>
+<option value="Reference/Core/egmSpark__AnimStateManager.htm">egmSpark::AnimStateManager</option>
+<option value="Reference/Core/egmSpark__AssertDestination.htm">egmSpark::AssertDestination</option>
+<option value="Reference/Core/egmSpark__AutoPerfTimer.htm">egmSpark::AutoPerfTimer</option>
+<option value="Reference/Core/egmSpark__BaseEffect.htm">egmSpark::BaseEffect</option>
+<option value="Reference/Core/egmSpark__BaseMovementInputHandler.htm">egmSpark::BaseMovementInputHandler</option>
+<option value="Reference/Core/egmSpark__BeamWeapon.htm">egmSpark::BeamWeapon</option>
+<option value="Reference/Core/egmSpark__BehaviorInvoker.htm">egmSpark::BehaviorInvoker</option>
+<option value="Reference/Core/egmSpark__BlendedAnim.htm">egmSpark::BlendedAnim</option>
+<option value="Reference/Core/egmSpark__BuiltinModelBaseStaticMapCleaner.htm">egmSpark::BuiltinModelBaseStaticMapCleaner</option>
+<option value="Reference/Core/egmSpark__BuiltinUpdateService.htm">egmSpark::BuiltinUpdateService</option>
+<option value="Reference/Core/egmSpark__CameraService.htm">egmSpark::CameraService</option>
+<option value="Reference/Core/egmSpark__CameraShake.htm">egmSpark::CameraShake</option>
+<option value="Reference/Core/egmSpark__CastRayRequest.htm">egmSpark::CastRayRequest</option>
+<option value="Reference/Core/egmSpark__CharacterAnimController.htm">egmSpark::CharacterAnimController</option>
+<option value="Reference/Core/egmSpark__CharacterControllerHitReport.htm">egmSpark::CharacterControllerHitReport</option>
+<option value="Reference/Core/egmSpark__CharacterMover.htm">egmSpark::CharacterMover</option>
+<option value="Reference/Core/egmSpark__CharacterRotator.htm">egmSpark::CharacterRotator</option>
+<option value="Reference/Core/egmSpark__ClipEmptyEvent.htm">egmSpark::ClipEmptyEvent</option>
+<option value="Reference/Core/egmSpark__CollisionEvent.htm">egmSpark::CollisionEvent</option>
+<option value="Reference/Core/egmSpark__DamageEvent.htm">egmSpark::DamageEvent</option>
+<option value="Reference/Core/egmSpark__DeathEvent.htm">egmSpark::DeathEvent</option>
+<option value="Reference/Core/egmSpark__DependencyHelper.htm">egmSpark::DependencyHelper</option>
+<option value="Reference/Core/egmSpark__DestroyPhysXEvent.htm">egmSpark::DestroyPhysXEvent</option>
+<option value="Reference/Core/egmSpark__DetachWeaponEvent.htm">egmSpark::DetachWeaponEvent</option>
+<option value="Reference/Core/egmSpark__DisableInputEvent.htm">egmSpark::DisableInputEvent</option>
+<option value="Reference/Core/egmSpark__DisableLocomotionEvent.htm">egmSpark::DisableLocomotionEvent</option>
+<option value="Reference/Core/egmSpark__EffectCacheEntry.htm">egmSpark::EffectCacheEntry</option>
+<option value="Reference/Core/egmSpark__EffectsManager.htm">egmSpark::EffectsManager</option>
+<option value="Reference/Core/egmSpark__EnableDamageEvent.htm">egmSpark::EnableDamageEvent</option>
+<option value="Reference/Core/egmSpark__EnableInputEvent.htm">egmSpark::EnableInputEvent</option>
+<option value="Reference/Core/egmSpark__EnableLocomotionEvent.htm">egmSpark::EnableLocomotionEvent</option>
+<option value="Reference/Core/egmSpark__EntityRotator.htm">egmSpark::EntityRotator</option>
+<option value="Reference/Core/egmSpark__EventHelper.htm">egmSpark::EventHelper</option>
+<option value="Reference/Core/egmSpark__EventVariable.htm">egmSpark::EventVariable</option>
+<option value="Reference/Core/egmSpark__ExplodeEvent.htm">egmSpark::ExplodeEvent</option>
+<option value="Reference/Core/egmSpark__FileFinder.htm">egmSpark::FileFinder</option>
+<option value="Reference/Core/egmSpark__FillClipEvent.htm">egmSpark::FillClipEvent</option>
+<option value="Reference/Core/egmSpark__FilteredAssetLocator.htm">egmSpark::FilteredAssetLocator</option>
+<option value="Reference/Core/egmSpark__FireWeaponEvent.htm">egmSpark::FireWeaponEvent</option>
+<option value="Reference/Core/egmSpark__FoundFile.htm">egmSpark::FoundFile</option>
+<option value="Reference/Core/egmSpark__FrameRateTracker.htm">egmSpark::FrameRateTracker</option>
+<option value="Reference/Core/egmSpark__FreeCamera.htm">egmSpark::FreeCamera</option>
+<option value="Reference/Core/egmSpark__FullBodySeqDoneEvent.htm">egmSpark::FullBodySeqDoneEvent</option>
+<option value="Reference/Core/egmSpark__GamebryoSplashState.htm">egmSpark::GamebryoSplashState</option>
+<option value="Reference/Core/egmSpark__GamepadRumble.htm">egmSpark::GamepadRumble</option>
+<option value="Reference/Core/egmSpark__GameState.htm">egmSpark::GameState</option>
+<option value="Reference/Core/egmSpark__GameStateBuiltin.htm">egmSpark::GameStateBuiltin</option>
+<option value="Reference/Core/egmSpark__GameStateService.htm">egmSpark::GameStateService</option>
+<option value="Reference/Core/egmSpark__GroupedAnimData.htm">egmSpark::GroupedAnimData</option>
+<option value="Reference/Core/egmSpark__GroupedAnimDataList.htm">egmSpark::GroupedAnimDataList</option>
+<option value="Reference/Core/egmSpark__HealthModel.htm">egmSpark::HealthModel</option>
+<option value="Reference/Core/egmSpark__HealthUpdateEvent.htm">egmSpark::HealthUpdateEvent</option>
+<option value="Reference/Core/egmSpark__HideWeaponEvent.htm">egmSpark::HideWeaponEvent</option>
+<option value="Reference/Core/egmSpark__HUDService.htm">egmSpark::HUDService</option>
+<option value="Reference/Core/egmSpark__IBaseEventVariable.htm">egmSpark::IBaseEventVariable</option>
+<option value="Reference/Core/egmSpark__IBehaviorInvoker.htm">egmSpark::IBehaviorInvoker</option>
+<option value="Reference/Core/egmSpark__IBuiltinModelBase.htm">egmSpark::IBuiltinModelBase</option>
+<option value="Reference/Core/egmSpark__ICamera.htm">egmSpark::ICamera</option>
+<option value="Reference/Core/egmSpark__ICameraImpl.htm">egmSpark::ICameraImpl</option>
+<option value="Reference/Core/egmSpark__IContactReport.htm">egmSpark::IContactReport</option>
+<option value="Reference/Core/egmSpark__IFatalError.htm">egmSpark::IFatalError</option>
+<option value="Reference/Core/egmSpark__Initializer.htm">egmSpark::Initializer</option>
+<option value="Reference/Core/egmSpark__IPhysXKinematicCollisionCallback.htm">egmSpark::IPhysXKinematicCollisionCallback</option>
+<option value="Reference/PostEffects/egmSpark__IPostEffectLibrary.htm">egmSpark::IPostEffectLibrary</option>
+<option value="Reference/Core/egmSpark__KFMEffect.htm">egmSpark::KFMEffect</option>
+<option value="Reference/Core/egmSpark__LaunchProjectileEvent.htm">egmSpark::LaunchProjectileEvent</option>
+<option value="Reference/Core/egmSpark__LevelService.htm">egmSpark::LevelService</option>
+<option value="Reference/Core/egmSpark__LoadingState.htm">egmSpark::LoadingState</option>
+<option value="Reference/Core/egmSpark__LoadingState__Error.htm">egmSpark::LoadingState::Error</option>
+<option value="Reference/Core/egmSpark__LocomotionAnim.htm">egmSpark::LocomotionAnim</option>
+<option value="Reference/Core/egmSpark__LocomotionAnims.htm">egmSpark::LocomotionAnims</option>
+<option value="Reference/Core/egmSpark__LocomotionController.htm">egmSpark::LocomotionController</option>
+<option value="Reference/Core/egmSpark__LogoSplash.htm">egmSpark::LogoSplash</option>
+<option value="Reference/Core/egmSpark__ManualOcclusionService.htm">egmSpark::ManualOcclusionService</option>
+<option value="Reference/Core/egmSpark__MathHelpers.htm">egmSpark::MathHelpers</option>
+<option value="Reference/Core/egmSpark__MoveInDirectionEvent.htm">egmSpark::MoveInDirectionEvent</option>
+<option value="Reference/Core/egmSpark__MovementHandler.htm">egmSpark::MovementHandler</option>
+<option value="Reference/Core/egmSpark__MoveToDestinationEvent.htm">egmSpark::MoveToDestinationEvent</option>
+<option value="Reference/Core/egmSpark__MuzzleFlash.htm">egmSpark::MuzzleFlash</option>
+<option value="Reference/Core/egmSpark__MuzzleFlashManager.htm">egmSpark::MuzzleFlashManager</option>
+<option value="Reference/Core/egmSpark__NoArgumentsBehaviorInvoker.htm">egmSpark::NoArgumentsBehaviorInvoker</option>
+<option value="Reference/Core/egmSpark__OnAnimSetChangedEvent.htm">egmSpark::OnAnimSetChangedEvent</option>
+<option value="Reference/Core/egmSpark__OnCrouchedEvent.htm">egmSpark::OnCrouchedEvent</option>
+<option value="Reference/Core/egmSpark__OnFallingEvent.htm">egmSpark::OnFallingEvent</option>
+<option value="Reference/Core/egmSpark__OnJumpBeginEvent.htm">egmSpark::OnJumpBeginEvent</option>
+<option value="Reference/Core/egmSpark__OnLandedEvent.htm">egmSpark::OnLandedEvent</option>
+<option value="Reference/Core/egmSpark__OnMoveDoneEvent.htm">egmSpark::OnMoveDoneEvent</option>
+<option value="Reference/Core/egmSpark__OnPhysXCharacterControllerCreatedEvent.htm">egmSpark::OnPhysXCharacterControllerCreatedEvent</option>
+<option value="Reference/Core/egmSpark__OnPhysXContactEvent.htm">egmSpark::OnPhysXContactEvent</option>
+<option value="Reference/Core/egmSpark__OnPhysXPropsReadyEvent.htm">egmSpark::OnPhysXPropsReadyEvent</option>
+<option value="Reference/Core/egmSpark__OnPreloadCompleteEvent.htm">egmSpark::OnPreloadCompleteEvent</option>
+<option value="Reference/Core/egmSpark__OnStandingEvent.htm">egmSpark::OnStandingEvent</option>
+<option value="Reference/Core/egmSpark__OnTextKeyEvent.htm">egmSpark::OnTextKeyEvent</option>
+<option value="Reference/Core/egmSpark__OnWeaponSwitchEvent.htm">egmSpark::OnWeaponSwitchEvent</option>
+<option value="Reference/Core/egmSpark__OutOfAmmoEvent.htm">egmSpark::OutOfAmmoEvent</option>
+<option value="Reference/Core/egmSpark__OverTheShoulderCamera.htm">egmSpark::OverTheShoulderCamera</option>
+<option value="Reference/Core/egmSpark__ParticleEffect.htm">egmSpark::ParticleEffect</option>
+<option value="Reference/Core/egmSpark__PerformanceTimer.htm">egmSpark::PerformanceTimer</option>
+<option value="Reference/Core/egmSpark__PhysXCharacterContactEvent.htm">egmSpark::PhysXCharacterContactEvent</option>
+<option value="Reference/Core/egmSpark__PhysXCharacterController.htm">egmSpark::PhysXCharacterController</option>
+<option value="Reference/Core/egmSpark__PhysXCharacterControllerData.htm">egmSpark::PhysXCharacterControllerData</option>
+<option value="Reference/Core/egmSpark__PhysXEntityMover.htm">egmSpark::PhysXEntityMover</option>
+<option value="Reference/Core/egmSpark__PhysXHelperService.htm">egmSpark::PhysXHelperService</option>
+<option value="Reference/Core/egmSpark__PhysXKinematicController.htm">egmSpark::PhysXKinematicController</option>
+<option value="Reference/Core/egmSpark__PhysXProjectileMover.htm">egmSpark::PhysXProjectileMover</option>
+<option value="Reference/Core/egmSpark__PhysXProps.htm">egmSpark::PhysXProps</option>
+<option value="Reference/Core/egmSpark__PhysXSceneHandle.htm">egmSpark::PhysXSceneHandle</option>
+<option value="Reference/Core/egmSpark__PhysXSettingsScreen.htm">egmSpark::PhysXSettingsScreen</option>
+<option value="Reference/Core/egmSpark__PlayFullBodySequenceEvent.htm">egmSpark::PlayFullBodySequenceEvent</option>
+<option value="Reference/Core/egmSpark__PlaySequenceEvent.htm">egmSpark::PlaySequenceEvent</option>
+<option value="Reference/Core/egmSpark__PlaySoundEvent.htm">egmSpark::PlaySoundEvent</option>
+<option value="Reference/Core/egmSpark__PlayUpperBodySequenceEvent.htm">egmSpark::PlayUpperBodySequenceEvent</option>
+<option value="Reference/PostEffects/egmSpark__PostEffect.htm">egmSpark::PostEffect</option>
+<option value="Reference/PostEffects/egmSpark__PostEffectBloom.htm">egmSpark::PostEffectBloom</option>
+<option value="Reference/PostEffects/egmSpark__PostEffectColorCorrect.htm">egmSpark::PostEffectColorCorrect</option>
+<option value="Reference/PostEffects/egmSpark__PostEffectDepthOfField.htm">egmSpark::PostEffectDepthOfField</option>
+<option value="Reference/PostEffects/egmSpark__PostEffectsDefaultLibrary.htm">egmSpark::PostEffectsDefaultLibrary</option>
+<option value="Reference/PostEffects/egmSpark__PostEffectsDepthMaterial.htm">egmSpark::PostEffectsDepthMaterial</option>
+<option value="Reference/PostEffects/egmSpark__PostEffectsManager.htm">egmSpark::PostEffectsManager</option>
+<option value="Reference/PostEffects/egmSpark__PostEffectsService.htm">egmSpark::PostEffectsService</option>
+<option value="Reference/PostEffects/egmSpark__PostEffectsStep.htm">egmSpark::PostEffectsStep</option>
+<option value="Reference/Core/egmSpark__PreloaderState.htm">egmSpark::PreloaderState</option>
+<option value="Reference/Core/egmSpark__PreloadGroup.htm">egmSpark::PreloadGroup</option>
+<option value="Reference/Core/egmSpark__PreloadHelper.htm">egmSpark::PreloadHelper</option>
+<option value="Reference/Core/egmSpark__PreloadHelperComplete.htm">egmSpark::PreloadHelperComplete</option>
+<option value="Reference/Core/egmSpark__PreloadHelperResponse.htm">egmSpark::PreloadHelperResponse</option>
+<option value="Reference/Core/egmSpark__PreloadItem.htm">egmSpark::PreloadItem</option>
+<option value="Reference/Core/egmSpark__Projectile.htm">egmSpark::Projectile</option>
+<option value="Reference/Core/egmSpark__ProjectileWeapon.htm">egmSpark::ProjectileWeapon</option>
+<option value="Reference/Core/egmSpark__PropertyFetch_Converter.htm">egmSpark::PropertyFetch_Converter</option>
+<option value="Reference/Core/egmSpark__PropertyFetch_Notifier.htm">egmSpark::PropertyFetch_Notifier</option>
+<option value="Reference/Core/egmSpark__PropertyFetch_StaticConverter.htm">egmSpark::PropertyFetch_StaticConverter</option>
+<option value="Reference/Core/egmSpark__RightWeaponFiredEvent.htm">egmSpark::RightWeaponFiredEvent</option>
+<option value="Reference/Core/egmSpark__RTriggerDownEvent.htm">egmSpark::RTriggerDownEvent</option>
+<option value="Reference/Core/egmSpark__RTriggerUpEvent.htm">egmSpark::RTriggerUpEvent</option>
+<option value="Reference/Core/egmSpark__ScreenText.htm">egmSpark::ScreenText</option>
+<option value="Reference/Core/egmSpark__ScreenTextRenderView.htm">egmSpark::ScreenTextRenderView</option>
+<option value="Reference/Core/egmSpark__ScreenTextureClick.htm">egmSpark::ScreenTextureClick</option>
+<option value="Reference/Core/egmSpark__ScreenTextureClick__Element.htm">egmSpark::ScreenTextureClick::Element</option>
+<option value="Reference/Core/egmSpark__SequenceSynchronizer.htm">egmSpark::SequenceSynchronizer</option>
+<option value="Reference/Core/egmSpark__ServiceAllocator.htm">egmSpark::ServiceAllocator</option>
+<option value="Reference/Core/egmSpark__ServiceInitInfo.htm">egmSpark::ServiceInitInfo</option>
+<option value="Reference/Core/egmSpark__ServicePerfTimer.htm">egmSpark::ServicePerfTimer</option>
+<option value="Reference/Core/egmSpark__SetAnimStateEvent.htm">egmSpark::SetAnimStateEvent</option>
+<option value="Reference/Core/egmSpark__SetStanceEvent.htm">egmSpark::SetStanceEvent</option>
+<option value="Reference/Core/egmSpark__ShaderHelper.htm">egmSpark::ShaderHelper</option>
+<option value="Reference/Core/egmSpark__ShakeCameraEvent.htm">egmSpark::ShakeCameraEvent</option>
+<option value="Reference/Core/egmSpark__Shatterable.htm">egmSpark::Shatterable</option>
+<option value="Reference/Core/egmSpark__ShowWeaponEvent.htm">egmSpark::ShowWeaponEvent</option>
+<option value="Reference/Core/egmSpark__ShutdownHandlerEntry.htm">egmSpark::ShutdownHandlerEntry</option>
+<option value="Reference/Core/egmSpark__SimpleCamera.htm">egmSpark::SimpleCamera</option>
+<option value="Reference/Core/egmSpark__SparkAnimationService.htm">egmSpark::SparkAnimationService</option>
+<option value="Reference/Core/egmSpark__SparkAttachment.htm">egmSpark::SparkAttachment</option>
+<option value="Reference/Core/egmSpark__SparkDebugMenu.htm">egmSpark::SparkDebugMenu</option>
+<option value="Reference/Core/egmSpark__SparkMainService.htm">egmSpark::SparkMainService</option>
+<option value="Reference/Core/egmSpark__SparkSceneGraphService.htm">egmSpark::SparkSceneGraphService</option>
+<option value="Reference/Core/egmSpark__SparkSceneService.htm">egmSpark::SparkSceneService</option>
+<option value="Reference/Core/egmSpark__SparkServiceManager.htm">egmSpark::SparkServiceManager</option>
+<option value="Reference/Core/egmSpark__SparkStateMachine.htm">egmSpark::SparkStateMachine</option>
+<option value="Reference/Core/egmSpark__SparkTerrain.htm">egmSpark::SparkTerrain</option>
+<option value="Reference/Core/egmSpark__SparkVisualTrackerService.htm">egmSpark::SparkVisualTrackerService</option>
+<option value="Reference/Core/egmSpark__SpawnerService.htm">egmSpark::SpawnerService</option>
+<option value="Reference/Core/egmSpark__StartFiringEvent.htm">egmSpark::StartFiringEvent</option>
+<option value="Reference/Core/egmSpark__StopFiringEvent.htm">egmSpark::StopFiringEvent</option>
+<option value="Reference/Core/egmSpark__StopMovementEvent.htm">egmSpark::StopMovementEvent</option>
+<option value="Reference/Core/egmSpark__StopSequenceEvent.htm">egmSpark::StopSequenceEvent</option>
+<option value="Reference/Core/egmSpark__StopUpperBodySequenceEvent.htm">egmSpark::StopUpperBodySequenceEvent</option>
+<option value="Reference/Core/egmSpark__SwapSkinHelper.htm">egmSpark::SwapSkinHelper</option>
+<option value="Reference/Core/egmSpark__TextKeyHandler.htm">egmSpark::TextKeyHandler</option>
+<option value="Reference/Core/egmSpark__TPRCamera.htm">egmSpark::TPRCamera</option>
+<option value="Reference/Core/egmSpark__UIGameState.htm">egmSpark::UIGameState</option>
+<option value="Reference/Core/egmSpark__UIManager.htm">egmSpark::UIManager</option>
+<option value="Reference/Core/egmSpark__UIMenu.htm">egmSpark::UIMenu</option>
+<option value="Reference/Core/egmSpark__UpperBodySeqDoneEvent.htm">egmSpark::UpperBodySeqDoneEvent</option>
+<option value="Reference/Core/egmSpark__WalkableMaterialChangeMessage.htm">egmSpark::WalkableMaterialChangeMessage</option>
+<option value="Reference/Core/egmSpark__WalkableService.htm">egmSpark::WalkableService</option>
+<option value="Reference/Core/egmSpark__Weapon.htm">egmSpark::Weapon</option>
+<option value="Reference/Core/egmSpark__WeaponHolder.htm">egmSpark::WeaponHolder</option>
+<option value="Reference/DayDreamer/FoundMatchEntry.htm">FoundMatchEntry</option>
+<option value="Reference/Namespaces/GameAPI.htm">GameAPI</option>
+<option value="Reference/DayDreamer/GameDebugMenu.htm">GameDebugMenu</option>
+<option value="Reference/DayDreamer/GameStateServiceEx.htm">GameStateServiceEx</option>
+<option value="Reference/Namespaces/IMatchUtilities.htm">IMatchUtilities</option>
+<option value="Reference/DayDreamer/InGameMenu.htm">InGameMenu</option>
+<option value="Reference/Namespaces/Level.htm">Level</option>
+<option value="Reference/AlphaGame/LoadingStateEx.htm">LoadingStateEx</option>
+<option value="Reference/DayDreamer/LobbyEvent.htm">LobbyEvent</option>
+<option value="Reference/DayDreamer/LobbyState.htm">LobbyState</option>
+<option value="Reference/DayDreamer/LobbyState__SubstateTransition.htm">LobbyState::SubstateTransition</option>
+<option value="Reference/AlphaGame/MainService.htm">MainService</option>
+<option value="Reference/Namespaces/MPGXBLMatchmaking.htm">MPGXBLMatchmaking</option>
+<option value="">Namespaces</option>
+<option value="Reference/Namespaces/Introduction_to_Namespace_Reference.htm">&nbsp;&nbsp;&nbsp;Namespace Reference</option>
+<option value="Reference/DayDreamer/PlayerLeftEvent.htm">PlayerLeftEvent</option>
+<option value="Reference/DayDreamer/PlayerReadyEvent.htm">PlayerReadyEvent</option>
+<option value="Reference/DayDreamer/PlayingState.htm">PlayingState</option>
+<option value="">PostEffects</option>
+<option value="Reference/PostEffects/Introduction_to_PostEffects_Class_Reference.htm">&nbsp;&nbsp;&nbsp;Class Reference</option>
+<option value="Programmer/Scripting/lua_bindings.htm">Script Bindings</option>
+<option value="Reference/DayDreamer/ShadowCullingProcess.htm">ShadowCullingProcess</option>
+<option value="Reference/DayDreamer/SinglePlayerVsMultiplayer.htm">SinglePlayerVsMultiplayer</option>
+<option value="Reference/Namespaces/SparkAPI.htm">SparkAPI</option>
+<option value="Reference/Namespaces/SparkCamera.htm">SparkCamera</option>
+<option value="Reference/Namespaces/SparkHUD.htm">SparkHUD</option>
+<option value="Reference/Namespaces/SparkManualOcclusion.htm">SparkManualOcclusion</option>
+<option value="Reference/Namespaces/SparkMovement.htm">SparkMovement</option>
+<option value="Reference/Namespaces/SparkState.htm">SparkState</option>
+<option value="Reference/Namespaces/SparkWalkable.htm">SparkWalkable</option>
+<option value="Reference/Namespaces/SpawnerService.htm">SpawnerService</option>
+<option value="Reference/Core/TerrainLastShaderSortProcessor.htm">TerrainLastShaderSortProcessor</option>
+<option value="Reference/DayDreamer/UnloadState.htm">UnloadState</option>
+
+</select>
+</div>
+
+
+<div id="DivFooter" style="white-space: nowrap; padding: 5px 0px 5px 5px;">
+&nbsp;<font style="font-family: Verdana, Arial, Helvetica; font-size: 8pt"><a 
+href="http://emergent.net/" target="_blank">Emergent Game Technologies</a></font><br>
+
+</div>
+
+</body>
+</html>

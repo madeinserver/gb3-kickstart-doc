@@ -1,0 +1,824 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::MovementHandler</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::MovementHandler</p>
+<p class="NDLRefParentage">: public <span class="NDLSystemFont"><a href="egmSpark__IBuiltinModelBase.htm">egmSpark::IBuiltinModelBase</a></span></p>
+
+
+<p class="NDLRefHeaderFile">&lt;MovementHandler.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_movement_handler.gif" alt="Inheritance graph for egmSpark::MovementHandler"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::MovementHandler</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal"><span class="NDLSystemFont">MovementHandler</span> class - handles moving characters. </p>
+<p class="NDLNormal">This class is a built-in model that mixes in the Actor model from the StandardModelLibrary. The <span class="NDLSystemFont">MovementHandler</span> will move the actor according to the model's target mode.</p>
+<p class="NDLNormal">TargetNone - does not move the actor TargetDirection - moves the actor based on the direction provided TargetPoint - moves the actor to a specified point TargetEntity - moves the actor to the position of a specified entity</p>
+<p class="NDLNormal">The actor's idle, walking, and running animations must be specified as properties in the model. In addition, there are properties for handling the animation rates of walking and running to allow the artist to adjust the animation speeds to match the movement speed provided. The <span class="NDLSystemFont">MovementHandler</span> will automatically handle the state transitions between idle, walking, and running.</p>
+<p class="NDLNormal">The movement speed can be selected by setting the target movement type.</p>
+<p class="NDLNormal">Idle - the actor will not change position even if the target is set Walking - the actor will move at its walking speed as directed by the target mode Running - the actor will move at its running speed as directed by the target mode Invalid - the actor will not change position or rotation under any circumstance</p>
+<p class="NDLNormal">The <span class="NDLSystemFont">MovementHandler</span> is updated on every tick. The change in position or rotation is based on the properties set, the scale of the actor, and the amount of time passed from the previous tick.</p>
+<p class="NDLNormal">The <span class="NDLSystemFont">MovementHandler</span> also uses the <span class="NDLSystemFont"><a href="egmSpark__WalkableService.htm">WalkableService</a></span> to determine whether or not it can move to the targeted area.</p>
+<p class="NDLNormal">Note that the entity will always face in the direction that it is moving. </p>
+
+<a name="public_types"></a>
+<p class="NDLRefHead1">Public Types</p>
+<a name="classegm_spark_1_1_movement_handler_1a209648b040fcb88294b7a6bc3d63663f"></a>
+<p class=NDLRefHead2>egmSpark::MovementHandler::MovementType</p>
+
+
+<p class="NDLRefMemberDescription">Enum describing the available movement types. </p>
+
+
+<!--(Table)=========================================================-->
+<div class="ReferenceTable">
+<table>
+  <thead>
+	<tr>
+        <th>Name</th>
+	    <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">Invalid</span></td>
+    <td>No movement type set. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">Idle</span></td>
+    <td>Idling/not moving. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">Walking</span></td>
+    <td>Walking. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">Running</span></td>
+    <td>Running. </td>
+</tr>
+
+  </tbody>
+</table>
+</div>
+
+<a name="classegm_spark_1_1_movement_handler_1a5a2c0fb157fcda59b255895cab13978f"></a>
+<p class=NDLRefHead2>egmSpark::MovementHandler::TargetMode</p>
+
+
+<p class="NDLRefMemberDescription">Enum describing the ways to specify how the entity determines where it moves. </p>
+
+
+<!--(Table)=========================================================-->
+<div class="ReferenceTable">
+<table>
+  <thead>
+	<tr>
+        <th>Name</th>
+	    <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">TargetNone</span></td>
+    <td>No target mode. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">TargetDirection</span></td>
+    <td>Moving in a specific direction. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">TargetPoint</span></td>
+    <td>Moving to a specified point. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">TargetEntity</span></td>
+    <td>Moving to a specified entity. </td>
+</tr>
+
+  </tbody>
+</table>
+</div>
+
+
+<a name="world_orientation_vectors"></a>
+<p class="NDLRefHead1">World orientation vectors</p>
+
+<p class="NDLRefMemberDescription">The <span class="NDLSystemFont">MovementHandler</span> assumes that the world up axis is in the positive Z direction {0, 0, 1} and that the world forward vector is facing the positive X direction {1, 0, 0}.</p>
+<p class="NDLRefMemberDescription">The movement handler uses these vectors to convert between rotations and directions. </p>
+
+<a name="classegm_spark_1_1_movement_handler_1a629272fd11852a1a372f8ef954b54a30"></a>
+<p class="NDLRefMemberFunction">static const efd::Point3  WORLD_UP_VECTOR</p>
+<p class="NDLRefMemberDescription">The world up vector. </p>
+
+<a name="classegm_spark_1_1_movement_handler_1a2024882588c03df7b9a15009928688f3"></a>
+<p class="NDLRefMemberFunction">static const efd::Point3  WORLD_FORWARD_VECTOR</p>
+<p class="NDLRefMemberDescription">The world up vector. </p>
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_movement_handler_1aa3a57320f433d81f28b17d08ce59062a"></a>
+<p class="NDLRefMemberFunction">MovementHandler()</p>
+<p class="NDLRefMemberDescription">Constructor. </p>
+
+<a name="classegm_spark_1_1_movement_handler_1a18e6734cc4ec64873a36e5c0adea54a1"></a>
+<p class="NDLRefMemberFunction">virtual ~MovementHandler()</p>
+<p class="NDLRefMemberDescription">Destructor. </p>
+
+<a name="classegm_spark_1_1_movement_handler_1a5d4b9627a40f700e96c942fe3ba4a978"></a>
+<p class="NDLRefMemberFunction">virtual void  OnAdded()</p>
+<p class="NDLRefMemberDescription">An override of egf::IBuiltinModel::OnAdded that unregisters the model from the <span class="NDLSystemFont"><a href="egmSpark__BuiltinUpdateService.htm">BuiltinUpdateService</a></span>. </p>
+<p class="NDLRefMemberDetailedDescription">Derived classes should call this base class method if they override this method. Typically you should call this method as the last step of any override implementation. </p>
+
+<a name="classegm_spark_1_1_movement_handler_1a37db25112f47945cfbd10d125623d235"></a>
+<p class="NDLRefMemberFunction">virtual efd::AsyncResult  Update(efd::TimeType timeDelta)</p>
+<p class="NDLRefMemberDescription">Updates the entity's position and rotation based on the MovementType and TargetMode. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">timeDelta</span></td>
+    <td>amount of game time passed on the last tick </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_movement_handler_1ad1ca95d79f814a1487aca8d3db9d96d9"></a>
+<p class="NDLRefMemberFunction">efd::Bool  InitializeAnimationData()</p>
+<p class="NDLRefMemberDescription">Gets all the animation data needed for the <span class="NDLSystemFont">MovementHandler</span> to function. </p>
+<p class="NDLRefMemberDetailedDescription">This includes getting the actor manager and sequence IDs for the named sequences.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>Returns true if the animation data is successfully initialized. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_movement_handler_1a5c3e6535fc48b3d8638e6adf326b14e5"></a>
+<p class="NDLRefMemberFunction">void  ResetAnimationData()</p>
+<p class="NDLRefMemberDescription">Resets all the animation data used by the <span class="NDLSystemFont">MovementHandler</span>. </p>
+<p class="NDLRefMemberDetailedDescription">This is usually used when the actor is removed from the scene. <span class="NDLSystemFont"><a href="egmSpark__MovementHandler.htm#classegm_spark_1_1_movement_handler_1ad1ca95d79f814a1487aca8d3db9d96d9">InitializeAnimationData()</a></span> will need to be called for the <span class="NDLSystemFont">MovementHandler</span> to work properly. </p>
+
+<a name="classegm_spark_1_1_movement_handler_1a75c3ba4d08ccf486029fe33ca53d4a20"></a>
+<p class="NDLRefMemberFunction">virtual void  OnRemoved()</p>
+<p class="NDLRefMemberDescription">An override of egf::IBuiltinModel::OnRemoved that unregisters the model from the <span class="NDLSystemFont"><a href="egmSpark__BuiltinUpdateService.htm">BuiltinUpdateService</a></span>. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Derived classes should call this base class method if they override this method. Typically you should call this method as the last step of any override implementation. </p></p>
+<a name="built-in_behavior_properties"></a>
+<p class="NDLRefHead1">Built-in behavior properties</p>
+
+<p class="NDLRefMemberDescription">The following methods are made available to script via built-in behaviors </p>
+
+<a name="classegm_spark_1_1_movement_handler_1a88910b8fd319c3ac387aa7fe7921f6a1"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetCurrentSpeed() const</p>
+<p class="NDLRefMemberDescription">Returns the speed, in units per second, that the entity is moving. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The speed. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_movement_handler_1a1338d2dd6f07b67a76b749d5424c36a6"></a>
+<p class="NDLRefMemberFunction">efd::Point3  GetCurrentDirection() const</p>
+<p class="NDLRefMemberDescription">Returns the direction that the entity is facing. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The direction. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_movement_handler_1afcdd65c7051877ae6527d897571e94d3"></a>
+<p class="NDLRefMemberFunction"><span class="NDLSystemFont"><a href="egmSpark__MovementHandler.htm#classegm_spark_1_1_movement_handler_1a209648b040fcb88294b7a6bc3d63663f">MovementType</a></span>  GetCurrentMovementType() const</p>
+<p class="NDLRefMemberDescription">Returns the MovementType that the entity is using when moving. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The type. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_movement_handler_1a753d7cd3232e70275083897792ce2d05"></a>
+<p class="NDLRefMemberFunction">efd::Point3  GetTargetPoint() const</p>
+<p class="NDLRefMemberDescription">Returns the point towards which the entity is moving. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The point. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_movement_handler_1aa7380e49a6ea8267e7e52943e4b240a0"></a>
+<p class="NDLRefMemberFunction">void  SetTargetPoint(const efd::Point3& targetPoint)</p>
+<p class="NDLRefMemberDescription">Sets the point to which the entity should go. </p>
+<p class="NDLRefMemberDetailedDescription">Note that the entity will hit the target point before stopping so it will likely not be exactly on that point by the time it stops. This sets the target mode to TargetPoint.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">targetPoint</span></td>
+    <td>point to which the entity will go </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_movement_handler_1aaaeef59eecdee90cd6218fb37ac9dfbb"></a>
+<p class="NDLRefMemberFunction">efd::Point3  GetTargetDirection() const</p>
+<p class="NDLRefMemberDescription">Returns the direction that the entity is moving. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The direction. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_movement_handler_1a6d443760ee151f9ae8c1bc73be2c9742"></a>
+<p class="NDLRefMemberFunction">void  SetTargetDirection(<br/>const efd::Point3& targetDirection, <br/>const efd::Point3& relativeRotation)</p>
+<p class="NDLRefMemberDescription">Sets the direction that the entity will move. </p>
+<p class="NDLRefMemberDetailedDescription">The movement direction will be based on the relative rotation provided. If the relative rotation is efd::Point3::ZERO, then the direction will be based on WORLD_UP_VECTOR and WORLD_FORWARD_VECTOR. This sets the target mode to TargetDirection.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">targetDirection</span></td>
+    <td>direction to make the entity move </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">relativeRotation</span></td>
+    <td>the rotation to use to establish targetDirection's origin </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_movement_handler_1adbd9f1c263dcda429139344b7c712d54"></a>
+<p class="NDLRefMemberFunction">efd::Point3  GetTargetRotation() const</p>
+<p class="NDLRefMemberDescription">Returns the rotation of the entity when it moves forward. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The rotation. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_movement_handler_1a814b918a41a280ae998c908bcb77d680"></a>
+<p class="NDLRefMemberFunction">void  SetTargetRotation(<br/>const efd::Point3& targetRotation, <br/>const efd::Point3& relativeRotation)</p>
+<p class="NDLRefMemberDescription">Sets the facing rotation of the entity. </p>
+<p class="NDLRefMemberDetailedDescription">The facing rotation will be based on the relative rotation provided. This sets the target mode to TargetDirection.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">targetRotation</span></td>
+    <td>facing rotation for the entity to move </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">relativeRotation</span></td>
+    <td>the rotation to use to establish targetRotation's origin </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_movement_handler_1ab1bb2397a0a62333939647b6762fac9d"></a>
+<p class="NDLRefMemberFunction">egf::Entity*  GetTargetEntity() const</p>
+<p class="NDLRefMemberDescription">Returns the entity the <span class="NDLSystemFont">MovementHandler</span> entity is following. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The entity. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_movement_handler_1a8de286a5416f00ec44228d750e726751"></a>
+<p class="NDLRefMemberFunction">void  SetTargetEntity(egf::Entity* pTargetEntity)</p>
+<p class="NDLRefMemberDescription">Sets the entity for the <span class="NDLSystemFont">MovementHandler</span> entity to follow. </p>
+<p class="NDLRefMemberDetailedDescription">This sets the target mode to TargetEntity. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pTargetEntity</span></td>
+    <td>entity to follow. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_movement_handler_1a4f14e6d1040b2a512768b5c1e8e43d66"></a>
+<p class="NDLRefMemberFunction"><span class="NDLSystemFont"><a href="egmSpark__MovementHandler.htm#classegm_spark_1_1_movement_handler_1a209648b040fcb88294b7a6bc3d63663f">MovementType</a></span>  GetTargetMovementType() const</p>
+<p class="NDLRefMemberDescription">Returns the MovementType that the entity should use when moving. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The type. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_movement_handler_1aff2e05d1cba047e862efcbdd0b0d1fe1"></a>
+<p class="NDLRefMemberFunction">void  SetTargetMovementType(<span class="NDLSystemFont"><a href="egmSpark__MovementHandler.htm#classegm_spark_1_1_movement_handler_1a209648b040fcb88294b7a6bc3d63663f">MovementType</a></span> movementType)</p>
+<p class="NDLRefMemberDescription">Sets the MovementType that the entity should use when moving. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">movementType</span></td>
+    <td>movement type to use for the entity's movement </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_movement_handler_1abffd6189fd354e551ca7f36389054201"></a>
+<p class="NDLRefMemberFunction"><span class="NDLSystemFont"><a href="egmSpark__MovementHandler.htm#classegm_spark_1_1_movement_handler_1a5a2c0fb157fcda59b255895cab13978f">TargetMode</a></span>  GetTargetMode()</p>
+<p class="NDLRefMemberDescription">Returns the targeting mode used by the entity. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The mode. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_movement_handler_1afa7f5ae0956543d4ce90e9154f0c2bd3"></a>
+<p class="NDLRefMemberFunction">void  Enable(<span class="NDLSystemFont"><a href="egmSpark__MovementHandler.htm#classegm_spark_1_1_movement_handler_1a209648b040fcb88294b7a6bc3d63663f">MovementType</a></span> initialMovementType = Idle)</p>
+<p class="NDLRefMemberDescription">Enables the movement handler and sets the movement type to the desired state. </p>
+<p class="NDLRefMemberDetailedDescription">When the movement handlers is enabled it will take control over the animation and movement of the character. New movement handlers start enabled, so it is only necessary to call this if the handler has previously been disabled. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">initialMovementType</span></td>
+    <td>The movement type to start the movement handler in. If no type is specified, Idle is used. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_movement_handler_1a5d95ae2b111c6296cee3db6d9b01505d"></a>
+<p class="NDLRefMemberFunction">void  Disable(efd::utf8string newAnimation = "")</p>
+<p class="NDLRefMemberDescription">Disables the movement handler and starts the requested animation. </p>
+<p class="NDLRefMemberDetailedDescription">When the movement handlers is disabled, the movement of the character will halt and animation will be handled externally. No processing will be done during the update call. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">newAnimation</span></td>
+    <td>The animation to start after the movement handler is disabled. If no animation is specified, the idle animation will be started. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_movement_handler_1a43989d08a87981d941d68152c7174ceb"></a>
+<p class="NDLRefMemberFunction">efd::Bool  IsEnabled()</p>
+<p class="NDLRefMemberDescription">Used to check whether the movement handler is enabled or not. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>Whether or not the movement handler is enabled. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+<a name="built-in_model_property_accessors"></a>
+<p class="NDLRefHead1">Built-in model property accessors</p>
+
+<p class="NDLRefMemberDescription">The following methods are getters and setters for properties specified by the model that need more than the default get and set behaviors. </p>
+
+<a name="classegm_spark_1_1_movement_handler_1a114c37ce6d64e73c400750ca46940b1a"></a>
+<p class="NDLRefMemberFunction">efd::utf8string  GetIdleSequence() const</p>
+<p class="NDLRefMemberDescription">Returns the name of the idle sequence. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The name. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_movement_handler_1a3e3d1f5b0b3745f9bb976b98876c7338"></a>
+<p class="NDLRefMemberFunction">void  SetIdleSequence(const efd::utf8string& idleSequence)</p>
+<p class="NDLRefMemberDescription">Sets the name of the idle sequence. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">idleSequence</span></td>
+    <td>the name of the new sequence </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_movement_handler_1a82f26ae1e885275298a51508d358429b"></a>
+<p class="NDLRefMemberFunction">efd::utf8string  GetWalkSequence() const</p>
+<p class="NDLRefMemberDescription">Returns the name of the walk sequence. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The name. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_movement_handler_1a4756c18a796f8caa4d3a0958bb8002cf"></a>
+<p class="NDLRefMemberFunction">void  SetWalkSequence(const efd::utf8string& walkSequence)</p>
+<p class="NDLRefMemberDescription">Sets the name of the walk sequence. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">walkSequence</span></td>
+    <td>the name of the new sequence </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_movement_handler_1a0a745b970e89e613d833e649c3e90c11"></a>
+<p class="NDLRefMemberFunction">efd::utf8string  GetRunSequence() const</p>
+<p class="NDLRefMemberDescription">Returns the name of the run sequence. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The name. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_movement_handler_1a28f27b7d100907f571a4ca711c2cf083"></a>
+<p class="NDLRefMemberFunction">void  SetRunSequence(const efd::utf8string& runSequence)</p>
+<p class="NDLRefMemberDescription">Sets the name of the run sequence. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">runSequence</span></td>
+    <td>the name of the new sequence </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

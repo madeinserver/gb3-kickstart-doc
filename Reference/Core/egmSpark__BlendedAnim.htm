@@ -1,0 +1,113 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::BlendedAnim</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::BlendedAnim</p>
+
+
+<p class="NDLRefHeaderFile">&lt;AnimStateManager.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_blended_anim.gif" alt="Inheritance graph for egmSpark::BlendedAnim"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::BlendedAnim</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">Support for an animation sequence that can be blended in to and out of over time. </p>
+
+<a name="public_attributes"></a>
+<p class="NDLRefHead1">Public Attributes</p>
+
+
+<a name="classegm_spark_1_1_blended_anim_1a95c095d8edfd39f8ffc574221028780b"></a>
+<p class="NDLRefMemberFunction">NiActorManager::SequenceID  m_sequence</p>
+<p class="NDLRefMemberFunction"></p>
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_blended_anim_1ab0363131a135c8a1e301be13016aefcd"></a>
+<p class="NDLRefMemberFunction">BlendedAnim()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_blended_anim_1af7d9e2a8bcb5938b7d4a4eecae8e2b7a"></a>
+<p class="NDLRefMemberFunction">void  SetAdditive(efd::Bool isAdditive)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_blended_anim_1a173df60b737a72c0f3af533acb552622"></a>
+<p class="NDLRefMemberFunction">efd::Bool  IsAdditive() const</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_blended_anim_1af31574e27904144329ede778162ad61a"></a>
+<p class="NDLRefMemberFunction">operator NiActorManager::SequenceID() const</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_blended_anim_1a0815292f8884f05b9ea3fc9fc6730902"></a>
+<p class="NDLRefMemberFunction">NiActorManager::SequenceID  GetSequenceID() const</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_blended_anim_1a0c563dbe022f412ac136a8006dd0b154"></a>
+<p class="NDLRefMemberFunction">void  Update(<br/>NiActorManager* pActorMan, <br/>efd::TimeType delta)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_blended_anim_1ac37c81ff7983861cf3e7aab8709f87d5"></a>
+<p class="NDLRefMemberFunction">void  SetWeight(<br/>efd::Float32 weight, <br/>efd::Float32 blendRate = 0.2f)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_blended_anim_1a788e7e0a8019b344e00806db381ab362"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetWeight()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_blended_anim_1a9c2cebc9a1033cb1e30a8caf128c8646"></a>
+<p class="NDLRefMemberFunction">void  Reset()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_blended_anim_1aac9f211abbdd13118ff0a78dc48576ed"></a>
+<p class="NDLRefMemberFunction">efd::Bool  Activate(<br/>NiActorManager* pActorMan, <br/>efd::UInt32 priority, <br/>efd::Float32 easeIn)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_blended_anim_1a2a25a250680812280a7d58df16b3eb05"></a>
+<p class="NDLRefMemberFunction">efd::Bool  Deactivate(<br/>NiActorManager* pActorMan, <br/>efd::Float32 easeOutTime)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_blended_anim_1a74735c9c4db762723ea45f868f6ff888"></a>
+<p class="NDLRefMemberFunction">efd::Bool  IsActive(NiActorManager* pActorMan) const</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_blended_anim_1a7141d8865557658b0536d7b1834062bb"></a>
+<p class="NDLRefMemberFunction">efd::Bool  IsActivated() const</p>
+<p class="NDLRefMemberFunction"></p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

@@ -1,0 +1,1679 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::MathHelpers</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::MathHelpers</p>
+
+
+<p class="NDLRefHeaderFile">&lt;MathHelpers.h&gt;</p>
+
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">A class containing helpful static functions for performing common mathematical operations. </p>
+
+<a name="2d_vector_functions"></a>
+<p class="NDLRefHead1">2D Vector Functions</p>
+
+
+<a name="classegm_spark_1_1_math_helpers_1a3a56263b80c86dafafcd77c84c2f8f59"></a>
+<p class="NDLRefMemberFunction">static efd::Point2  RotateVector2D(<br/>const efd::Point2& vector, <br/>float degrees)</p>
+<p class="NDLRefMemberDescription">Rotates a 2D vector by an angle in degrees. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">vector</span></td>
+    <td>The vector to rotate. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">degrees</span></td>
+    <td>The angle to rotate the vector by in degrees. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The rotated vector. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1a7f5b2acff70455ab3b7de79a4988e1c8"></a>
+<p class="NDLRefMemberFunction">static float  Dist2D(<br/>const efd::Point3& pos1, <br/>const efd::Point3& pos2)</p>
+<p class="NDLRefMemberDescription">Calculates the distance between two 2D points. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pos1</span></td>
+    <td>The first point. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pos2</span></td>
+    <td>The second point. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The distance between the two points. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1a46715aba16500ee488af54ce05b857e6"></a>
+<p class="NDLRefMemberFunction">static float  Dot2D(<br/>const efd::Point3& v1, <br/>const efd::Point3& v2)</p>
+<p class="NDLRefMemberDescription">Calculates the dot product of two 2D vectors. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">v1</span></td>
+    <td>The first vector. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">v2</span></td>
+    <td>The second vector. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The dot product. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+<a name="3d_vector_functions"></a>
+<p class="NDLRefHead1">3D Vector Functions</p>
+
+
+<a name="classegm_spark_1_1_math_helpers_1a7ae693d708f6a7fa6dd31f9f3ac081a3"></a>
+<p class="NDLRefMemberFunction">static float  GetAngleBetweenVectors(<br/>const efd::Point3& u, <br/>const efd::Point3& v)</p>
+<p class="NDLRefMemberDescription">Calculates the angle between two vectors. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">u</span></td>
+    <td>The first vector. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">v</span></td>
+    <td>The second vector. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The angle between u and v in radians. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1a496dccef95b15c0df123edf1b1c0a8fb"></a>
+<p class="NDLRefMemberFunction">static float  GetAngleBetweenActorDirections(<br/>const efd::Point3& vDir1, <br/>const efd::Point3& vDir2)</p>
+<p class="NDLRefMemberDescription">Calculates the angle between two actor directions in degrees. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">vDir1</span></td>
+    <td>The first direction. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">vDir2</span></td>
+    <td>The second direction. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The angle between vDir1 and vDir2 in degrees. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1adb33ff6e97dc3bcd063497b6020376fc"></a>
+<p class="NDLRefMemberFunction">static float  GetAngleBetweenActorDirectionsRad(<br/>const efd::Point3& vDir1, <br/>const efd::Point3& vDir2)</p>
+<p class="NDLRefMemberDescription">Calculates the angle between two actor directions in radians. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">vDir1</span></td>
+    <td>The first direction. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">vDir2</span></td>
+    <td>The second direction. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The angle between vDir1 and vDir2 in radians. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1a5bd0b96742b82ad45217547311ed834d"></a>
+<p class="NDLRefMemberFunction">static efd::Point3  NormalizeVector(const efd::Point3& vector)</p>
+<p class="NDLRefMemberDescription">Normalizes a vector. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">vector</span></td>
+    <td>The vector to normalize. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The normalized vector. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1a820a4775692ff9e7ce82623ecf295adc"></a>
+<p class="NDLRefMemberFunction">static bool  IsZero(<br/>const efd::Point3& point, <br/>float fValue = 0.0001f)</p>
+<p class="NDLRefMemberDescription">Checks if a point is equal to zero within a given error threshold. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">point</span></td>
+    <td>The point to test. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">fValue</span></td>
+    <td>The comparison threshold to use. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if the point's distance from zero is below the threshold. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+<a name="angle_functions"></a>
+<p class="NDLRefHead1">Angle Functions</p>
+
+
+<a name="classegm_spark_1_1_math_helpers_1a1c4dbcab01968a5be2aaacd73cdff40b"></a>
+<p class="NDLRefMemberFunction">static float  DegToRad(const float& fDegrees)</p>
+<p class="NDLRefMemberDescription">Converts from degrees to radians. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">fDegrees</span></td>
+    <td>An angle in degrees. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The angle converted to radians. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1a0fe5b765de34b891702fe96c578920e6"></a>
+<p class="NDLRefMemberFunction">static float  RadToDeg(const float& fRad)</p>
+<p class="NDLRefMemberDescription">Converts radians to degrees. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">fRad</span></td>
+    <td>An angle in radians. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The angle converted to degrees. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1a015e47d26b57aae11ee9881205bb87a9"></a>
+<p class="NDLRefMemberFunction">static float  FixAngle(const float input)</p>
+<p class="NDLRefMemberDescription">Calculates a coterminal angle in the standard position (0 to 2 pi) of the given angle in radians. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">input</span></td>
+    <td>The angle to fix in radians. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The fixed angle in radians. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1af2a63cc77a19bd3ed403abf0b89811dc"></a>
+<p class="NDLRefMemberFunction">static float  FixAngleDeg(const float input)</p>
+<p class="NDLRefMemberDescription">Calculates a coterminal angle in the standard position (0 to 360 degrees) of the given angle in degrees. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">input</span></td>
+    <td>The angle to fix in degrees. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The fixed angle in degrees. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1a6e30adeeb143b81042dc051182a2dd5a"></a>
+<p class="NDLRefMemberFunction">static void  FixAngle(efd::Point3* angle)</p>
+<p class="NDLRefMemberDescription">Calculates coterminal angles in the standard position (0 to 2 pi) for all of the components of the given vector. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">angle</span></td>
+    <td>The vector containing the angles to fix in radians. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>A vector containing the fixed angles in radians. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+<a name="physx_vector_conversion_functions"></a>
+<p class="NDLRefHead1">PhysX Vector Conversion Functions</p>
+
+
+<a name="classegm_spark_1_1_math_helpers_1a040096665cc46df2cb3d344f3b496eda"></a>
+<p class="NDLRefMemberFunction">static NxExtendedVec3  ToNxExtended(const efd::Point3& point)</p>
+<p class="NDLRefMemberDescription">Converts a Gamebryo point to a PhysX extended vector. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">point</span></td>
+    <td>The point to convert. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The converted vector. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1a5031663f3503690cddb3b93e0052dce2"></a>
+<p class="NDLRefMemberFunction">static NxExtendedVec3  ToNxExtended(const NxVec3& point)</p>
+<p class="NDLRefMemberDescription">Converts a PhysX vector to a PhysX extended vector. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">point</span></td>
+    <td>The vector to convert. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The converted vector. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1a95386c116a4beeda66b081e6b9d07bad"></a>
+<p class="NDLRefMemberFunction">static NxVec3  ToNxVec3(const efd::Point3& point)</p>
+<p class="NDLRefMemberDescription">Converts a Gamebryo point to a PhysX vector. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">point</span></td>
+    <td>The point to convert. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The converted vector. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1a40835893d14a524fdb7be8d3b39d2afc"></a>
+<p class="NDLRefMemberFunction">static NxVec3  ToNxVec3(const NxExtendedVec3& point)</p>
+<p class="NDLRefMemberDescription">Converts a PhysX extended vector to a PhysX vector. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">point</span></td>
+    <td>The vector to convert. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The converted vector. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1aac3e79285d41876ccd0caf2f2e6c3596"></a>
+<p class="NDLRefMemberFunction">static efd::Point3  ToPoint3(const NxVec3& point)</p>
+<p class="NDLRefMemberDescription">Converts a PhysX vector to a Gamebryo point. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">point</span></td>
+    <td>The vector to convert. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The converted point. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1a24b41cb74949e845a767f715d9badc00"></a>
+<p class="NDLRefMemberFunction">static efd::Point3  ToPoint3(const NxExtendedVec3& point)</p>
+<p class="NDLRefMemberDescription">Converts a PhysX extended vector to a Gamebryo point. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">point</span></td>
+    <td>The vector to convert. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The converted point. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1ae9ae35e86d71b19614ec8c7704e80b74"></a>
+<p class="NDLRefMemberFunction">static efd::Matrix3  ToMatrix3(const NxMat33& matrix)</p>
+<p class="NDLRefMemberDescription">Converts a PhysX rotation matrix to a Gamebryo rotation matrix. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">matrix</span></td>
+    <td>The matrix to convert. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The converted matrix. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1aa1731132ff8e83f0ce5740113c078b54"></a>
+<p class="NDLRefMemberFunction">static NxMat33  ToNxMat33(const efd::Matrix3& matrix)</p>
+<p class="NDLRefMemberDescription">Converts a Gamebryo rotation matrix to a PhysX rotation matrix. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">matrix</span></td>
+    <td>The matrix to convert. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The converted matrix. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+<a name="random_number_functions"></a>
+<p class="NDLRefHead1">Random Number Functions</p>
+
+
+<a name="classegm_spark_1_1_math_helpers_1a3c9a95050acc640751bd7997b1a5fbbb"></a>
+<p class="NDLRefMemberFunction">static int  GetRandomInteger()</p>
+<p class="NDLRefMemberDescription">Generates a random integer. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The generated number. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1aab24b8c9109e5b142b8d66dc221243e7"></a>
+<p class="NDLRefMemberFunction">static int  GetRandomIntegerRange(<br/>int iMin, <br/>int iMax)</p>
+<p class="NDLRefMemberDescription">Generates a random integer within a range. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">iMin</span></td>
+    <td>The minimum of the range. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">iMax</span></td>
+    <td>The maximum of the range. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The generated number. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1aa8e7f05d348a3aca591be2528f338ecf"></a>
+<p class="NDLRefMemberFunction">static int  GetRandomIntegerRangeZeroTo(int iMax)</p>
+<p class="NDLRefMemberDescription">Generates a random integer between zero and a maximum. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">iMax</span></td>
+    <td>The maximum of the range. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The generated number. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1a3150112374d24f029723167b2543a1fa"></a>
+<p class="NDLRefMemberFunction">static float  GetRandomFloat(<br/>float min, <br/>float max)</p>
+<p class="NDLRefMemberDescription">Generates a random floating point number within a range. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">min</span></td>
+    <td>The minimum of the range. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">max</span></td>
+    <td>The maximum of the range. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The generated number. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+<a name="rotation_functions"></a>
+<p class="NDLRefHead1">Rotation Functions</p>
+
+
+<a name="classegm_spark_1_1_math_helpers_1a33138edb7d282806bdbb951ff7a976bc"></a>
+<p class="NDLRefMemberFunction">static float  GetCurrentYaw(const efd::Matrix3& rotation)</p>
+<p class="NDLRefMemberDescription">Calculates the current yaw of a rotation matrix. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">rotation</span></td>
+    <td>The matrix to calculate the yaw from. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The calculated yaw in radians. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1a8d01417b47bb7d20d638ef1fb7ed5786"></a>
+<p class="NDLRefMemberFunction">static efd::Matrix3  EulerToMatrix3(const efd::Point3& eulerAngles)</p>
+<p class="NDLRefMemberDescription">Converts Euler angles to a 3x3 rotation matrix. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">eulerAngles</span></td>
+    <td>The angles to convert. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The matrix result of the conversion. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1ad05ffcdcd4644e420b4fbcebc885c221"></a>
+<p class="NDLRefMemberFunction">static efd::Point3  Matrix3ToEuler(const efd::Matrix3& matrix)</p>
+<p class="NDLRefMemberDescription">Converts a 3x3 rotation matrix to Euler angles. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">matrix</span></td>
+    <td>The matrix to convert. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The angles resulting from the conversion. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1a77145939174bbe97731d6942474727fb"></a>
+<p class="NDLRefMemberFunction">static void  FaceDirection(<br/>efd::Matrix3& matrix, <br/>const efd::Point3& cvDesiredFacing)</p>
+<p class="NDLRefMemberDescription">Reorients a rotation matrix about the current up axis so its forward vector is facing in a direction. </p>
+<p class="NDLRefMemberDetailedDescription">This is a quick method to orient the matrix. It will "work", but cause some instability when facing within eight degrees of the y-axis. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">matrix</span></td>
+    <td>The matrix to rotate. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">cvDesiredFacing</span></td>
+    <td>The direction that the matrix should face. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1a9d4f7e1f6922db86cb5d434dac6fe796"></a>
+<p class="NDLRefMemberFunction">static void  FaceDirection(<br/>efd::Point3& eulerAngles, <br/>const efd::Point3& cvDesiredFacing)</p>
+<p class="NDLRefMemberDescription">Reorients a set of euler angles about the current up axis so its forward vector is facing in a direction. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">eulerAngles</span></td>
+    <td>The angles to rotate. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">cvDesiredFacing</span></td>
+    <td>The direction that the angles should face. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1a16bf932dd09a66cb080c8de05fb1ba60"></a>
+<p class="NDLRefMemberFunction">static void  FaceDirectionLight(<br/>efd::Matrix3& matrix, <br/>const efd::Point3& cvDesiredFacing)</p>
+<p class="NDLRefMemberDescription">Reorients a rotation matrix about the up axis so its forward vector is facing in a direction. </p>
+<p class="NDLRefMemberDetailedDescription">This is a quick method to orient the matrix. It will "work", but cause some instability when facing within eight degrees of the y-axis. </p>
+<p class="NDLRefMemberDetailedDescription">This version of the function does not take the current up vector setting into account. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">matrix</span></td>
+    <td>The matrix to rotate. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">cvDesiredFacing</span></td>
+    <td>The direction that the matrix should face. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1a51dfe041fe660e4da7c844645d870e0e"></a>
+<p class="NDLRefMemberFunction">static void  Slerp(<br/>efd::Quaternion& dest, <br/>const efd::Quaternion& q1, <br/>const efd::Quaternion& q2, <br/>float t)</p>
+<p class="NDLRefMemberDescription">Performs spherical linear interpolation between two quaternions. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">dest</span></td>
+    <td>The result of the interpolation will be placed here. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">q1</span></td>
+    <td>The first quaternion. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">q2</span></td>
+    <td>The second quaternion. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">t</span></td>
+    <td>The Amount of interpolation from q1 to q2 in a range of 0 to 1. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+<a name="world_scale_and_orientation_functions"></a>
+<p class="NDLRefHead1">World Scale and Orientation Functions</p>
+
+
+<a name="classegm_spark_1_1_math_helpers_1ac26407ff1e9a95709a90f6ba7ecbe5d8"></a>
+<p class="NDLRefMemberFunction">static float&  UP_COMPONENT(efd::Point3& pos)</p>
+<p class="NDLRefMemberDescription">Returns the up component of a vector. </p>
+<p class="NDLRefMemberDetailedDescription">This could be either the Y or Z component depending on the current up vector setting. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pos</span></td>
+    <td>The vector. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>A reference to up component of the vector (an assignable l-value). </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1aad5d3ff2c96b0d1602cc292b3972647e"></a>
+<p class="NDLRefMemberFunction">static float  UP_COMPONENT(const efd::Point3& pos)</p>
+<p class="NDLRefMemberDescription">Returns the up component of a vector. </p>
+<p class="NDLRefMemberDetailedDescription">This could be either the Y or Z component depending on the current up vector setting. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pos</span></td>
+    <td>The vector. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The value of up component of the vector. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1a2a131118a69b308d2437f0919db263b2"></a>
+<p class="NDLRefMemberFunction">static float&  UP_COMPONENT(NxVec3& pos)</p>
+<p class="NDLRefMemberDescription">Returns the up component of a PhysX vector. </p>
+<p class="NDLRefMemberDetailedDescription">This could be the Y or Z component depending on the current up vector setting. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pos</span></td>
+    <td>The vector. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The up component of the vector. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1a522bbba6c67b6e60e5897c7d51b1d3f1"></a>
+<p class="NDLRefMemberFunction">static float  UP_COMPONENT(const NxVec3& pos)</p>
+<p class="NDLRefMemberDescription">Returns the up component of a PhysX vector. </p>
+<p class="NDLRefMemberDetailedDescription">This could be the Y or Z component depending on the current up vector setting. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pos</span></td>
+    <td>The vector. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The up component of the vector. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1a9cf47841037e9950c02fe9104c0c0367"></a>
+<p class="NDLRefMemberFunction">static double&  UP_COMPONENT(NxExtendedVec3& pos)</p>
+<p class="NDLRefMemberDescription">Returns the up component of a PhysX extended vector. </p>
+<p class="NDLRefMemberDetailedDescription">This could be the Y or Z component depending on the current up vector setting. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pos</span></td>
+    <td>The vector. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The up component of the vector. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1a68edab8be18162c610d672655b812b62"></a>
+<p class="NDLRefMemberFunction">static double  UP_COMPONENT(const NxExtendedVec3& pos)</p>
+<p class="NDLRefMemberDescription">Returns the up component of a PhysX extended vector. </p>
+<p class="NDLRefMemberDetailedDescription">This could be the Y or Z component depending on the current up vector setting. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pos</span></td>
+    <td>The vector. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The up component of the vector. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1a944613521ec16f78fefcf6370af109be"></a>
+<p class="NDLRefMemberFunction">static float&  FORWARD_COMPONENT(efd::Point3& pos)</p>
+<p class="NDLRefMemberDescription">Returns the forward component of a vector. </p>
+<p class="NDLRefMemberDetailedDescription">This could be the X or Y component depending on the current up vector setting. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pos</span></td>
+    <td>The vector. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The forward component of the vector. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1abe0619422926bbee511edd68b82787da"></a>
+<p class="NDLRefMemberFunction">static float  FORWARD_COMPONENT(const efd::Point3& pos)</p>
+<p class="NDLRefMemberDescription">Returns the forward component of a vector. </p>
+<p class="NDLRefMemberDetailedDescription">This could be the X or Y component depending on the current up vector setting. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pos</span></td>
+    <td>The vector. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The forward component of the vector. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1a62e3ce68e7e64cd9659acfd4dc965a02"></a>
+<p class="NDLRefMemberFunction">static float  GetOneMeter()</p>
+<p class="NDLRefMemberDescription">Returns the number of game units that equal one meter in the physical simulation. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The current meter conversion factor. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1a88092d20a3bf0ea611fd596ddbbd7362"></a>
+<p class="NDLRefMemberFunction">static void  SetOneMeter(float oneMeter)</p>
+<p class="NDLRefMemberDescription">Sets the number of game units that equal one meter in the physical simulation. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">oneMeter</span></td>
+    <td>The new meter conversion factor. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1adaa46be8fa4f90f33aedc35b4610ed99"></a>
+<p class="NDLRefMemberFunction">static void  SetYUp(bool b)</p>
+<p class="NDLRefMemberDescription">Sets whether Y is up or Z is up. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">b</span></td>
+    <td>True if Y is up and X is forward. False if Z is up and Y is forward. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1af0aed4db3271c29997d37878927274a4"></a>
+<p class="NDLRefMemberFunction">static bool  IsYUp()</p>
+<p class="NDLRefMemberDescription">Checks whether Y is the current up axis. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if Y is up, false if Z is up. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1a4b2cb97dc17029a19bf760519545fa8b"></a>
+<p class="NDLRefMemberFunction">static bool  IsZUp()</p>
+<p class="NDLRefMemberDescription">Checks whether Z is the current up axis. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if Z is up, false if Y is up. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1a9901fa91ceaabdf8643ecb61dbe768f2"></a>
+<p class="NDLRefMemberFunction">static efd::Point3  GetForwardVectorFromMatrix(const efd::Matrix3& rMatrix)</p>
+<p class="NDLRefMemberDescription">Extracts the forward vector from a rotation matrix based on the current up vector setting. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">rMatrix</span></td>
+    <td>The matrix to extract the vector from. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The extracted vector. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1adb90949d05cb2cdd1ac15bcaaa9acec2"></a>
+<p class="NDLRefMemberFunction">static efd::Point3  GetRightVectorFromMatrix(const efd::Matrix3& rMatrix)</p>
+<p class="NDLRefMemberDescription">Extracts the right vector from a rotation matrix based on the current up vector setting. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">rMatrix</span></td>
+    <td>The matrix to extract the vector from. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The extracted vector. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1af6066e0a520c95ad9fffa84004d9b2ec"></a>
+<p class="NDLRefMemberFunction">static efd::Point3  GetUpVectorFromMatrix(const efd::Matrix3& rMatrix)</p>
+<p class="NDLRefMemberDescription">Extracts the up vector from a rotation matrix based on the current up vector setting. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">rMatrix</span></td>
+    <td>The matrix to extract the vector from. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The extracted vector. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1af3afbe9235ac9f369756555dac863f6a"></a>
+<p class="NDLRefMemberFunction">static void  GetRotationVectors(<br/>const efd::Matrix3& rMatrix, <br/>efd::Point3& forward, <br/>efd::Point3& right, <br/>efd::Point3& up)</p>
+<p class="NDLRefMemberDescription">Extracts the forward, right, and up vectors from a rotation matrix based on the current up vector setting. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">rMatrix</span></td>
+    <td>The matrix to extract the vectors from. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">forward</span></td>
+    <td>The extracted forward vector will be placed here. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">right</span></td>
+    <td>The extracted right vector will be placed here. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">up</span></td>
+    <td>The extracted up vector will be placed here. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1a574fb985da01bb8e5b3d4294a0b5e95c"></a>
+<p class="NDLRefMemberFunction">static efd::Point3  GetForwardVectorFromEuler(const efd::Point3& euler)</p>
+<p class="NDLRefMemberDescription">Calculates the forward vector from a set of euler angle rotations based on the current up vector setting. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">euler</span></td>
+    <td>The euler angles to calculate the vector from. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The calculated vector. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1a958817feb199e7679da0d6e20c723db1"></a>
+<p class="NDLRefMemberFunction">static efd::Point3  GetRightVectorFromEuler(const efd::Point3& euler)</p>
+<p class="NDLRefMemberDescription">Calculates the forward vector from a set of euler angle rotations based on the current up vector setting. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">euler</span></td>
+    <td>The euler angles to calculate the vector from. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The calculated vector. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1ac8aaf113f991f1e42d71a456a93fc8f3"></a>
+<p class="NDLRefMemberFunction">static efd::Point3  GetUpVectorFromEuler(const efd::Point3& euler)</p>
+<p class="NDLRefMemberDescription">Calculates the up vector from a set of euler angle rotations based on the current up vector setting. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">euler</span></td>
+    <td>The euler angles to calculate the vector from. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The calculated vector. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1acd767b94c709eceafa9dc13202eda814"></a>
+<p class="NDLRefMemberFunction">static int  AXIS_UP()</p>
+<p class="NDLRefMemberDescription">Returns array position of the current up axis. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>1 for Y or 2 for Z. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1afd4e5b972e1db6a3a72e3f7227621365"></a>
+<p class="NDLRefMemberFunction">static int  AXIS_FORWARD()</p>
+<p class="NDLRefMemberDescription">Returns array position of the current forward axis. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>0 for X or 1 for Y. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_math_helpers_1a1a69d53395fcab5509457e6c5f4e530c"></a>
+<p class="NDLRefMemberFunction">static int  AXIS_RIGHT()</p>
+<p class="NDLRefMemberDescription">Returns array position of the current right axis. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>0 for X or 2 for Z. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

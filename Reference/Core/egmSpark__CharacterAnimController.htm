@@ -1,0 +1,361 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::CharacterAnimController</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::CharacterAnimController</p>
+<p class="NDLRefParentage">: public <span class="NDLSystemFont"><a href="egmSpark__IBuiltinModelBase.htm">egmSpark::IBuiltinModelBase</a></span></p>
+
+
+<p class="NDLRefHeaderFile">&lt;CharacterAnimController.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_character_anim_controller.gif" alt="Inheritance graph for egmSpark::CharacterAnimController"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::CharacterAnimController</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">This BuiltinModel is designed to allow full body and upper body animation sequences to be played& reset as necessary. </p>
+<p class="NDLNormal">In addition, optionally, you can have behavior callbacks for when animations are finished.</p>
+<p class="NDLNormal">This BuiltinModel supports the following:</p>
+<ul>
+<li>Playing of full body animations</li>
+<li>Concept of single upper body animation (with callback when done)</li>
+<li>Activation& deactivation of layered animations</li></ul>
+<p class="NDLNormal">
+<p class="NDLNormal">This class is setup to replicate the animations it's responsible for over the wire to the replicated versions of itself. </p></p>
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_character_anim_controller_1aa79d95873480f901712605e902e12313"></a>
+<p class="NDLRefMemberFunction">CharacterAnimController()</p>
+<p class="NDLRefMemberDetailedDescription">Constructor </p>
+
+<a name="classegm_spark_1_1_character_anim_controller_1a142e66982ffbc0a683b2d774353b9fed"></a>
+<p class="NDLRefMemberFunction">virtual bool  PlayFullBodySequence(<br/>const efd::utf8string& seqName, <br/>bool bWantSeqDoneCallback, <br/>bool bResetIfNeeded, <br/>bool bNotifyOnActivation)</p>
+<p class="NDLRefMemberDescription">Play a full body sequence (uses SetTargetAnimation) with optional callback when done. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">seqName</span></td>
+    <td>Name of sequence to play. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">bWantSeqDoneCallback</span></td>
+    <td>Set to true for the system to send OnFullBodySeqDone. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">bResetIfNeeded</span></td>
+    <td>Set to true to have the animation restart from beginning if currently playing. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">bNotifyOnActivation</span></td>
+    <td>true to notify on activation.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if it succeeds, false if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_character_anim_controller_1ab31ea2bff845f66b5cc3bb3a1376c45a"></a>
+<p class="NDLRefMemberFunction">virtual bool  PlayUpperBodySequence(<br/>const efd::utf8string& seqName, <br/>bool autoDeactivate = true, <br/>bool useAdditiveAnimation = false)</p>
+<p class="NDLRefMemberDescription">Play a upper body sequence (uses ActivateLayeredSequence). </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">This function does not do anything to force the sequence to only behave on the upper body. It is assumed that the actual animation has been setup as an upper body sequence.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">seqName</span></td>
+    <td>Name of sequence to play. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">autoDeactivate</span></td>
+    <td>Set to true for the sequence to be deactivated when done. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">useAdditiveAnimation</span></td>
+    <td>true to use additive animation.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if it succeeds, false if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_character_anim_controller_1a65092aca63a353290c9e61018f17148c"></a>
+<p class="NDLRefMemberFunction">virtual bool  StopUpperBodySequence()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_character_anim_controller_1af6cc295b91192839f024a403dd9dfa8a"></a>
+<p class="NDLRefMemberFunction">virtual bool  PlaySequence(<br/>const efd::utf8string& seqName, <br/>efd::UInt32 priority, <br/>efd::Bool autoDeactivate = true, <br/>efd::Float32 easeInOverride = -1.0f, <br/>efd::Bool useAdditiveAnimation = false)</p>
+<p class="NDLRefMemberDescription">Play a layered sequence. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">seqName</span></td>
+    <td>Name of sequence to play. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">priority</span></td>
+    <td>Priority to play sequence at. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">autoDeactivate</span></td>
+    <td>Set to true for the sequence to be deactivated when done. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">easeInOverride</span></td>
+    <td>Allows an optional override of the ease in value set up in the model. The default value of -1 disables overriding. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">useAdditiveAnimation</span></td>
+    <td>true to use additive animation.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if it succeeds, false if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_character_anim_controller_1a1dc4449d3074e3bfe1d1cd53d2a99889"></a>
+<p class="NDLRefMemberFunction">virtual bool  StopSequence(const efd::utf8string& seqName)</p>
+<p class="NDLRefMemberDescription">Abort a playing sequence. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">seqName</span></td>
+    <td>Name of sequence to abort.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if it succeeds, false if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_character_anim_controller_1a2f87a21c901e58e5c45da6d481098f23"></a>
+<p class="NDLRefMemberFunction">virtual void  PlayFullBodySequence(efd::DataStream* pStream)</p>
+<p class="NDLRefMemberDescription">Event handler for playing full body sequences. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pStream</span></td>
+    <td>A DataStream containing the parameters used by this event. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_character_anim_controller_1ad72f7ecd748cb1bcbca09427b1e8b16d"></a>
+<p class="NDLRefMemberFunction">virtual void  PlayUpperBodySequence(efd::DataStream* pStream)</p>
+<p class="NDLRefMemberDescription">Event handler for playing upper body sequences. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pStream</span></td>
+    <td>A DataStream containing the parameters used by this event. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_character_anim_controller_1a14fbee1e0453e1c83f5ea2d1e6350a99"></a>
+<p class="NDLRefMemberFunction">virtual void  StopUpperBodySequence(efd::DataStream* pStream)</p>
+<p class="NDLRefMemberDescription">Event handler for stopping upper body sequences. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pStream</span></td>
+    <td>A DataStream containing the parameters used by this event. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_character_anim_controller_1a094606a49adcac7c13b01872b6421a78"></a>
+<p class="NDLRefMemberFunction">virtual void  PlaySequence(efd::DataStream* pStream)</p>
+<p class="NDLRefMemberDescription">Event handler for playing animation sequences. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pStream</span></td>
+    <td>A DataStream containing the parameters used by this event. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_character_anim_controller_1a739b094f98a12e9f9f076ad28a913bc4"></a>
+<p class="NDLRefMemberFunction">virtual void  StopSequence(efd::DataStream* pStream)</p>
+<p class="NDLRefMemberDescription">Event handler for stopping animation sequences. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pStream</span></td>
+    <td>A DataStream containing the parameters used by this event. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_character_anim_controller_1af9da6d7e9d8f9e940c46aeb3254234e0"></a>
+<p class="NDLRefMemberFunction">virtual void  OnTextKey(efd::DataStream* pStream)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_character_anim_controller_1a0832564726dd5bd7d02f91bf34ab54b2"></a>
+<p class="NDLRefMemberFunction">bool  PlaySequenceId(<br/>NiActorManager::SequenceID seqID, <br/>efd::UInt32 priority, <br/>efd::Float32 easeInTime, <br/>efd::Float32 easeOutTime, <br/>efd::Float32 weight, <br/>bool autoDeactivate = false, <br/>bool additive = false)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_character_anim_controller_1a3e4cd2d263ca436f88d45c4783bf4169"></a>
+<p class="NDLRefMemberFunction">void  StopAllSequences()</p>
+<p class="NDLRefMemberFunction"></p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

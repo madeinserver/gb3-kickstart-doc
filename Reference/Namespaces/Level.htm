@@ -1,0 +1,185 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>Level Namespace</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">Level Namespace</p>
+
+
+
+
+
+<a name="private_methods"></a>
+<p class="NDLRefHead1">Private Methods</p>
+
+
+<a name="namespace_level_1a1a7c1fc7926344d6aa0bb9807b7af83e"></a>
+<p class="NDLRefMemberFunction">egf::EntityID  GetEntityByName(const efd::utf8string& name)</p>
+<p class="NDLRefMemberDescription">Gets the first entity with the given name. </p>
+<p class="NDLRefMemberDetailedDescription">To retrieve an entity by name, it must mixin the Nameable model. </p>
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">name</span></td>
+    <td>The name of the entiy.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The EntityID for the entity with that name. If no entity is found the invalid EntityID is returned. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_level_1a34220632e074f2f55a28f296c7606209"></a>
+<p class="NDLRefMemberFunction">efd::list&lt;egf::EntityID&gt;  GetEntitiesByName(const efd::utf8string& name)</p>
+<p class="NDLRefMemberDescription">Gets a list of entity ids for every entity that has the given name. </p>
+<p class="NDLRefMemberDetailedDescription">To retrieve an entity by name, it must mixin the Nameable model. </p>
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">name</span></td>
+    <td>The name of the entiy.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>A list of EntityIDs for every entity found with the provided name. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_level_1a9915d3e220f39f0afa5a34121ce4680a"></a>
+<p class="NDLRefMemberFunction">egf::EntityID  GetClosestEntityInRange(<br/>const efd::Point3& origin, <br/>efd::Float32 radius, <br/>const efd::utf8string* pModelName = NULL)</p>
+<p class="NDLRefMemberDescription">Finds the closest entity in range, given a starting origin and a radius from which to search. </p>
+<p class="NDLRefMemberDetailedDescription">By default, static entities are not considered in this search. To change this you will need to look at the LevelService. You can also optionally filter the search to only consider entities that mixin a specific model. </p>
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">origin</span></td>
+    <td>The origin. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">radius</span></td>
+    <td>The radius. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pModelName</span></td>
+    <td>Name of the model that must be mixed into the entity.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The closest entity found in range. If no entity is found the invalid entity id is returned. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_level_1a5aeccf726c125085c38bdd31e020f699"></a>
+<p class="NDLRefMemberFunction">efd::list&lt;egf::EntityID&gt;  GetEntitiesInRange(<br/>const efd::Point3& origin, <br/>efd::Float32 radius, <br/>const efd::utf8string* pModelName = NULL)</p>
+<p class="NDLRefMemberDescription">Finds all the entities in a range, given a starting origin and a radius from which to search. </p>
+<p class="NDLRefMemberDetailedDescription">By default, static entities are not considered in this search. To change this you will need to look at the LevelService. You can also optionally filter the search to only consider entities that mixin a specific model. </p>
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">origin</span></td>
+    <td>The origin. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">radius</span></td>
+    <td>The radius. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pModelName</span></td>
+    <td>Name of the model that must be mixed into the entity.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>A list of entity ids for each entity found in a range. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

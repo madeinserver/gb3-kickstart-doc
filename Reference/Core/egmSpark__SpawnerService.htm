@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::SpawnerService</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::SpawnerService</p>
+<p class="NDLRefParentage">: public IMessageHelperSystemService</p>
+
+
+<p class="NDLRefHeaderFile">&lt;SpawnerService.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_spawner_service.gif" alt="Inheritance graph for egmSpark::SpawnerService"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::SpawnerService</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">The primary purpose of this service is to provide centralized code for spawning entities from a given model name. </p>
+<p class="NDLNormal">This service also tracks all items that are spawned by it so that those entities can be removed when the block file is unloaded or when we switch to another block/level. </p>
+
+<a name="public_static_methods"></a>
+<p class="NDLRefHead1">Public Static Methods</p>
+
+
+<a name="classegm_spark_1_1_spawner_service_1af7f1d6df02c78e5952bdf6c1cbb925f8"></a>
+<p class="NDLRefMemberFunction">static <span class="NDLSystemFont">SpawnerService</span>*  Get()</p>
+<p class="NDLRefMemberFunction"></p>
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_spawner_service_1a58cd553eaf25af06391841b073f710d0"></a>
+<p class="NDLRefMemberFunction">SpawnerService()</p>
+<p class="NDLRefMemberDescription">Constructor. </p>
+
+<a name="classegm_spark_1_1_spawner_service_1a596377e6d4bdcbf54c936bb8edc7b67e"></a>
+<p class="NDLRefMemberFunction">virtual egf::EntityID  SpawnEntityFromModel(<br/>const efd::utf8string& modelName, <br/>const efd::Point3* pPosition = NULL, <br/>const efd::Point3* pRotation = NULL, <br/>efd::Bool trackEntity = true)</p>
+<p class="NDLRefMemberDescription">Request the immediate creation of an entity optionally specifying the initial position and rotation. </p>
+<p class="NDLRefMemberDetailedDescription">Immediate creation requires that all assets related to the specified model name have been successfully pre-loaded. If immediate creation is not possible due to the needed assets not being preloaded then an asynchronous creation will be attempted.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">modelName</span></td>
+    <td>The name of the FlatModel to use when creating the entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pPosition</span></td>
+    <td>Optional pointer to the initial position for the created entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pRotation</span></td>
+    <td>Optional pointer to the initial rotation for the created entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">trackEntity</span></td>
+    <td>If true, the created entity will be tracked by this service and will be deleted by future calls to DestroyAllEntities. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_spawner_service_1a00e2c01a8470f23831f4cbc67520edec"></a>
+<p class="NDLRefMemberFunction">virtual void  RemoveEntity(egf::EntityID entityID)</p>
+<p class="NDLRefMemberDescription">Remove an entity from the set of entities being tracked by this service. </p>
+<p class="NDLRefMemberDetailedDescription">This method should be called when any tracked entity spawned by this service is destroyed. Calling this method will NOT actually destroy the entity in question, only remove it from the tracking set.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>The entity to stop tracking. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_spawner_service_1a9d30e90585d1248bbdfbe7f2ccd83ef8"></a>
+<p class="NDLRefMemberFunction">virtual void  DestroyAllEntities()</p>
+<p class="NDLRefMemberDescription">Destroy all tracked entities spawned by this service. </p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

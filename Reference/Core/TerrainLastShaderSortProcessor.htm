@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>TerrainLastShaderSortProcessor</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">TerrainLastShaderSortProcessor</p>
+<p class="NDLRefParentage">: public NiShaderSortProcessor</p>
+
+
+<p class="NDLRefHeaderFile">&lt;TerrainLastShaderSortProcessor.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/class_terrain_last_shader_sort_processor.gif" alt="Inheritance graph for TerrainLastShaderSortProcessor"/>
+  <p class="FigureCaption">Inheritance graph for TerrainLastShaderSortProcessor</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">This is a custom render list sorter based on <span class="NDLSystemFont">NiShaderSortProcessor</span>. </p>
+<p class="NDLNormal">The <span class="NDLSystemFont"><a href="TerrainLastShaderSortProcessor.htm#class_terrain_last_shader_sort_processor_1a1a2007e87a1907985f796b8073be9f00">PreRenderProcessList()</a></span> method is overriden and additiona logic has been added to render terrain meshes after all other meshes (except those that have alpha blending).</p>
+<p class="NDLNormal">Since terrain is often occluded by other objects, this saves GPU rendering time that would be spent drawing terrain pixels that would be eventually overwritten anyway. </p>
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="class_terrain_last_shader_sort_processor_1a1a2007e87a1907985f796b8073be9f00"></a>
+<p class="NDLRefMemberFunction">virtual void  PreRenderProcessList(<br/>const NiVisibleArray* pkInput, <br/>NiVisibleArray& kOutput, <br/>void* pvExtraData)</p>
+<p class="NDLRefMemberFunction"></p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

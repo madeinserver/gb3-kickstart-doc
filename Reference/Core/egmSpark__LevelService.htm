@@ -1,0 +1,304 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::LevelService</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::LevelService</p>
+<p class="NDLRefParentage">: public ISystemService</p>
+
+
+<p class="NDLRefHeaderFile">&lt;LevelService.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_level_service.gif" alt="Inheritance graph for egmSpark::LevelService"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::LevelService</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">This service tracks important spatial information for a level as well as provides ways to query information about the entities in world. </p>
+<p class="NDLNormal">This service maintains a uniform grid spatial hash of the entities in the world. By default the world is broken up into cells that are 25x25x25 meters.</p>
+<p class="NDLNormal">There are ways to query closest entity, or entities in a radius. There are also ways to find an entity by name in this service. </p>
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_level_service_1a011b258475c96e841a022836a78c27d4"></a>
+<p class="NDLRefMemberFunction">LevelService()</p>
+<p class="NDLRefMemberDetailedDescription">Constructor </p>
+
+<a name="classegm_spark_1_1_level_service_1a6ec5f34777f95a0b6defc85ef5df2937"></a>
+<p class="NDLRefMemberFunction">egf::Entity*  GetEntityByName(const efd::utf8string& name)</p>
+<p class="NDLRefMemberDescription">Finds an entity by name. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">name</span></td>
+    <td>The name of the entity. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The first entity found matching the name given. If no entity is found matching this name, NULL is returned. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_level_service_1ab3fcee18b81ce880c8560c8e58f696e2"></a>
+<p class="NDLRefMemberFunction">bool  GetEntitiesByName(<br/>const efd::utf8string& name, <br/>efd::list&lt;egf::Entity*&gt;& outEntites)</p>
+<p class="NDLRefMemberDescription">Finds all the entities with the given name and adds them to a list. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">name</span></td>
+    <td>The name of the entities. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">outEntites</span></td>
+    <td>The list to store the entities in. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if any entities were found matching the name, otherwise false. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_level_service_1a20fa2a0f996a6dc1cfac20d52342de50"></a>
+<p class="NDLRefMemberFunction">egf::Entity*  GetClosestEntityInRange(<br/>const efd::Point3& origin, <br/>efd::Float32 radius, <br/>const efd::utf8string* pModelName = NULL)</p>
+<p class="NDLRefMemberDescription">Finds the closest entity in an area. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">origin</span></td>
+    <td>The center to search from. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">radius</span></td>
+    <td>The radius to search out from the center. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pModelName</span></td>
+    <td>The model name to filter on, NULL if no filter. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The closest entity found in the provided radius from the provided origin. If no entities are found matching the criteria, NULL is returned. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_level_service_1a9406b9587e6d6c3752ca6330252d7482"></a>
+<p class="NDLRefMemberFunction">bool  GetEntitiesInRange(<br/>efd::list&lt;egf::Entity*&gt;& outEntites, <br/>const efd::Point3& origin, <br/>efd::Float32 radius, <br/>const efd::utf8string* pModelName = NULL)</p>
+<p class="NDLRefMemberDescription">Finds the all the entities in an area. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">outEntites</span></td>
+    <td>The list to store the entities in. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">origin</span></td>
+    <td>The center to search from. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">radius</span></td>
+    <td>The radius to search out from the center. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pModelName</span></td>
+    <td>The model name to filter on, NULL if no filter. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if any entities were added to the list, otherwise false. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_level_service_1ab0e6be7b3ee756bfb40d7b226d56a5e5"></a>
+<p class="NDLRefMemberFunction">void  ResetSpatialMap()</p>
+<p class="NDLRefMemberDescription">Resets spatial map. </p>
+<p class="NDLRefMemberDetailedDescription">This will clear all the memory being used by the spatial hash, which by default is grow only when it's recalculating the spatial hash each tick. </p>
+
+<a name="classegm_spark_1_1_level_service_1a17cfd1ff8840f9f823f527a0254bf9e5"></a>
+<p class="NDLRefMemberFunction">void  RebuildEntityUniverse()</p>
+<p class="NDLRefMemberDescription">Rebuilds the entity universe. </p>
+<p class="NDLRefMemberDetailedDescription">The entity universe are all the entities examined each tick and organized into the spatial map. By default static entities are ignored, if this were changed. The entity universe should be rebuilt. The same is true if the spatial map cell size is changed. </p>
+
+<a name="classegm_spark_1_1_level_service_1abe2386d3c21f64b936ed53fd78932800"></a>
+<p class="NDLRefMemberFunction">void  SetSpatialMapCellSize(efd::Point3 value)</p>
+<p class="NDLRefMemberDescription">Sets the spatial map cell size. </p>
+<p class="NDLRefMemberDetailedDescription">This is 25x25x25 by default.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">value</span></td>
+    <td>The cell size of the spatial hash map. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_level_service_1a41d3e7d6ee196cdf60083335781f76eb"></a>
+<p class="NDLRefMemberFunction">efd::Point3  GetSpatialMapCellSize()</p>
+<p class="NDLRefMemberDescription">Retrieve the current spatial map cell size. </p>
+
+<a name="classegm_spark_1_1_level_service_1a9e7dda40413ccc4cc5210f96abb9afb1"></a>
+<p class="NDLRefMemberFunction">void  SetTrackStaticEntities(bool value)</p>
+<p class="NDLRefMemberDescription">Sets a value indicating if we're spatially mapping static entities. </p>
+<p class="NDLRefMemberDetailedDescription">This is false by default.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">value</span></td>
+    <td>are we spatially tracking static entities. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_level_service_1aba88a67993bafb51677fe567b2d7e75d"></a>
+<p class="NDLRefMemberFunction">bool  GetTrackStaticEntities()</p>
+<p class="NDLRefMemberDescription">Retrieve a value indicating if we're spatially mapping static entities. </p>
+
+<a name="classegm_spark_1_1_level_service_1a9674f58a0222836ad006a8d5f6cab240"></a>
+<p class="NDLRefMemberFunction">const NiBound&  ComputeSceneBounds()</p>
+<p class="NDLRefMemberDescription">Iterates over each entity with a scenegraph and merges the bounds to compute a final bound that encompasses all entities. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>the World space bound of all entities </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_level_service_1a7ed105b59f0e9982dde9ef4a363a2788"></a>
+<p class="NDLRefMemberFunction">void  OnEntityAdded(<br/>const egf::EntityChangeMessage* pMessage, <br/>efd::Category targetChannel)</p>
+<p class="NDLRefMemberDescription">Listens for entities being added so that we can update the entity universe, and also add them to the list of named entities. </p>
+
+<a name="classegm_spark_1_1_level_service_1aa5b7ff306107d686f179040ae43784ec"></a>
+<p class="NDLRefMemberFunction">void  OnEntityRemoved(<br/>const egf::EntityChangeMessage* pMessage, <br/>efd::Category targetChannel)</p>
+<p class="NDLRefMemberDescription">Listens for entities being removed so that we can update the entity universe, and also remove them from the list of named entities. </p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

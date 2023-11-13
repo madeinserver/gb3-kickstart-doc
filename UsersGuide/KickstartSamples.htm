@@ -1,0 +1,123 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>Kickstart Samples</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Fresnel" />
+<meta name="Generator" content="Palimpsest by Emergent Game Technologies - http://emergent.net" />
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+    
+<link rel="stylesheet" href="../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+
+<!--(Begin Body)================================================================================-->
+<body lang="EN-US">
+<script src="../shared/NavScript.js" language="JavaScript1.2" type="text/javascript">
+</script><script language="JavaScript1.2" type="text/javascript">
+WriteNavLink(2);
+</script>
+
+<h1>Kickstart Samples</h1>
+
+<p>Kickstart ships with two sample applications, AlphaGame and DayDreamer.  This page describes
+each sample and lists the controls for the sample.</p>
+
+<h3>Playing Alpha Game</h3>
+
+<p>Alpha Game could be considered a "GamePack". It consists of an executable, art, code, and other 
+data that together create a very simple 3rd-person walkaround scenario. Alpha Game is built from a 
+game solution that currently includes AlphaGame.emtproj, SparkLibrary.emtproj, and a level file 
+called AlphaGame.block. The solution also references the Gamebryo Standard Library, the PhysX 
+Standard Library for trigger collision, and the Wwise Solution for 3D sound.</p>
+
+<p>You run Alpha Game by double-clicking its executable: 
+&lt;AlphaGame&gt;\Application\win32\AlphaGame_Release_&lt;VC80 or VC90&gt;.exe</p>
+
+<p>where:</p>
+
+<ul>
+    <li>&lt;AlphaGame&gt; is the directory that contains your local copy of Alpha Game</li>
+    <li>&lt;VC80 or VC90&gt; is shorthand for the version of Visual Studio that was used to compile 
+    the executable </li>
+</ul>
+
+<p>The gameplay in AlphaGame is very simple. Using a standard Xbox controller on PC, you can:</p>
+
+<ul>
+    <li>Zoom the attached camera system in/out and around with the right analog stick (arrow keys 
+    on keyboard).</li>
+    <li>Move the player with the left analog stick (a,w,s,d keys on keyboard). Note that the 
+    direction in which the character moves is relative to the position of the camera.</li>
+    <li>The A button (spacebar on keyboard) is the "action" key. Currently, this is used to open 
+    the treasure chest.</li>
+    <li>The Start button (escape key on the keyboard) pauses and unpauses the game. Once paused, 
+    the only action currently available is to unpause.</li>
+    <li>Enemies patrol way points until they are within a certain distance of the player. Then they 
+    pursue the player and explode if they touch him, doing damage.</li>
+    <li>The game is won by reaching the end of the level and pressing the action button to open the 
+    treasure chest.</li>
+    <li>The game is lost if the player's health reaches zero.
+    <li>There are also trigger and door examples placed thoughout the level.
+    <li>Left shoulder button (LB) cycles through a series of performance tracker screens
+    <li>Left trigger button (LT) dumps accumulated performance information to the log, and resets 
+    the counters. The first time you press it it will include performance information gathered 
+    during startup. Subsequent presses include information since the last press. </li>
+</ul>
+
+<h3>Playing DayDreamer</h3>
+
+<p>DayDreamer could be considered a "GamePack". It consists of an executable, art, code, and 
+other data that together create a simple over-the-shoulder perpective shooter. DayDreamer is 
+built from a game solution that currently includes DayDreamer.emtproj, SparkLibrary.emtproj, 
+and two level files. The solution also references the Gamebryo Standard Library, the PhysX Standard
+Library for trigger collision, and the Wwise Solution for 3D sound. The Scaleform GFx library is 
+also available although it is currently not being used.</p>
+
+<p>You run DayDreamer by double-clicking its executable: 
+&lt;DayDreamer&gt;\Application\win32\DayDreamer_Release_&lt;VC80 or VC90&gt;.exe</p>
+
+<p>where:</p>
+
+<ul>
+    <li>&lt;DayDreamer&gt; is the directory that contains your local copy of DayDreamer</li>
+    <li>&lt;VC80 or VC90&gt; is shorthand for the version of Visual Studio that was used to compile 
+    the executable </li>
+</ul>
+
+<p>The controls for DayDreamer are as follows:</p>
+
+<ul>
+    <li>Move the player with the left analog stick (a,w,s,d keys on keyboard).</li>
+    <li>Move the camera perspective and direction the player faces with the right analog stick, 
+    mouse, or direction keys on keyboard</li>
+    <li>Use the right mouse button to zoom</li>
+    <li>Fire with the left mouse button or right trigger button</li>
+    <li>Enable/Disable PhysX debug mode with F6</li>
+    <li>Change weapons by the mouse scroll or the left and right shoulder buttons</li>
+    <li>Press F3 to enter free-fly mode</li>
+    <li>Press Space or the gamepad A button to jump</li>
+    <li>Press "C" or the gamepad B button to crouch</li>
+    <li>Press "U" or the gamepad Y button to activate items</li>
+    <li>Press "Esc" or the gamepad Start button to bring up the menu.</li>
+</ul>
+
+<p>Note that you must have ammunition to fire weapons other than the pistol. Ammunition pickups are 
+scattered throughout the level. </p>
+
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

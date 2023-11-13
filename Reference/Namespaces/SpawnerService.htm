@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>SpawnerService Namespace</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">SpawnerService Namespace</p>
+
+
+
+
+
+<a name="private_methods"></a>
+<p class="NDLRefHead1">Private Methods</p>
+
+
+<a name="namespace_spawner_service_1a00eb28f86c8bb7cf9a1e701f02f9a18e"></a>
+<p class="NDLRefMemberFunction">egf::EntityID  SpawnEntityFromModel(<br/>const efd::utf8string& modelName, <br/>const efd::Point3& position, <br/>const efd::Point3& rotation)</p>
+<p class="NDLRefMemberDescription">Spawn entity from model and specify the initial position and rotation. </p>
+<p class="NDLRefMemberDetailedDescription">The spawned entity will be tracked by the <span class="NDLSystemFont">SpawnerService</span> which will destroy the entity at shutdown or when SpawnerService::DestroyAllEntities is called.</p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">modelName</span></td>
+    <td>Name of the model. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">position</span></td>
+    <td>The position. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">rotation</span></td>
+    <td>The rotation.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The EntityID of the created entity. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spawner_service_1a74086bf9cadd6de3ac33302f28b51cde"></a>
+<p class="NDLRefMemberFunction">egf::EntityID  SpawnEntityFromModel(<br/>const efd::utf8string& modelName, <br/>const efd::Point3& position)</p>
+<p class="NDLRefMemberDescription">Spawn entity from model and specify the initial position. </p>
+<p class="NDLRefMemberDetailedDescription">The spawned entity will be tracked by the <span class="NDLSystemFont">SpawnerService</span> which will destroy the entity at shutdown or when SpawnerService::DestroyAllEntities is called.</p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">modelName</span></td>
+    <td>Name of the model. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">position</span></td>
+    <td>The initial position.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The EntityID of the created entity. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spawner_service_1ae9e90a066ab895c70a42bb963754a0e5"></a>
+<p class="NDLRefMemberFunction">egf::EntityID  SpawnEntityFromModel(<br/>const efd::utf8string& modelName, <br/>efd::Bool trackEntity = true)</p>
+<p class="NDLRefMemberDescription">Spawn entity from model and specify whether the <span class="NDLSystemFont">SpawnerService</span> should track the entity. </p>
+<p class="NDLRefMemberDetailedDescription">If the entity is tracked then it will be destroyed when the <span class="NDLSystemFont">SpawnerService</span> is shutdown or when SpawnerService::DestroyAllEntities is called.</p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">modelName</span></td>
+    <td>Name of the model. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">trackEntity</span></td>
+    <td>If true, the <span class="NDLSystemFont">SpawnerService</span> will track this entity and will delete the entity when tracked entities are cleaned up.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The EntityID of the created entity. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

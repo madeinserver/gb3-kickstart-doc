@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::PostEffectsDefaultLibrary</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::PostEffectsDefaultLibrary</p>
+<p class="NDLRefParentage">: public <span class="NDLSystemFont"><a href="egmSpark__IPostEffectLibrary.htm">egmSpark::IPostEffectLibrary</a></span></p>
+
+
+<p class="NDLRefHeaderFile">&lt;PostEffectsDefaultLibrary.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_post_effects_default_library.gif" alt="Inheritance graph for egmSpark::PostEffectsDefaultLibrary"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::PostEffectsDefaultLibrary</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">Helper class for setting up the default library of post process effects. </p>
+
+<a name="shared_buffers"></a>
+<p class="NDLRefHead1">Shared Buffers</p>
+
+
+<a name="classegm_spark_1_1_post_effects_default_library_1afe97b3f4b1e17f06d48df0a7fa1e3428"></a>
+<p class="NDLRefMemberFunction">static const efd::UInt32  k_bufferAux0</p>
+<p class="NDLRefMemberDescription">Full sized aux buffer 0. </p>
+
+<a name="classegm_spark_1_1_post_effects_default_library_1a37c60ec7b293609928044823fc9e57fb"></a>
+<p class="NDLRefMemberFunction">static const efd::UInt32  k_bufferAux1</p>
+<p class="NDLRefMemberDescription">Full sized aux buffer 1. </p>
+
+<a name="classegm_spark_1_1_post_effects_default_library_1ae3776ff0f2d0094c0c493723bd837268"></a>
+<p class="NDLRefMemberFunction">static const efd::UInt32  k_bufferSmall2x2_0</p>
+<p class="NDLRefMemberDescription">Half dimension buffer 0. </p>
+
+<a name="classegm_spark_1_1_post_effects_default_library_1a62f1526e2b3dcea7eddf83d7e283ea60"></a>
+<p class="NDLRefMemberFunction">static const efd::UInt32  k_bufferSmall2x2_1</p>
+<p class="NDLRefMemberDescription">Half dimension buffer 1. </p>
+
+<a name="classegm_spark_1_1_post_effects_default_library_1a2446ca4ee78fed4d07d011f096a099a5"></a>
+<p class="NDLRefMemberFunction">static const efd::UInt32  k_bufferSmall4x4</p>
+<p class="NDLRefMemberDescription">Quarter dimension buffer. </p>
+
+<a name="classegm_spark_1_1_post_effects_default_library_1afda0a782a3d82bbffedfefd667c54540"></a>
+<p class="NDLRefMemberFunction">static const efd::UInt32  k_bufferSmall1x4</p>
+<p class="NDLRefMemberDescription">Quarter height buffer. </p>
+<a name="public_static_methods"></a>
+<p class="NDLRefHead1">Public Static Methods</p>
+
+
+<a name="classegm_spark_1_1_post_effects_default_library_1a12ba6214b5b17a0d3ae05c47fa6ff8c6"></a>
+<p class="NDLRefMemberFunction">static <span class="NDLSystemFont">PostEffectsDefaultLibrary</span>*  GetDefaultLibrary()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_post_effects_default_library_1abc539e916e2bd072ad00f59e5270b4f4"></a>
+<p class="NDLRefMemberFunction">static bool  ValidateBufferList(<br/>const efd::UInt32* pBufferList, <br/>unsigned int size)</p>
+<p class="NDLRefMemberFunction"></p>
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_post_effects_default_library_1a67edcc1221cb1aa97cdad9595ab3cdd5"></a>
+<p class="NDLRefMemberFunction">PostEffectsDefaultLibrary()</p>
+<p class="NDLRefMemberDescription">Creates a set of effects and adds them to the given <span class="NDLSystemFont"><a href="egmSpark__PostEffectsStep.htm">PostEffectsStep</a></span>. </p>
+<p class="NDLRefMemberDetailedDescription">It also creates the requisite shared buffers for these effects.</p>
+<p class="NDLRefMemberDetailedDescription">An instance of the <span class="NDLSystemFont">PostEffectsDefaultLibrary</span> may be deleted as soon as all desired information has been read from it (e.g. <span class="NDLSystemFont"><a href="egmSpark__PostEffectsDefaultLibrary.htm#classegm_spark_1_1_post_effects_default_library_1ac835bedf406b4eecd250836bf39b0ff1">GetBloom()</a></span>). </p>
+
+<a name="classegm_spark_1_1_post_effects_default_library_1ab54f155f3acd35b3d2c070113a2af949"></a>
+<p class="NDLRefMemberFunction">virtual ~PostEffectsDefaultLibrary()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_post_effects_default_library_1ae20019171bdb65fcc36fe987c61a9a43"></a>
+<p class="NDLRefMemberFunction">virtual bool  Setup(<span class="NDLSystemFont"><a href="egmSpark__PostEffectsStep.htm">PostEffectsStep</a></span>* pkStep)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_post_effects_default_library_1af2f69530aff0b60ea50b85a8c7e2e40e"></a>
+<p class="NDLRefMemberFunction">virtual void  Destroy()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_post_effects_default_library_1a787013af6f350e65bc5563b5ca855c3e"></a>
+<p class="NDLRefMemberFunction">virtual void  EnablePostEffects(bool enable)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_post_effects_default_library_1ac835bedf406b4eecd250836bf39b0ff1"></a>
+<p class="NDLRefMemberFunction"><span class="NDLSystemFont"><a href="egmSpark__PostEffectBloom.htm">PostEffectBloom</a></span>*  GetBloom()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_post_effects_default_library_1aefde3ff8636807de54368a90b105fba1"></a>
+<p class="NDLRefMemberFunction"><span class="NDLSystemFont"><a href="egmSpark__PostEffectColorCorrect.htm">PostEffectColorCorrect</a></span>*  GetColorCorrect()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_post_effects_default_library_1a4f13d7f50052b728fa01d1e981d9b930"></a>
+<p class="NDLRefMemberFunction"><span class="NDLSystemFont"><a href="egmSpark__PostEffectDepthOfField.htm">PostEffectDepthOfField</a></span>*  GetDepthOfField()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_post_effects_default_library_1ac39a382c8d61fbd646dc84464305e227"></a>
+<p class="NDLRefMemberFunction">virtual void  TickEffects(efd::TimeType deltaTime)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_post_effects_default_library_1aa0d375d8204a7d92a85d74999947dd4a"></a>
+<p class="NDLRefMemberFunction">void  BloomFade(<br/>float strength, <br/>float thresh, <br/>float timeFadeIn, <br/>float timeHold, <br/>float timeFadeOut)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_post_effects_default_library_1a255a08c877447367fc8615b38ac7900a"></a>
+<p class="NDLRefMemberFunction">void  InterpolateDOFStrength(<br/>float strength, <br/>float timeFade)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_post_effects_default_library_1adacc9cb750ecc6283bc0d20a57fac379"></a>
+<p class="NDLRefMemberFunction">void  ColorFade(<br/>const NiColor& color, <br/>float timeFadeIn, <br/>float timeHold, <br/>float timeFadeOut)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_post_effects_default_library_1ad68b8aa4adf47bcd7aaf617386ca073f"></a>
+<p class="NDLRefMemberFunction">void  SaturateFade(<br/>float saturate, <br/>float timeFadeIn, <br/>float timeHold, <br/>float timeFadeOut)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_post_effects_default_library_1a2d63bec328539d7e4a4a7cdc9802378d"></a>
+<p class="NDLRefMemberFunction">void  SaturateShift(<br/>float saturate, <br/>float timeFade)</p>
+<p class="NDLRefMemberFunction"></p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

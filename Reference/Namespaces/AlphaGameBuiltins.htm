@@ -1,0 +1,159 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>AlphaGameBuiltins Namespace</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">AlphaGameBuiltins Namespace</p>
+
+
+
+
+
+<a name="private_methods"></a>
+<p class="NDLRefHead1">Private Methods</p>
+
+
+<a name="namespace_alpha_game_builtins_1a0ca46c5c287f8000b94632186a55e3ee"></a>
+<p class="NDLRefMemberFunction">void  ReportServiceTimes(<br/>const efd::utf8string& reportContext, <br/>efd::Bool reset)</p>
+<p class="NDLRefMemberDescription">Produce a services report to the log. </p>
+<p class="NDLRefMemberDetailedDescription">Each active service will be listed along with the absolute time and percentage time spent in each one.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">reportContext</span></td>
+    <td>Text string describing the context in which the report is being produced. This is printed to the log to help you identify what the report is covering.</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">reset</span></td>
+    <td>If 'true', the service counters will be reset after generating the report. This means the next report will only list time spent since the report at which it was reset. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_alpha_game_builtins_1aa2bf37777d14365f23b92812a44c480f"></a>
+<p class="NDLRefMemberFunction">void  AppReport(<br/>const efd::utf8string& reportContext, <br/>efd::UInt32 flags)</p>
+<p class="NDLRefMemberDescription">Produce an application-specific report to the log. </p>
+<p class="NDLRefMemberDetailedDescription">Note that the default app doesn't have an AppReport; you should implement this if you want to use it.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">reportContext</span></td>
+    <td>Text string describing the context in which the report is being produced. This is printed to the log to help you identify where the report is being produced.</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">flags</span></td>
+    <td>Application-specific flags indicating what report should be produced. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_alpha_game_builtins_1aa28b67d4958206f3e11492fae966bae2"></a>
+<p class="NDLRefMemberFunction">void  QuitGame(efd::UInt32 rc)</p>
+<p class="NDLRefMemberDescription">Quit the game. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">rc</span></td>
+    <td>Return code to pass to the OS </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_alpha_game_builtins_1ac7bc25e310e39152a2c4b89c0138281f"></a>
+<p class="NDLRefMemberFunction">void  ToggleVisualTracker()</p>
+<p class="NDLRefMemberDescription">Enable/Disable the VisualTracker. </p>
+
+<a name="namespace_alpha_game_builtins_1a2e391be864ac1ed021ece05ed2c12285"></a>
+<p class="NDLRefMemberFunction">efd::Bool  SystemSupportsShadows()</p>
+<p class="NDLRefMemberDescription">Return true/false depending on whether shadows are supported. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if shadows are supported </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

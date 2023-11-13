@@ -1,0 +1,150 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::SparkStateMachine</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::SparkStateMachine</p>
+<p class="NDLRefParentage">: public <span class="NDLSystemFont"><a href="egmSpark__IBuiltinModelBase.htm">egmSpark::IBuiltinModelBase</a></span></p>
+
+
+<p class="NDLRefHeaderFile">&lt;SparkStateMachine.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_spark_state_machine.gif" alt="Inheritance graph for egmSpark::SparkStateMachine"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::SparkStateMachine</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">This builtin model is designed to allow state-specific behaviors to be called. </p>
+<p class="NDLNormal">For example, if you are in the "normal" state, the system will trap behaviors and forward them onto BehaviorName_normal.</p>
+<p class="NDLNormal">
+<p class="NDLNormal">You cannot directly create an instance of this built-in model. Instead, create a builtin model in EMT and then register it via the <span class="NDLSystemFont"><a href="../Namespaces/SparkAPI.htm#namespace_spark_a_p_i_1a910c672bd85ec03a055327e3caf79a70">SparkAPI.RegisterStateMachine</a></span> function.</p>In your built-in model, you must specify all state-specific behaviors as built-in behaviors. Then, don't define any behavior handlers for those built-in behaviors.</p>
+<p class="NDLNormal">Use the <span class="NDLSystemFont"><a href="../Namespaces/SparkAPI.htm#namespace_spark_a_p_i_1a910c672bd85ec03a055327e3caf79a70">SparkAPI.RegisterStateMachine</a></span> function to register a model. </p>
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_spark_state_machine_1ac4b2fdecf579591cdcdafa160e655aab"></a>
+<p class="NDLRefMemberFunction">SparkStateMachine()</p>
+<p class="NDLRefMemberDetailedDescription">Constructor </p>
+
+<a name="classegm_spark_1_1_spark_state_machine_1a124bc9b88ccfa8eac9a19be6c5f896ae"></a>
+<p class="NDLRefMemberFunction">virtual void  TransitionState(const efd::utf8string& newState)</p>
+<p class="NDLRefMemberDescription">Transitions to a new state. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">newState</span></td>
+    <td>The state to transition to. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_spark_state_machine_1a992a3140b83ed43a1726fb65053178d9"></a>
+<p class="NDLRefMemberFunction">virtual efd::Bool  SendDefaultEvent(<br/>const efd::utf8string& eventName, <br/>efd::DataStream* pStream)</p>
+<p class="NDLRefMemberDescription">Sends an event that invokes a behavior with the default state name suffix. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">eventName</span></td>
+    <td>The name of the event to invoke. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pStream</span></td>
+    <td>The data stream containing any parameters used by the event. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_spark_state_machine_1afe262b7976205235f963b9bb925b5b4c"></a>
+<p class="NDLRefMemberFunction">virtual void  OnCreate()</p>
+<p class="NDLRefMemberDescription">Called once the OnCreate entity lifecycle completes. </p>
+
+<a name="classegm_spark_1_1_spark_state_machine_1a942f5b3e7c690705666e0ce6d3ddcf2d"></a>
+<p class="NDLRefMemberFunction">virtual efd::Bool  Dispatch(<br/>const egf::BehaviorDescriptor* i_pBehaviorToInvoke, <br/>efd::DataStream* i_pArgumentStream)</p>
+<p class="NDLRefMemberDescription">An implementation of egf::IBuiltinModel::Dispatch that will invoke behavior callback functions registered with the SPARK_BUILTINMODEL_BEHAVIOR macro. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">i_pBehaviorToInvoke</span></td>
+    <td>The behavior to invoke. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">i_pArgumentStream</span></td>
+    <td>The data stream containing any parameters for the behavior. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

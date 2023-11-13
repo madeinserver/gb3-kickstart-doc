@@ -1,0 +1,238 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::LoadingState</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::LoadingState</p>
+<p class="NDLRefParentage">: public <span class="NDLSystemFont"><a href="egmSpark__GameState.htm">egmSpark::GameState</a></span></p>
+
+
+<p class="NDLRefHeaderFile">&lt;LoadingState.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_loading_state.gif" alt="Inheritance graph for egmSpark::LoadingState"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::LoadingState</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">A <span class="NDLSystemFont"><a href="egmSpark__GameState.htm">GameState</a></span> for loading entity block files. </p>
+<p class="NDLNormal">Can display logo splash screens until the block loading has completed. </p>
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_loading_state_1a466783bb745da87d51937ea95f7792de"></a>
+<p class="NDLRefMemberFunction">LoadingState(efd::ServiceManager* pServiceManager)</p>
+<p class="NDLRefMemberDescription">Constructor. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pServiceManager</span></td>
+    <td>A pointer to the service manager which will be cached. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_loading_state_1a02d7def1939edf6e7f81c4049acc1a76"></a>
+<p class="NDLRefMemberFunction">virtual ~LoadingState()</p>
+<p class="NDLRefMemberDescription">Destructor. </p>
+
+<a name="classegm_spark_1_1_loading_state_1a960e01b0d2d655587b7be6c1c7c88709"></a>
+<p class="NDLRefMemberFunction">virtual void  OnShutdown()</p>
+<p class="NDLRefMemberDescription">Event handling function that is called when the state is shut down. </p>
+
+<a name="classegm_spark_1_1_loading_state_1aba26acac0ab2917c94fd56a65a26469a"></a>
+<p class="NDLRefMemberFunction">void  SkipRemaining()</p>
+<p class="NDLRefMemberDescription">Attempt to skip remaining splash screens. </p>
+
+<a name="classegm_spark_1_1_loading_state_1af97fea535fac615a8f64b821a11518fd"></a>
+<p class="NDLRefMemberFunction">void  AddSplash(<span class="NDLSystemFont"><a href="../Namespaces/egmSpark.htm#namespaceegm_spark_1a04fe4e97167cdd500a5f6063d0db2b7b">LogoSplashPtr</a></span> splash)</p>
+<p class="NDLRefMemberDescription">Adds a splash screen instance to the loading state. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">splash</span></td>
+    <td>Splash screen to display. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_loading_state_1aff78e66360c4084ed7d417184fdffc75"></a>
+<p class="NDLRefMemberFunction">void  QueueBlockFile(<br/>const efd::AssetID& blockFile, <br/>efd::Bool critical, <br/>efd::Bool isMasterSimulator = false)</p>
+<p class="NDLRefMemberDescription">Queues a block file for loading. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">blockFile</span></td>
+    <td>Name of block file to load. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">critical</span></td>
+    <td></td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">isMasterSimulator</span></td>
+    <td>True when blocks should be loaded into master simulator </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_loading_state_1a1e06b12ebdb9a7e315a8ad08b4353441"></a>
+<p class="NDLRefMemberFunction">efd::Bool  IsInitialTime() const</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if this is the first time the <span class="NDLSystemFont">LoadingState</span> has been active. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_loading_state_1ad3b5a628186464270fd280adabf5d712"></a>
+<p class="NDLRefMemberFunction">virtual void  HandleWorldLoadedMessage(<br/>const egf::EntityLoadResult* pWorldMessage, <br/>efd::Category targetChannel)</p>
+<p class="NDLRefMemberDescription">Message callback when block is finished loading. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pWorldMessage</span></td>
+    <td>Message being received from world message </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">targetChannel</span></td>
+    <td>Channel message was sent to. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_loading_state_1ae512d45b7dbc60bbd1782912b58a25e4"></a>
+<p class="NDLRefMemberFunction">virtual bool  Begin()</p>
+<p class="NDLRefMemberDescription">Overridden virtual functions inherit base documentation and are not documented here. </p>
+
+<a name="classegm_spark_1_1_loading_state_1a690fd9245f4f96f9d14b55369e2a204b"></a>
+<p class="NDLRefMemberFunction">virtual void  End()</p>
+<p class="NDLRefMemberDescription">Method called by the <span class="NDLSystemFont"><a href="egmSpark__GameStateService.htm">GameStateService</a></span> when the state is ended. </p>
+
+<a name="classegm_spark_1_1_loading_state_1a941bbbcbfff1625fa8224bb34124ff31"></a>
+<p class="NDLRefMemberFunction">virtual void  OnTick(efd::TimeType time)</p>
+<p class="NDLRefMemberDescription">Method called by the <span class="NDLSystemFont"><a href="egmSpark__GameStateService.htm">GameStateService</a></span> so that the state can handle the passage of time. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<p class="NDLRefMemberDetailedDescription">Default implementation does nothing, overrides need not call it. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">time</span></td>
+    <td>The time of the application (cumulative). </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

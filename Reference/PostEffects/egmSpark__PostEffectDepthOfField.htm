@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::PostEffectDepthOfField</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::PostEffectDepthOfField</p>
+<p class="NDLRefParentage">: public <span class="NDLSystemFont"><a href="egmSpark__PostEffect.htm">egmSpark::PostEffect</a></span></p>
+
+
+<p class="NDLRefHeaderFile">&lt;PostEffectDepthOfField.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_post_effect_depth_of_field.gif" alt="Inheritance graph for egmSpark::PostEffectDepthOfField"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::PostEffectDepthOfField</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">This depth of field effect blurs the screen, except for surfaces that are at the desired focal depth, with a smooth transition to a blur in the foreground and/or background. </p>
+<p class="NDLNormal">The associated shared buffers are normally created by <span class="NDLSystemFont"><a href="egmSpark__PostEffectsDefaultLibrary.htm">PostEffectsDefaultLibrary</a></span>. </p>
+<p class="NDLNormal"><span class="NDLSystemFont"><a href="egmSpark__PostEffectsManager.htm">PostEffectsManager</a></span></p>
+<p class="NDLNormal"><span class="NDLSystemFont"><a href="egmSpark__PostEffectsDefaultLibrary.htm">PostEffectsDefaultLibrary</a></span></p>
+
+<a name="public_static_attributes"></a>
+<p class="NDLRefHead1">Public Static Attributes</p>
+
+
+<a name="classegm_spark_1_1_post_effect_depth_of_field_1ae2d91ad24d9443d184afc4a9563a7ee7"></a>
+<p class="NDLRefMemberFunction">static const efd::UInt32  k_bufferList[]</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_post_effect_depth_of_field_1a030030d2a22e9c67624a867a398e7822"></a>
+<p class="NDLRefMemberFunction">static const unsigned int  k_bufferListSize</p>
+<p class="NDLRefMemberFunction"></p>
+<a name="parameters"></a>
+<p class="NDLRefHead1">Parameters</p>
+
+
+<a name="classegm_spark_1_1_post_effect_depth_of_field_1afc9e8884499258481f482a5fc8df76c6"></a>
+<p class="NDLRefMemberFunction">float  m_fRange[4]</p>
+<p class="NDLRefMemberDescription">The range parameter controls four world-space distances. </p>
+<p class="NDLRefMemberDetailedDescription">0. The blurry foreground ends here, to fade to clarity by distance 1.</p>
+<p class="NDLRefMemberDetailedDescription">1. The completely clear range begins, continues to distance 2.</p>
+<p class="NDLRefMemberDetailedDescription">2. The clear range ends, fades to the blurry background by distance 3.</p>
+<p class="NDLRefMemberDetailedDescription">3. The blurry background begins here.</p>
+<p class="NDLRefMemberDetailedDescription">The four values should be in increasing order, or discontinuities will appear in the blur. </p>
+
+<a name="classegm_spark_1_1_post_effect_depth_of_field_1a6f892880081c056117136d65cd672bd6"></a>
+<p class="NDLRefMemberFunction">float  m_fStrength</p>
+<p class="NDLRefMemberDescription">An overall strength of the blur. </p>
+<p class="NDLRefMemberDetailedDescription">0 produces no effect.</p>
+<p class="NDLRefMemberDetailedDescription">Expected range: [0,1] </p>
+
+<a name="classegm_spark_1_1_post_effect_depth_of_field_1a7cdbb26a3c04018b22cf45941488a704"></a>
+<p class="NDLRefMemberFunction">float  m_fNearStrength</p>
+<p class="NDLRefMemberDescription">Separately controls the foreground blur strength. </p>
+<p class="NDLRefMemberDetailedDescription">0 produces no blur.</p>
+<p class="NDLRefMemberDetailedDescription">Expected range: [0,1] </p>
+
+<a name="classegm_spark_1_1_post_effect_depth_of_field_1af4148f7389d47badc061eee340ab5bda"></a>
+<p class="NDLRefMemberFunction">float  m_fFarStrength</p>
+<p class="NDLRefMemberDescription">Separately controls the background blur strength. </p>
+<p class="NDLRefMemberDetailedDescription">0 produces no blur.</p>
+<p class="NDLRefMemberDetailedDescription">Expected range: [0,1] </p>
+
+<a name="classegm_spark_1_1_post_effect_depth_of_field_1ae0e07624e645f7aa2aa9c1d25b4d5d15"></a>
+<p class="NDLRefMemberFunction">bool  m_bDiagnostic</p>
+<p class="NDLRefMemberDescription">Replaces the output shader with a diagnostic view of the ranges. </p>
+<p class="NDLRefMemberDetailedDescription">The foreground is rendered in red, and the background is rendered in green. </p>
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_post_effect_depth_of_field_1afad9e6cb002371aefa0b15c05bb902d6"></a>
+<p class="NDLRefMemberFunction">PostEffectDepthOfField(<span class="NDLSystemFont"><a href="egmSpark__PostEffectsStep.htm">PostEffectsStep</a></span>* pStep)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_post_effect_depth_of_field_1aabba07a04b1c2bc6336b7bb5c97e09b4"></a>
+<p class="NDLRefMemberFunction">virtual bool  Render(NiTexture* pIn)</p>
+<p class="NDLRefMemberDescription">The virtual function Render must be implemented by every <span class="NDLSystemFont"><a href="egmSpark__PostEffect.htm">PostEffect</a></span>. </p>
+<p class="NDLRefMemberDetailedDescription">This function may render one or more full-screen passes. Render must contain one and only one final pass (see BeginFinalPass), and may not use an early pass (see BeginEarlyPass) after the final pass. </p>
+<p class="NDLRefMemberDetailedDescription"><span class="NDLSystemFont"><a href="egmSpark__PostEffect.htm#classegm_spark_1_1_post_effect_1a95e6a13b8ec9945b0948e71f86c458f0">BeginFinalPass()</a></span></p>
+<p class="NDLRefMemberDetailedDescription"><span class="NDLSystemFont"><a href="egmSpark__PostEffect.htm#classegm_spark_1_1_post_effect_1a1b207daf0558c9990c0df1b21a7ac3cf">BeginEarlyPass()</a></span></p>
+<p class="NDLRefMemberDetailedDescription"><span class="NDLSystemFont"><a href="egmSpark__PostEffect.htm#classegm_spark_1_1_post_effect_1affc010d22dc8e3a782a82af6fe3c0fc4">BeginAuxPass()</a></span></p>
+<p class="NDLRefMemberDetailedDescription"><span class="NDLSystemFont"><a href="egmSpark__PostEffect.htm#classegm_spark_1_1_post_effect_1a447207fa5df1ee39a2e1d4efc296300d">EndPass()</a></span></p>
+<p class="NDLRefMemberDetailedDescription"><span class="NDLSystemFont"><a href="egmSpark__PostEffect.htm#classegm_spark_1_1_post_effect_1abaa5a876671fbccab4e529fd3c9bd517">UseTexture()</a></span></p>
+<p class="NDLRefMemberDetailedDescription"><span class="NDLSystemFont"><a href="egmSpark__PostEffect.htm#classegm_spark_1_1_post_effect_1aa48a43d392662789e05d352584831b2d">UseMaterial()</a></span></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pIn</span></td>
+    <td>The fullscreen texture input to this post effect.</td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_post_effect_depth_of_field_1aca42c8ab859fb41591a14b4e577111bd"></a>
+<p class="NDLRefMemberFunction">virtual bool  Skip() const</p>
+<p class="NDLRefMemberDescription">Skip should return true if this effect pass can be skipped this frame. </p>
+<p class="NDLRefMemberDetailedDescription">This is a potential optimization; if an effect is enabled but its parameters are set in such a way that it will have no visible impact on the frame, Skip can be used to bypass its Render step automatically. The default implementation always returns false. </p>
+<p class="NDLRefMemberDetailedDescription">SetEnable() </p>
+
+<a name="classegm_spark_1_1_post_effect_depth_of_field_1a4997b0deb70ca0af4809d172fdaf6e3b"></a>
+<p class="NDLRefMemberFunction">void  SetDiagnostic(bool on)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_post_effect_depth_of_field_1a1dd10e34f3d046dbea8e4b02d9ca5990"></a>
+<p class="NDLRefMemberFunction">void  SetStrength(float strength)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_post_effect_depth_of_field_1a5b5507f596a8ef09488fdd67c448da7e"></a>
+<p class="NDLRefMemberFunction">void  SetNearStrength(float strength)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_post_effect_depth_of_field_1ade4be8c3a3a3b90b39afa0eaea8124c5"></a>
+<p class="NDLRefMemberFunction">void  SetFarStrength(float strength)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_post_effect_depth_of_field_1ae19a4a430a04a3da3e5517ce2b8dcb85"></a>
+<p class="NDLRefMemberFunction">void  SetNearBlurRange(<br/>float nearBlurBegin, <br/>float nearBlurEnd)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_post_effect_depth_of_field_1a4cd5f0e7dac368831a9252928cbafb65"></a>
+<p class="NDLRefMemberFunction">void  SetFarBlurRange(<br/>float farBlurBegin, <br/>float farBlurEnd)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_post_effect_depth_of_field_1a2357c6a065061d990be407ca93dc7f6b"></a>
+<p class="NDLRefMemberFunction">void  SetFocusDistance(<br/>float distance, <br/>float nearBegin, <br/>float focusWidth, <br/>float farWidth)</p>
+<p class="NDLRefMemberDescription">Utility function to setup a distance where you want the camera to be "in focus". </p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

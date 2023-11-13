@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::SimpleCamera</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::SimpleCamera</p>
+<p class="NDLRefParentage">: public <span class="NDLSystemFont"><a href="egmSpark__ICameraImpl.htm">egmSpark::ICameraImpl</a></span></p>
+
+
+<p class="NDLRefHeaderFile">&lt;SimpleCamera.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_simple_camera.gif" alt="Inheritance graph for egmSpark::SimpleCamera"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::SimpleCamera</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal"><span class="NDLSystemFont">SimpleCamera</span> is a camera that does respect movement settings, but does not subscribe to any particular control events to set them. </p>
+<p class="NDLNormal">That means that Lua or C++ code will need to pass along input events to get it to move around. There is a <span class="NDLSystemFont">SimpleCamera</span> builtin model that implements Lua scripts to tie this camera to the input analog stick. This camera will look at the camera subject entity if one is set. </p>
+
+<a name="public_attributes"></a>
+<p class="NDLRefHead1">Public Attributes</p>
+
+
+<a name="classegm_spark_1_1_simple_camera_1a6137b1191b19ed52d6b8a5ef03cf3f9d"></a>
+<p class="NDLRefMemberFunction">efd::Float32  m_speedFactor</p>
+<p class="NDLRefMemberDescription">Camera speed in units/sec. </p>
+<a name="construction_and_destruction"></a>
+<p class="NDLRefHead1">Construction and Destruction</p>
+
+
+<a name="classegm_spark_1_1_simple_camera_1a23a7fa29b5583c161aabe80b8999192b"></a>
+<p class="NDLRefMemberFunction">SimpleCamera()</p>
+<p class="NDLRefMemberDescription">Constructor. </p>
+
+<a name="classegm_spark_1_1_simple_camera_1a3e8416d9704017dfd6ae7ed2bc4954ba"></a>
+<p class="NDLRefMemberFunction">virtual ~SimpleCamera()</p>
+<p class="NDLRefMemberDescription">Destructor. </p>
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_simple_camera_1ac232dd9f39a28fdb4da3605fbb43f174"></a>
+<p class="NDLRefMemberFunction">virtual void  OnTick()</p>
+<p class="NDLRefMemberDescription">Process movement and other time-based phenomena. Called by <span class="NDLSystemFont"><a href="egmSpark__CameraService.htm">CameraService</a></span>. </p>
+
+<a name="classegm_spark_1_1_simple_camera_1afa9a6562ece57f27277ad2b0a5c7efc9"></a>
+<p class="NDLRefMemberFunction">efd::Point3  GetSubjectPosition() const</p>
+<p class="NDLRefMemberDescription">Get the camera subject's position. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The position. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_simple_camera_1adae3687230041294c665b1e3d28bcb46"></a>
+<p class="NDLRefMemberFunction">efd::Point3  GetSubjectRotation() const</p>
+<p class="NDLRefMemberDescription">Get the camera subject's rotation. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The rotation. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

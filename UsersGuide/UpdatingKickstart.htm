@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>Updating Kickstart from SVN</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Fresnel" />
+<meta name="Generator" content="Palimpsest by Emergent Game Technologies - http://emergent.net" />
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+    
+<link rel="stylesheet" href="../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+
+<!--(Begin Body)================================================================================-->
+<body lang="EN-US">
+<script src="../shared/NavScript.js" language="JavaScript1.2" type="text/javascript">
+</script><script language="JavaScript1.2" type="text/javascript">
+WriteNavLink(2);
+</script>
+
+<h1>Updating Kickstart from SVN</h1>
+
+<p>Emergent Labs distributes Spark and the Alpha Game sample through its Subversion (svn) server.
+Whenever Emergent pushes new code, levels, or bug fixes, they will go to the latest branch (
+<a href="https://labs.emergent.net/src/latest">https://labs.emergent.net/src/latest</a>).</p>
+
+<h3>To download Spark</h3>
+
+<ol>   
+    <li>If you have not already done so, download and install TortoiseSVN.</li>
+    <li>On your workstation, create a directory in which to download projects from Emergent Labs. 
+    For example, c:\Emergent\Labs.</li>
+    <li>Within c:\Emergent\Labs, create a checkout directory for Spark. For example, 
+    c:\Emergent\Labs\Spark.</li>
+    <li>In Windows Explorer, right-click the directory in which you want to download files. From the 
+    context menu, choose SVN Checkout.
+        <div class="FigureContainer">
+            <img alt="" src="CheckoutMenu.png" border="0" />
+            <p class="FigureCaption">Figure 1</p>
+        </div>
+    </li>
+    <li>In the Checkout dialog (Shown Below), enter the information as follows:
+    <ul>
+          <li>URL of repository = <a href ="https://labs.emergent.net/src/latest/Spark">
+          https://labs.emergent.net/src/latest/Spark</a></li>
+          <li>Checkout directory = c:\Emergent\Labs\Spark</li>
+          <li>Checkout Depth = Fully recursive</li>
+          <li>Revision = HEAD revision</li>
+    </ul>
+        <div class="FigureContainer">
+            <img alt="" src="CheckoutDialog.png" border="0" />
+            <p class="FigureCaption">Figure 2</p>
+        </div>
+    </li>
+    <li>Click OK.</li>
+    <li>In the Authentication dialog, enter your Pulse credentials. These are the user 
+    name and password that you use to access Forums and Support on Emergent's community portal.
+    Note that changing your password on Pulse also changes it for the svn server.
+        <div class="FigureContainer">
+            <img alt="" src="AuthenticationDialog.png" border="0" />
+            <p class="FigureCaption">Figure 3</p>
+        </div>
+    </li>
+</ol>
+
+<h3>To Download the AlphaGame Demo</h3>
+
+<ol>
+    <li>On your workstation, create a checkout directory for AlphaGame. For example, 
+    c:\Emergent\Labs\AlphaGame.</li>
+    <li>In the Checkout dialog, enter the information as follows:
+    <ul>
+        <li> URL of repository = <a href="https://labs.emergent.net/src/latest/AlphaGame">
+        https://labs.emergent.net/src/latest/AlphaGame</a></li>
+        <li>Checkout directory = your directory here (EXAMPLE: c:\Emergent\Labs\AlphaGame)</li>
+        <li>Checkout Depth = Fully recursive</li>
+        <li>Revision = HEAD revision</li>
+    </ul></li>
+</ol>
+
+<h3>To Download the DayDreamer Demo</h3>
+
+<ol>
+    <li>On your workstation, create a checkout directory for Multiplayer Game. For example, 
+    c:\Emergent\Labs\MultiplayerGame.</li>
+    <li>In the Checkout dialog, enter the information as follows:
+    <ul>
+        <li> URL of repository = <a href="https://labs.emergent.net/src/latest/DayDreamer">
+        https://labs.emergent.net/src/latest/DayDreamer</a></li>
+        <li>Checkout directory = your directory here (EXAMPLE: c:\Emergent\Labs\DayDreamer)</li>
+        <li>Checkout Depth = Fully recursive</li>
+        <li>Revision = HEAD revision</li>
+    </ul></li>
+</ol>
+
+<p>It is not a requirement for your AlphaGame or DayDreamer checkout directory to be within 
+the same parent directory as Spark.</p>
+
+<p>If you choose not to run the installer, then remember that you will need to install any required
+software and set any required environment variables manually before you will be able to run
+AlphaGame and DayDreamer.  Please see the <a href="../Home/home_intro.htm">Introduction</a>
+section for a detailed list of required prerequisites</p>
+
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

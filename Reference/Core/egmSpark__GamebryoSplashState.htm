@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::GamebryoSplashState</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::GamebryoSplashState</p>
+<p class="NDLRefParentage">: public <span class="NDLSystemFont"><a href="egmSpark__PreloaderState.htm">egmSpark::PreloaderState</a></span></p>
+
+
+<p class="NDLRefHeaderFile">&lt;GamebryoSplashState.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_gamebryo_splash_state.gif" alt="Inheritance graph for egmSpark::GamebryoSplashState"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::GamebryoSplashState</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">This state is responsible for displaying a gamebryo logo screen. </p>
+<p class="NDLNormal">It is subclassed from the <span class="NDLSystemFont"><a href="egmSpark__PreloaderState.htm">PreloaderState</a></span> so you may optionally specify a PreloaderModel to preload models while the splash screen is displayed.</p>
+<p class="NDLNormal">
+<p class="NDLNormal">Pass to the constructor the <span class="NDLSystemFont"><a href="egmSpark__GameState.htm">GameState</a></span> pointer of the game state to be called when this one is done </p></p>
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_gamebryo_splash_state_1a68e8a86585394053649424d3dc61f069"></a>
+<p class="NDLRefMemberFunction">GamebryoSplashState(<br/>efd::ServiceManager* pServiceMan, <br/><span class="NDLSystemFont"><a href="egmSpark__GameState.htm">GameState</a></span>* pNextGameState)</p>
+<p class="NDLRefMemberDescription">Constructor. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pServiceMan</span></td>
+    <td>The service manager that owns the <span class="NDLSystemFont"><a href="egmSpark__GameStateService.htm">GameStateService</a></span> that owns this state. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pNextGameState</span></td>
+    <td><span class="NDLSystemFont"><a href="egmSpark__GameState.htm">GameState</a></span> to call after this splash is complete </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_gamebryo_splash_state_1ad7fe0b6f1b089aedb4985f264c6f2e9d"></a>
+<p class="NDLRefMemberFunction">void  Setup(<br/>const efd::utf8string& logoPath, <br/>efd::Float32 minLogoTime = 5.0f, <br/>const efd::utf8string& preloaderModel = efd::utf8string::NullString())</p>
+<p class="NDLRefMemberDescription">A setup method to configure the splash state. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">logoPath</span></td>
+    <td>path to the splash screen </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">minLogoTime</span></td>
+    <td>Minimum time to display the logo before moving on to the next game state </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">preloaderModel</span></td>
+    <td>A model name used to create an entity. This model is expected to a SparkPreloader derived model and is used to specify assets to preload. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

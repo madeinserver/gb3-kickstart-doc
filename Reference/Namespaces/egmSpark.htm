@@ -1,0 +1,1936 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark Namespace</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark Namespace</p>
+
+
+
+
+
+<a name="helper_classes"></a>
+<p class="NDLRefHead1">Helper Classes</p>
+
+
+<a name="namespaceegm_spark_1a89acf2e59e3d4e500b7059c986f6d31f"></a>
+<p class="NDLRefMemberFunction">typedef efd::map&lt;egf::BehaviorID, efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../Core/egmSpark__IBehaviorInvoker.htm">egmSpark::IBehaviorInvoker</a></span>&gt;&gt;  BehaviorMap</p>
+<p class="NDLRefMemberDescription">Map to tie behavior IDs to the C++ behaviors that must get called. </p>
+<a name="constants"></a>
+<p class="NDLRefHead1">Constants</p>
+
+
+<a name="namespaceegm_spark_1a0b00fe8fdb03ba694788c0b1e610658c"></a>
+<p class="NDLRefMemberFunction">efd::Point3  FORWARD_VECTOR</p>
+<p class="NDLRefMemberDescription">The direction that is considered forward. </p>
+
+<a name="namespaceegm_spark_1aaed269484a74beece9a97c399565d917"></a>
+<p class="NDLRefMemberFunction">efd::Point3  UP_VECTOR</p>
+<p class="NDLRefMemberDescription">The direction that is considered up. </p>
+
+<a name="namespaceegm_spark_1a6f965398094afdcb2c1d1b7e54889899"></a>
+<p class="NDLRefMemberFunction">efd::Point3  DOWN_VECTOR</p>
+<p class="NDLRefMemberDescription">The direction that is considered down. </p>
+
+<a name="namespaceegm_spark_1a88fddce9af1e3c188fae69b262e92750"></a>
+<p class="NDLRefMemberFunction">efd::Point3  RIGHT_VECTOR</p>
+<p class="NDLRefMemberDescription">The direction that is considered right. </p>
+
+<a name="namespaceegm_spark_1a6f67431d70bb4906a1457da5d7b6cbfd"></a>
+<p class="NDLRefMemberFunction">efd::Point3  LEFT_VECTOR</p>
+<p class="NDLRefMemberDescription">The direction that is considered left. </p>
+<a name="helper_functions_for_manipulating_rotation,_position,_and_velocity"></a>
+<p class="NDLRefHead1">Helper functions for manipulating rotation, position, and velocity</p>
+
+
+<a name="namespaceegm_spark_1a35f1d2650ed5415e1bb94f18b702d020"></a>
+<p class="NDLRefMemberFunction">void  SetPosition(<br/>const egf::EntityID& id, <br/>const efd::Point3& position)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespaceegm_spark_1ae422a52733ea1d8008de64e14fe3a30d"></a>
+<p class="NDLRefMemberFunction">void  SetRotation(<br/>const egf::EntityID& id, <br/>const efd::Matrix3& rotation)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespaceegm_spark_1ad27733cac053101fa0cadb3bf96cf057"></a>
+<p class="NDLRefMemberFunction">void  SetEulerRotation(<br/>const egf::EntityID& id, <br/>const efd::Point3& rotation)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespaceegm_spark_1a45e8b82621d5a85d2bc759b6f3859aac"></a>
+<p class="NDLRefMemberFunction">efd::Point3  GetPosition(const egf::EntityID& id)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespaceegm_spark_1a6a37af42c7d3343185c3f94d39d4cc24"></a>
+<p class="NDLRefMemberFunction">efd::Matrix3  GetRotation(const egf::EntityID& id)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespaceegm_spark_1ab765200a17c7d9724ada6b674e7a6654"></a>
+<p class="NDLRefMemberFunction">efd::Point3  GetEulerRotation(const egf::EntityID& id)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespaceegm_spark_1aee2fe38ca6b6aece58d4320d58ca0c56"></a>
+<p class="NDLRefMemberFunction">void  SetPosition(<br/>egf::Entity* pEntity, <br/>const efd::Point3& position)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespaceegm_spark_1a169e01b8c999a769ada08d3e24448f80"></a>
+<p class="NDLRefMemberFunction">void  SetRotation(<br/>egf::Entity* pEntity, <br/>const efd::Matrix3& rotation)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespaceegm_spark_1a15044ecf55b1ef6708f049749835bbdb"></a>
+<p class="NDLRefMemberFunction">void  SetEulerRotation(<br/>egf::Entity* pEntity, <br/>const efd::Point3& rotation)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespaceegm_spark_1a5f33f3d49cc65e0448de008b1cfa8531"></a>
+<p class="NDLRefMemberFunction">efd::Point3  GetPosition(const egf::Entity* pEntity)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespaceegm_spark_1a4fe15f1084d863e9084bb47f73e0d59b"></a>
+<p class="NDLRefMemberFunction">efd::Matrix3  GetRotation(const egf::Entity* pEntity)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespaceegm_spark_1a9235acf046780563c98d5c8b2148511f"></a>
+<p class="NDLRefMemberFunction">efd::Point3  GetEulerRotation(const egf::Entity* pEntity)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespaceegm_spark_1a22ba124f62ecafb74487bb206a00b718"></a>
+<p class="NDLRefMemberFunction">bool  SetInitialLinearVelocity(<br/>egf::Entity* pEntity, <br/>const efd::Point3& linVelocity)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespaceegm_spark_1a4669fe7628415c84992f0693eeb5a7b4"></a>
+<p class="NDLRefMemberFunction">bool  SetInitialAngularVelocity(<br/>egf::Entity* pEntity, <br/>const efd::Point3& angVelocity)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespaceegm_spark_1a7f9fb93058038ff53baa1589f973a1d1"></a>
+<p class="NDLRefMemberFunction">bool  SetVelocity(<br/>egf::Entity* pEntity, <br/>const efd::Point3& velocity)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespaceegm_spark_1ab3d6154d194ca1a7369d4c026a24c6c2"></a>
+<p class="NDLRefMemberFunction">bool  SetDesiredVelocity(<br/>egf::Entity* pEntity, <br/>const efd::Point3& velocity)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespaceegm_spark_1a4eb5ac353745fbb85d6f7ccc86269750"></a>
+<p class="NDLRefMemberFunction">efd::Point3  GetVelocity(const egf::Entity* pEntity)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespaceegm_spark_1af6e42f54ed3f62e2da5b802f900239c7"></a>
+<p class="NDLRefMemberFunction">efd::Point3  GetDesiredVelocity(const egf::Entity* pEntity)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespaceegm_spark_1a92f5aff87bae44d69ed79e22c8f4bc92"></a>
+<p class="NDLRefMemberFunction">bool  SetReplicatedPosition(<br/>egf::Entity* pEntity, <br/>const efd::Point3& positionToBeReplicated)</p>
+<p class="NDLRefMemberFunction"></p>
+<a name="private_types"></a>
+<p class="NDLRefHead1">Private Types</p>
+
+
+<a name="namespaceegm_spark_1ac809e41ed1422ec13f269131da4228c4"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../Core/egmSpark__AssertDestination.htm">AssertDestination</a></span>&gt;  AssertDestinationPtr</p>
+<p class="NDLRefMemberDescription">A smart pointer (reference counting, self deleting pointer) for the <span class="NDLSystemFont"><a href="../Core/egmSpark__AssertDestination.htm">AssertDestination</a></span> class. </p>
+
+<a name="namespaceegm_spark_1a89e1996ce86bbe842e38144a79edbf32"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../Core/egmSpark__SparkAttachment.htm">SparkAttachment</a></span>&gt;  AttachmentBuiltInModelPtr</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespaceegm_spark_1a7ed97064a1769cc94ef8670ec1d98b39"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../Core/egmSpark__BuiltinUpdateService.htm">BuiltinUpdateService</a></span>&gt;  BuiltinUpdateServicePtr</p>
+<p class="NDLRefMemberDescription">A SmartPointer for the <span class="NDLSystemFont"><a href="../Core/egmSpark__BuiltinUpdateService.htm">BuiltinUpdateService</a></span> class. </p>
+
+<a name="namespaceegm_spark_1af8cfe0076c30f9913cf8bebe361b4f70"></a>
+<p class="NDLRefMemberFunction">typedef efd::map&lt;const efd::utf8string, <span class="NDLSystemFont"><a href="../Core/egmSpark__ICamera.htm">egmSpark::ICamera</a></span>*&gt;  StringCameraMap</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespaceegm_spark_1ab72c7549265a8d8adc2265d19561cfea"></a>
+<p class="NDLRefMemberFunction">typedef StringCameraMap::iterator  StringCameraMap_Iter</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespaceegm_spark_1a626d8397dc48fdd133599db5162b1c76"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../Core/egmSpark__CameraService.htm">CameraService</a></span>&gt;  CameraServicePtr</p>
+<p class="NDLRefMemberDescription">A smartPointer for the <span class="NDLSystemFont"><a href="../Core/egmSpark__CameraService.htm">egmSpark::CameraService</a></span>. </p>
+
+<a name="namespaceegm_spark_1a7021e44233dd65557902fb5146cf8422"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../Core/egmSpark__BaseEffect.htm">BaseEffect</a></span>&gt;  BaseEffectPtr</p>
+<p class="NDLRefMemberDescription">A SmartPointer for the <span class="NDLSystemFont"><a href="../Core/egmSpark__BaseEffect.htm">BaseEffect</a></span> class. </p>
+
+<a name="namespaceegm_spark_1a447e0f7ff85daa5a804b539765c7085d"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../Core/egmSpark__KFMEffect.htm">KFMEffect</a></span>&gt;  KFMEffectPtr</p>
+<p class="NDLRefMemberDescription">A SmartPointer for the <span class="NDLSystemFont"><a href="../Core/egmSpark__KFMEffect.htm">KFMEffect</a></span> class. </p>
+
+<a name="namespaceegm_spark_1a47af3560740c379529b2e21d85ff5fca"></a>
+<p class="NDLRefMemberFunction">typedef efd::list&lt;<span class="NDLSystemFont"><a href="../Namespaces/egmSpark.htm#namespaceegm_spark_1a7021e44233dd65557902fb5146cf8422">BaseEffectPtr</a></span>&gt;  EffectList</p>
+<p class="NDLRefMemberDescription">A list of <span class="NDLSystemFont"><a href="../Core/egmSpark__BaseEffect.htm">BaseEffect</a></span> smart pointers. </p>
+
+<a name="namespaceegm_spark_1a60388a9ddea69770111c154668607bc7"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../Core/egmSpark__EffectCacheEntry.htm">EffectCacheEntry</a></span>&gt;  EffectCacheEntryPtr</p>
+<p class="NDLRefMemberDescription">A SmartPointer for the <span class="NDLSystemFont"><a href="../Core/egmSpark__EffectCacheEntry.htm">EffectCacheEntry</a></span> class. </p>
+
+<a name="namespaceegm_spark_1ac6a652549e74d9eaf806b95af18e8b98"></a>
+<p class="NDLRefMemberFunction">typedef efd::map&lt;efd::utf8string, <span class="NDLSystemFont"><a href="../Namespaces/egmSpark.htm#namespaceegm_spark_1a60388a9ddea69770111c154668607bc7">EffectCacheEntryPtr</a></span>&gt;  EffectMap</p>
+<p class="NDLRefMemberDescription">A map from string name to <span class="NDLSystemFont"><a href="../Core/egmSpark__EffectCacheEntry.htm">EffectCacheEntry</a></span> smart pointer. </p>
+
+<a name="namespaceegm_spark_1a54d66dca7193f8012d5f4324565ee278"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../Core/egmSpark__FilteredAssetLocator.htm">FilteredAssetLocator</a></span>&gt;  FilteredAssetLocatorPtr</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespaceegm_spark_1ae1277f94a981650fb8529906f1bbbd33"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../Core/egmSpark__FreeCamera.htm">FreeCamera</a></span>&gt;  FreeCameraPtr</p>
+<p class="NDLRefMemberDescription">A SmartPointer for the <span class="NDLSystemFont"><a href="../Core/egmSpark__FreeCamera.htm">FreeCamera</a></span> class. </p>
+
+<a name="namespaceegm_spark_1a66c09b5ea81f1f0a829efbf3203fedde"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../Core/egmSpark__GameState.htm">GameState</a></span>&gt;  GameStatePtr</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespaceegm_spark_1ac2d19dc0f84e124ee21013562f0eea64"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../Core/egmSpark__GameStateService.htm">GameStateService</a></span>&gt;  GameStateServicePtr</p>
+<p class="NDLRefMemberDescription">A SmartPointer for the <span class="NDLSystemFont"><a href="../Core/egmSpark__GameStateService.htm">GameStateService</a></span> class. </p>
+
+<a name="namespaceegm_spark_1af29db2ed9dcd8ba3fd5da97a69558778"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../Core/egmSpark__HUDService.htm">HUDService</a></span>&gt;  HUDServicePtr</p>
+<p class="NDLRefMemberDescription">A SmartPointer for the <span class="NDLSystemFont"><a href="../Core/egmSpark__HUDService.htm">HUDService</a></span> class. </p>
+
+<a name="namespaceegm_spark_1a573a80a127b4b1099bf049dbec1e022e"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../Core/egmSpark__ICamera.htm">ICamera</a></span>&gt;  ICameraPtr</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespaceegm_spark_1a919916b55dfd0ce638fd84747e27cec8"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../Core/egmSpark__ICameraImpl.htm">ICameraImpl</a></span>&gt;  ICameraImplPtr</p>
+<p class="NDLRefMemberDescription">A SmartPointer for the <span class="NDLSystemFont"><a href="../Core/egmSpark__ICameraImpl.htm">ICameraImpl</a></span> interface. </p>
+
+<a name="namespaceegm_spark_1ac4d8f82718d523558521b69a38c4cb65"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../Core/egmSpark__LevelService.htm">LevelService</a></span>&gt;  LevelServicePtr</p>
+<p class="NDLRefMemberDescription">A SmartPointer for the <span class="NDLSystemFont"><a href="../Core/egmSpark__LevelService.htm">LevelService</a></span> class. </p>
+
+<a name="namespaceegm_spark_1a04fe4e97167cdd500a5f6063d0db2b7b"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../Core/egmSpark__LogoSplash.htm">LogoSplash</a></span>&gt;  LogoSplashPtr</p>
+<p class="NDLRefMemberDescription">A SmartPointer for the <span class="NDLSystemFont"><a href="../Core/egmSpark__LogoSplash.htm">LogoSplash</a></span> class. </p>
+
+<a name="namespaceegm_spark_1a439c1b0ba41f2080f724d81d7f5f0865"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../Core/egmSpark__ManualOcclusionService.htm">ManualOcclusionService</a></span>&gt;  ManualOcclusionServicePtr</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespaceegm_spark_1afe655b88aa4ee9b960809948b0b3d130"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../Core/egmSpark__MovementHandler.htm">MovementHandler</a></span>&gt;  MovementHandlerPtr</p>
+<p class="NDLRefMemberDescription">A SmartPointer for the <span class="NDLSystemFont"><a href="../Core/egmSpark__MovementHandler.htm">MovementHandler</a></span> class. </p>
+
+<a name="namespaceegm_spark_1a37e69a59a4ab6555852db1d45cd93f17"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../Core/egmSpark__MuzzleFlashManager.htm">MuzzleFlashManager</a></span>&gt;  MuzzleFlashManagerPtr</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespaceegm_spark_1aa28f2cca8029c35c248f1f8310f05f4c"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../Core/egmSpark__OverTheShoulderCamera.htm">OverTheShoulderCamera</a></span>&gt;  OverTheShoulderCameraPtr</p>
+<p class="NDLRefMemberDescription">A SmartPointer for the <span class="NDLSystemFont"><a href="../Core/egmSpark__OverTheShoulderCamera.htm">OverTheShoulderCamera</a></span> class. </p>
+
+<a name="namespaceegm_spark_1a9698f9351f10ca83bcf0257f3648841d"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../Core/egmSpark__PhysXHelperService.htm">PhysXHelperService</a></span>&gt;  PhysXHelperServicePtr</p>
+<p class="NDLRefMemberDescription">A smartPointer for the <span class="NDLSystemFont"><a href="../Core/egmSpark__PhysXHelperService.htm">PhysXHelperService</a></span> class. </p>
+
+<a name="namespaceegm_spark_1ae3c74b1a1e3fbf165d2ff598aaf21cfa"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../Core/egmSpark__PhysXSceneHandle.htm">PhysXSceneHandle</a></span>&gt;  PhysXSceneHandlePtr</p>
+<p class="NDLRefMemberDescription">A SmartPointer for the <span class="NDLSystemFont"><a href="../Core/egmSpark__PhysXSceneHandle.htm">PhysXSceneHandle</a></span> class. </p>
+
+<a name="namespaceegm_spark_1aa2360c5e76c8e70b57de9cdd2d9c8ac5"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../Core/egmSpark__PreloadHelper.htm">PreloadHelper</a></span>&gt;  PreloadHelperPtr</p>
+<p class="NDLRefMemberDescription">A SmartPointer for the <span class="NDLSystemFont"><a href="../Core/egmSpark__PreloadHelper.htm">PreloadHelper</a></span> class. </p>
+
+<a name="namespaceegm_spark_1a0dfa4afe07cfca01ac3597fc19808996"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../Core/egmSpark__PreloadItem.htm">PreloadItem</a></span>&gt;  PreloadItemPtr</p>
+<p class="NDLRefMemberDescription">A SmartPointer for the <span class="NDLSystemFont"><a href="../Core/egmSpark__PreloadItem.htm">PreloadItem</a></span> class. </p>
+
+<a name="namespaceegm_spark_1a4e51dc997a7eb7cd350c18e5d9db6ea6"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../Core/egmSpark__PreloadGroup.htm">PreloadGroup</a></span>&gt;  PreloadGroupPtr</p>
+<p class="NDLRefMemberDescription">A SmartPointer for the <span class="NDLSystemFont"><a href="../Core/egmSpark__PreloadGroup.htm">PreloadGroup</a></span> class. </p>
+
+<a name="namespaceegm_spark_1a754d41a131c3da4908e7a73fb3e6ea11"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../Core/egmSpark__ScreenText.htm">ScreenText</a></span>&gt;  ScreenTextPtr</p>
+<p class="NDLRefMemberDescription">A SmartPointer for the <span class="NDLSystemFont"><a href="../Core/egmSpark__ScreenText.htm">ScreenText</a></span> class. </p>
+
+<a name="namespaceegm_spark_1a68045cd4902ee97788b5009f1602caa8"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../Core/egmSpark__ScreenTextureClick.htm">ScreenTextureClick</a></span>&gt;  ScreenTextureClickPtr</p>
+<p class="NDLRefMemberDescription">A SmartPointer for the <span class="NDLSystemFont"><a href="../Core/egmSpark__ScreenTextureClick.htm">ScreenTextureClick</a></span> class. </p>
+
+<a name="namespaceegm_spark_1a597c3a23f1c9f73c4246fdb3c9aa9962"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../Core/egmSpark__CameraShake.htm">CameraShake</a></span>&gt;  CameraShakePtr</p>
+<p class="NDLRefMemberDescription">A SmartPointer for the <span class="NDLSystemFont"><a href="../Core/egmSpark__CameraShake.htm">CameraShake</a></span> class. </p>
+
+<a name="namespaceegm_spark_1ac43791e39893c65f635840f55b8ff7c3"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../Core/egmSpark__SimpleCamera.htm">SimpleCamera</a></span>&gt;  SimpleCameraPtr</p>
+<p class="NDLRefMemberDescription">A SmartPointer for the <span class="NDLSystemFont"><a href="../Core/egmSpark__SimpleCamera.htm">SimpleCamera</a></span> class. </p>
+
+<a name="namespaceegm_spark_1ab2bfe52b76304b2cd06f8f6bd1a0058e"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../Core/egmSpark__SparkAnimationService.htm">SparkAnimationService</a></span>&gt;  SparkAnimationServicePtr</p>
+<p class="NDLRefMemberDescription">A SmartPointer for the <span class="NDLSystemFont"><a href="../Core/egmSpark__SparkAnimationService.htm">SparkAnimationService</a></span> class. </p>
+
+<a name="namespaceegm_spark_1ac59a1ff70a1dd8d2497c0e428d8957f5"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../Core/egmSpark__PhysXSettingsScreen.htm">PhysXSettingsScreen</a></span>&gt;  PhysXSettingsScreenPtr</p>
+<p class="NDLRefMemberDescription">A SmartPointer for the <span class="NDLSystemFont"><a href="../Core/egmSpark__PhysXSettingsScreen.htm">PhysXSettingsScreen</a></span> class. </p>
+
+<a name="namespaceegm_spark_1a1938f5061f2c9d9750e9eadba12ecc3a"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../Core/egmSpark__SparkDebugMenu.htm">SparkDebugMenu</a></span>&gt;  SparkDebugMenuPtr</p>
+<p class="NDLRefMemberDescription">A SmartPointer for the <span class="NDLSystemFont"><a href="../Core/egmSpark__SparkDebugMenu.htm">SparkDebugMenu</a></span> class. </p>
+
+<a name="namespaceegm_spark_1add31d5008ac927d6b8a3240c05bab091"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../Core/egmSpark__ServiceInitInfo.htm">ServiceInitInfo</a></span>&gt;  ServiceInitInfoPtr</p>
+<p class="NDLRefMemberDescription">A SmartPointer for the <span class="NDLSystemFont"><a href="../Core/egmSpark__ServiceInitInfo.htm">ServiceInitInfo</a></span> class. </p>
+
+<a name="namespaceegm_spark_1a5a8d65eae99ede6b5e843b13037a4f9c"></a>
+<p class="NDLRefMemberFunction">typedef efd::map&lt;efd::ClassID, <span class="NDLSystemFont"><a href="../Namespaces/egmSpark.htm#namespaceegm_spark_1add31d5008ac927d6b8a3240c05bab091">ServiceInitInfoPtr</a></span>&gt;  ServiceInitMap</p>
+<p class="NDLRefMemberDescription">This type holds a map of ClassIDs to the initialization information required to initialize that class. </p>
+
+<a name="namespaceegm_spark_1a545bb8f1567825c8b867b258a349bb12"></a>
+<p class="NDLRefMemberFunction">typedef void(*  ShutdownHandler)(void *userdata)</p>
+<p class="NDLRefMemberDescription">Shutdown handler function type. </p>
+<p class="NDLRefMemberDetailedDescription">Used as a parameter to InstallShutdownHandler. </p>
+
+<a name="namespaceegm_spark_1a4b2dcd8d00bec1fdd7332a640e140c5c"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../Core/egmSpark__ShutdownHandlerEntry.htm">ShutdownHandlerEntry</a></span>&gt;  ShutdownHandlerEntryPtr</p>
+<p class="NDLRefMemberDescription">A SmartPointer for the <span class="NDLSystemFont"><a href="../Core/egmSpark__ShutdownHandlerEntry.htm">ShutdownHandlerEntry</a></span> class. </p>
+
+<a name="namespaceegm_spark_1a940ce7a7c676427f3c1cc74007a14111"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../Core/egmSpark__SparkMainService.htm">SparkMainService</a></span>&gt;  SparkMainServicePtr</p>
+<p class="NDLRefMemberDescription">A SmartPointer for the <span class="NDLSystemFont"><a href="../Core/egmSpark__SparkMainService.htm">SparkMainService</a></span> class. </p>
+
+<a name="namespaceegm_spark_1a6f62e44155ab6e8086b9015e9152d70c"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../Core/egmSpark__SparkVisualTrackerService.htm">SparkVisualTrackerService</a></span>&gt;  SparkVisualTrackerServicePtr</p>
+<p class="NDLRefMemberDescription">A SmartPointer for the <span class="NDLSystemFont"><a href="../Core/egmSpark__SparkVisualTrackerService.htm">SparkVisualTrackerService</a></span> class. </p>
+
+<a name="namespaceegm_spark_1ae4225bbffc48addd0abb6e2bdc8c0f76"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../Core/egmSpark__SpawnerService.htm">SpawnerService</a></span>&gt;  SpawnerServicePtr</p>
+<p class="NDLRefMemberDescription">A SmartPointer for the <span class="NDLSystemFont"><a href="../Core/egmSpark__SpawnerService.htm">SpawnerService</a></span> class. </p>
+
+<a name="namespaceegm_spark_1af720c628ebb1bd6ff0a3be554030a468"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../Core/egmSpark__SwapSkinHelper.htm">SwapSkinHelper</a></span>&gt;  SwapSkinHelperPtr</p>
+<p class="NDLRefMemberDescription">A SmartPointer for the <span class="NDLSystemFont"><a href="../Core/egmSpark__SwapSkinHelper.htm">SwapSkinHelper</a></span> class. </p>
+
+<a name="namespaceegm_spark_1ab5c4de480af46cb7cd4be7a7bd1d7dc7"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../Core/egmSpark__TPRCamera.htm">TPRCamera</a></span>&gt;  TPRCameraPtr</p>
+<p class="NDLRefMemberDescription">A SmartPointer for the <span class="NDLSystemFont"><a href="../Core/egmSpark__TPRCamera.htm">TPRCamera</a></span> class. </p>
+
+<a name="namespaceegm_spark_1a3d1edfa4f076af43650dddc0a79e7137"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../Core/egmSpark__UIGameState.htm">UIGameState</a></span>&gt;  UIGameStatePtr</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespaceegm_spark_1acccb51d56365fa0fa7311fb59a5867ea"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../Core/egmSpark__UIManager.htm">UIManager</a></span>&gt;  UIManagerPtr</p>
+<p class="NDLRefMemberDescription">A SmartPointer for the <span class="NDLSystemFont"><a href="../Core/egmSpark__UIManager.htm">UIManager</a></span> class. </p>
+
+<a name="namespaceegm_spark_1aa204454ed898e19b60bad043e82fb530"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../Core/egmSpark__UIMenu.htm">UIMenu</a></span>&gt;  UIMenuPtr</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespaceegm_spark_1a572da4f66aea519f35715bdcc1808f96"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../Core/egmSpark__WalkableMaterialChangeMessage.htm">WalkableMaterialChangeMessage</a></span>&gt;  WalkableMaterialChangeMessagePtr</p>
+<p class="NDLRefMemberDescription">A SmartPointer for the <span class="NDLSystemFont"><a href="../Core/egmSpark__WalkableMaterialChangeMessage.htm">WalkableMaterialChangeMessage</a></span> class. </p>
+
+<a name="namespaceegm_spark_1a4a5d3202c6e0b5ed15be2654c4c95787"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../Core/egmSpark__WalkableService.htm">WalkableService</a></span>&gt;  WalkableServicePtr</p>
+<p class="NDLRefMemberDescription">A SmartPointer for the <span class="NDLSystemFont"><a href="../Core/egmSpark__WalkableService.htm">WalkableService</a></span> class. </p>
+
+<a name="namespaceegm_spark_1a002113fbf630c5157635c234850561c6"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../PostEffects/egmSpark__PostEffect.htm">PostEffect</a></span>&gt;  PostEffectPtr</p>
+<p class="NDLRefMemberDescription">A SmartPointer for the <span class="NDLSystemFont"><a href="../PostEffects/egmSpark__PostEffect.htm">PostEffect</a></span> class. </p>
+
+<a name="namespaceegm_spark_1a02a09417f0546a7caf0bbd3adf30d5d6"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../PostEffects/egmSpark__PostEffectBloom.htm">PostEffectBloom</a></span>&gt;  PostEffectBloomPtr</p>
+<p class="NDLRefMemberDescription">A SmartPointer for the <span class="NDLSystemFont"><a href="../PostEffects/egmSpark__PostEffectBloom.htm">PostEffectBloom</a></span> class. </p>
+
+<a name="namespaceegm_spark_1af00eafa09ab8c0be6ec45369eafc876f"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../PostEffects/egmSpark__PostEffectColorCorrect.htm">PostEffectColorCorrect</a></span>&gt;  PostEffectColorCorrectPtr</p>
+<p class="NDLRefMemberDescription">A SmartPointer for the <span class="NDLSystemFont"><a href="../PostEffects/egmSpark__PostEffectColorCorrect.htm">PostEffectColorCorrect</a></span> class. </p>
+
+<a name="namespaceegm_spark_1ad1b81ad9287394a0135af74126db8ee0"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../PostEffects/egmSpark__PostEffectDepthOfField.htm">PostEffectDepthOfField</a></span>&gt;  PostEffectDepthOfFieldPtr</p>
+<p class="NDLRefMemberDescription">A SmartPointer for the <span class="NDLSystemFont"><a href="../PostEffects/egmSpark__PostEffectDepthOfField.htm">PostEffectDepthOfField</a></span> class. </p>
+
+<a name="namespaceegm_spark_1a2b8c59d331c3b4591ebf71815e20fb63"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../PostEffects/egmSpark__IPostEffectLibrary.htm">IPostEffectLibrary</a></span>&gt;  IPostEffectLibraryPtr</p>
+<p class="NDLRefMemberDescription">A SmartPointer for the <span class="NDLSystemFont"><a href="../PostEffects/egmSpark__IPostEffectLibrary.htm">IPostEffectLibrary</a></span> class. </p>
+
+<a name="namespaceegm_spark_1a5fd3efa979652098383000acbfaadca5"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../PostEffects/egmSpark__PostEffectsDepthMaterial.htm">PostEffectsDepthMaterial</a></span>&gt;  PostEffectsDepthMaterialPtr</p>
+<p class="NDLRefMemberDescription">A SmartPointer for the <span class="NDLSystemFont"><a href="../PostEffects/egmSpark__PostEffectsDepthMaterial.htm">PostEffectsDepthMaterial</a></span> class. </p>
+
+<a name="namespaceegm_spark_1a5d52faf99bf67b4bc006bcc10cbdcedc"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../PostEffects/egmSpark__PostEffectsService.htm">PostEffectsService</a></span>&gt;  PostEffectsServicePtr</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespaceegm_spark_1a9e5e88e8135a2f357dc2cd5e4047e959"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../PostEffects/egmSpark__PostEffectsStep.htm">PostEffectsStep</a></span>&gt;  PostEffectsStepPtr</p>
+<p class="NDLRefMemberDescription">A SmartPointer for the <span class="NDLSystemFont"><a href="../PostEffects/egmSpark__PostEffectsStep.htm">PostEffectsStep</a></span> class. </p>
+<a name="private_attributes"></a>
+<p class="NDLRefHead1">Private Attributes</p>
+<a name="namespaceegm_spark_1ac02975592439b4d08d80b3092651a8be"></a>
+<p class=NDLRefHead2>egmSpark::eAimingMode</p>
+
+
+
+
+<!--(Table)=========================================================-->
+<div class="ReferenceTable">
+<table>
+  <thead>
+	<tr>
+        <th>Name</th>
+	    <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">AM_STAND</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">AM_CROUCH</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">AM_WALK</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">AM_RUN</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">AM_CROUCHWALK</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">AM_CROUCHRUN</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">AM_COUNT</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">AM_INVALID</span></td>
+    <td>&nbsp;</td>
+</tr>
+
+  </tbody>
+</table>
+</div>
+
+<a name="namespaceegm_spark_1aec37436444c0d418f98a735484c83dff"></a>
+<p class=NDLRefHead2>egmSpark::ePhysXCollisionGroup</p>
+
+
+<p class="NDLRefMemberDescription">Default collision groups. </p>
+
+
+<!--(Table)=========================================================-->
+<div class="ReferenceTable">
+<table>
+  <thead>
+	<tr>
+        <th>Name</th>
+	    <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">COLLISION_GROUP_DEFAULT</span></td>
+    <td>Default collision group. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">COLLISION_GROUP_TERRAIN</span></td>
+    <td>Collision group for terrain. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">COLLISION_GROUP_RAGDOLL</span></td>
+    <td>Collision group for ragdolls. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">COLLISION_GROUP_PLAYER_CHARACTER</span></td>
+    <td>Collision group for player characters. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">COLLISION_GROUP_STATIC</span></td>
+    <td>Collision group for static objects. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">COLLISION_GROUP_PROP</span></td>
+    <td>Collision group for props. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">COLLISION_GROUP_VEHICLE</span></td>
+    <td>Collision group for vehicles. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">COLLISION_GROUP_PROJECTILE</span></td>
+    <td>Collision group for projectiles. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">COLLISION_GROUP_TRIGGER</span></td>
+    <td>Collision group for triggers. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">COLLISION_GROUP_NPC</span></td>
+    <td>Collision group for NPCs. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">COLLISION_GROUP_NOPUSH</span></td>
+    <td>Objects in this collision group cannot be pushed, except by a BOSS character. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">COLLISION_GROUP_PICKUP</span></td>
+    <td>Objects in this collision group cannot be pushed, no collision with players. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">COLLISION_GROUP_AI_CHARACTER</span></td>
+    <td>Same as Player character above, but for AI. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">COLLISION_GROUP_BOSS_CHARACTER</span></td>
+    <td>Collision group specialized for a boss character. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">COLLISION_GROUP_NOPUSH_BOSS</span></td>
+    <td>Objects in this collision group cannot be pushed by a BOSS. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">COLLISION_GROUP_COUNT</span></td>
+    <td>Stores the number of items in this enum. </td>
+</tr>
+
+  </tbody>
+</table>
+</div>
+
+<a name="namespaceegm_spark_1a1c04b964fb9d1d8f86940a8f72d4113c"></a>
+<p class=NDLRefHead2>egmSpark::ePhysXCollisionGroupMask</p>
+
+
+<p class="NDLRefMemberDescription">Default collision group masks. </p>
+
+
+<!--(Table)=========================================================-->
+<div class="ReferenceTable">
+<table>
+  <thead>
+	<tr>
+        <th>Name</th>
+	    <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">COLLISION_MASK_DEFAULT</span></td>
+    <td>Mask for default collision group. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">COLLISION_MASK_TERRAIN</span></td>
+    <td>Mask for terrain collision group. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">COLLISION_MASK_RAGDOLL</span></td>
+    <td>Mask for ragdoll collision group. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">COLLISION_MASK_PLAYER_CHARACTER</span></td>
+    <td>Mask for player character collision group. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">COLLISION_MASK_STATIC</span></td>
+    <td>Mask for static collision group. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">COLLISION_MASK_PROP</span></td>
+    <td>Mask for prop collision group. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">COLLISION_MASK_VEHICLE</span></td>
+    <td>Mask for vehicle collision group. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">COLLISION_MASK_PROJECTILE</span></td>
+    <td>Mask for projectile collision group. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">COLLISION_MASK_TRIGGER</span></td>
+    <td>Mask for trigger collision group. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">COLLISION_MASK_NPC</span></td>
+    <td>Mask for NPC collision group. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">COLLISION_MASK_NOPUSH</span></td>
+    <td>Mask for no-push collision group. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">COLLISION_MASK_PICKUP</span></td>
+    <td>Mask for pickup collision group. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">COLLISION_MASK_AI_CHARACTER</span></td>
+    <td>Mask for AI character collision group. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">COLLISION_MASK_BOSS_CHARACTER</span></td>
+    <td>Mask for boss collision group. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">COLLISION_MASK_NOPUSH_BOSS</span></td>
+    <td>Mask for collision group that contains objects that cannot be pushed by bosses. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">COLLISION_MASK_ALL</span></td>
+    <td>Mask for all collision groups. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">COLLISION_MASK_EXPLOSION_IMMUNE</span></td>
+    <td>Mask combining collision groups that are immune from explosions. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">COLLISION_MASK_BULLET</span></td>
+    <td>Mask combining collision groups for ammunition. </td>
+</tr>
+
+  </tbody>
+</table>
+</div>
+
+<a name="namespaceegm_spark_1a1fdbc297f110e24197e853a27001643b"></a>
+<p class=NDLRefHead2>egmSpark::eDefaultServicePriorities</p>
+
+
+<p class="NDLRefMemberDescription">Ignite has some different default service priorities than the services define. </p>
+
+<p class="NDLRefMemberDetailedDescription">This enum defines the Ignite priorities. </p>
+
+<!--(Table)=========================================================-->
+<div class="ReferenceTable">
+<table>
+  <thead>
+	<tr>
+        <th>Name</th>
+	    <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">kServPrioFinishSimulationService</span></td>
+    <td>Finish simulating before Scheduler ticks (5500). </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kServPrioPhysXUpdateDestinationsService</span></td>
+    <td>Follow FinishSimulationService. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kServPrioVisualTrackerService</span></td>
+    <td>Set priority to match the Gamebryo Visual Tracker. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kServPrioBuiltinUpdateService</span></td>
+    <td>Update built-ins before AnimationService ticks (1800). </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kServPrioPhysXHelperService</span></td>
+    <td>Tick <span class="NDLSystemFont"><a href="../Core/egmSpark__PhysXHelperService.htm">PhysXHelperService</a></span> before Propservice ticks (1740). </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kServPrioSparkCameraService</span></td>
+    <td>Tick camera after SceneGraphService ticks (1500). </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kServPrioGFxService</span></td>
+    <td>Tick GFx before RenderService ticks (1100). </td>
+</tr>
+
+  </tbody>
+</table>
+</div>
+
+
+
+<a name="namespaceegm_spark_1ac693300ef0b502f8f75aa2b9412121f5"></a>
+<p class="NDLRefMemberFunction">static const efd::UInt32  USE_DEFAULT_SERVICE_PRIORITY</p>
+<p class="NDLRefMemberDescription">Special value used by various Spark initialize methods to indicate that the default priority as specified by ISystemService::GetDefaultPriority() should be used. </p>
+<a name="private_methods"></a>
+<p class="NDLRefHead1">Private Methods</p>
+
+
+<a name="namespaceegm_spark_1af340fdf161a610a009b101413a160037"></a>
+<p class="NDLRefMemberFunction">template &lt;typename T  &gt; efd::Bool  GetAnimSetMapPropertyValue(<br/>const egf::FlatModel* pAnimSet, <br/>egf::PropertyID propertyID, <br/>const efd::utf8string& key, <br/>T& value)</p>
+<p class="NDLRefMemberDescription">Utility function to return back an a animation set property from a map via an animation set flat model. </p>
+
+<a name="namespaceegm_spark_1ad5ad937abc897ea3637f595b09a8ec6c"></a>
+<p class="NDLRefMemberFunction">template &lt;typename T  &gt; efd::Bool  GetAnimSetPropertyValue(<br/>const egf::FlatModel* pFlatModel, <br/>egf::PropertyID propertyID, <br/>T& value)</p>
+<p class="NDLRefMemberDescription">Utility function to return back an a animation set property from an animation set flat model. </p>
+
+<a name="namespaceegm_spark_1ac6578da4463ce78e2527c419122f1deb"></a>
+<p class="NDLRefMemberFunction">template &lt;typename T  &gt; efd::Bool  GetAnimSetPropertyValue(<br/>const egf::FlatModel* pFlatModel, <br/>const efd::utf8string& propertyName, <br/>T& value)</p>
+<p class="NDLRefMemberDescription">Utility function to return back an a animation set property from an animation set flat model. </p>
+
+<a name="namespaceegm_spark_1a020901bf9fbbccad538a69f68738d552"></a>
+<p class="NDLRefMemberFunction">egf::Entity*  GetAnimStateOwner(const egf::EntityID& animStateID)</p>
+<p class="NDLRefMemberDescription">Returns back the entity that owns the given animation set. </p>
+
+<a name="namespaceegm_spark_1ad80c34d7ad9d7420f68b7396aa4f7dcd"></a>
+<p class="NDLRefMemberFunction">egf::EntityID  GetAnimStateOwnerID(const egf::EntityID& animStateID)</p>
+<p class="NDLRefMemberDescription">Returns back the entity ID of the entity that owns the given animation set. </p>
+
+<a name="namespaceegm_spark_1a200f6fe2fefd83e394d63df7879b93b9"></a>
+<p class="NDLRefMemberFunction">NiActorManager::SequenceID  GetAnimSetSequenceID(<br/>egf::Entity* pEntity, <br/>const egf::FlatModel* pAnimSet, <br/>egf::PropertyID propID, <br/>NiActorManager::SequenceID defaultSeqID = NiActorManager::INVALID_SEQUENCE_ID)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespaceegm_spark_1ac2b2ff452a91e91d202a80fa7cddf51f"></a>
+<p class="NDLRefMemberFunction">NiActorManager::SequenceID  GetAnimSetSequenceID(<br/>egf::Entity* pEntity, <br/>const egf::FlatModel* pAnimSet, <br/>const efd::utf8string& propertyName, <br/>NiActorManager::SequenceID defaultSeqID = NiActorManager::INVALID_SEQUENCE_ID)</p>
+<p class="NDLRefMemberDescription">Retrieves an animation sequence ID for the passed animation-name via the given animation set flat model. </p>
+
+<a name="namespaceegm_spark_1a2d28cc5c544b4d41f882d4f908e4cc6c"></a>
+<p class="NDLRefMemberFunction">efd::TimeType  GetTime()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespaceegm_spark_1a571d31522399e22404b480741dd6b621"></a>
+<p class="NDLRefMemberFunction">efd::ServiceManager*  GetServiceManager()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespaceegm_spark_1ac6582bfdb142bdac17b898cfb933f4a4"></a>
+<p class="NDLRefMemberFunction">template &lt;class SystemService  &gt; SystemService*  GetSystemService()</p>
+<p class="NDLRefMemberDescription">Simplified method of obtaining a pointer to a system service. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>null if it fails, else the system service. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespaceegm_spark_1a6bae4e04f0a68df91277d3ab915201d2"></a>
+<p class="NDLRefMemberFunction">template &lt;class BuiltinModelClass  &gt; BuiltinModelClass*  GetBuiltin(const egf::Entity* pEntity)</p>
+<p class="NDLRefMemberDescription">Gets the instance of the specified Built-in Model class from the entity with the specified entity ID. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pEntity</span></td>
+    <td>The entity.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>the built-in model instance for that entity or NULL if model cannot be found. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespaceegm_spark_1ae3467f2411af3667aae39c723d07eea2"></a>
+<p class="NDLRefMemberFunction">egf::Entity*  LookupEntity(const egf::EntityID& id)</p>
+<p class="NDLRefMemberDescription">Helper function for converting an EntityID to a Entity pointer. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">id</span></td>
+    <td>The identifier.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>null if it fails, else. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespaceegm_spark_1af6e3cd30897c82f40f3d5b9fa12458e1"></a>
+<p class="NDLRefMemberFunction">template &lt;class BuiltinModelClass  &gt; BuiltinModelClass*  GetBuiltinByID(const egf::EntityID& entityID)</p>
+<p class="NDLRefMemberDescription">Gets the instance of the specified Built-in Model class from the entity with the specified entity ID. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>The id of the entity with the built-in model instance </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>the built-in model instance for that entity or NULL if model cannot be found. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespaceegm_spark_1af2526e63359aab782adfe8fb6de2a00f"></a>
+<p class="NDLRefMemberFunction">void  CauseDamage(<br/>egf::Entity* pDamager, <br/>egf::Entity* pCausedBy, <br/>egf::Entity* pDamagee, <br/>const efd::Point3& location, <br/>efd::Float32 damage, <br/>const efd::utf8string& damageType = efd::utf8string::NullString())</p>
+<p class="NDLRefMemberDescription">This helper function will send the damage event to the passed entity (pDamagee). </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pDamager</span></td>
+    <td>Actual entity that caused the damage (probably a projectile or a weapon) </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pCausedBy</span></td>
+    <td>This is usually the entity that is the owner of the pDamager (can be pDamager) </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pDamagee</span></td>
+    <td>Entity that will have damage applied to them. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">location</span></td>
+    <td>Location where the damage occurred. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">damage</span></td>
+    <td>Amount of damage to apply. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">damageType</span></td>
+    <td>Variable that can be used to track type of damage. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespaceegm_spark_1a77d927935617fb3afcf1a68e9fdb782f"></a>
+<p class="NDLRefMemberFunction">void  CauseRadiusDamage(<br/>egf::Entity* pDamager, <br/>egf::Entity* pCausedBy, <br/>const efd::Point3& location, <br/>efd::Float32 damage, <br/>efd::Float32 minDist, <br/>efd::Float32 maxDist, <br/>egf::Entity* pIgnore, <br/>bool castRays, <br/>const efd::utf8string& damageType = efd::utf8string::NullString())</p>
+<p class="NDLRefMemberDescription">This helper function will send the damage event entities within a specified sphere. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pDamager</span></td>
+    <td>Actual entity that caused the damage (probably a projectile or a weapon) </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pCausedBy</span></td>
+    <td>This is usually the entity that is the owner of the pDamager (can be pDamager) </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">location</span></td>
+    <td>Location where the damage occurred. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">damage</span></td>
+    <td>Amount of damage to apply. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">minDist</span></td>
+    <td>Entities closer than this distance will receive full damage. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">maxDist</span></td>
+    <td>Entities farther than this distance will receive partial damage based on distance. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pIgnore</span></td>
+    <td>Entity that should not be affected by the radius damage. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">castRays</span></td>
+    <td>If true, system will detect if something should block damage (wall, etc) </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">damageType</span></td>
+    <td>Variable that can be used to track type of damage. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespaceegm_spark_1aa6071d97ef9bd63bae3a7e360fb5b060"></a>
+<p class="NDLRefMemberFunction">void  SendEvent(<br/>egf::Entity* pFrom, <br/>egf::Entity* pTo, <br/>const char* pcEventName, <br/>bool sendIfOwnedOnly = true)</p>
+<p class="NDLRefMemberDescription">This send event function is useful for sending event via an event name string with no parameters. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">The event is only sent to the owning entity. That is, it is not sent to replicated versions of the entity.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pFrom</span></td>
+    <td>Entity that is sending the event. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pTo</span></td>
+    <td>Entity that should receive the event. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pcEventName</span></td>
+    <td>Name of event to be sent. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">sendIfOwnedOnly</span></td>
+    <td>If this parameter is true, the event will only be sent if the receiving entity is "owned" (ie: is not a replicated version of an entity) </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespaceegm_spark_1aaac514d92b2b93b593aa9065723e025a"></a>
+<p class="NDLRefMemberFunction">void  SendEvent(<br/>egf::Entity* pFrom, <br/>egf::Entity* pTo, <br/>const char* pcEventName, <br/>efd::DataStream* pStream, <br/>bool sendIfOwnedOnly = true)</p>
+<p class="NDLRefMemberDescription">This send event function is useful for sending event via an event name string with a data stream. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">The event is only sent to the owning entity. That is, it is not sent to replicated versions of the entity.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pFrom</span></td>
+    <td>Entity that is sending the event. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pTo</span></td>
+    <td>Entity that should receive the event. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pcEventName</span></td>
+    <td>Name of event to be sent. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pStream</span></td>
+    <td>Data stream to be sent with this event. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">sendIfOwnedOnly</span></td>
+    <td>If this parameter is true, the event will only be sent if the receiving entity is "owned" (ie: is not a replicated version of an entity) </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespaceegm_spark_1af87e26109e78abaea681bffdc2abca26"></a>
+<p class="NDLRefMemberFunction">void  SendEvent(<br/>egf::Entity* pFrom, <br/>egf::Entity* pTo, <br/><span class="NDLSystemFont"><a href="../Core/egmSpark__EventHelper.htm">EventHelper</a></span>* pEvent, <br/>efd::Bool sendIfOwnedOnly = true)</p>
+<p class="NDLRefMemberDescription">This send event function is useful for sending event via an <span class="NDLSystemFont"><a href="../Core/egmSpark__EventHelper.htm">EventHelper</a></span>. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">the event is only sent to the owning entity. That is, it is not sent to replicated versions of the entity.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pFrom</span></td>
+    <td>Entity that is sending the event. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pTo</span></td>
+    <td>Entity that should receive the event. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pEvent</span></td>
+    <td><span class="NDLSystemFont"><a href="../Core/egmSpark__EventHelper.htm">EventHelper</a></span> which contains the EventID and any Event Data. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">sendIfOwnedOnly</span></td>
+    <td>If this parameter is true, the event will only be sent if the receiving entity is "owned" (ie: is not a replicated version of an entity) </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespaceegm_spark_1a1951461a628d14e2de37a9148cbe5b8a"></a>
+<p class="NDLRefMemberFunction">void  PostEvent(<br/>egf::Entity* pFrom, <br/>egf::Entity* pTo, <br/><span class="NDLSystemFont"><a href="../Core/egmSpark__EventHelper.htm">EventHelper</a></span>* pEvent, <br/>efd::TimeType delay = 0.0, <br/>bool sendIfOwnedOnly = true)</p>
+<p class="NDLRefMemberDescription">This function is useful sending a delayed event via an <span class="NDLSystemFont"><a href="../Core/egmSpark__EventHelper.htm">EventHelper</a></span>. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">The event is only sent to the owning entity. That is, it is not sent to replicated versions of the entity. The specified entity pointers may refer to replicas however.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pFrom</span></td>
+    <td>Entity that is sending the event (and will receive any replies or callbacks). </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pTo</span></td>
+    <td>Entity that should receive the event. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pEvent</span></td>
+    <td><span class="NDLSystemFont"><a href="../Core/egmSpark__EventHelper.htm">EventHelper</a></span> which contains the EventID and any Event Data </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">delay</span></td>
+    <td>How much time to delay before event is actually executed </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">sendIfOwnedOnly</span></td>
+    <td>If this parameter is true, the event will only be sent if the receiving entity is "owned" (in other words, is not a replicated version of an entity) </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespaceegm_spark_1a431b34ce7b99d9cd0c906cc4bf53c6a6"></a>
+<p class="NDLRefMemberFunction">void  PostEvent(<br/>const egf::EntityID& entityID, <br/>const efd::utf8string& eventName, <br/>efd::DataStream* pDataStream = NULL, <br/>efd::TimeType delay = 0.0, <br/>bool sendIfOwnedOnly = true)</p>
+<p class="NDLRefMemberDescription">Post event. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">The specified entityID must reference a locally existing entity, either owned or replica.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity to receive the event. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">eventName</span></td>
+    <td>Name of the behavior. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pDataStream</span></td>
+    <td>The data stream containing behavior arguments. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">delay</span></td>
+    <td>The delay time in seconds to wait before executing the event. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">sendIfOwnedOnly</span></td>
+    <td>true to send if owned only. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespaceegm_spark_1af9b50d9b2b6be8f77538d4e705527696"></a>
+<p class="NDLRefMemberFunction">efd::Bool  SendViewEvent(<br/>egf::Entity* pTo, <br/><span class="NDLSystemFont"><a href="../Core/egmSpark__EventHelper.htm">EventHelper</a></span>* pEvent, <br/>const efd::Category& category = efd::kCAT_INVALID)</p>
+<p class="NDLRefMemberDescription">This function sends a "ViewEvent" to the specified entity via an <span class="NDLSystemFont"><a href="../Core/egmSpark__EventHelper.htm">EventHelper</a></span> object. </p>
+<p class="NDLRefMemberDetailedDescription">A ViewEvent is sent to all instances of the entity regardless of whether the entity is owned or replicated.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pTo</span></td>
+    <td>The entity to which the event is sent. This can either be a replica or the original entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pEvent</span></td>
+    <td>The <span class="NDLSystemFont"><a href="../Core/egmSpark__EventHelper.htm">EventHelper</a></span> derived class containing the event data to send. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">category</span></td>
+    <td>Channel to send view event over. Defaults to using a default, (hard-coded) category as determined by the GetViewEventChannel() method. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if an event was sent or a behavior was queued. Sending the event does not guarantee receipt or proper execution of the event. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespaceegm_spark_1a5b9415b86f728c4cadd2f5c931139e0a"></a>
+<p class="NDLRefMemberFunction">efd::Bool  SendViewEvent(<br/>egf::Entity* pTo, <br/>const efd::utf8string& eventName, <br/>efd::DataStream* pStream, <br/>const efd::Category& category = efd::kCAT_INVALID)</p>
+<p class="NDLRefMemberDescription">This function sends a "ViewEvent" to the specified entity via an event name and data stream A ViewEvent is sent to all instances of the entity regardless of whether the entity is owned or replicated. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pTo</span></td>
+    <td>to. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">eventName</span></td>
+    <td>Name of the event. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pStream</span></td>
+    <td>The stream. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">category</span></td>
+    <td>Channel to send view event over. Defaults to using a default, (hard-coded) category. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespaceegm_spark_1af4dd0b934e8ea4494f93cc12c82d6669"></a>
+<p class="NDLRefMemberFunction">efd::Bool  SendLocalEvent(<br/>egf::Entity* pTo, <br/><span class="NDLSystemFont"><a href="../Core/egmSpark__EventHelper.htm">EventHelper</a></span>* pEvent, <br/>egf::FlatModelID mixInModelID = egf::kFlatModelID_INVALID)</p>
+<p class="NDLRefMemberDescription">Sends event, using EventHandler, to only the local version of this entity regardless of whether it is owned or is replicated. </p>
+<p class="NDLRefMemberDetailedDescription">This is very useful for local, client-side effects.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pTo</span></td>
+    <td>to. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pEvent</span></td>
+    <td>The event. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">mixInModelID</span></td>
+    <td>Identifier for the mix in model.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if it succeeds, false if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespaceegm_spark_1a6d525c13aa7d71a826a2e3922dbe7c81"></a>
+<p class="NDLRefMemberFunction">efd::Bool  SendLocalEvent(<br/>egf::Entity* pTo, <br/>const efd::utf8string& eventName, <br/>efd::DataStream* pStream = NULL, <br/>const efd::utf8string& mixinModelName = efd::utf8string::NullString())</p>
+<p class="NDLRefMemberDescription">Sends event, using event name and data stream, to only the local version of this entity regardless of whether it is owned or is replicated. </p>
+<p class="NDLRefMemberDetailedDescription">This is very useful for local, client- side effects.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pTo</span></td>
+    <td>to. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">eventName</span></td>
+    <td>Name of the event. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pStream</span></td>
+    <td>The stream. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">mixinModelName</span></td>
+    <td>Name of the mixin model.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if it succeeds, false if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespaceegm_spark_1a0e3794c357bf9579244f21177aaf354d"></a>
+<p class="NDLRefMemberFunction">efd::Bool  SendLocalEvent(<br/>const egf::EntityID& entityID, <br/>egf::BehaviorID behaviorID, <br/>efd::DataStream* pStream = NULL, <br/>egf::FlatModelID mixInFlatModelID = egf::kFlatModelID_INVALID)</p>
+<p class="NDLRefMemberDescription">Send local event. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">behaviorID</span></td>
+    <td>Identifier for the behavior. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pStream</span></td>
+    <td>The stream. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">mixInFlatModelID</span></td>
+    <td>Identifier for the mix in flat model.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if it succeeds, false if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespaceegm_spark_1a64ba7bca8656fe12a4bbeb8c79ed3d58"></a>
+<p class="NDLRefMemberFunction">void  DestroyEntity(egf::Entity* pEntity)</p>
+<p class="NDLRefMemberDescription">Helper function to destroy an entity. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pEntity</span></td>
+    <td>The entity. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespaceegm_spark_1a91efe3efec414bf347ca77cae94b3749"></a>
+<p class="NDLRefMemberFunction">void  DestroyEntity(const egf::EntityID& id)</p>
+<p class="NDLRefMemberDescription">Helper function to destroy an entity. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">id</span></td>
+    <td>The identifier. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespaceegm_spark_1a3fc26775963443659f7923f51d6d44ac"></a>
+<p class="NDLRefMemberFunction">NiAVObject*  GetSceneGraph(const egf::EntityID& entityID)</p>
+<p class="NDLRefMemberDescription">Grab the scene graph associated with an entity id. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>Identifier for the entity.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>null if it fails, else the scene graph. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespaceegm_spark_1a36698075b03a682c65d5d1b6ead14e7e"></a>
+<p class="NDLRefMemberFunction">NiObject*  GetSceneGraphFromCache(const efd::AssetID& nifAsset)</p>
+<p class="NDLRefMemberDescription">Grab a scene graph from the SceneGraphService SceneGraph cache. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">nifAsset</span></td>
+    <td>The nif asset.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>null if it fails, else the scene graph from cache. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespaceegm_spark_1a9d6fe6881056aee86a0ef94169c6b0cb"></a>
+<p class="NDLRefMemberFunction">NiNode*  GetNiNode(NiObject* pObject)</p>
+<p class="NDLRefMemberDescription">Helper functions for converting to NiNode and NiAVObject. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pObject</span></td>
+    <td>The object.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>null if it fails, else the ni node. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespaceegm_spark_1a179dd8e8c2412dd988b4a95911e436ad"></a>
+<p class="NDLRefMemberFunction">NiAVObject*  GetNiAVObject(NiObject* pObject)</p>
+<p class="NDLRefMemberDescription">Helper functions for converting to NiObject and NiAVObject. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pObject</span></td>
+    <td>The object.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>null if it fails, else the ni a v object. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespaceegm_spark_1a53dfd8c233bde01d135b3c3224929bef"></a>
+<p class="NDLRefMemberFunction">void  HideEntity(egf::Entity* pEntity)</p>
+<p class="NDLRefMemberDescription">Utility functions for hiding and showing an entity. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pEntity</span></td>
+    <td>The entity. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespaceegm_spark_1a66db998efd3839808b9b90811a344012"></a>
+<p class="NDLRefMemberFunction">void  ShowEntity(egf::Entity* pEntity)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespaceegm_spark_1a99c9fd628bf4d9046161d37c90c0f2c7"></a>
+<p class="NDLRefMemberFunction">efd::Bool  IsShuttingDown()</p>
+<p class="NDLRefMemberDescription">Return true if system is shutting down. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if shutting down, false if not. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespaceegm_spark_1a632d11bfde31bbf25d3fd5b3044a291c"></a>
+<p class="NDLRefMemberFunction">efd::UInt32  GetEnumValue(<br/>const char* strEnumName, <br/>const char* strIDName)</p>
+<p class="NDLRefMemberDescription">Does what BehaviorAPI::GetEnumValue, but doesn't have the ScriptContext dependency. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">strEnumName</span></td>
+    <td>Name of the string enum. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">strIDName</span></td>
+    <td>Name of the string identifier.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The enum value. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespaceegm_spark_1a0b9cb1e8f17a8f157220ac1925307984"></a>
+<p class="NDLRefMemberFunction">efd::Bool  IsSinglePlayer()</p>
+<p class="NDLRefMemberDescription">Query if in single player mode. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if single player, false if not. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespaceegm_spark_1a3a346868de541d6b36585c753e38939c"></a>
+<p class="NDLRefMemberFunction">template &lt;typename T  &gt; efd::Bool  GetModelPropertyValue(<br/>const egf::FlatModel* pFlatModel, <br/>egf::PropertyID propertyID, <br/>T& value)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespaceegm_spark_1a02ed84949197fecdcdd7157d192b29fc"></a>
+<p class="NDLRefMemberFunction">void  ReStartAnimations(<br/>NiObjectNET* pObj, <br/>float fStartTime)</p>
+<p class="NDLRefMemberDescription">Restarts all animations in the passed in scene graph sub tree. </p>
+<p class="NDLRefMemberDetailedDescription">Should work with all types of time controllers (APP_TIME and APP_INIT). If necessary it changes the phase of the time controllers to the inverse of the passed-in time. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pObj</span></td>
+    <td>The The scene graph to act upon. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">fStartTime</span></td>
+    <td>The time that the animation should start from. If the passed-in time is not the current time the animation will be reset to wherever it would be if it had started at that time. That time may be in the future. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespaceegm_spark_1a1804437dcf92bab6c0362ed35b54db5a"></a>
+<p class="NDLRefMemberFunction">void  StopAnimations(NiObjectNET* pObj)</p>
+<p class="NDLRefMemberDescription">Stops animation for the passed scene graph. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pObj</span></td>
+    <td>The The scene graph to act upon. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespaceegm_spark_1ab5ee7594e544fab4a453211db96d7633"></a>
+<p class="NDLRefMemberFunction">float  CalculateEndTimeOfAnimations(NiObjectNET* pObj)</p>
+<p class="NDLRefMemberDescription">Returns the time at which all animations within the passed in sub tree are done. </p>
+<p class="NDLRefMemberDetailedDescription">The returned time is relative to the animation's time 0. This is different from the perceived duration of the animation in that it may not start at time 0 (for example there may be a backed in delay). Note that the returned time can be &lt;0 if the animations are authored that way. Only the first cycle of looped animations will be considered. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pObj</span></td>
+    <td>The The scene graph to act upon. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The time at which all animations are done. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespaceegm_spark_1a8e0384782abda2c13577e234a639eb4a"></a>
+<p class="NDLRefMemberFunction">efd::Bool  InitializeCoreServiceSet(<br/>efd::ServiceManager* pServiceManager, <br/><span class="NDLSystemFont"><a href="../Namespaces/egmSpark.htm#namespaceegm_spark_1a5a8d65eae99ede6b5e843b13037a4f9c">ServiceInitMap</a></span>* pInitInfo = NULL)</p>
+<p class="NDLRefMemberDescription">Use the Service Allocator helper functions to create common game services needed by most applications. </p>
+<p class="NDLRefMemberDetailedDescription">This is a simplified approach to creating instances of the services directly. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pServiceManager</span></td>
+    <td>A pointer to the service manager. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pInitInfo</span></td>
+    <td>Map of class IDs to service initialization parameters </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespaceegm_spark_1a2bbbd6645516d2759511903de6a2764b"></a>
+<p class="NDLRefMemberFunction">efd::Bool  InitializePhysXServiceSet(<br/>efd::ServiceManager* pServiceManager, <br/><span class="NDLSystemFont"><a href="../Namespaces/egmSpark.htm#namespaceegm_spark_1a5a8d65eae99ede6b5e843b13037a4f9c">ServiceInitMap</a></span>* pInitInfo)</p>
+<p class="NDLRefMemberDescription">Use the Service Allocator helper functions to create common PhysX services needed by most applications that use PhysX. </p>
+<p class="NDLRefMemberDetailedDescription">This is a simplified approach to creating instances of the services directly. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pServiceManager</span></td>
+    <td>A pointer to the service manager. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pInitInfo</span></td>
+    <td>Map of class IDs to service initialization parameters </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespaceegm_spark_1a74de384172cd3fdb349b975c3fc52a2d"></a>
+<p class="NDLRefMemberFunction">void  ShutdownPhysXServiceSet(void* userdata)</p>
+<p class="NDLRefMemberDescription">Shuts down the PhysX services initialized by InitializePhysXServiceSet. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">userdata</span></td>
+    <td>Unused. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespaceegm_spark_1a5b7ba7e0d437afb255cb7c00b3102261"></a>
+<p class="NDLRefMemberFunction">efd::Bool  InitializeOnlineServiceSet(<br/>efd::ServiceManager* pServiceManager, <br/><span class="NDLSystemFont"><a href="../Namespaces/egmSpark.htm#namespaceegm_spark_1a5a8d65eae99ede6b5e843b13037a4f9c">ServiceInitMap</a></span>* pInitInfo)</p>
+<p class="NDLRefMemberDescription">Use the Service Allocator helper functions to create common multiplayer services needed by most multiplayer applications. </p>
+<p class="NDLRefMemberDetailedDescription">This is a simplified approach to creating instances of the services directly. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pServiceManager</span></td>
+    <td>A pointer to the service manager. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pInitInfo</span></td>
+    <td>Map of class IDs to service initialization parameters </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespaceegm_spark_1a73e9fa6bcc7ca4f9933c1ded31c38d85"></a>
+<p class="NDLRefMemberFunction">void  InstallShutdownHandler(<br/><span class="NDLSystemFont"><a href="../Namespaces/egmSpark.htm#namespaceegm_spark_1a545bb8f1567825c8b867b258a349bb12">ShutdownHandler</a></span> handler, <br/>void* userdata)</p>
+<p class="NDLRefMemberDescription">Install a shutdown handler. </p>
+<p class="NDLRefMemberDetailedDescription">The shutdown handler function will be called from when the system is shutting down. If you use <span class="NDLSystemFont"><a href="../Core/egmSpark__SparkMainService.htm">SparkMainService</a></span>, this will be called from <span class="NDLSystemFont"><a href="../Core/egmSpark__SparkMainService.htm#classegm_spark_1_1_spark_main_service_1a335c714ee274a506ea9f0a30cf792ec3">SparkMainService::Go()</a></span> just after the service manager finishes with its Run() call. If you don't, you'll need to call <span class="NDLSystemFont"><a href="../Namespaces/egmSpark.htm#namespaceegm_spark_1a6dd0386b54fcb561e54bdcf6fe0c56c0">RunShutdownHandlers()</a></span> AFTER all services have been shut down.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">handler</span></td>
+    <td>The shutdown handler to run</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">userdata</span></td>
+    <td>Arbitrary user-defined data to be passed to the shutdown handler </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespaceegm_spark_1a6dd0386b54fcb561e54bdcf6fe0c56c0"></a>
+<p class="NDLRefMemberFunction">void  RunShutdownHandlers()</p>
+<p class="NDLRefMemberDescription">Run all installed shutdown handlers. </p>
+<p class="NDLRefMemberDetailedDescription">If you use <span class="NDLSystemFont"><a href="../Core/egmSpark__SparkMainService.htm">SparkMainService</a></span>, this will be called automatically when you call <span class="NDLSystemFont"><a href="../Core/egmSpark__SparkMainService.htm#classegm_spark_1_1_spark_main_service_1a335c714ee274a506ea9f0a30cf792ec3">SparkMainService::Go()</a></span>. If not, you'll need to call it explicitly after all services have been shut down but before ServiceManager is freed. </p>
+
+<a name="namespaceegm_spark_1af16d6a66a2b9f6d53800c0b188a01e41"></a>
+<p class="NDLRefMemberFunction">template &lt;class T  &gt; void  Shutdown(void* instance)</p>
+<p class="NDLRefMemberDescription">Template function to call the Shutdown method on an object of class T. </p>
+<p class="NDLRefMemberDetailedDescription">Can be used as a parameter to <span class="NDLSystemFont"><a href="../Namespaces/egmSpark.htm#namespaceegm_spark_1a73e9fa6bcc7ca4f9933c1ded31c38d85">InstallShutdownHandler()</a></span> to call the shutdown method on an arbitrary class. </p>
+
+<a name="namespaceegm_spark_1a15acbb89e6d6bc4a5f28182aa66870ff"></a>
+<p class="NDLRefMemberFunction">template &lt;class T  &gt; T*  RegisterService(<br/>efd::ServiceManager* pServiceManager, <br/>const <span class="NDLSystemFont"><a href="../Namespaces/egmSpark.htm#namespaceegm_spark_1a5a8d65eae99ede6b5e843b13037a4f9c">ServiceInitMap</a></span>& InitInfo, <br/>T* pService, <br/>efd::UInt32 priority = USE_DEFAULT_SERVICE_PRIORITY, <br/>efd::ClassID classID = efd::kInvalidClassID)</p>
+<p class="NDLRefMemberDescription">Template function to register an individual service while respecting user-defined override values in a ServiceInitMap. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pServiceManager</span></td>
+    <td>Pointer to the service manager </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">InitInfo</span></td>
+    <td>Map of class IDs to service initialization parameters </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pService</span></td>
+    <td>Pointer to the already-allocated service </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">priority</span></td>
+    <td>Priority to initialize this service at. If set to the constant USE_DEFAULT_SERVICE_PRIORITY, the service default will be used. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">classID</span></td>
+    <td>Class ID to initialize the service on. If efd::kInvalidClassID is specified, the service's CLASS_ID constant will be used, for example ecr::AnimationService::CLASS_ID. Occasionally you will need to override the class ID when you are replacing a system class so that other system classes who look for that class id will find you instead of the system version. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>A newly-installed instance of the service class, or NULL if the user requested that the service not be initialized this run. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespaceegm_spark_1acdc87b7fe7347a09b0669aa415c88a68"></a>
+<p class="NDLRefMemberFunction">template &lt;class T  &gt; T*  RegisterService(<br/>efd::ServiceManager* pServiceManager, <br/>T* pService, <br/>efd::UInt32 priority = USE_DEFAULT_SERVICE_PRIORITY, <br/>efd::ClassID classID = efd::kInvalidClassID)</p>
+<p class="NDLRefMemberDescription">Template function to register an already-allocated individual service. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pServiceManager</span></td>
+    <td>Pointer to the service manager </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pService</span></td>
+    <td>The service instance to register </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">priority</span></td>
+    <td>Priority to initialize this service at. If set to the constant USE_DEFAULT_SERVICE_PRIORITY, the service default will be used. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">classID</span></td>
+    <td>Class ID to initialize the service on. If efd::kInvalidClassID is specified, the service's CLASS_ID constant will be used, for example ecr::AnimationService::CLASS_ID. Occasionally you will need to override the class ID when you are replacing a system class so that other system classes who look for that class id will find you instead of the system version. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The T* parameter passed in </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespaceegm_spark_1aa41b8358d85ca1618dcf8e5a652d9eee"></a>
+<p class="NDLRefMemberFunction">const char*  ConvertMediaFilename(const char* pcFilename)</p>
+<p class="NDLRefMemberFunction"></p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

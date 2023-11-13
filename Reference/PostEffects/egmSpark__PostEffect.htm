@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::PostEffect</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::PostEffect</p>
+<p class="NDLRefParentage">: public NiRefObject</p>
+
+
+<p class="NDLRefHeaderFile">&lt;PostEffect.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_post_effect.gif" alt="Inheritance graph for egmSpark::PostEffect"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::PostEffect</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">A <span class="NDLSystemFont">PostEffect</span> is an instance of a post effect. </p>
+<p class="NDLNormal">Each post effect performs one or more full-screen render passes, and can be turned on and off as needed.</p>
+<p class="NDLNormal">Every <span class="NDLSystemFont">PostEffect</span> belongs to a single <span class="NDLSystemFont"><a href="egmSpark__PostEffectsStep.htm">PostEffectsStep</a></span>. Once created, the effect should not be reassigned to another step. </p>
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_post_effect_1a41919ebeb48894634fdf4006d9c71306"></a>
+<p class="NDLRefMemberFunction">PostEffect(<span class="NDLSystemFont"><a href="egmSpark__PostEffectsStep.htm">PostEffectsStep</a></span>* pStep)</p>
+<p class="NDLRefMemberDescription">The constructor requires an owning <span class="NDLSystemFont"><a href="egmSpark__PostEffectsStep.htm">PostEffectsStep</a></span>. </p>
+<p class="NDLRefMemberDetailedDescription">This effect will be added to that render step. </p>
+
+<a name="classegm_spark_1_1_post_effect_1a61597c3c40736f63013dc1953873bcbb"></a>
+<p class="NDLRefMemberFunction">virtual ~PostEffect()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_post_effect_1a2528991db44c7e33d58e7c4b25d1b3fc"></a>
+<p class="NDLRefMemberFunction">void  SetName(const NiFixedString& name)</p>
+<p class="NDLRefMemberDescription">SetName changes the name of this effect. </p>
+<p class="NDLRefMemberDetailedDescription">Typically this is called at the very beginning of its constructor. </p>
+
+<a name="classegm_spark_1_1_post_effect_1ac85c8784f972eff457a82f499afad873"></a>
+<p class="NDLRefMemberFunction">const NiFixedString&  GetName() const</p>
+<p class="NDLRefMemberDescription">Gets the name of this effect. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription"><span class="NDLSystemFont"><a href="egmSpark__PostEffect.htm#classegm_spark_1_1_post_effect_1a2528991db44c7e33d58e7c4b25d1b3fc">SetName()</a></span></p></p>
+
+<a name="classegm_spark_1_1_post_effect_1ad2be8349b787d4f268e037030c01aef0"></a>
+<p class="NDLRefMemberFunction">void  SetEnabled(efd::Bool enabled)</p>
+<p class="NDLRefMemberDescription">SetEnabled is used to turn the effect on and off as needed. </p>
+<p class="NDLRefMemberDetailedDescription">The effect may be permanently disabled by Invalidate, in which case SetEnable will have no effect. When the enabled state is changed by SetEnabled, the virtual member OnEnable will be called with the new state.</p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription"><span class="NDLSystemFont"><a href="egmSpark__PostEffect.htm#classegm_spark_1_1_post_effect_1a77bdd48ba4953148a08ca5f45de52d64">OnEnable()</a></span></p>
+<p class="NDLRefMemberDetailedDescription"><span class="NDLSystemFont"><a href="egmSpark__PostEffect.htm#classegm_spark_1_1_post_effect_1a9d97dcc6eb5a5320cb794082d291e4dd">GetEnabled()</a></span></p>
+<p class="NDLRefMemberDetailedDescription"><span class="NDLSystemFont"><a href="egmSpark__PostEffect.htm#classegm_spark_1_1_post_effect_1a6084a5f2bbc081e4bc90ed3c492d33e9">GetValid()</a></span></p>
+<p class="NDLRefMemberDetailedDescription"><span class="NDLSystemFont"><a href="egmSpark__PostEffect.htm#classegm_spark_1_1_post_effect_1abe6d176adb05bf59557a29bf44579d42">Invalidate()</a></span></p></p>
+
+<a name="classegm_spark_1_1_post_effect_1a9d97dcc6eb5a5320cb794082d291e4dd"></a>
+<p class="NDLRefMemberFunction">efd::Bool  GetEnabled() const</p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription"><span class="NDLSystemFont"><a href="egmSpark__PostEffect.htm#classegm_spark_1_1_post_effect_1ad2be8349b787d4f268e037030c01aef0">SetEnabled()</a></span></p></p>
+
+<a name="classegm_spark_1_1_post_effect_1a6084a5f2bbc081e4bc90ed3c492d33e9"></a>
+<p class="NDLRefMemberFunction">efd::Bool  GetValid() const</p>
+<p class="NDLRefMemberDescription">This returns true unless the effect has been permanently disabled. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription"><span class="NDLSystemFont"><a href="egmSpark__PostEffect.htm#classegm_spark_1_1_post_effect_1abe6d176adb05bf59557a29bf44579d42">Invalidate()</a></span></p></p>
+
+<a name="classegm_spark_1_1_post_effect_1a72e519b58e1d3a790008eff8a19c1b28"></a>
+<p class="NDLRefMemberFunction">void  SetOrder(efd::UInt32 order)</p>
+<p class="NDLRefMemberDescription">This changes the draw order of this effect within its <span class="NDLSystemFont"><a href="egmSpark__PostEffectsStep.htm">PostEffectsStep</a></span>. </p>
+<p class="NDLRefMemberDetailedDescription">Effects with lower order numbers will be rendered first. </p>
+<p class="NDLRefMemberDetailedDescription"><span class="NDLSystemFont"><a href="egmSpark__PostEffect.htm#classegm_spark_1_1_post_effect_1a6b8fdf04b40add6e511837d72443e50a">OnOrder()</a></span></p>
+
+<a name="classegm_spark_1_1_post_effect_1a457de4bde19034c6ff85d732296b5447"></a>
+<p class="NDLRefMemberFunction">efd::UInt32  GetOrder() const</p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription"><span class="NDLSystemFont"><a href="egmSpark__PostEffect.htm#classegm_spark_1_1_post_effect_1a72e519b58e1d3a790008eff8a19c1b28">SetOrder()</a></span></p></p>
+
+<a name="classegm_spark_1_1_post_effect_1a18527ceb2f22c6e18f2e7aef8d8376f9"></a>
+<p class="NDLRefMemberFunction">virtual bool  Render(NiTexture* pIn) = 0</p>
+<p class="NDLRefMemberDescription">The virtual function Render must be implemented by every <span class="NDLSystemFont">PostEffect</span>. </p>
+<p class="NDLRefMemberDetailedDescription">This function may render one or more full-screen passes. Render must contain one and only one final pass (see BeginFinalPass), and may not use an early pass (see BeginEarlyPass) after the final pass. </p>
+<p class="NDLRefMemberDetailedDescription"><span class="NDLSystemFont"><a href="egmSpark__PostEffect.htm#classegm_spark_1_1_post_effect_1a95e6a13b8ec9945b0948e71f86c458f0">BeginFinalPass()</a></span></p>
+<p class="NDLRefMemberDetailedDescription"><span class="NDLSystemFont"><a href="egmSpark__PostEffect.htm#classegm_spark_1_1_post_effect_1a1b207daf0558c9990c0df1b21a7ac3cf">BeginEarlyPass()</a></span></p>
+<p class="NDLRefMemberDetailedDescription"><span class="NDLSystemFont"><a href="egmSpark__PostEffect.htm#classegm_spark_1_1_post_effect_1affc010d22dc8e3a782a82af6fe3c0fc4">BeginAuxPass()</a></span></p>
+<p class="NDLRefMemberDetailedDescription"><span class="NDLSystemFont"><a href="egmSpark__PostEffect.htm#classegm_spark_1_1_post_effect_1a447207fa5df1ee39a2e1d4efc296300d">EndPass()</a></span></p>
+<p class="NDLRefMemberDetailedDescription"><span class="NDLSystemFont"><a href="egmSpark__PostEffect.htm#classegm_spark_1_1_post_effect_1abaa5a876671fbccab4e529fd3c9bd517">UseTexture()</a></span></p>
+<p class="NDLRefMemberDetailedDescription"><span class="NDLSystemFont"><a href="egmSpark__PostEffect.htm#classegm_spark_1_1_post_effect_1aa48a43d392662789e05d352584831b2d">UseMaterial()</a></span></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pIn</span></td>
+    <td>The fullscreen texture input to this post effect.</td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_post_effect_1a4144d4d7dc1b562fb4e7f9b906ba3c86"></a>
+<p class="NDLRefMemberFunction">virtual bool  Skip() const</p>
+<p class="NDLRefMemberDescription">Skip should return true if this effect pass can be skipped this frame. </p>
+<p class="NDLRefMemberDetailedDescription">This is a potential optimization; if an effect is enabled but its parameters are set in such a way that it will have no visible impact on the frame, Skip can be used to bypass its Render step automatically. The default implementation always returns false. </p>
+<p class="NDLRefMemberDetailedDescription">SetEnable() </p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

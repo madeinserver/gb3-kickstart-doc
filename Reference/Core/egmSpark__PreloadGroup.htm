@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::PreloadGroup</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::PreloadGroup</p>
+<p class="NDLRefParentage">: public IBase</p>
+
+
+<p class="NDLRefHeaderFile">&lt;PreloadHelperResponse.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_preload_group.gif" alt="Inheritance graph for egmSpark::PreloadGroup"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::PreloadGroup</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">Helper struct. </p>
+<p class="NDLNormal">This struct describes a set of URNs that were loaded together. The first item in the item list is the flat model URN that was given to the preloader. Subsequent items were asset URNs that were referred to by the flat model and therefore cascaded. </p>
+
+<a name="public_attributes"></a>
+<p class="NDLRefHead1">Public Attributes</p>
+
+
+<a name="classegm_spark_1_1_preload_group_1aac7cd4d5569453de9f595e24e3ff2a50"></a>
+<p class="NDLRefMemberFunction">efd::Category  m_cat</p>
+<p class="NDLRefMemberDescription">Category to send the reply to. </p>
+
+<a name="classegm_spark_1_1_preload_group_1a9ffd0a36f469211aba494dec6ca92bf0"></a>
+<p class="NDLRefMemberFunction">efd::deque&lt;<span class="NDLSystemFont"><a href="../Namespaces/egmSpark.htm#namespaceegm_spark_1a0dfa4afe07cfca01ac3597fc19808996">PreloadItemPtr</a></span>&gt;  m_items</p>
+<p class="NDLRefMemberDescription">List of URNs and the result of attempting to load each one. </p>
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_preload_group_1acaf03d6eee79e99d081efc999c9ca6b1"></a>
+<p class="NDLRefMemberFunction">PreloadGroup(<br/>efd::Category cat, <br/><span class="NDLSystemFont"><a href="../Namespaces/egmSpark.htm#namespaceegm_spark_1a0dfa4afe07cfca01ac3597fc19808996">PreloadItemPtr</a></span> initial_item = NULL)</p>
+<p class="NDLRefMemberDescription">Constructor. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">cat</span></td>
+    <td>The category to send the reply to. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">initial_item</span></td>
+    <td>An item to be added to the list for preloading. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_preload_group_1a8fbe3bc3da616918f2bd18bdff1206a7"></a>
+<p class="NDLRefMemberFunction">efd::Bool  ContainsItem(const efd::utf8string& urn)</p>
+<p class="NDLRefMemberDescription">Searches through the list of items to find any that match the specified URN. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">urn</span></td>
+    <td>The URN to match. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if a matching item was found. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

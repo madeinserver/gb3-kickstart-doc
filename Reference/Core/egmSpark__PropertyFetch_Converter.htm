@@ -1,0 +1,312 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::PropertyFetch_Converter</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::PropertyFetch_Converter</p>
+<p class="NDLRefParentage">: public PropertyData</p>
+
+
+<p class="NDLRefHeaderFile">&lt;SparkBuiltinModelHelper.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/structegm_spark_1_1_property_fetch___converter.gif" alt="Inheritance graph for egmSpark::PropertyFetch_Converter"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::PropertyFetch_Converter</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">Converts read-write property PropertyData for a Built-in model scalar property. </p>
+<p class="NDLNormal"></p>
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="structegm_spark_1_1_property_fetch___converter_1a1a39f4e1cd916f704861c9a535063c0f"></a>
+<p class="NDLRefMemberFunction">egf::PropertyResult  Get(<br/>const egf::IBuiltinModel* pThis, <br/>void* o_pData) const</p>
+<p class="NDLRefMemberDescription">Gets a property value. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pThis</span></td>
+    <td>The model to get the property from. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">o_pData</span></td>
+    <td>The output data will be filled in here. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>egf::PropertyResult_OK will be returned if the function succeeded. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="structegm_spark_1_1_property_fetch___converter_1a16e09c2e3c2ae0d27c766a53e02a3a2c"></a>
+<p class="NDLRefMemberFunction">egf::PropertyResult  Set(<br/>egf::IBuiltinModel* pThis, <br/>const void* i_pData)</p>
+<p class="NDLRefMemberDescription">Sets a property value. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pThis</span></td>
+    <td>The model to set the property on. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">i_pData</span></td>
+    <td>The new value for the property. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>egf::PropertyResult_OK will be returned if the function succeeded. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="structegm_spark_1_1_property_fetch___converter_1adb5a8fa8f823f5f3217755b81d15a726"></a>
+<p class="NDLRefMemberFunction">egf::PropertyResult  SetByString(<br/>egf::IBuiltinModel* pThis, <br/>const efd::utf8string& data)</p>
+<p class="NDLRefMemberDescription">Sets a property value by parsing a string representation of the data. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pThis</span></td>
+    <td>The model to set the property on. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">data</span></td>
+    <td>The new value for the property in string form. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>egf::PropertyResult_OK will be returned if the function succeeded. PropertyResult_TypeMismatch will be returned if the string cannot be parsed into the required data type. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="structegm_spark_1_1_property_fetch___converter_1aba502dae48f98a09cebb68a05cfbd5f1"></a>
+<p class="NDLRefMemberFunction">egf::PropertyResult  SetDefault(<br/>egf::IBuiltinModel* pThis, <br/>const egf::PropertyDescriptor* pDesc)</p>
+<p class="NDLRefMemberDescription">Resets the value of a property to the default. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pThis</span></td>
+    <td>The model to reset the property on. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pDesc</span></td>
+    <td>The PropertyDescriptor to look up the default value for this property from. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>egf::PropertyResult_OK will be returned if the function succeeded. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="structegm_spark_1_1_property_fetch___converter_1a249aeb7100d7905a619398de42b89fa5"></a>
+<p class="NDLRefMemberFunction">efd::ClassID  GetType() const</p>
+<p class="NDLRefMemberDescription">Get the ClassID for this type of class. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The ClassID. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="structegm_spark_1_1_property_fetch___converter_1a02b74f3e679fdc3c6f3dfa79c4e4f360"></a>
+<p class="NDLRefMemberFunction">void  ToStream(<br/>const egf::IBuiltinModel* pThis, <br/>efd::DataStream& strm) const</p>
+<p class="NDLRefMemberDescription">Copies the value of a property to a DataStream. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pThis</span></td>
+    <td>The model to copy the property value from. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">strm</span></td>
+    <td>The data stream to copy the property value to. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True will be returned if the function succeeded. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="structegm_spark_1_1_property_fetch___converter_1a7d8314fe4b6803757345c5f198e8285d"></a>
+<p class="NDLRefMemberFunction">bool  FromStream(<br/>egf::IBuiltinModel* pThis, <br/>efd::DataStream& strm)</p>
+<p class="NDLRefMemberDescription">Reads the value of a property from a DataStream. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pThis</span></td>
+    <td>The model to read the property value to. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">strm</span></td>
+    <td>The data stream to read the property value from. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True will be returned if the function succeeded. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="structegm_spark_1_1_property_fetch___converter_1a86d1efa41f45fa47685688036b33221f"></a>
+<p class="NDLRefMemberFunction">bool  AdvanceStream(<br/>const egf::IBuiltinModel* pThis, <br/>efd::DataStream& strm) const</p>
+<p class="NDLRefMemberDescription">Skips over a piece of data in a data stream. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pThis</span></td>
+    <td>A model pointer - unused. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">strm</span></td>
+    <td>The DataStream to skip over a piece of data in. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True will be returned if the function succeeded. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

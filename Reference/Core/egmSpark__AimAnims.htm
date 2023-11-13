@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::AimAnims</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::AimAnims</p>
+
+
+<p class="NDLRefHeaderFile">&lt;AimingManager.h&gt;</p>
+
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">Instance of an aiming mode that stores the aiming sequences and handles activation,deactivation,updating,etc. </p>
+
+<a name="public_attributes"></a>
+<p class="NDLRefHead1">Public Attributes</p>
+
+
+<a name="classegm_spark_1_1_aim_anims_1a5fdf6a047148c5d1a016b93fd89cb81d"></a>
+<p class="NDLRefMemberFunction"><span class="NDLSystemFont"><a href="egmSpark__BlendedAnim.htm">BlendedAnim</a></span>  m_up</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_aim_anims_1a5ef2b7463567df4a9be1886f8d82d5fe"></a>
+<p class="NDLRefMemberFunction"><span class="NDLSystemFont"><a href="egmSpark__BlendedAnim.htm">BlendedAnim</a></span>  m_down</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_aim_anims_1a3d640d8010ccd931bd87d7fbb0519f87"></a>
+<p class="NDLRefMemberFunction">efd::Float32  m_blendRate</p>
+<p class="NDLRefMemberFunction"></p>
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_aim_anims_1a86aa18dec14271dc61d9a5c5f77881d4"></a>
+<p class="NDLRefMemberFunction">AimAnims()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_aim_anims_1a9fdeeed6fb618e4c583fcbd067d8ea0c"></a>
+<p class="NDLRefMemberFunction">efd::Bool  Activate(<br/>NiActorManager* pActorMan, <br/>efd::UInt32 priority, <br/>efd::Float32 easeIn)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_aim_anims_1a6a11c1316d77a99b826bae94d18279b0"></a>
+<p class="NDLRefMemberFunction">efd::Bool  Deactivate(<br/>NiActorManager* pActorMan, <br/>efd::Float32 easeOut)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_aim_anims_1a4daae0ae1e6faedeb2026a33137f2422"></a>
+<p class="NDLRefMemberFunction">void  GetWeights(<br/>efd::Float32& aimUpWeight, <br/>efd::Float32& aimDownWeight)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_aim_anims_1a3a06f7cc1a67e0cf825241e886beea9d"></a>
+<p class="NDLRefMemberFunction">void  Start(<br/>efd::Float32 upWeight, <br/>efd::Float32 downWeight, <br/>efd::Float32 blendRate)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_aim_anims_1a43f50ad529f2cfbdc01da6de27c2cf84"></a>
+<p class="NDLRefMemberFunction">void  Stop(NiActorManager* pActorMan)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_aim_anims_1ac49f4bfa11ac34020924a497155e05ca"></a>
+<p class="NDLRefMemberFunction">void  Update(<br/>NiActorManager* pActorMan, <br/>efd::Float32 upWeight, <br/>efd::Float32 downWeight, <br/>efd::TimeType timeDelta)</p>
+<p class="NDLRefMemberFunction"></p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

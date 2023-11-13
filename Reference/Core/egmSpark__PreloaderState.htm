@@ -1,0 +1,206 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::PreloaderState</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::PreloaderState</p>
+<p class="NDLRefParentage">: public <span class="NDLSystemFont"><a href="egmSpark__LoadingState.htm">egmSpark::LoadingState</a></span></p>
+
+
+<p class="NDLRefHeaderFile">&lt;PreloaderState.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_preloader_state.gif" alt="Inheritance graph for egmSpark::PreloaderState"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::PreloaderState</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">This state can be sub-classed in order to perform preloading of models and their corresponding assets. </p>
+<p class="NDLNormal">The IsLoadinDone function will not return true until all models are completely preloaded. note: A common use of this state is for putting up a splash screen until the preloading of the models& assets is complete. </p>
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_preloader_state_1ae1d0af9324a7b629a3869e2b96105576"></a>
+<p class="NDLRefMemberFunction">PreloaderState(efd::ServiceManager* pServiceManager)</p>
+<p class="NDLRefMemberDescription">Constructor. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pServiceManager</span></td>
+    <td>A pointer to the service manager. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_preloader_state_1a21f11b7e1e9f6f32c8ffab2e218aff52"></a>
+<p class="NDLRefMemberFunction">void  StartPreload(<br/>const efd::utf8string& sparkPreloaderModel, <br/>efd::Float32 minLoadTime = 5.0f)</p>
+<p class="NDLRefMemberDescription">Pass the name of the SparkPreloader model that will perform the preload requests. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">sparkPreloaderModel</span></td>
+    <td>name of model that will do its preloading </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">minLoadTime</span></td>
+    <td>Minimum amount of time you want this state to be active </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_preloader_state_1a0804eb922c75b5f6e6ae5b74f33eec6b"></a>
+<p class="NDLRefMemberFunction">virtual efd::Bool  LoadingIsDone() const</p>
+<p class="NDLRefMemberDescription">Returns whether or loading has finished. This includes preloading. </p>
+
+<a name="classegm_spark_1_1_preloader_state_1adfc1b0a9a034af5b9795cee2228bbc4b"></a>
+<p class="NDLRefMemberFunction">virtual <span class="NDLSystemFont"><a href="../Namespaces/egmSpark.htm#namespaceegm_spark_1a04fe4e97167cdd500a5f6063d0db2b7b">LogoSplashPtr</a></span>  GetNextSplash()</p>
+<p class="NDLRefMemberDescription">Find the next available splash screen. </p>
+
+<a name="classegm_spark_1_1_preloader_state_1a7d274444d046d4483eab0c3145f87bce"></a>
+<p class="NDLRefMemberFunction">void  HandleEntityCreationMsg(<br/>const efd::AssetLoadResponse* pMessage, <br/>efd::Category targetChannel)</p>
+<p class="NDLRefMemberDescription">Message handler for the initial preloader model but not the models that the preloader model requests to be preloaded. </p>
+<p class="NDLRefMemberDetailedDescription">Those are handled in the PreloaderHelper. We only listen for when the set of preloaded models are complete after this. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pMessage</span></td>
+    <td>The message that was received. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">targetChannel</span></td>
+    <td>The channel on which the message was received. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_preloader_state_1ab61e1ecffdbae79d4396a62ab3c1b327"></a>
+<p class="NDLRefMemberFunction">void  HandlePreloadCompleteMsg(<br/>const <span class="NDLSystemFont"><a href="egmSpark__PreloadHelperComplete.htm">PreloadHelperComplete</a></span>* pMessage, <br/>efd::Category targetChannel)</p>
+<p class="NDLRefMemberDescription">Message handler that is called when all the requested preload models are complete. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pMessage</span></td>
+    <td>The message that was received. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">targetChannel</span></td>
+    <td>The channel on which the message was received. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_preloader_state_1a387e80f22735ca1ae7a50c6cdf398e09"></a>
+<p class="NDLRefMemberFunction">virtual void  OnTick(efd::TimeType time)</p>
+<p class="NDLRefMemberDescription">Method called by the <span class="NDLSystemFont"><a href="egmSpark__GameStateService.htm">GameStateService</a></span> so that the state can handle the passage of time. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<p class="NDLRefMemberDetailedDescription">Default implementation does nothing, overrides need not call it. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">time</span></td>
+    <td>The time of the application (cumulative). </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_preloader_state_1a26b5f5078ab3ed9aebb4f1ef29fbf636"></a>
+<p class="NDLRefMemberFunction">virtual void  End()</p>
+<p class="NDLRefMemberDescription">Method called by the <span class="NDLSystemFont"><a href="egmSpark__GameStateService.htm">GameStateService</a></span> when the state is ended. </p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

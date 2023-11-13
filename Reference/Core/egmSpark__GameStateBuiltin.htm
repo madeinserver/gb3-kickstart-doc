@@ -1,0 +1,198 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::GameStateBuiltin</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::GameStateBuiltin</p>
+<p class="NDLRefParentage">: public <span class="NDLSystemFont"><a href="egmSpark__GameState.htm">egmSpark::GameState</a></span></p>
+
+
+<p class="NDLRefHeaderFile">&lt;GameStateBuiltin.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_game_state_builtin.gif" alt="Inheritance graph for egmSpark::GameStateBuiltin"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::GameStateBuiltin</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal"><span class="NDLSystemFont"><a href="egmSpark__GameState.htm">GameState</a></span> BuiltInModel class. </p>
+<p class="NDLNormal">Used to allow manipulation and implementation of game states and transitions from script and the entity model tool. </p>
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_game_state_builtin_1ad2b94407f53da18da7b11723d5d98ca9"></a>
+<p class="NDLRefMemberFunction">GameStateBuiltin()</p>
+<p class="NDLRefMemberDetailedDescription">Default constructor used by factory method </p>
+
+<a name="classegm_spark_1_1_game_state_builtin_1a1d8b642e3b91c5f46759a90b4fc07adc"></a>
+<p class="NDLRefMemberFunction">virtual void  OnAdded()</p>
+<p class="NDLRefMemberDescription">This is an overridden virtual function. </p>
+<p class="NDLRefMemberDetailedDescription">See the egf::IBuiltinModel in the main Gamebryo documentation for details. </p>
+
+<a name="classegm_spark_1_1_game_state_builtin_1aa4cf4971e831bd3ee3fece326e7a0656"></a>
+<p class="NDLRefMemberFunction">virtual void  OnRemoved()</p>
+<p class="NDLRefMemberDescription">This is an overridden virtual function. </p>
+<p class="NDLRefMemberDetailedDescription">See the egf::IBuiltinModel in the main Gamebryo documentation for details. </p>
+
+<a name="classegm_spark_1_1_game_state_builtin_1acd1b699d8f549798e2bc0eaf72f8db97"></a>
+<p class="NDLRefMemberFunction">virtual bool  Begin()</p>
+<p class="NDLRefMemberDescription">Begin gets called right before this state is invoked. </p>
+<p class="NDLRefMemberDetailedDescription">(after state is successfully loaded) </p>
+
+<a name="classegm_spark_1_1_game_state_builtin_1a94f2353ac22fb18232a648cfd0966719"></a>
+<p class="NDLRefMemberFunction">virtual void  End()</p>
+<p class="NDLRefMemberDescription">End gets called right before a new state is about to take over. </p>
+
+<a name="classegm_spark_1_1_game_state_builtin_1ae5e9384efc1b541768b534a97f40a8c9"></a>
+<p class="NDLRefMemberFunction">virtual bool  Suspend()</p>
+<p class="NDLRefMemberDescription">Suspend gets called when a new state is being "called" keeping this state active but dormant. </p>
+
+<a name="classegm_spark_1_1_game_state_builtin_1a980398f2412b7067e7aa9b8579c1e075"></a>
+<p class="NDLRefMemberFunction">virtual bool  Resume()</p>
+<p class="NDLRefMemberDescription">Resume gets called when this state is about to be resumed after having another state be activated on top of it. </p>
+
+<a name="classegm_spark_1_1_game_state_builtin_1a36e3b4e16904c5df57af3167b7b24369"></a>
+<p class="NDLRefMemberFunction">virtual void  OnTick(efd::TimeType time)</p>
+<p class="NDLRefMemberDescription">Kicks off the OnGameStateTick built-in behavior. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">time</span></td>
+    <td>The current cumulative time of the application. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_game_state_builtin_1a6c458437e6b9a3bd78d9c81910951ff3"></a>
+<p class="NDLRefMemberFunction">const efd::ID128&  GetDataFileID()</p>
+<p class="NDLRefMemberDescription">Gets the data File ID that gets set when an entity is in a block file. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The ID. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_game_state_builtin_1aa121c343550546734ef0dcafd9bc3f05"></a>
+<p class="NDLRefMemberFunction">virtual efd::Bool  Resolve(<span class="NDLSystemFont"><a href="egmSpark__GameState.htm">GameState</a></span>* pConflictingGameState)</p>
+<p class="NDLRefMemberDescription">This method is called to notify a game state that there is another state being registered with the same name as the existing state. </p>
+
+<a name="classegm_spark_1_1_game_state_builtin_1a20f09e0cde92ab45271cebe4f9dfa23c"></a>
+<p class="NDLRefMemberFunction">virtual void  OnCreate()</p>
+<p class="NDLRefMemberDescription">Called once the OnCreate entity lifecycle completes. </p>
+<a name="built-in_variable_accessors"></a>
+<p class="NDLRefHead1">Built-in variable accessors</p>
+
+
+<a name="classegm_spark_1_1_game_state_builtin_1a687050b3f9cb21a9c7e0f30379be4bf0"></a>
+<p class="NDLRefMemberFunction">efd::Bool  GetWantTicks() const</p>
+<p class="NDLRefMemberDescription">Gets the current value of the flag that determines if any processing occurs during the ticks. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The current value. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_game_state_builtin_1ae4194ab3710ddda7a9936f140b1ad2bc"></a>
+<p class="NDLRefMemberFunction">void  SetWantTicks(const efd::Bool& )</p>
+<p class="NDLRefMemberDescription">Sets a new value of the flag that determines if any processing occurs during the ticks. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The new value. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::PhysXEntityMover</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::PhysXEntityMover</p>
+<p class="NDLRefParentage">: public <span class="NDLSystemFont"><a href="egmSpark__IBuiltinModelBase.htm">egmSpark::IBuiltinModelBase</a></span></p>
+
+
+<p class="NDLRefHeaderFile">&lt;PhysXEntityMover.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_phys_x_entity_mover.gif" alt="Inheritance graph for egmSpark::PhysXEntityMover"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::PhysXEntityMover</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">Reponds to entity move events for use with Kinematic PhysX entities For networked games, the design is for the entity that you are moving to be owned by the host and replicated on remote clients. </p>
+
+<a name="public_types"></a>
+<p class="NDLRefHead1">Public Types</p>
+<a name="classegm_spark_1_1_phys_x_entity_mover_1a8e85ba2b7cf5280d64a6d2b904fbcde4"></a>
+<p class=NDLRefHead2>egmSpark::PhysXEntityMover::eMoveMode</p>
+
+
+
+
+<!--(Table)=========================================================-->
+<div class="ReferenceTable">
+<table>
+  <thead>
+	<tr>
+        <th>Name</th>
+	    <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">MM_NONE</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">MM_POSITION</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">MM_DIRECTION</span></td>
+    <td>&nbsp;</td>
+</tr>
+
+  </tbody>
+</table>
+</div>
+
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_phys_x_entity_mover_1a10b2bea03bf33c2d84c743a96ea35847"></a>
+<p class="NDLRefMemberFunction">PhysXEntityMover()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_phys_x_entity_mover_1acf14856371f0f1c7e4b5ac0cfc8f1d5a"></a>
+<p class="NDLRefMemberFunction">virtual void  OnRemoved()</p>
+<p class="NDLRefMemberDescription">An override of egf::IBuiltinModel::OnRemoved that unregisters the model from the <span class="NDLSystemFont"><a href="egmSpark__BuiltinUpdateService.htm">BuiltinUpdateService</a></span>. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Derived classes should call this base class method if they override this method. Typically you should call this method as the last step of any override implementation. </p></p>
+
+<a name="classegm_spark_1_1_phys_x_entity_mover_1ae0e5931ced391bf093ba6928e9d15026"></a>
+<p class="NDLRefMemberFunction">virtual void  OnAssetsLoaded()</p>
+<p class="NDLRefMemberDescription">Called once the OnAssetsLoaded entity lifecycle completes. </p>
+
+<a name="classegm_spark_1_1_phys_x_entity_mover_1ab1dd345c310c7dcde17d6fa8506a0b58"></a>
+<p class="NDLRefMemberFunction">virtual void  OnReplicaAssetsLoaded()</p>
+<p class="NDLRefMemberDescription">Called once the OnReplicaAssetsLoaded entity lifecycle completes for a replicated entity. </p>
+
+<a name="classegm_spark_1_1_phys_x_entity_mover_1afbb0cd561e2e62b5778ce0f004f39762"></a>
+<p class="NDLRefMemberFunction">virtual efd::AsyncResult  Update(efd::TimeType timeDelta)</p>
+<p class="NDLRefMemberDescription">The Update method is called by <span class="NDLSystemFont"><a href="egmSpark__BuiltinUpdateService.htm#classegm_spark_1_1_builtin_update_service_1a7c4275972f75aa847ab6d9d5755d82f8">BuiltinUpdateService::OnTick</a></span> on every registered built-in model. </p>
+<p class="NDLRefMemberDetailedDescription">Models that do not require updating can return AsyncResult_Complete to prevent further calls. The default implementation simply returns AsyncResult_Complete.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">timeDelta</span></td>
+    <td>The amount of game time that passed since the previous tick. This is not always the time passed since the last call to Update as updating can be paused. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>Return AsyncResult_Pending to be called again on the next tick or return AsyncResult_Complete if further calls are not needed. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_entity_mover_1a2139890fc6a7a3865287c69cb0f59c8f"></a>
+<p class="NDLRefMemberFunction">virtual void  Stop()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_phys_x_entity_mover_1a912fd38d7d30b3098bfeda99dcbb8107"></a>
+<p class="NDLRefMemberFunction">virtual void  MoveTo(const efd::Point3& destination)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_phys_x_entity_mover_1ac7f562e0fc8f5d5a6e46b26e7e5e5f39"></a>
+<p class="NDLRefMemberFunction">virtual void  MoveInDirection(const efd::Point3& direction)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_phys_x_entity_mover_1acec9e9043a34199fba572d2eb96805ab"></a>
+<p class="NDLRefMemberFunction">virtual bool  IsValidHit(NxSweepQueryHit* pHit)</p>
+<p class="NDLRefMemberDescription">Checks whether the hit is one that we care about. </p>
+<p class="NDLRefMemberDetailedDescription">Implemented in derived classes. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if the hit is valid, false otherwise. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_entity_mover_1a865782208e564352c1f803eb368467a9"></a>
+<p class="NDLRefMemberFunction">virtual bool  OnHit(<br/>NxSweepQueryHit* pHit, <br/>NxVec3& newPos)</p>
+<p class="NDLRefMemberDescription">A callback that is executed when the actor is hit. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pHit</span></td>
+    <td>ThePhysX SweepQueryHit object that contains information about the collision. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">newPos</span></td>
+    <td>The position of the hit. The callback can change this value if needed. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>False if no more callbacks are required for this collision instance. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_entity_mover_1af7f5a51b4ce861d85587e7c1ffb1c9b1"></a>
+<p class="NDLRefMemberFunction">virtual void  OnMoveToDestination(efd::DataStream* pStream)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_phys_x_entity_mover_1a6b7b073cba2af17d5b3b8b9c07034f38"></a>
+<p class="NDLRefMemberFunction">virtual void  OnMoveInDirection(efd::DataStream* pStream)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_phys_x_entity_mover_1acb2d54b98c654dd57cbbf7d0028781bc"></a>
+<p class="NDLRefMemberFunction">virtual void  OnStopMovement(efd::DataStream* pStream)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_phys_x_entity_mover_1a5f1ae5bce41dc5799185c5b951bde648"></a>
+<p class="NDLRefMemberFunction">virtual efd::Point3  GetHostPosition() const</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_phys_x_entity_mover_1a7489e91ac15a8e9aa8306e65c4ea6f13"></a>
+<p class="NDLRefMemberFunction">virtual void  SetHostPosition(const efd::Point3& hostPosition)</p>
+<p class="NDLRefMemberFunction"></p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

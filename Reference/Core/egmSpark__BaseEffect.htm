@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::BaseEffect</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::BaseEffect</p>
+<p class="NDLRefParentage">: public MemObject</p>
+
+
+<p class="NDLRefHeaderFile">&lt;EffectsManager.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_base_effect.gif" alt="Inheritance graph for egmSpark::BaseEffect"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::BaseEffect</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">Effect used by the EffectManager to store information about a graphical asset. </p>
+
+<a name="public_attributes"></a>
+<p class="NDLRefHead1">Public Attributes</p>
+
+
+<a name="classegm_spark_1_1_base_effect_1a3057b58e34777955d871b613bb69fcab"></a>
+<p class="NDLRefMemberFunction">efd::utf8string  m_soundEvent</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_base_effect_1ac02e020c4ebab912ad77e20120780a58"></a>
+<p class="NDLRefMemberFunction">efd::Bool  m_active</p>
+<p class="NDLRefMemberFunction"></p>
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_base_effect_1a492d916fc7a43d4cdf16a93a0dc2f6fd"></a>
+<p class="NDLRefMemberFunction">BaseEffect()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_base_effect_1a52253e1985bc303ca5f2f63b5a4dbf82"></a>
+<p class="NDLRefMemberFunction">virtual ~BaseEffect()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_base_effect_1af1018bf29eb07ff8ccb3410872aedb88"></a>
+<p class="NDLRefMemberFunction">virtual NiAVObject*  GetSceneGraph() = 0</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_base_effect_1aaf405d265679ab4da840da375e638814"></a>
+<p class="NDLRefMemberFunction">virtual efd::Bool  Start() = 0</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_base_effect_1a3d8663f3325a03694c7694849ce79789"></a>
+<p class="NDLRefMemberFunction">virtual void  Stop() = 0</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_base_effect_1a84011333cd121176330e42d759a5b331"></a>
+<p class="NDLRefMemberFunction">virtual void  Update(efd::Float32 delta) = 0</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_base_effect_1afb2c3dd628e5d3378357bd2476775667"></a>
+<p class="NDLRefMemberFunction">virtual efd::Bool  IsDone() = 0</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_base_effect_1a1b74976b2cdfae1ff5c2067cae7b00f9"></a>
+<p class="NDLRefMemberFunction">virtual efd::Bool  IsActive()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_base_effect_1a52e21fbf575480a1465527c4d8986274"></a>
+<p class="NDLRefMemberFunction">virtual void  SetTransform(<br/>const efd::Point3& position, <br/>const efd::Matrix3& rotation) = 0</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_base_effect_1a02c7cb174d5f6dfd95246917710c918b"></a>
+<p class="NDLRefMemberFunction">virtual void  SetPosition(const efd::Point3& position) = 0</p>
+<p class="NDLRefMemberFunction"></p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

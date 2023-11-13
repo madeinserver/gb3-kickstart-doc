@@ -1,0 +1,183 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::PostEffectsManager</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::PostEffectsManager</p>
+<p class="NDLRefParentage">: public MemObject</p>
+
+
+<p class="NDLRefHeaderFile">&lt;PostEffectsManager.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_post_effects_manager.gif" alt="Inheritance graph for egmSpark::PostEffectsManager"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::PostEffectsManager</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">The post effect manager is a singleton class that manages the shared resources associated with <span class="NDLSystemFont"><a href="egmSpark__PostEffect.htm">PostEffect</a></span> and <span class="NDLSystemFont"><a href="egmSpark__PostEffectsStep.htm">PostEffectsStep</a></span> instances. </p>
+
+<a name="public_static_attributes"></a>
+<p class="NDLRefHead1">Public Static Attributes</p>
+
+
+<a name="classegm_spark_1_1_post_effects_manager_1ac6ee7ab051d5269c288886188fd900ca"></a>
+<p class="NDLRefMemberFunction">static const unsigned int  k_numMaps</p>
+<p class="NDLRefMemberDescription">Maximum number of samplers on default quad. </p>
+<a name="shared_buffers"></a>
+<p class="NDLRefHead1">Shared Buffers</p>
+
+<p class="NDLRefMemberDescription">This default set of shared buffers is automatically created by Init if requested.</p>
+<p class="NDLRefMemberDescription">k_bufferDefault0, k_bufferDefault1, and k_bufferInput should not normally be accessed directly by a <span class="NDLSystemFont"><a href="egmSpark__PostEffect.htm">PostEffect</a></span>; these buffers are automatically selected and used by the <span class="NDLSystemFont"><a href="egmSpark__PostEffectsStep.htm">PostEffectsStep</a></span> that owns the effect.</p>
+<p class="NDLRefMemberDescription">If creating these buffers manually, k_bufferInput should have a target that uses a depth buffer, k_bufferDefault0 may use the same texture as k_bufferInput, but k_bufferDefault1 requires its own texture. (The <span class="NDLSystemFont"><a href="egmSpark__PostEffectsStep.htm">PostEffectsStep</a></span> will write alternately to default buffers 0 and 1 with each effect pass, starting with 1.)</p>
+<p class="NDLRefMemberDescription">The range 0xECFE0000 to 0xECFEFFFF is reserved for internal use. Do not create custom buffers with ID values in this range. </p>
+<p class="NDLRefMemberDescription"><span class="NDLSystemFont"><a href="egmSpark__PostEffectsManager.htm#classegm_spark_1_1_post_effects_manager_1a72c6ed29c933c39e1ceb07aff68ea909">Init()</a></span></p>
+
+<a name="classegm_spark_1_1_post_effects_manager_1ae6adbbe568febcc2e85f032deb150c04"></a>
+<p class="NDLRefMemberFunction">static const efd::UInt32  k_bufferDefault0</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_post_effects_manager_1ae4bb7fb847bffbeff5ec72a011fb9911"></a>
+<p class="NDLRefMemberFunction">static const efd::UInt32  k_bufferDefault1</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_post_effects_manager_1a3d986520db534f17f07f7afecf322e8d"></a>
+<p class="NDLRefMemberFunction">static const efd::UInt32  k_bufferInput</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_post_effects_manager_1a4637969b7fbee4e815d77fd07368bbe0"></a>
+<p class="NDLRefMemberFunction">static const efd::UInt32  k_bufferDepth</p>
+<p class="NDLRefMemberFunction"></p>
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_post_effects_manager_1a331741d5871cea62e00e16b3d9b41713"></a>
+<p class="NDLRefMemberFunction"><span class="NDLSystemFont"><a href="egmSpark__PostEffectsStep.htm">PostEffectsStep</a></span>*  CreateRenderStep()</p>
+<p class="NDLRefMemberDescription">Creates a new <span class="NDLSystemFont"><a href="egmSpark__PostEffectsStep.htm">PostEffectsStep</a></span>. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription"><span class="NDLSystemFont"><a href="egmSpark__PostEffectsStep.htm">PostEffectsStep</a></span></p></p>
+
+<a name="classegm_spark_1_1_post_effects_manager_1a567401eb60c5532eed08fc8f211ad567"></a>
+<p class="NDLRefMemberFunction">NiDefaultClickRenderStep*  CreateDepthStep(const <span class="NDLSystemFont">NiViewRenderClick</span>* pClick)</p>
+<p class="NDLRefMemberDescription">Creates a render set suitable for generating the depth texture required by depth effects. </p>
+<p class="NDLRefMemberDetailedDescription">Copies its render views from a given render click.</p>
+<p class="NDLRefMemberDetailedDescription">Insert this step into your render frame any time before the <span class="NDLSystemFont"><a href="egmSpark__PostEffectsStep.htm">PostEffectsStep</a></span> that depends on it. </p>
+
+<a name="classegm_spark_1_1_post_effects_manager_1a75364a8af1d9e8cd110e66d989ecf82f"></a>
+<p class="NDLRefMemberFunction">NiMeshScreenElements*  GetDefaultScreenQuad()</p>
+<p class="NDLRefMemberDescription">Returns the shared fullscreen quad mesh. </p>
+<p class="NDLRefMemberDetailedDescription">Used internally by <span class="NDLSystemFont"><a href="egmSpark__PostEffect.htm">PostEffect</a></span>. </p>
+
+<a name="classegm_spark_1_1_post_effects_manager_1ac3e3c1d41000126e41c36ee20ad6f67e"></a>
+<p class="NDLRefMemberFunction">NiTexturingProperty*  GetDefaultTexturingProperty()</p>
+<p class="NDLRefMemberDescription">Returns the texturing property of the fullscreen quad mesh. </p>
+<p class="NDLRefMemberDetailedDescription">Used internally by <span class="NDLSystemFont"><a href="egmSpark__PostEffect.htm">PostEffect</a></span>. </p>
+
+<a name="classegm_spark_1_1_post_effects_manager_1a3f30b7c15003788d839e61c40c17fbc0"></a>
+<p class="NDLRefMemberFunction">NiRenderTargetGroup*  GetSharedTarget(efd::UInt32 buffer)</p>
+<p class="NDLRefMemberDescription">Returns a render target from the shared set, identified by a unique integer. </p>
+<p class="NDLRefMemberDetailedDescription">Returns NULL if not found. </p>
+
+<a name="classegm_spark_1_1_post_effects_manager_1a5b75353381bde57077223854ce7fc3cf"></a>
+<p class="NDLRefMemberFunction">NiRenderedTexture*  GetSharedTexture(efd::UInt32 buffer)</p>
+<p class="NDLRefMemberDescription">Returns a texture from the shared set, identified by a unique integer. </p>
+<p class="NDLRefMemberDetailedDescription">Returns NULL if not found. </p>
+
+<a name="classegm_spark_1_1_post_effects_manager_1a9f8658883b33f897cfd529e12577e0cb"></a>
+<p class="NDLRefMemberFunction">NiRenderedTexture*  GetDepthTexture()</p>
+<p class="NDLRefMemberDescription">Returns the shared depth texture. </p>
+<p class="NDLRefMemberDetailedDescription">Equivalent to GetSharedTexture(PostEffectsManager::k_bufferDepth). </p>
+
+<a name="classegm_spark_1_1_post_effects_manager_1a8010dee0e3e09d501acfee93ce5a76c8"></a>
+<p class="NDLRefMemberFunction">bool  DepthEnabled()</p>
+<p class="NDLRefMemberDescription">Returns true if the shared depth texture is available. </p>
+<p class="NDLRefMemberDetailedDescription">Equivalent to (NULL != <span class="NDLSystemFont"><a href="egmSpark__PostEffectsManager.htm#classegm_spark_1_1_post_effects_manager_1a9f8658883b33f897cfd529e12577e0cb">GetDepthTexture()</a></span>). </p>
+
+<a name="classegm_spark_1_1_post_effects_manager_1a16f1b09abdf99d4804f21ab91ec3d5b7"></a>
+<p class="NDLRefMemberFunction">void  SetSharedBuffer(<br/>efd::UInt32 buffer, <br/>NiRenderedTexture* pTexture, <br/>NiRenderTargetGroup* pTarget)</p>
+<p class="NDLRefMemberDescription">This adds a manually created texture/target pair to the set of shared buffers. </p>
+<p class="NDLRefMemberDetailedDescription">Reusing the same integer key for iBuffer will replace any existing buffer using the same key. </p>
+
+<a name="classegm_spark_1_1_post_effects_manager_1a4e494791bd82d8e829d35595c7acf2c8"></a>
+<p class="NDLRefMemberFunction">bool  CreateSharedBuffer(<br/>efd::UInt32 buffer, <br/>unsigned int w, <br/>unsigned int h)</p>
+<p class="NDLRefMemberDescription">This automatically creates an RGBA buffer of the requested size, and adds it to the set of shared buffers. </p>
+<p class="NDLRefMemberDetailedDescription">Returns false on failure. </p>
+<a name="public_static_methods"></a>
+<p class="NDLRefHead1">Public Static Methods</p>
+
+
+<a name="classegm_spark_1_1_post_effects_manager_1a72c6ed29c933c39e1ceb07aff68ea909"></a>
+<p class="NDLRefMemberFunction">static bool  Init(<br/>bool defaultBuffers, <br/>bool depth)</p>
+<p class="NDLRefMemberDescription">This creates the singleton <span class="NDLSystemFont">PostEffectsManager</span> and returns true if successful. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">defaultBuffers</span></td>
+    <td>If true, Init creates the default full screen buffers k_bufferDefault0, k_bufferDefault1, and k_bufferInput. If false, you are responsible for creating these buffers yourself before creating an <span class="NDLSystemFont"><a href="egmSpark__PostEffectsStep.htm">PostEffectsStep</a></span> with CreateRenderStep. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">depth</span></td>
+    <td>If true, creates the default k_bufferDepth buffer. To be able to use depth based post effect, you must also render to k_bufferDepth, which can be done with CreateDepthStep, or by another means of your choosing. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if the PostEffectManager singleton was successfully created. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_post_effects_manager_1ac7e12f411fd8a2155c5afff95ca0582d"></a>
+<p class="NDLRefMemberFunction">static void  Shutdown()</p>
+<p class="NDLRefMemberDescription">Deletes the PostEffectManager singleton. </p>
+
+<a name="classegm_spark_1_1_post_effects_manager_1a304e849e6d10a30d335a9e5ba82b4684"></a>
+<p class="NDLRefMemberFunction">static <span class="NDLSystemFont">PostEffectsManager</span>*  GetManager()</p>
+<p class="NDLRefMemberDescription">Get the PostEffectManager singleton. </p>
+<p class="NDLRefMemberDetailedDescription">Returns NULL if not called between Init and Shutdown, or if Init was unsuccessful. </p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::Initializer</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::Initializer</p>
+
+
+<p class="NDLRefHeaderFile">&lt;SparkInitializers.h&gt;</p>
+
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">A structure containing the service initialize methods. </p>
+<p class="NDLNormal">The structure's only purpose is to provide default template arguments.</p>
+<p class="NDLNormal"></p>
+
+<a name="public_static_methods"></a>
+<p class="NDLRefHead1">Public Static Methods</p>
+
+
+<a name="structegm_spark_1_1_initializer_1a63db8c44c9ae5750cfb92dfb24592d8c"></a>
+<p class="NDLRefMemberFunction">static T*  InitializeService(<br/>efd::ServiceManager* pServiceManager, <br/>const <span class="NDLSystemFont"><a href="../Namespaces/egmSpark.htm#namespaceegm_spark_1a5a8d65eae99ede6b5e843b13037a4f9c">ServiceInitMap</a></span>& InitInfo, <br/>efd::UInt32 defaultPriority = USE_DEFAULT_SERVICE_PRIORITY, <br/>efd::ClassID classID = efd::kInvalidClassID)</p>
+<p class="NDLRefMemberDescription">Function to allocate and register an individual service while respecting user-defined override values in a ServiceInitMap. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pServiceManager</span></td>
+    <td>Pointer to the service manager </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">InitInfo</span></td>
+    <td>Map of class IDs to service initialization parameters </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">defaultPriority</span></td>
+    <td>Priority to initialize this service at. If set to the constant USE_DEFAULT_SERVICE_PRIORITY, the service default will be used. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">classID</span></td>
+    <td>Class ID to initialize the service on. If efd::kInvalidClassID is specified, the service's CLASS_ID constant will be used (T::CLASS_ID). Occasionally you will need to override the class ID when you are replacing a system class so that other system classes who look for that class id will find you instead of the system version. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>A newly-allocated and installed instance of the service class, or NULL if the user requested that the service not be initialized this run. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="structegm_spark_1_1_initializer_1a7efeaf974a65eddf2878bda7b3eca20c"></a>
+<p class="NDLRefMemberFunction">static T*  InitializeService(<br/>efd::ServiceManager* pServiceManager, <br/>efd::UInt32 priority = USE_DEFAULT_SERVICE_PRIORITY, <br/>efd::ClassID classID = efd::kInvalidClassID)</p>
+<p class="NDLRefMemberDescription">Template function to allocate and register an individual service. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pServiceManager</span></td>
+    <td>Pointer to the service manager </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">priority</span></td>
+    <td>Priority at which to initialize this service. If set to the constant USE_DEFAULT_SERVICE_PRIORITY, the service's default will be used as returned by the service's GetDefaultPriority() function. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">classID</span></td>
+    <td>Class ID to initialize the service on. If efd::kInvalidClassID is specified, the service's CLASS_ID constant will be used, for example AnimationService::CLASS_ID. Occasionally you will need to override the class ID when you are replacing a system class so that other system classes who look for that class id will find you instead of the system version. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>A newly-allocated and installed instance of the service class. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

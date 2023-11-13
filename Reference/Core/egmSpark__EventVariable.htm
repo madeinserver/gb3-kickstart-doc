@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::EventVariable</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::EventVariable</p>
+<p class="NDLRefParentage">: public <span class="NDLSystemFont"><a href="egmSpark__IBaseEventVariable.htm">egmSpark::IBaseEventVariable</a></span></p>
+
+
+<p class="NDLRefHeaderFile">&lt;EventHelper.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_event_variable.gif" alt="Inheritance graph for egmSpark::EventVariable"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::EventVariable</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">Templated class used by <span class="NDLSystemFont"><a href="egmSpark__EventHelper.htm">EventHelper</a></span> to automatically stream in/out event parameters. </p>
+
+<a name="public_attributes"></a>
+<p class="NDLRefHead1">Public Attributes</p>
+
+
+<a name="classegm_spark_1_1_event_variable_1a671ab0a31d95b8d005418936fa2b1d1a"></a>
+<p class="NDLRefMemberFunction">type  value</p>
+<p class="NDLRefMemberDescription">Stores the value of the variable. </p>
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_event_variable_1a1a669dec0075fc3afbf727fe173a2929"></a>
+<p class="NDLRefMemberFunction"><span class="NDLSystemFont">EventVariable</span>&lt;type&gt;  operator=(const type& other)</p>
+<p class="NDLRefMemberDescription">Assignment operator. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">other</span></td>
+    <td>R-value for assignment. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_event_variable_1a30a92f2c7d11da21db423d40c84cd61b"></a>
+<p class="NDLRefMemberFunction">operator type()</p>
+<p class="NDLRefMemberDescription">Automatic type conversion operator. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The value of the variable. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_event_variable_1a0912f5b636d3bdc565c1b759f5be7db8"></a>
+<p class="NDLRefMemberFunction">virtual void  Read(efd::DataStream* pStream)</p>
+<p class="NDLRefMemberDescription">Reads the variable from a data stream. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pStream</span></td>
+    <td>The data stream. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_event_variable_1a067cd471327653d91ad8000afc5a7ead"></a>
+<p class="NDLRefMemberFunction">virtual void  Write(efd::DataStream* pStream)</p>
+<p class="NDLRefMemberDescription">Writes the variable to a data stream. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pStream</span></td>
+    <td>The data stream. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

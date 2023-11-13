@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::BuiltinModelBaseStaticMapCleaner</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::BuiltinModelBaseStaticMapCleaner</p>
+
+
+<p class="NDLRefHeaderFile">&lt;SparkBuiltinModelHelper.h&gt;</p>
+
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">This class helps free memory used by the static maps used by every IBuiltinModelImpl class. </p>
+<p class="NDLNormal">This avoids false positives when doing memory leak detection. </p>
+
+<a name="public_static_methods"></a>
+<p class="NDLRefHead1">Public Static Methods</p>
+
+
+<a name="classegm_spark_1_1_builtin_model_base_static_map_cleaner_1aae3b1ab676bd2c9a25bbc3afe53f6e2e"></a>
+<p class="NDLRefMemberFunction">static void  CleanMapAtSDMShutdown(<span class="NDLSystemFont"><a href="../Namespaces/egmSpark.htm#namespaceegm_spark_1a89acf2e59e3d4e500b7059c986f6d31f">BehaviorMap</a></span>& map)</p>
+<p class="NDLRefMemberDescription">Add a map to the list requiring cleanup. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">map</span></td>
+    <td>The map to add. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_builtin_model_base_static_map_cleaner_1a44abd5c777530bfa56142dde030bdf24"></a>
+<p class="NDLRefMemberFunction">static void  _SDMShutdown()</p>
+<p class="NDLRefMemberDescription">Perform SDM Shutdown cleanup. </p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

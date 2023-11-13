@@ -1,0 +1,197 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>Overview of Cameras</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Fresnel" />
+<meta name="Generator" content="Palimpsest by Emergent Game Technologies - http://emergent.net" />
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+    
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+
+<!--(Begin Body)================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript">
+</script><script language="JavaScript1.2" type="text/javascript">
+WriteNavLink(2);
+</script>
+
+<h1>Overview of Cameras</h1>
+
+<p>The Spark Camera Service provides a generalized camera manager.  Your game will probably need
+its own custom camera.  Spark lets you prototype the camera in Lua, then downcode to C++ for
+performance after you are comfortable with it.</p>
+
+<p>The Spark Camera Service supports any number of camera instances.  Out of the box, it is
+compiled to support up to five custom C++ camera <b>types</b>, two of which are the Spark-provided
+SimpleCamera and ThirdPersonRotatingCamera.  If you need more custom camera types, edit
+CameraService.cpp and redefined the constant kMAX_CAMERA_TYPES to as high as you like.</p>
+
+<h3>Spark Cameras</h3>
+
+<p>So what is a Spark camera, anyway?  Simply put, a Spark Camera is a combination of a C++ class
+implementing the egmSpark::ICamera interface and the egf::IBuiltinModel interface; and a builtin
+model defined in an Entity Modeling Tool (EMT) project.  If you look at the SparkLibrary EMT
+project, you'll see three camera classes: SparkCamera, SparkSimpleCamera, and
+SparkThirdPersonRotatingCamera.</p>
+
+<h3>SparkCamera</h3>
+
+<p>SparkCamera is not a complete camera.  It's not a builtin model, it's just a regular EMT model,
+so you can't use it by itself as a camera.  It serves to hold some common behaviors and properties
+used by the builtin models used to implement the real cameras.</p>
+
+<p>The most important property of SparkCamera is the <b>isActive</b> flag.  If <b>isActive</b> is
+set to <i>true</i> in the entity at startup, then that camera automatically becomes the active
+camera.  If no camera has an <b>isActive</b> value set to <i>true</i>, then you'll have a blank
+screen to look at until something does set the camera.  If more than one camera sets it to
+<i>true</i>, then it's random which camera will be chosen.</p>
+
+<p>Another important property, depending on the camera you are using, is the <b>CameraSubject</b>
+property.  This is the entity your camera will treat as its subject.  Depending on the camera, this
+can either be critical or ignored.</p>
+
+<h3>SparkSimpleCamera</h3>
+
+<p>The SparkSimpleCamera is exactly what it says - a very simple camera.  It doesn't contain any
+built-in movement controls at all.  Instead, you need to direct it from Lua script code.  This may
+be useful to you as a prototyping tool - you can code up a camera in Lua and get its behavior right
+before you commit to C++ coding.</p>
+
+<p>To use the SparkSimpleCamera model, you'll want to create a model in your EMT project that mixes
+in SparkSimpleCamera.  Next, you'll need to hook input controls up to your camera (if you want to
+move it around, anyway).  You can use the SparkInputHandler model to set these controls up.  (If
+you don't hook up controls, the camera will just sit in one position - which, in some cases, may be
+useful in and of itself.)</p>
+
+<p>The SparkSimpleCamera does have the ability to move around.  You could always just set the
+Position and Rotation fields, but that's fairly low-level and difficult to do smoothly.  A better
+method is to use the builtin functions SparkCamera.SetLateralMovement and
+SparkCamera.SetLongitudinalMovement.  Together with setting the Rotation value, you can move the
+camera around with these calls.  SetLateralMovement sets the camera's movement to its left and
+right.  SetLongitudinalMovement sets its movement forward and backward.  Rotation sets its rotation
+about each axis (using Euler angles in degrees).</p>
+
+<h3>SparkThirdPersonRotatingCamera</h3>
+
+<p>If your game lends itself to a third person camera that rotates around its subject, the
+SparkThirdPersonRotatingCamera may be all you need.  This C++ camera type implements a very
+specific set of behaviors for a camera, behaviors that were developed for the MangledMetal sample
+that comes with Gamebryo Lightspeed.  To use this camera, simply mix it in to a model of your
+choice, and create an instance of that model in your block file.  If you do use the
+SparkThirdPersonRotatingCamera, make sure you specify a camera subject by mixing the
+SparkThirdPersonRotatingCameraSubject model into one of your entities, and then passing that entity
+to the CameraService via the SetSubject Lua builtin function.</p>
+
+<p>The SparkThirdPersonRotatingCamera installs C++ callbacks to handle certain named input events
+that will control the camera.  You should create an actionmap file that defines these input event
+names as being associated with input events.  The named input events that
+SparkThirdPersonRotatingCamera listens for are</p>
+
+<ul>
+    <li>SPARK_CAMERA_CONTROL_KEYB_FORWARD - Keyboard keypress to move the camera forward.</li>
+    <li>SPARK_CAMERA_CONTROL_KEYB_BACKWARD - Keyboard keypress to move the camera backward.</li>
+    <li>SPARK_CAMERA_CONTROL_KEYB_LEFT - Keyboard keypress to move the camera left.</li>
+    <li>SPARK_CAMERA_CONTROL_KEYB_RIGHT - Keyboard keypress to move the camera right.</li>
+    <li>SPARK_CAMERA_CONTROL - Analog stick event to control the camera.</li>
+</ul>
+
+<p>The AlphaGame comes with an actionmap file that defines these and other input events.  Look at
+the file AlphaGame/Application/Data/SparkActionMap.actionmap.</p>
+
+<h3>Custom C++ Cameras</h3>
+
+<p>Perhaps the SparkThirdPersonRotatingCamera doesn't meet your needs exactly.  After you have your
+camera's behavior pretty well-defined, you will want to implement it in C++ for performance.
+Implementing a builtin C++ camera comprises four steps:</p>
+
+<ol>
+    <li>Create the builtin model in your EMT project. Your builtin model should mix in the
+    SparkCamera model from the SparkLibrary EMT project. Add whatever properties you
+    need. The Lightspeed documentation can tell you how to create the builtin model.
+    Make sure to add the BUILTIN trait to the model.</li>
+    <li>Create the C++ class to implement your builtin model. Again, the Lightspeed documentation
+    can help you out here. One important addition to a regular builtin model is that
+    your C++ class should multiply inherit from the egmSpark::ICamera interface as well
+    as IBuiltinModelImpl. See the definition of the egmSpark::SimpleCamera class in
+    SimpleCamera.h for details. <b>Special Note:</b> Make sure you inherit from IBuiltinModelImpl
+    <b>first</b>. For the dynamic typecast system to work properly, the first class
+    you inherit from must be derived from IBase, which IBuiltinModelImpl is.</li>
+    <li>Install the new C++ builtin model in the Spark Camera Service. Use the static function
+    SparkCameraService::InstallCameraInstance function to install the builtin model.
+    You will need to pass three things: The name of the EMT project builtin model that
+    you created; the ID number of the EMT project builtin model; and a pointer to a
+    factory function that will allocate new instances of the builtin model. The ID number
+    can be found in the .flat file associated with your EMT model. Just open the file
+    and look for the "id=" value near the top. <b>Special Note:</b> You must install
+    the camera as early as possible in the initialization cycle. All cameras must be
+    registered before the CameraService's OnInit() function is called. You can call
+    it from your program's main or from a static initializer, or from a service OnPreInit()
+    call. The bottom of the MainService::SetupServices function is fine if you are using
+    AlphaGame as a base. </li>
+    <li>Drag a model that mixes in your builtin EMT model into your block file to instantiate
+    the camera. Make sure that one instance of your camera has the <b>isActive</b> flag
+    set to <i>true</i> so it becomes the active camera.</li>
+</ol>
+
+<p>Since the SparkSimpleCamera is indeed so simple, it's probably easiest to simply copy
+SimpleCamera.h and SimpleCamera.cpp, then change the class name to whatever you like.  If you do
+choose to copy SimpleCamera, you'll need to do a few things:</p>
+
+<p>1. Rename all occurrences of "SimpleCamera" to whatever you like.</p>
+
+<p>2. Remove the "namespace egmSpark { }" from around the class definition.  This will require
+adding egmSpark:: in front of a few class references, and removing egmSpark:: from some references
+to your camera class.</p>
+
+<p>3. Since SimpleCamera is part of Kickstart Core, it refers to Kickstart Core header files using
+#include "filename.h". When you move it out to your game project, you have to change these includes
+to #include &lt;egmSpark/filename.h&gt;. Kickstart Core files need to use the other syntax because at
+the time they are being compiled, the SDK directory may not exist, so they can't pull the files
+from the SDK.</p>
+
+<p>4. You'll need your own ClassID for the new class, not the one from Kickstart Core. (Well, you
+COULD use the one from Kickstart, but the dynamic type system might get confused - it's never a
+good practice). If your game is based on AlphaGame, you can edit SystemServiceIDs.enum, add your
+new class to it, #include "SystemServiceIDs.h" and use kCLASSID_yourclass.  If you're not based on
+AlphaGame, you should have some way to generate class IDs.</p>
+
+<h3>SparkCamera Builtins</h3>
+
+<p>The SparkCamera Lua bindings provide the following functions and constants:</p>
+
+<dl>
+    <dt>SparkCamera.GetActiveCamera()</dt>
+    <dd>Returns the Entity ID of the active camera</dd>
+    <dt>SparkCamera.ActivateCamera(camera)</dt>
+    <dd>Activates the camera with the given EntityID</dd>
+    <dt>SparkCamera.DeactivateCamera(camera)</dt>
+    <dd>Deactivates the camera with the given EntityID</dd>
+    <dt>SparkCamera.SetLongitudinalMovement(camera, magnitude)</dt>
+    <dd>Sets the longitudinal movement (forward/backward) of the specified camera. Magnitude is a
+    Float32 designed to be taken from an analog stick input event.</dd>
+    <dt>SparkCamera.SetLateralMovement(camera, magnitude)</dt>
+    <dd>Sets the lateral movement (left/right) of the specified camera. Magnitude is a Float32
+    designed to be taken from an analog stick input event.</dd>
+    <dt>SparkCamera.SetSubject(camera, subject)</dt>
+    <dd>Sets the subject of the specified camera entity to be the specified subject entity</dd>
+</dl>
+
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

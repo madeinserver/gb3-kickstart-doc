@@ -1,0 +1,222 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::SparkAnimationService</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::SparkAnimationService</p>
+<p class="NDLRefParentage">: public AnimationService</p>
+
+
+<p class="NDLRefHeaderFile">&lt;SparkAnimationService.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_spark_animation_service.gif" alt="Inheritance graph for egmSpark::SparkAnimationService"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::SparkAnimationService</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">Enhanced version of AnimationService which automatically retries activate& deactivate. </p>
+
+<a name="public_static_methods"></a>
+<p class="NDLRefHead1">Public Static Methods</p>
+
+
+<a name="classegm_spark_1_1_spark_animation_service_1af918b708555ef4fdd49355b43e352497"></a>
+<p class="NDLRefMemberFunction">static <span class="NDLSystemFont">SparkAnimationService</span>*  GetInstance()</p>
+<p class="NDLRefMemberDescription">Provides access to the service singleton. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The singleton pointer. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_spark_animation_service_1a4da02e2cf0a4175cbf3d10eb7ba297f2"></a>
+<p class="NDLRefMemberFunction">SparkAnimationService()</p>
+<p class="NDLRefMemberDescription">Constructor. </p>
+
+<a name="classegm_spark_1_1_spark_animation_service_1a4ada87493a8d2126d7fab8f9acf57bee"></a>
+<p class="NDLRefMemberFunction">virtual NiActorManager::SequenceID  GetSequenceID(<br/>const egf::EntityID& characterEntityID, <br/>const efd::utf8string& animationPropertyName)</p>
+<p class="NDLRefMemberDescription">Retrieves the sequence ID (from the animation set) associated with the passed character entity by the name of the property that holds the sequence name. </p>
+<p class="NDLRefMemberDetailedDescription">If the character is holding a weapon that has an animation set mixed into it, it will return the sequence name defined in the animation set. If not, it will return the sequence ID defined in the animation set that is mixed into the character itself (This is useful for weapon-specific versions of animations)</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">characterEntityID</span></td>
+    <td>The entity ID to get the sequence name from. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">animationPropertyName</span></td>
+    <td>The name of property that holds the animation sequence name. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_spark_animation_service_1afd055bf599c1589cb4d496d8c9eb973c"></a>
+<p class="NDLRefMemberFunction">virtual NiActorManager::SequenceID  GetSequenceID(<br/>const egf::Entity* pCharacter, <br/>egf::PropertyID animationPropertyID)</p>
+<p class="NDLRefMemberDescription">Retrieves the sequence ID (from the animation set) associated with the passed character entity by the ID of the property that holds the sequence name. </p>
+<p class="NDLRefMemberDetailedDescription">If the character is holding a weapon that has an animation set mixed into it, it will return the sequence name defined in the animation set. If not, it will return the sequence ID defined in the animation set that is mixed into the character itself (This is useful for weapon-specific versions of animations)</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<p class="NDLRefMemberDetailedDescription">This uses the "MasterAnimSet". </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pCharacter</span></td>
+    <td>The entity to get the sequence name from. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">animationPropertyID</span></td>
+    <td>The ID of the property that holds the animation sequence name.</td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_spark_animation_service_1a99e28f53330e08b15c954a125f2aea5f"></a>
+<p class="NDLRefMemberFunction">virtual void  UnregisterTextKey(<br/>const egf::EntityID& entityID, <br/>NiActorManager::SequenceID sequenceID, <br/>const efd::utf8string& textKey)</p>
+<p class="NDLRefMemberDescription">Unregisters the callback for a text key on the specified entity and animation sequence. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>The entity ID. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">sequenceID</span></td>
+    <td>The sequence ID. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">textKey</span></td>
+    <td>The text key to unregister. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_spark_animation_service_1a70f466b66a0ec66f6d3831979d19032c"></a>
+<p class="NDLRefMemberFunction">efd::Bool  ListenForTextKeyEvents(<br/>const egf::EntityID& entityID, <br/>const char* behaviorName, <br/>NiActorManager::SequenceID sequenceID, <br/>const char* textKey = NULL)</p>
+<p class="NDLRefMemberDescription">Registers a behavior callback for a text key on the specified entity and animation sequence. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>The entity ID. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">behaviorName</span></td>
+    <td>The name of the behavior to invoke when the text key is hit. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">sequenceID</span></td>
+    <td>The sequence ID. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">textKey</span></td>
+    <td>The text key to register. Can be NULL to match all text keys in the sequence regardless of content. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_spark_animation_service_1a055f318c9f32553e4ca94724c2ca6932"></a>
+<p class="NDLRefMemberFunction">NiActorManager*  GetActorFromUrn(const efd::utf8string& urn)</p>
+<p class="NDLRefMemberDescription">Returns an actor manager from preloaded assetID. </p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

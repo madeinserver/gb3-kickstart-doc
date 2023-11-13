@@ -1,0 +1,512 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::ScreenText</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::ScreenText</p>
+<p class="NDLRefParentage">: public NiRefObject</p>
+
+
+<p class="NDLRefHeaderFile">&lt;ScreenText.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_screen_text.gif" alt="Inheritance graph for egmSpark::ScreenText"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::ScreenText</p>
+</div>
+</p>
+
+
+<a name="public_static_methods"></a>
+<p class="NDLRefHead1">Public Static Methods</p>
+
+
+<a name="classegm_spark_1_1_screen_text_1a05f0b4231ca5c2cacea47dca1cf9e03c"></a>
+<p class="NDLRefMemberFunction">static NiTexture*  GetTexture()</p>
+<p class="NDLRefMemberDescription">Provides access to the texture used for character rendering. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The texture. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_screen_text_1aeee278fb724528b75b022b46b4ad73f4"></a>
+<p class="NDLRefMemberFunction">ScreenText(<br/>unsigned int uiMaxChars, <br/><span class="NDLSystemFont"><a href="egmSpark__ScreenTextRenderView.htm">ScreenTextRenderView</a></span>* pRenderView, <br/>const NiColorA& kColor)</p>
+<p class="NDLRefMemberDescription">Constructor. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">uiMaxChars</span></td>
+    <td>The maximum length of string that can be allocated. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pRenderView</span></td>
+    <td>The render view used to draw the text. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kColor</span></td>
+    <td>The color of the text. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_screen_text_1ad85290438c65f0822092733b89c156e2"></a>
+<p class="NDLRefMemberFunction">~ScreenText()</p>
+<p class="NDLRefMemberDescription">Destructor. </p>
+
+<a name="classegm_spark_1_1_screen_text_1a58bee38a49f95a01a1bd5ee9dea70648"></a>
+<p class="NDLRefMemberFunction">void  SetString(const char* pcString)</p>
+<p class="NDLRefMemberDescription">Sets the text displayed. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<p class="NDLRefMemberDetailedDescription">Will truncate the string to the pre-set max number of characters. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pcString</span></td>
+    <td>The new text to display. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_screen_text_1aab5619d975e209fe4159a056fa744e36"></a>
+<p class="NDLRefMemberFunction">const char*  GetString() const</p>
+<p class="NDLRefMemberDescription">Sets the text displayed. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The text that will currently be displayed. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_screen_text_1a29721769220d72972b88c9ed1b75015a"></a>
+<p class="NDLRefMemberFunction">void  SetTextOrigin(<br/>unsigned int uiX, <br/>unsigned int uiY)</p>
+<p class="NDLRefMemberDescription">Sets the position of the upper-left edge of the text in screen space pixel coordinates. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<p class="NDLRefMemberDetailedDescription">Screen space pixel coords: &lt;0 - (m-1), 0 - (n-1)&gt;, where the screen size is (m,n). </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">uiX</span></td>
+    <td>The new x position in pixels. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">uiY</span></td>
+    <td>The new y position in pixels. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_screen_text_1aa9c1323e8c3f8969e8015593c13bb281"></a>
+<p class="NDLRefMemberFunction">void  GetTextOrigin(<br/>unsigned int& uiX, <br/>unsigned int& uiY) const</p>
+<p class="NDLRefMemberDescription">Gets the position of the upper-left edge of the text in screen space pixel coordinates. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<p class="NDLRefMemberDetailedDescription">Screen space pixel coords: &lt;0 - (m-1), 0 - (n-1)&gt;, where the screen size is (m,n). </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">uiX</span></td>
+    <td>Receives the current x position in pixels. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">uiY</span></td>
+    <td>Receives the current y position in pixels. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_screen_text_1a06fede3033c8d6572b6bd8d0c37b39ba"></a>
+<p class="NDLRefMemberFunction">void  SetScrollDown(bool bDown)</p>
+<p class="NDLRefMemberDescription">Sets whether or not the text will scroll down automatically as more is added. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">bDown</span></td>
+    <td>True to enable scroll down, false to disable. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_screen_text_1ae1743cc2ea34329adb4fb5379071a532"></a>
+<p class="NDLRefMemberFunction">bool  GetScrollDown() const</p>
+<p class="NDLRefMemberDescription">Gets whether or not the text will scroll down automatically as more is added. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if scroll down is enabled. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_screen_text_1a5cbe83f7cb0b706fdbb37f630c50c2fe"></a>
+<p class="NDLRefMemberFunction">void  SetColor(NiColorA& kNewColor)</p>
+<p class="NDLRefMemberDescription">Sets the color of the text. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">kNewColor</span></td>
+    <td>The new text color. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_screen_text_1a6c842076023b8eeeec3a660f33483056"></a>
+<p class="NDLRefMemberFunction">const NiColorA&  GetColor() const</p>
+<p class="NDLRefMemberDescription">Gets the color of the text. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The current text color. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_screen_text_1ad8eb29c38525a49c73dd079e5389823c"></a>
+<p class="NDLRefMemberFunction">void  SetVisible(bool bVisible)</p>
+<p class="NDLRefMemberDescription">Used to toggle visibility of the text. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">bVisible</span></td>
+    <td>True to show the text, false to hide it. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_screen_text_1ab7bde6d9be8cce1fee90c7bef919f0cb"></a>
+<p class="NDLRefMemberFunction">short  GetHeight() const</p>
+<p class="NDLRefMemberDescription">Returns the height of the string which is always the vertical character spacing in pixels. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The height of the string. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_screen_text_1a85ac96b6769c934216c0c422c39c91eb"></a>
+<p class="NDLRefMemberFunction">short  GetWidth() const</p>
+<p class="NDLRefMemberDescription">Returns the combined width of all characters in the string. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The width of the string. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_screen_text_1aa540fff8d94b9d38bfa95f7657601558"></a>
+<p class="NDLRefMemberFunction">short  GetCharacterSpacing() const</p>
+<p class="NDLRefMemberDescription">Returns the horizontal character spacing in pixels. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The horizontal character spacing. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_screen_text_1a7abe9da225a5bfcd80458aba35efa8e5"></a>
+<p class="NDLRefMemberFunction">void  SetMaxLineLength(unsigned int uiColumns)</p>
+<p class="NDLRefMemberDescription">Sets the line length for word wrapping This should always be less than the text size, or else truncation will occur. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">uiColumns</span></td>
+    <td>The new number of columns before word wrapping occurs. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_screen_text_1ae7a861674f4f8eae1b5bde5966b01695"></a>
+<p class="NDLRefMemberFunction">unsigned int  GetMaxLineLength() const</p>
+<p class="NDLRefMemberDescription">Gets the line length for word wrapping. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The current number of columns before word wrapping occurs. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_screen_text_1a656df0f032446380a83a9bb4310693cc"></a>
+<p class="NDLRefMemberFunction">void  AppendCharacter(char cChar)</p>
+<p class="NDLRefMemberDescription">Appends a character to the strong. </p>
+<p class="NDLRefMemberDetailedDescription">This will not append beyond the pre-set max number of characters. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">cChar</span></td>
+    <td>The character to append. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_screen_text_1a7789efa71e3d3fd41cc85a5919cacc5d"></a>
+<p class="NDLRefMemberFunction">void  DeleteLastCharacter()</p>
+<p class="NDLRefMemberDescription">Removes the character at the end of the string. </p>
+
+<a name="classegm_spark_1_1_screen_text_1a4139d02caa5162ae74b024e7faecbff9"></a>
+<p class="NDLRefMemberFunction">void  RecreateText()</p>
+<p class="NDLRefMemberDescription">Regenerates the screen elements used to render the text. </p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

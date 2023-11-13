@@ -1,0 +1,601 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::PhysXCharacterController</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::PhysXCharacterController</p>
+<p class="NDLRefParentage">: public <span class="NDLSystemFont"><a href="egmSpark__IBuiltinModelBase.htm">egmSpark::IBuiltinModelBase</a></span></p>
+
+
+<p class="NDLRefHeaderFile">&lt;PhysXCharacterController.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_phys_x_character_controller.gif" alt="Inheritance graph for egmSpark::PhysXCharacterController"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::PhysXCharacterController</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">Implementation of the NxController provided with PhysX (Note: Requires NxController.dll for Win32 version). </p>
+<p class="NDLNormal">Features of the <span class="NDLSystemFont">PhysXCharacterController</span> model:</p>
+<p class="NDLNormal">
+<ul>
+<li>Utilizes the NxCharacter controller to implement player movement. This includes the handling of slopes, step heights, and gravity.</li>
+<li>Pushing of dynamic PhysX actors via collision group.</li>
+<li>Dead reckoning for use with multiplayer latency hiding</li>
+<li>Detects the ground and adjusts the position of the character when the ground moves from underneath the character.</li></ul></p>
+<p class="NDLNormal">Notes regarding the dead reckoning:</p>
+<ul>
+<li>A replicated position and desired velocity is sent (unreliably) every 1/10 second</li>
+<li>This system will predict where the character is heading and keep moving the character in that direction until the next update</li>
+<li>When the next replicated position update is received, there will undoubtedly be some error in where the replicated entity is located versus where the owning entity is located. The system handles this by essentially steering the movement towards the new, corrected, predicted position.</li>
+<li>This works well for the most part, however there are times where it the two get too far out of sync. In this case, the character will be teleported to the replicated position (note: this distance is simply a property that can be updated by designers via the entity modeling tool. </li></ul>
+
+<a name="public_types"></a>
+<p class="NDLRefHead1">Public Types</p>
+<a name="classegm_spark_1_1_phys_x_character_controller_1a73995ed0060407f0e4800cf22f242b34"></a>
+<p class=NDLRefHead2>egmSpark::PhysXCharacterController::eStance</p>
+
+
+
+<p class="NDLRefMemberDetailedDescription">The way the character is standing </p>
+
+<!--(Table)=========================================================-->
+<div class="ReferenceTable">
+<table>
+  <thead>
+	<tr>
+        <th>Name</th>
+	    <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">STANCE_STANDING</span></td>
+    <td>The character is standing normally. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">STANCE_CROUCHED</span></td>
+    <td>The character is crouching. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">STANCE_COUNT</span></td>
+    <td>Placed at the end of the enumeration so it contains the number of options. </td>
+</tr>
+
+  </tbody>
+</table>
+</div>
+
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_phys_x_character_controller_1ae9e8d500da45370b3cc64c795d88a16a"></a>
+<p class="NDLRefMemberFunction">PhysXCharacterController()</p>
+<p class="NDLRefMemberDescription">Constructor. </p>
+
+<a name="classegm_spark_1_1_phys_x_character_controller_1a9351384122c2a651ad333bb11f788486"></a>
+<p class="NDLRefMemberFunction">~PhysXCharacterController()</p>
+<p class="NDLRefMemberDescription">Destrutor. </p>
+
+<a name="classegm_spark_1_1_phys_x_character_controller_1aa7d31425152c828d8eafb62e35788b57"></a>
+<p class="NDLRefMemberFunction">virtual NxActor*  GetNxActor()</p>
+<p class="NDLRefMemberDescription">Gets the PhysX actor associated with this character controller. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>A pointer to the PhysX actor, or NULL if it does not exist. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_character_controller_1a7110b8ec9c7d1362757957770c2f30f8"></a>
+<p class="NDLRefMemberFunction">bool  SetDesiredVelocity(const efd::Point3& velocity)</p>
+<p class="NDLRefMemberDescription">Sets the velocity that the character should be attempting to move at. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">velocity</span></td>
+    <td>The new target velocity. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if the function succeeds. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_character_controller_1aeb1500edaf62f317c36e1e58a53d6170"></a>
+<p class="NDLRefMemberFunction">virtual void  TeleportTo(const efd::Point3& position)</p>
+<p class="NDLRefMemberDescription">Teleports a character to the specified position. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">position</span></td>
+    <td>The locatoin to teleport to. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_character_controller_1afeb383609de1edb4cfd8eab4fa9f9b10"></a>
+<p class="NDLRefMemberFunction">efd::Point3  GetReplicationPosition() const</p>
+<p class="NDLRefMemberDescription">Get the position of the character that will be replicated over the network. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The current replication position. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_character_controller_1a5261fcff7968d53510687979fdea99f2"></a>
+<p class="NDLRefMemberFunction">void  SetReplicationPosition(const efd::Point3& position)</p>
+<p class="NDLRefMemberDescription">Used by the property system to set the underlying replication position variable and to notify the class of that event. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Do NOT call <span class="NDLSystemFont"><a href="egmSpark__PhysXCharacterController.htm#classegm_spark_1_1_phys_x_character_controller_1a5261fcff7968d53510687979fdea99f2">SetReplicationPosition()</a></span> to set the property. Instead use SetPropertyValue() or <span class="NDLSystemFont"><a href="../Namespaces/egmSpark.htm#namespaceegm_spark_1a92f5aff87bae44d69ed79e22c8f4bc92">egmSpark::SetReplicatedPosition()</a></span> instead. </p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">position</span></td>
+    <td>The new replication position. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_character_controller_1a54017055cec521571c3a5f1a6881c04b"></a>
+<p class="NDLRefMemberFunction">virtual void  DestroyPhysX()</p>
+<p class="NDLRefMemberDescription">Releases the PhysX character controller that is managed by this class. </p>
+
+<a name="classegm_spark_1_1_phys_x_character_controller_1a1fa7d09b72f2b746e2b8ed083eddd350"></a>
+<p class="NDLRefMemberFunction">virtual void  OnJump(efd::DataStream* pStream)</p>
+<p class="NDLRefMemberDescription">An event handler function that is invoked when the character jumps. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pStream</span></td>
+    <td>A data stream containing any parameters used by the event handler. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_character_controller_1a1be8394f12dff28e1da418579bc0d8f0"></a>
+<p class="NDLRefMemberFunction">virtual void  OnStand(efd::DataStream* pStream)</p>
+<p class="NDLRefMemberDescription">An event handler function that is invoked when the character stands. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pStream</span></td>
+    <td>A data stream containing any parameters used by the event handler. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_character_controller_1a99174ebf4041351a38879712537b786f"></a>
+<p class="NDLRefMemberFunction">virtual void  OnCrouch(efd::DataStream* pStream)</p>
+<p class="NDLRefMemberDescription">An event handler function that is invoked when the character crouches. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pStream</span></td>
+    <td>A data stream containing any parameters used by the event handler. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_character_controller_1ac97eb9985848f7f1bfee4ec352501a67"></a>
+<p class="NDLRefMemberFunction">void  SetGround(NxActor* pGround)</p>
+<p class="NDLRefMemberDescription">Sets the PhysX actor that the character is currently standing on. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pGround</span></td>
+    <td>A pointer to the actor that the character is now standing on, or NULL if the character is not standing on anything. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_character_controller_1ac9cd9d465c0677fe8b5cc1468554ff90"></a>
+<p class="NDLRefMemberFunction">NxActor*  GetGround()</p>
+<p class="NDLRefMemberDescription">Gets the PhysX actor that the character is currently standing on. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>A pointer to the actor, or NULL if the character is not standing on anything. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_character_controller_1a6e97b4b0b2a103885076f2784a2734b2"></a>
+<p class="NDLRefMemberFunction">virtual efd::Bool  IsFalling()</p>
+<p class="NDLRefMemberDescription">Tests whether the character is currently falling. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if the character is falling. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_character_controller_1afe9e2c9858a9cf470e375a09c2ee29c2"></a>
+<p class="NDLRefMemberFunction">virtual efd::Bool  CanCrouch()</p>
+<p class="NDLRefMemberDescription">Tests whether it is currently possible for the character to crouch. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if the character can crouch now. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_character_controller_1a229632e27af2e689dc7c445fb7f800e3"></a>
+<p class="NDLRefMemberFunction">virtual efd::Bool  IsCrouched()</p>
+<p class="NDLRefMemberDescription">Queries whether the character is currently crouching. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if the character is crouching. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_character_controller_1a7ef95b39673fc1202002129ba412bf20"></a>
+<p class="NDLRefMemberFunction">virtual efd::Bool  CanStand()</p>
+<p class="NDLRefMemberDescription">Tests whether it is currently possible for the character to stand up. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if the character can stand up now. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_character_controller_1a80a4c00746e9e7317b163b375962d594"></a>
+<p class="NDLRefMemberFunction">virtual efd::Bool  IsStanding()</p>
+<p class="NDLRefMemberDescription">Queries whether the character is currently standing up. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if the character is standing up. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_character_controller_1a4ae5dc86cbf737033403539ebe9ee9e6"></a>
+<p class="NDLRefMemberFunction">virtual efd::Bool  Crouch()</p>
+<p class="NDLRefMemberDescription">Causes the character to crouch. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if the character crouched successfully. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_character_controller_1a699cab77020d717f6deeb96ff34aea7e"></a>
+<p class="NDLRefMemberFunction">virtual efd::Bool  Stand()</p>
+<p class="NDLRefMemberDescription">Causes the character to stand up. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if the character stood up successfully. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_character_controller_1add486d34bc3f925b40138f646da02540"></a>
+<p class="NDLRefMemberFunction">virtual efd::Bool  SetStance(<span class="NDLSystemFont"><a href="egmSpark__PhysXCharacterController.htm#classegm_spark_1_1_phys_x_character_controller_1a73995ed0060407f0e4800cf22f242b34">eStance</a></span> stance)</p>
+<p class="NDLRefMemberDescription">Sets the way the character is standing. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">stance</span></td>
+    <td>The new stance the character should transition to. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if the stance was changed successfully. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_character_controller_1a82afcb476923faa02482e054ba68c384"></a>
+<p class="NDLRefMemberFunction">virtual efd::Point3  GetCentroid()</p>
+<p class="NDLRefMemberDescription">Gets the position of the center of the character. </p>
+<p class="NDLRefMemberDetailedDescription">If a PhysX controller exists, then the position is queried from it. Otherwise, the entity position is used. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The center of the character. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

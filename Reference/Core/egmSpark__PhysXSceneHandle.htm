@@ -1,0 +1,432 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::PhysXSceneHandle</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::PhysXSceneHandle</p>
+<p class="NDLRefParentage">: public MemObject</p>
+
+
+<p class="NDLRefHeaderFile">&lt;PhysXSceneHandle.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_phys_x_scene_handle.gif" alt="Inheritance graph for egmSpark::PhysXSceneHandle"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::PhysXSceneHandle</p>
+</div>
+</p>
+
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_phys_x_scene_handle_1a963e331150bfd146b67f6df78f2a7182"></a>
+<p class="NDLRefMemberFunction">PhysXSceneHandle(NiPhysXScene* pNiPhysXScene = NULL)</p>
+<p class="NDLRefMemberDescription">Constructor. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pNiPhysXScene</span></td>
+    <td>The NiPhysXScene that you wish this class to control. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_scene_handle_1a03152ba85177c253751050929495ab3c"></a>
+<p class="NDLRefMemberFunction">virtual ~PhysXSceneHandle()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_phys_x_scene_handle_1a8bdccb7aa0fbd2c1b30baec41638c339"></a>
+<p class="NDLRefMemberFunction">NiPhysXScene*  GetNiPhysXScene()</p>
+<p class="NDLRefMemberDescription">Get the NiPhysXScene that is used by this class. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The NiPhysXScene used by this class </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_scene_handle_1ab14db75eda02ae1781d6c3845acd3ca7"></a>
+<p class="NDLRefMemberFunction">void  SetNiPhysXScene(NiPhysXScene* pPhysXScene)</p>
+<p class="NDLRefMemberDescription">Set the NiPhysXScene that is used by this class. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pPhysXScene</span></td>
+    <td>The NiPhysXScene used by this class </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_scene_handle_1a99e15647f47801a146e376b6382a67d1"></a>
+<p class="NDLRefMemberFunction">NxActor*  CreateCube(<br/>const NiPoint3& position, <br/>float size, <br/>float density = 10.0f, <br/>float angularDamping = 0.5f)</p>
+<p class="NDLRefMemberDescription">Creates a NxShape of a cube, that is a rigidbody and a corresponding NxActor to manage it. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">position</span></td>
+    <td>The position in the world to create this at. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">size</span></td>
+    <td>The width, height, and depth of the cube. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">density</span></td>
+    <td>This property is passed directly to PhysX. It is the density of the object. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">angularDamping</span></td>
+    <td>This property is passed directly to PhysX. It is the angulardamping of the cube. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>This function returns an NxActor with the shape added to it. It is a rigidbody object. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_scene_handle_1a5c52d61a04e82bed9486b7d5f37a7c00"></a>
+<p class="NDLRefMemberFunction">NxActor*  CreateBox(<br/>const NiPoint3& position, <br/>const NiPoint3& dimensions, <br/>float density = 10.0f, <br/>float angularDamping = 0.5f)</p>
+<p class="NDLRefMemberDescription">Creates a NxShape of a box, that is a rigidbody and a corresponding NxActor to manage it. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">position</span></td>
+    <td>The position in the world of the Actor this shape is part of. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">dimensions</span></td>
+    <td>The width, height, and depth of the box. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">density</span></td>
+    <td>This property is passed directly to PhysX. It is the density of the object. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">angularDamping</span></td>
+    <td>This property is passed directly to PhysX. It is the angulardamping of the cube. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>This function returns an NxActor with the shape added to it. It is a rigidbody object. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_scene_handle_1ae408bf39d34313f0747408e0da3820b0"></a>
+<p class="NDLRefMemberFunction">NxActor*  CreateSphere(<br/>const NiPoint3& position, <br/>float radius, <br/>float density = 10.0f, <br/>float angularDamping = 0.5f)</p>
+<p class="NDLRefMemberDescription">Creates a NxShape of a sphere, that is a rigidbody and a corresponding NxActor to manage it. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">position</span></td>
+    <td>The position in the world of the Actor this shape is part of. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">radius</span></td>
+    <td>The radius of the sphere. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">density</span></td>
+    <td>This property is passed directly to PhysX. It is the density of the object. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">angularDamping</span></td>
+    <td>This property is passed directly to PhysX. It is the angulardamping of the cube. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>This function returns an NxActor with the shape added to it. It is a rigidbody object. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_scene_handle_1abca99dcdfbd25b30c0ae7dd4c51a6a1d"></a>
+<p class="NDLRefMemberFunction">NxActor*  CreateCapsule(<br/>const NiPoint3& position, <br/>float radius, <br/>float height, <br/>float density = 10.0f, <br/>float angularDamping = 0.5f)</p>
+<p class="NDLRefMemberDescription">Creates a NxShape of a capsule, that is a rigidbody and a corresponding NxActor to manage it. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">position</span></td>
+    <td>The position in the world of the Actor this shape is part of.t. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">radius</span></td>
+    <td>The radius of the capsule. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">height</span></td>
+    <td>The height of the capsule. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">density</span></td>
+    <td>This property is passed directly to PhysX. It is the density of the object. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">angularDamping</span></td>
+    <td>This property is passed directly to PhysX. It is the angulardamping of the cube. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>This function returns an NxActor with the shape added to it. It is a rigidbody object. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_scene_handle_1a408428a6979e15d14fa9aa03d6d559ec"></a>
+<p class="NDLRefMemberFunction">NxActor*  CreateStaticBox(<br/>const NiPoint3& position, <br/>const NiPoint3& dimensions)</p>
+<p class="NDLRefMemberDescription">Creates a NxShape of a box, that is static and a corresponding NxActor to manage it. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">position</span></td>
+    <td>The position in the world of the Actor this shape is part of. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">dimensions</span></td>
+    <td>The width, height, and depth of the box. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>This function returns an NxActor with the shape added to it. It is a static object. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_scene_handle_1a8a6f7f42b390b69d3f5be8a600acf6fd"></a>
+<p class="NDLRefMemberFunction">NxActor*  CreateStaticSphere(<br/>const NiPoint3& position, <br/>float radius)</p>
+<p class="NDLRefMemberDescription">Creates a NxShape of a sphere, that is static and a corresponding NxActor to manage it. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">position</span></td>
+    <td>The position in the world of the Actor this shape is part of. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">radius</span></td>
+    <td>The radius of the sphere. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>This function returns an NxActor with the shape added to it. It is a static object. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_scene_handle_1ae5319e7c4eee325b3b68734f1cd07fbe"></a>
+<p class="NDLRefMemberFunction">NxActor*  CreateStaticCapsule(<br/>const NiPoint3& position, <br/>float radius, <br/>float height)</p>
+<p class="NDLRefMemberDescription">Creates a NxShape of a capsule, that is static and a corresponding NxActor to manage it. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">position</span></td>
+    <td>The position in the world of the Actor this shape is part of. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">radius</span></td>
+    <td>The radius of the capsule. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">height</span></td>
+    <td>The height of the capsule. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>This function returns an NxActor with the shape added to it. It is a static object. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_scene_handle_1a0d5fcab808e55532fbb6deb72c92c9d0"></a>
+<p class="NDLRefMemberFunction">void  DestroyActor(NxActor* pActor)</p>
+<p class="NDLRefMemberDescription">Removes an Actor from the PhysX Scene. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pActor</span></td>
+    <td>The actor to remove from the Scene. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_scene_handle_1a726a18aa4b75e7fb0b821791b32f6cbd"></a>
+<p class="NDLRefMemberFunction">void  ProcessPendingActors()</p>
+<p class="NDLRefMemberDescription">Forces the release of any NxActor's that are pending destruction. </p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

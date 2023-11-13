@@ -1,0 +1,199 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::SparkSceneGraphService</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::SparkSceneGraphService</p>
+<p class="NDLRefParentage">: public SceneGraphService</p>
+
+
+<p class="NDLRefHeaderFile">&lt;LightSpeedExtensions.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_spark_scene_graph_service.gif" alt="Inheritance graph for egmSpark::SparkSceneGraphService"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::SparkSceneGraphService</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">Extends the standard scene graph service to add new features. </p>
+
+<a name="public_static_methods"></a>
+<p class="NDLRefHead1">Public Static Methods</p>
+
+
+<a name="classegm_spark_1_1_spark_scene_graph_service_1abee3299b9fd4ad2316667ff8535c4520"></a>
+<p class="NDLRefMemberFunction">static <span class="NDLSystemFont">SparkSceneGraphService</span>*  GetInstance()</p>
+<p class="NDLRefMemberDescription">Provides access to the service singleton. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The singleton pointer. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_spark_scene_graph_service_1aac656f74e203ed3aea65a26ffae712e4"></a>
+<p class="NDLRefMemberFunction">SparkSceneGraphService(<br/>NiSPWorkflowManager* pWorkflowManager = NULL, <br/>NiTexturePalette* pTexturePalette = NULL, <br/>const efd::Bool toolMode = false)</p>
+<p class="NDLRefMemberDescription">Constructor. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pWorkflowManager</span></td>
+    <td>The workflow manager used to coordinate Floodgate task submission. If NULL, the service creates its own workflow manager. In general, all services should use the same workflow manager if they are operating in the same thread, or one manager per-thread otherwise. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pTexturePalette</span></td>
+    <td>The texture palette is used to facilitate texture sharing. The service will create a default palette if one is not provided in this constructor. The palette is stored as a smart pointer, so applications must not explicitly delete it. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">toolMode</span></td>
+    <td>If true, loaded scene graphs will have all data streams set with CPU read access, thus supporting picking on all models. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_spark_scene_graph_service_1afe3711d7b8a2e4c8f886c208ecd961bb"></a>
+<p class="NDLRefMemberFunction">virtual ~SparkSceneGraphService()</p>
+<p class="NDLRefMemberDescription">Destructor. </p>
+
+<a name="classegm_spark_1_1_spark_scene_graph_service_1aee9ce2f9a2a208c96859bcaefc8cf0df"></a>
+<p class="NDLRefMemberFunction">virtual void  OnSceneGraphAdded(<br/>egf::Entity* pEntity, <br/>NiAVObject* pSceneGraph)</p>
+<p class="NDLRefMemberDescription">A callback function which is invoked when a scene graph is added to the service. </p>
+<p class="NDLRefMemberDetailedDescription">It calls the base implementation of ecr::SceneGraphService::OnSceneGraphAdded and applies wireframe mode to the scene graph if it is enabled. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pEntity</span></td>
+    <td>The entity that owns the scene graph. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pSceneGraph</span></td>
+    <td>The scene graph that was added. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_spark_scene_graph_service_1a283182f39becad5603fc8bdfdb4c51ea"></a>
+<p class="NDLRefMemberFunction">void  SetWirefameMode(efd::Bool wireframe)</p>
+<p class="NDLRefMemberDescription">Enables or disables wireframe mode. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">wireframe</span></td>
+    <td>True to enable, false to disable. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_spark_scene_graph_service_1ac5b9835be8fafdb51988f6e7e2bad3a5"></a>
+<p class="NDLRefMemberFunction">efd::Bool  GetWireframeMode()</p>
+<p class="NDLRefMemberDescription">Gets the current wireframe mode. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if enabled, false otherwise. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

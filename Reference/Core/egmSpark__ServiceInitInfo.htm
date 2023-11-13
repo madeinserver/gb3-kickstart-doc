@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::ServiceInitInfo</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::ServiceInitInfo</p>
+<p class="NDLRefParentage">: public efd::RefCountObject< efd::NonAtomicRefCount ></p>
+
+
+<p class="NDLRefHeaderFile">&lt;SparkInitializers.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_service_init_info.gif" alt="Inheritance graph for egmSpark::ServiceInitInfo"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::ServiceInitInfo</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">This class defines information necessary to initialize a class. </p>
+<p class="NDLNormal">It is assumed that you already know the ClassID, and this can be used in a map to hold the other info necessary to implement the class. </p>
+
+<a name="public_attributes"></a>
+<p class="NDLRefHead1">Public Attributes</p>
+
+
+<a name="classegm_spark_1_1_service_init_info_1ab26d8ed49c187e92247cec95369aed46"></a>
+<p class="NDLRefMemberFunction">efd::Bool  m_initService</p>
+<p class="NDLRefMemberDescription">If true, we will initialize this service. </p>
+<p class="NDLRefMemberDetailedDescription">If false, don't init it at all. This is useful if you want to enable/disable certain services at runtime. For example, you may not want audio, or VisualTracker, or RapidIteration services on this particular run, but your code is built with them. </p>
+
+<a name="classegm_spark_1_1_service_init_info_1a0c45dde8f850459813fd5ce4125c7eb5"></a>
+<p class="NDLRefMemberFunction">efd::UInt32  m_priority</p>
+<p class="NDLRefMemberDescription">Priority at which to initialize this service, if it is to be initialized. </p>
+<p class="NDLRefMemberDetailedDescription">If you specify the constant USE_DEFAULT_SERVICE_PRIORITY, then the default priority will be used. </p>
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_service_init_info_1a830c967de46c272b30b8f33ac5836ef4"></a>
+<p class="NDLRefMemberFunction">ServiceInitInfo(<br/>efd::Bool initService = true, <br/>efd::UInt32 priority = USE_DEFAULT_SERVICE_PRIORITY)</p>
+<p class="NDLRefMemberDescription">Constructor. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">initService</span></td>
+    <td>True if the service should be initialized right away. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">priority</span></td>
+    <td>The service priority. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

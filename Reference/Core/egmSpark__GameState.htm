@@ -1,0 +1,603 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::GameState</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::GameState</p>
+<p class="NDLRefParentage">: public IBase</p>
+
+
+<p class="NDLRefHeaderFile">&lt;GameState.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_game_state.gif" alt="Inheritance graph for egmSpark::GameState"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::GameState</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">Base Game State. </p>
+<p class="NDLNormal">This state can have other game states attached to it. Attached states must be controlled manually </p>
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_game_state_1a25cc7987662651af20c50fd7ac2e89b4"></a>
+<p class="NDLRefMemberFunction">GameState(efd::ServiceManager* pServiceManager)</p>
+<p class="NDLRefMemberDescription">Constructor. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pServiceManager</span></td>
+    <td>A pointer to the ServiceManager. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_game_state_1acf5ae3ed11db675c53a31d6b2a9c4e7f"></a>
+<p class="NDLRefMemberFunction">virtual ~GameState()</p>
+<p class="NDLRefMemberDescription">Destructor. </p>
+
+<a name="classegm_spark_1_1_game_state_1a934d11b2c2b89137c92b4e3aec56c884"></a>
+<p class="NDLRefMemberFunction">virtual void  AttachState(<span class="NDLSystemFont">GameState</span>* pState)</p>
+<p class="NDLRefMemberDescription">Attaches a state to this one. </p>
+<p class="NDLRefMemberDetailedDescription">attached states will get deleted when this state is deleted. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pState</span></td>
+    <td>The state to attach. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_game_state_1ae9d61eb7461895737f4579dc01d3ec9c"></a>
+<p class="NDLRefMemberFunction">virtual void  DetachState(<span class="NDLSystemFont">GameState</span>* pState)</p>
+<p class="NDLRefMemberDescription">Detaches a state from this one. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pState</span></td>
+    <td>The state to detach. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_game_state_1ace10d5e8eced9f4992408f4b5dfdbd62"></a>
+<p class="NDLRefMemberFunction"><span class="NDLSystemFont">GameState</span>*  GetState(const efd::utf8string& name)</p>
+<p class="NDLRefMemberDescription">Returns a sub-state with the specified name. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">name</span></td>
+    <td>The name of the state to look up. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The state that was found, or NULL if there isn't one that matches the specified name. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_game_state_1af4b7c187a922036f82eb8f9407d3fa8e"></a>
+<p class="NDLRefMemberFunction">virtual bool  Begin()</p>
+<p class="NDLRefMemberDescription">Method called by the <span class="NDLSystemFont"><a href="egmSpark__GameStateService.htm">GameStateService</a></span> when the state is started. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if the function succeeds. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_game_state_1a3057d92b5468225b806276c78525c4fc"></a>
+<p class="NDLRefMemberFunction">virtual void  End()</p>
+<p class="NDLRefMemberDescription">Method called by the <span class="NDLSystemFont"><a href="egmSpark__GameStateService.htm">GameStateService</a></span> when the state is ended. </p>
+
+<a name="classegm_spark_1_1_game_state_1ad5d065fb652ee5ea8f61243797e19cf1"></a>
+<p class="NDLRefMemberFunction">virtual bool  Suspend()</p>
+<p class="NDLRefMemberDescription">Method called by the <span class="NDLSystemFont"><a href="egmSpark__GameStateService.htm">GameStateService</a></span> when the state is suspended so that another state can be active. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if the function succeeds. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_game_state_1a51952901227aa48811b4fd95120bbefb"></a>
+<p class="NDLRefMemberFunction">virtual bool  Resume()</p>
+<p class="NDLRefMemberDescription">Method called by the <span class="NDLSystemFont"><a href="egmSpark__GameStateService.htm">GameStateService</a></span> when the state was suspended and is now becoming active again. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if the function succeeds. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_game_state_1a7ef5b5efa2a2a83c438752a3957a2120"></a>
+<p class="NDLRefMemberFunction">virtual void  OnAttach()</p>
+<p class="NDLRefMemberDescription">Method that handles being attached to another state. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Default implementation does nothing, overrides need not call it. </p></p>
+
+<a name="classegm_spark_1_1_game_state_1aad295bb7b0fda7838a0e6d59ec56256f"></a>
+<p class="NDLRefMemberFunction">virtual void  OnDetach()</p>
+<p class="NDLRefMemberDescription">Method that handles being detached to another state. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Default implementation does nothing, overrides need not call it. </p></p>
+
+<a name="classegm_spark_1_1_game_state_1aed0a39d1f6ac3dae00a6f71686ebaceb"></a>
+<p class="NDLRefMemberFunction">virtual void  OnTick(efd::TimeType time)</p>
+<p class="NDLRefMemberDescription">Method called by the <span class="NDLSystemFont"><a href="egmSpark__GameStateService.htm">GameStateService</a></span> so that the state can handle the passage of time. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<p class="NDLRefMemberDetailedDescription">Default implementation does nothing, overrides need not call it. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">time</span></td>
+    <td>The time of the application (cumulative). </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_game_state_1a65bf75c48cfc6e8815b6cc45816d3fc5"></a>
+<p class="NDLRefMemberFunction">virtual bool  Load()</p>
+<p class="NDLRefMemberDescription">Method called to load resources before the state is ready to begin. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<p class="NDLRefMemberDetailedDescription">Default implementation simply returns true, overrides need not call it. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if the function succeeds. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_game_state_1ac29a566620c0784a66ad19b58b5e56eb"></a>
+<p class="NDLRefMemberFunction">virtual bool  UpdateLoad()</p>
+<p class="NDLRefMemberDescription">Method called to continue the loading process so that all loading does not block until it is complete. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<p class="NDLRefMemberDetailedDescription">Default implementation simply return true, overrides need not call it. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True when load is complete </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_game_state_1acda26c129c6efee3642ae8d6309f305c"></a>
+<p class="NDLRefMemberFunction">virtual float  GetPercentLoaded()</p>
+<p class="NDLRefMemberDescription">Returns percentage of loading that has been completed (between 0 and 1). </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<p class="NDLRefMemberDetailedDescription">Default implementation simply returns 1.0f, overrides need not call it. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The current value. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_game_state_1afd8e7ac7130609c33059febae58106f0"></a>
+<p class="NDLRefMemberFunction">virtual void  SetupInputListeners()</p>
+<p class="NDLRefMemberDescription">Sets up any input listeners the state needs. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Default implementation does nothing, overrides need not call it. </p></p>
+
+<a name="classegm_spark_1_1_game_state_1a7c387f027c7320e8cd9cd16f8283151c"></a>
+<p class="NDLRefMemberFunction">virtual void  HandleInputMessage(const ecrInput::InputActionMessage* pMsg)</p>
+<p class="NDLRefMemberDescription">Handles input messages. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<p class="NDLRefMemberDetailedDescription">Default implementation does nothing, overrides need not call it. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pMsg</span></td>
+    <td>The message to handle. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_game_state_1a3db5856d99871027c2500b7d79cc47a8"></a>
+<p class="NDLRefMemberFunction">void  AddInputListener(<br/>efd::utf8string actionMapName, <br/>void* userData = NULL)</p>
+<p class="NDLRefMemberDescription">Registers an input listener with the corresponding action name. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">actionMapName</span></td>
+    <td>The name of the action to use. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">userData</span></td>
+    <td>Arbitrary user data to associate with the action. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_game_state_1ab227134e6d7444977ad61dd35d9c89bb"></a>
+<p class="NDLRefMemberFunction">virtual efd::Bool  Resolve(<span class="NDLSystemFont">GameState</span>* pConflictingGameState)</p>
+<p class="NDLRefMemberDescription">This method is called to notify a game state that there is another state being registered with the same name as the existing state. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pConflictingGameState</span></td>
+    <td>The game state that has a name which is causing a conflict. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if the conflicting state should replace this state. Return false otherwise </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_game_state_1afc5ff64813915c839a988fb149d83d2c"></a>
+<p class="NDLRefMemberFunction">void  SetParent(<span class="NDLSystemFont">GameState</span>* pParent)</p>
+<p class="NDLRefMemberDescription">Sets the parent game state for this one. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pParent</span></td>
+    <td>The new parent game state. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_game_state_1a631f13e7270879b2224dfe0afbe3a29c"></a>
+<p class="NDLRefMemberFunction"><span class="NDLSystemFont">GameState</span>*  GetParent() const</p>
+<p class="NDLRefMemberDescription">Gets the current parent game state for this one. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>pParent The current parent game state. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_game_state_1a6a760f221959fb0177567756c61579f5"></a>
+<p class="NDLRefMemberFunction">const efd::utf8string&  GetName() const</p>
+<p class="NDLRefMemberDescription">Returns the name of this game state. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The name. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_game_state_1a7b1c8453d25a80bcd49d0f6fba597a1a"></a>
+<p class="NDLRefMemberFunction"><span class="NDLSystemFont"><a href="egmSpark__GameStateService.htm">GameStateService</a></span>*  GetGameStateService() const</p>
+<p class="NDLRefMemberDescription">Returns a pointer to the game state service. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>A pointer to the game state service. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_game_state_1af7e1504ac5a95857fa8170f16bde0616"></a>
+<p class="NDLRefMemberFunction">efd::MessageService*  GetMessageService() const</p>
+<p class="NDLRefMemberDescription">Returns a pointer to the message state service. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>A pointer to the message state service. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_game_state_1a7e592f5c93c0f606751746f468b50853"></a>
+<p class="NDLRefMemberFunction">efd::ServiceManager*  GetServiceManager() const</p>
+<p class="NDLRefMemberDescription">Returns a pointer to the service manager. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>A pointer to the service manager. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_game_state_1af383589968a34703adc0f8d6491d5496"></a>
+<p class="NDLRefMemberFunction">void  UpdateDetachList()</p>
+<p class="NDLRefMemberDescription">Detaches states that have been added to the detach list. </p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

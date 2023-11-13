@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::AimingManager</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::AimingManager</p>
+
+
+<p class="NDLRefHeaderFile">&lt;AimingManager.h&gt;</p>
+
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">Used by the <span class="NDLSystemFont"><a href="egmSpark__WeaponHolder.htm">WeaponHolder</a></span> builtin model in order to support multiple aiming animations for use for standing,crouching,walking,running,crouch walking, and crouch running. </p>
+<p class="NDLNormal">These animations are applied additively.</p>
+<p class="NDLNormal">It requires 2 additive animations per mode. A fully aimed up animation and a fully aimed down animation. </p>
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_aiming_manager_1ace483d815fd6e8d9ec2e7ef5ac7ad029"></a>
+<p class="NDLRefMemberFunction">AimingManager()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_aiming_manager_1a4ea5e259b6b5393c34513c18073eb8b4"></a>
+<p class="NDLRefMemberFunction">void  Initialize(<br/>NiActorManager* pActorMan, <br/>efd::UInt32 priority, <br/>efd::Float32 easeIn, <br/>efd::Float32 easeOut, <br/>efd::Float32 blendRate)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_aiming_manager_1a8fd69bf8cac36e82a518a02fe6697d5a"></a>
+<p class="NDLRefMemberFunction">void  SetAimMinMax(<br/>efd::Float32 min, <br/>efd::Float32 max)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_aiming_manager_1a5c53929dd22043799a7daa41088a5d65"></a>
+<p class="NDLRefMemberFunction">void  SetAimAngle(efd::Float32 aimAngle)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_aiming_manager_1a36fbedbcbfc036afcb40a6dc79aa33f9"></a>
+<p class="NDLRefMemberFunction">void  SetupMode(<br/><span class="NDLSystemFont"><a href="../Namespaces/egmSpark.htm#namespaceegm_spark_1ac02975592439b4d08d80b3092651a8be">eAimingMode</a></span> mode, <br/>NiActorManager::SequenceID up, <br/>NiActorManager::SequenceID down)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_aiming_manager_1ac31cd23a47c5bbab0634da3ae2134c2c"></a>
+<p class="NDLRefMemberFunction"><span class="NDLSystemFont"><a href="../Namespaces/egmSpark.htm#namespaceegm_spark_1ac02975592439b4d08d80b3092651a8be">eAimingMode</a></span>  GetAimingMode() const</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_aiming_manager_1aee632bccc56c8fcf5e81819e26d73e4a"></a>
+<p class="NDLRefMemberFunction">efd::Bool  StartAiming(<span class="NDLSystemFont"><a href="../Namespaces/egmSpark.htm#namespaceegm_spark_1ac02975592439b4d08d80b3092651a8be">eAimingMode</a></span> mode)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_aiming_manager_1a205f182bf951dbcea077d877d2eba004"></a>
+<p class="NDLRefMemberFunction">void  StopAiming()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_aiming_manager_1ac024192981feb0c1ff63e127d561df8c"></a>
+<p class="NDLRefMemberFunction">void  SetAimMode(<span class="NDLSystemFont"><a href="../Namespaces/egmSpark.htm#namespaceegm_spark_1ac02975592439b4d08d80b3092651a8be">eAimingMode</a></span> mode)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_aiming_manager_1a0f7a69d40e9de2c4e32ec962c13abd42"></a>
+<p class="NDLRefMemberFunction">efd::Bool  IsAiming() const</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_aiming_manager_1afcbe1f30e2f48326e44e6447663f7e7d"></a>
+<p class="NDLRefMemberFunction">void  Update(efd::TimeType timeDelta)</p>
+<p class="NDLRefMemberFunction"></p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

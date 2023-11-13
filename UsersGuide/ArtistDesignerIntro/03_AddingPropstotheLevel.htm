@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>Adding Props to the Level</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Fresnel" />
+<meta name="Generator" content="Palimpsest by Emergent Game Technologies - http://emergent.net" />
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+    
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+
+<!--(Begin Body)================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript">
+</script><script language="JavaScript1.2" type="text/javascript">
+WriteNavLink(2);
+</script>
+
+<h1>Adding Props to the Level</h1>
+
+<p>World Builder is the level design tool for the Entity System and Game Framework in Gamebryo
+LightSpeed. In this section of the tutorial, you will use World Builder to populate your world with
+entities (sometimes referred to as "props" or "entity instances").</p>
+
+<h3>Tutorial at-a-Glance</h3>
+
+<ul>
+    <li><a href="01_RapidIteration.htm">Intro to Rapid Iteration - Modifying AlphaGame</a></li>
+    <li> <a href="02_AddingEntityModels.htm">Adding Entity Models</a></li>
+    <li>Adding Props to the Level<b> <-- You are Here</b></li>
+    <li><a href="04_CreatingABlockFile.htm">Creating a New Block file</a></li>
+    <li><a href="05_RunningANewBlockFile.htm">Running a New Block file with AlphaGame</a></li>
+</ul>
+
+<h3>Adding entity instances (props) into the world</h3>
+
+<ol>
+    <li>If it is not already running, start Toolbench. From the Windows Start menu, select
+    <b>Emergent &gt; Gamebryo LightSpeed &gt; Tools &gt; Toolbench</b>.</li>
+    <li>From the Toolbench menu, select <b>File &gt; Open Content</b> and navigate to the directory
+    that contains the Alpha Game solution file (for example,
+    <i>&lt;AlphaGame&gt;</i>\Application\Data\AlphaGame.gsl).</li>
+    <li>In the Game Solution View, double-click ?AlphaGame.block? (at the bottom of the tree).<br />
+    This opens the Alpha Game level within World Builder.<br />
+    <br />
+        <div class="FigureContainer">
+            <img alt="" src="Spark_art_design_open_alpha_block.png" border="0" />
+            <p class="FigureCaption">Figure 1</p>
+        </div>    
+    </li>
+    <li>If you added any entity models since the last time you opened this .block file, you should
+    be prompted to update your Palette View. You should choose to have the system update the
+    Palette so that it contains all of your models, including the ones that you've added recently.
+    </li>
+    <li>From the Toolbench menu, select <b>View &gt; Palette View</b>.</li>
+    <li>From the Palette View, click and drag an entity into the world. When you release the mouse
+    button, the entity is placed into the world.<br /><b>Tip</b>: You can quickly create multiple
+    instances of entities in the world by holding down the spacebar while you drag and click. In
+    the following screenshot, you can see an entity called "MyCharacter0" placed in the world:
+        <div class="FigureContainer">
+            <img alt="" src="Spark_alpha_game_mycharacter_in_world.png" border="0" />
+            <p class="FigureCaption">Figure 2</p>
+        </div>
+    </li>
+    <li>Optionally, you can override indvidual entity properties. For example, in the following
+    screenshot, we've tweaked the Scale property that derives from the Placeable model. The
+    "MyCharacter0" entity is now a more appropriate size for the world.
+        <div class="FigureContainer">
+            <img alt="" src="Spark_alpha_game_mycharacter_in_world_scaled_down.png" border="0" />
+            <p class="FigureCaption">Figure 3</p>
+        </div>
+    </li>
+    <li>From the Toolbench menu, select <b>File &gt; Save All</b>.</li>
+</ol>
+
+<h3>Moving on...</h3>
+
+<p>We've walked through the steps to create an entity model, and we've placed instances of that
+entity into the world. Next, we'll shift to creating a new level (.block) file. See
+<a href="04_CreatingABlockFile.htm"> Creating a New Block file</a>.</p>
+
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

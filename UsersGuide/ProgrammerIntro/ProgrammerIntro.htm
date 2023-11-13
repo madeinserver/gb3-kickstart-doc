@@ -1,0 +1,163 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>Programmer Intro</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Fresnel" />
+<meta name="Generator" content="Palimpsest by Emergent Game Technologies - http://emergent.net" />
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+    
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+
+<!--(Begin Body)================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript">
+</script><script language="JavaScript1.2" type="text/javascript">
+WriteNavLink(2);
+</script>
+
+<h1>Programmer Intro</h1>
+
+<p>From a C++ programmer's point of view, The Spark Library consists of a number of modular
+Services designed to help you get your code written faster.  Spark services include</p>
+
+<ul>
+    <li><a href="CameraOverview.htm">CameraService</a> - Deals with in-game cameras</li>
+    <li><a href="InputOverview.htm">ControlService</a> - Deals with input from gamepads,
+    controllers, keyboards, etc.</li>
+    <li><a href="GameStateOverview.htm">GameStateService</a> - Deals with game states like Loading,
+    Paused, Play, Game Over,etc.</li>
+    <li><a href="HUDServiceOverview.htm">HUDService</a> - Shows a Head-Up Display on screen with 2D
+    bitmaps and controls showing game status</li>
+    <li><a href="ManualOcclusionServiceOverview.htm">ManualOcclusionService</a> - Allows you to
+    show or hide in-game objects to improve performance </li>
+    <li><a href="MovementServiceOverview.htm">MovementService</a> - Deals with character movement
+    in game </li>
+    <li><a href="WalkableServiceOverview.htm">WalkableService</a> - Deals with determining which areas
+    of the game are navigable to characters </li>
+</ul>
+
+<p>Spark Services all come with Lua bindings allowing you or your level designers to manipulate and
+use the services.</p>
+
+<h3>Rules (.i, .enum)</h3>
+
+<p>You may notice some special files in the AlphaGame or Spark Visual C++ projects ending with the
+extensions .i or .enum.  These files are built using custom Visual C++ build rules.  The custom
+build rules allow you to include more .i or .enum files whenever you like and have them treated
+correctly automatically.</p>
+
+<ul>
+    <li>.i files are SWIG binding files. They are used to generate Lua wrapper C++ filesfor Lua
+    builtins.</li>
+    <li>.enum files are input to an Emergent tool, DDEHeaderGen, which auto-generates C++header
+    files containing definitions of enumerated values.</li>
+</ul>
+
+<h3>AlphaGame</h3>
+
+<p>The AlphaGame solution and visual studio project are simple examples of the basic framework used
+by all Kickstart samples.</p>
+
+<h4>Asset Web</h4>
+
+<p>The asset web is the collection of data available to a game.  For AlphaGame, the asset web is in
+&lt;AlphaGame&gt;\Application\Data.  Whenever files are added to the data directory, it is
+necessary to update the asset web.  The asset web is updated whenever the project is built or
+Toolbench opens the GSL file in the project's data directory.  The asset web is specified in the
+Config.ini in the executable directory.</p>
+
+<h4>Making it Your Own</h4>
+
+<p>You can easily use the AlphaGame project to start your own project.  AlphaGame is completely
+self-contained; it refers to the Spark Core Library through the environment variable SPARK_PATH,
+and to the base Lightspeed product through the environment variable EMERGENT_PATH.  Simply copy the
+entire AlphaGame directory to get started.</p>
+
+<p>You may or may not want to use the AlphaGame.emtproj file in the Data directory.  If you do,
+there will be some code and models that you will probably want to delete or ignore.  However, it
+can make it easier and faster to get up and running since it already has elements like a camera,
+player character, input controls, and sound integration.</p>
+
+<p>Whether you decide to start from scratch or start deleting elements from AlphaGame, you will
+need to make sure that the block file for your game has the following elements:</p>
+
+<ul>
+    <li>A camera. You need a builtin model whose C++ side is derived from the egmSpark::ICamera
+        interface if you are using the Spark Camera Service. The Spark Core Library ships
+        with two cameras: the SimpleCamera, which is very basic but allows a great deal
+        of customization via Lua scripts; and ThirdPersonRotatingCamera, which is more complete,
+        but also more application-specific. To create a camera in your block file, just
+        drag a model mixing in of one of the camera models into your scene.</li>
+    <li>A camera subject. If you are using the ThirdPersonRotating Camera, the subject is
+        quite important. To designate a camera subject to the ThirdPersonRotatingCamera,
+        mix the ThirdPersonRotatingCameraSubject model into an entity.</li>
+    <li>A SoundListener model from the WWiseLibrary, if you are using sound. Without a SoundListener,
+        you won't hear 3D audio.</li>
+</ul>
+
+<h4>Deployment</h4>
+
+<h5>Config.ini</h5>
+
+<p>Each platform of AlphaGame has its own configuration file.  For example, the configuration file for the PC build is located here:</p>
+
+<dl>
+    <dd>&lt;AlphaGame&gt;\Source\Win32\Config_Win32.ini</dd>
+</dl>
+
+<p>This configuration file is renamed and copied to the appropriate place in the Application
+directory as a post build step. The PC configuration is located here:</p>
+
+<dl>
+    <dd>&lt;AlphaGame&gt;\Application\win32\config.ini</dd>
+</dl>
+
+<h4>Configuration</h4>
+
+<p>AlphaGame has a number of configuration options specified in config.ini.  Below are the sections
+([SectionName] in the ini file) and the properties for each section.</p>
+
+<ul>
+    <li><b>Game</b> - This section defines the configuration properties unique to Alpha
+        Game</li>
+</ul>
+<dl>
+    <dd>
+        <i>InitialWorld</i> - The block file that will be run by AlphaGame when it starts.
+        <ul>
+            <li>The format of this string is "urn:emergent-world:YourBlockFile" where "YourBlockFile
+                is the name of the block file without the .block extension. The default value is
+                AlphaGame, so AlphaGame.block will be the block file that is used.</li>
+            <li>This file must be in the asset web.</li>
+        </ul>
+    </dd>
+    <dd>
+        <i>EnableShadows</i> - Allows shadows to be disabled for the entire application.
+        This is generally set to true, but set to false for some platforms.
+    </dd>
+</dl>
+<ul>
+    <li><b>LightSpeed Configuration</b> - The other configuration sections and parameters
+        used in AlphaGame are defined by Gamebryo LightSpeed. Please check the Gamebryo
+        configuration documentation for more information.</li>
+</ul>
+
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

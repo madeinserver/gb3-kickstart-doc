@@ -1,0 +1,162 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::Weapon</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::Weapon</p>
+<p class="NDLRefParentage">: public <span class="NDLSystemFont"><a href="egmSpark__IBuiltinModelBase.htm">egmSpark::IBuiltinModelBase</a></span></p>
+
+
+<p class="NDLRefHeaderFile">&lt;Weapon.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_weapon.gif" alt="Inheritance graph for egmSpark::Weapon"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::Weapon</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">Base weapon builtin model. </p>
+<p class="NDLNormal">This weapon model implements the core functionality of a weapon entity. Note that this model assumes that the weapon's scene graph has been associated with this entity via the SparkSceneGraph Model. (Note: Do not use the Mesh model for weapons).</p>
+<p class="NDLNormal">Features of this model are as follows:</p>
+<ul>
+<li>Attachment/Detachment mechanisms for the weapon's scenegraph</li>
+<li><span class="NDLSystemFont">Weapon</span> sounds (out of ammo, draw, reload,</li>
+<li>Ability for designers to specify the firing interval</li>
+<li>The attachment/management of muzzle flashes</li>
+<li>Concept of ammunition</li>
+<li>Concept of a weapon "clip"</li>
+<li>Unlimited ammo weapons</li></ul>
+<p class="NDLNormal">Note: This class is a base-class and should be subclassed from (see <span class="NDLSystemFont"><a href="egmSpark__ProjectileWeapon.htm">ProjectileWeapon</a></span> below). </p>
+
+<a name="friend_members"></a>
+<p class="NDLRefHead1">Friend Members</p>
+
+
+<a name="classegm_spark_1_1_weapon_1ad5d65c4eebc8e33b25633723c9c9081f"></a>
+<p class="NDLRefMemberFunction">friend class  ProjectileWeapon()</p>
+<p class="NDLRefMemberFunction"></p>
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_weapon_1a56334efdc6b3c534713c119be1fc402a"></a>
+<p class="NDLRefMemberFunction">Weapon()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_weapon_1a08e06999e146982a74db921bc381cd98"></a>
+<p class="NDLRefMemberFunction">~Weapon()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_weapon_1a416e70edfee8cf10ff2950432aec1b96"></a>
+<p class="NDLRefMemberFunction">virtual bool  AttachTo(<br/>egf::Entity* pOwner, <br/>const efd::utf8string& attachNode)</p>
+<p class="NDLRefMemberDescription">Attaches the weapon to an entity owner. </p>
+
+<a name="classegm_spark_1_1_weapon_1a60663f5168706a28789ea9bff71210f2"></a>
+<p class="NDLRefMemberFunction">virtual bool  Detach()</p>
+<p class="NDLRefMemberDescription">Detaches the weapon to an entity owner. </p>
+
+<a name="classegm_spark_1_1_weapon_1a45c1dcc8cd6ef1db1f5512e29971e0ba"></a>
+<p class="NDLRefMemberFunction">virtual void  StartFiring()</p>
+<p class="NDLRefMemberDescription">Start firing the weapon. </p>
+<p class="NDLRefMemberDetailedDescription">The weapon will use its fire interval to continually fire until StopFiring is called </p>
+
+<a name="classegm_spark_1_1_weapon_1af104ceb0ac429fc9adce6d47237b7b13"></a>
+<p class="NDLRefMemberFunction">virtual void  StopFiring()</p>
+<p class="NDLRefMemberDescription">Stop weapon firing. </p>
+
+<a name="classegm_spark_1_1_weapon_1aa52501b45673ce9c309ace9487c40cc1"></a>
+<p class="NDLRefMemberFunction">virtual void  FireOnce()</p>
+<p class="NDLRefMemberDescription">Fire a single time. </p>
+
+<a name="classegm_spark_1_1_weapon_1a5406c7afcfc799ef8680d3b4c8868cf3"></a>
+<p class="NDLRefMemberFunction">virtual void  StartMuzzleFlash()</p>
+<p class="NDLRefMemberDescription">Plays a muzzle flash effect. </p>
+
+<a name="classegm_spark_1_1_weapon_1a5afc5768ddbaf0db62f1a951688a1048"></a>
+<p class="NDLRefMemberFunction">virtual void  StopMuzzleFlash()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_weapon_1a096c1ef870d3c34122ccdb3243120438"></a>
+<p class="NDLRefMemberFunction">virtual void  FillClip(efd::DataStream* pStream)</p>
+<p class="NDLRefMemberDescription">Behavior for filling the weapons clip. </p>
+
+<a name="classegm_spark_1_1_weapon_1ac4d2726a89996e7ad94d6ac779eb87d3"></a>
+<p class="NDLRefMemberFunction">virtual bool  CanFillClip()</p>
+<p class="NDLRefMemberDescription">Returns true if there is enough ammo left to add at least 1 ammunition to the clip. </p>
+
+<a name="classegm_spark_1_1_weapon_1acc61b64b286d903c7075f95997b0f7c5"></a>
+<p class="NDLRefMemberFunction">virtual void  SetEnabled(efd::Bool enabled)</p>
+<p class="NDLRefMemberDescription">Enable/Disable the weaopn with this function. </p>
+
+<a name="classegm_spark_1_1_weapon_1a21130277f506ec0ac528af0009b41286"></a>
+<p class="NDLRefMemberFunction">virtual void  AddAmmo(efd::UInt32 amount)</p>
+<p class="NDLRefMemberDescription">Add ammunition to the weapon. </p>
+
+<a name="classegm_spark_1_1_weapon_1a91274ae15ebdcb8c896d4ae7345f3d36"></a>
+<p class="NDLRefMemberFunction">virtual efd::Bool  CanAddAmmo(const efd::utf8string& ammoType)</p>
+<p class="NDLRefMemberDescription">Returns true if there is room to add any ammunition of the passed type. </p>
+
+<a name="classegm_spark_1_1_weapon_1a1f5a37ac15745c1447c16da63160a698"></a>
+<p class="NDLRefMemberFunction">virtual efd::Bool  UsesAmmoType(const efd::utf8string& ammoType)</p>
+<p class="NDLRefMemberDescription">Returns true if this weapon uses the passed ammo type. </p>
+
+<a name="classegm_spark_1_1_weapon_1aca18239ac8fa20409b561e1fa1c45c2f"></a>
+<p class="NDLRefMemberFunction">virtual void  OnShowWeapon(efd::DataStream* pStream)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_weapon_1a7f8fce552550f953c163c4cf6e8e2ebf"></a>
+<p class="NDLRefMemberFunction">virtual void  OnHideWeapon(efd::DataStream* pStream)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_weapon_1aeae207e18fbbfe7c6c765cc081079a3d"></a>
+<p class="NDLRefMemberFunction">virtual void  PlayFireWeaponSound()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_weapon_1a071494b916c85a9dab071ec93bf4a0bb"></a>
+<p class="NDLRefMemberFunction">virtual egf::Entity*  GetWeaponOwner()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_weapon_1a108f28ae6c883edd4da0701c7463ba21"></a>
+<p class="NDLRefMemberFunction">virtual efd::Point3  GetMuzzlePos()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_weapon_1a0d1c48db2ad8740376345301edf1ee33"></a>
+<p class="NDLRefMemberFunction">virtual efd::Point3  GetMuzzleDir()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_weapon_1a3e7b7d98fec4ab15f93de7d3b7f26195"></a>
+<p class="NDLRefMemberFunction">virtual const egf::FlatModel*  GetProjectileFlatModel()</p>
+<p class="NDLRefMemberFunction"></p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

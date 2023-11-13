@@ -1,0 +1,154 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::CameraShake</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::CameraShake</p>
+<p class="NDLRefParentage">: public <span class="NDLSystemFont"><a href="egmSpark__IBuiltinModelBase.htm">egmSpark::IBuiltinModelBase</a></span></p>
+
+
+<p class="NDLRefHeaderFile">&lt;SimpleCamera.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_camera_shake.gif" alt="Inheritance graph for egmSpark::CameraShake"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::CameraShake</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal"><span class="NDLSystemFont">CameraShake</span> model implements a simple camera shake for doing simple earth-quake effects Note: You will need to mix this into your <span class="NDLSystemFont"><a href="egmSpark__SimpleCamera.htm">SimpleCamera</a></span> derived camera. </p>
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_camera_shake_1aee42539e49476b88a9ba3c57865bbf0d"></a>
+<p class="NDLRefMemberFunction">CameraShake()</p>
+<p class="NDLRefMemberDetailedDescription">Constructor </p>
+
+<a name="classegm_spark_1_1_camera_shake_1ac8211b71a5e77ff6ff0e772432bec577"></a>
+<p class="NDLRefMemberFunction">void  ShakeCamera(<br/>const efd::Point3& shake, <br/>efd::Float32 decayRate, <br/>efd::Float32 duration, <br/>efd::Bool accumulative)</p>
+<p class="NDLRefMemberDescription">Apply a shaking force to the camera. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">shake</span></td>
+    <td>The maximum distance that the camera can shake along each axis. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">decayRate</span></td>
+    <td>The amount of decay in the magnitude of the shake force per second. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">duration</span></td>
+    <td>The amount of time the shaking will last in seconds. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">accumulative</span></td>
+    <td>Whether the new shaking force will be applied on top of any existing shaking force. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_camera_shake_1a0b071f59882392375a20fab23ca56d21"></a>
+<p class="NDLRefMemberFunction">void  OnShakeCamera(efd::DataStream* pStream)</p>
+<p class="NDLRefMemberDescription">Event handler function for shaking the camera. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pStream</span></td>
+    <td>A DataStream containing the parameters for the ShakeCamera function. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_camera_shake_1a682bf9293f78958a7e441d6a68d0aa4c"></a>
+<p class="NDLRefMemberFunction">efd::Bool  GetShake(<br/>efd::Float32 fDelta, <br/>efd::Point3& shake)</p>
+<p class="NDLRefMemberDescription">Gets the current shaking force to apply to the camera. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">fDelta</span></td>
+    <td>The amount of time that has passed since the last call to this function. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">shake</span></td>
+    <td>Receives an offset to apply to the position of the camera in order to shake it. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if the function succeeded. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

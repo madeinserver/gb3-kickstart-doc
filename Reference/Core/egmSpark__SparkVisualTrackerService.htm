@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::SparkVisualTrackerService</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::SparkVisualTrackerService</p>
+<p class="NDLRefParentage">: public ISystemService</p>
+
+
+<p class="NDLRefHeaderFile">&lt;SparkVisualTrackerService.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_spark_visual_tracker_service.gif" alt="Inheritance graph for egmSpark::SparkVisualTrackerService"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::SparkVisualTrackerService</p>
+</div>
+</p>
+
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_spark_visual_tracker_service_1a0b309b411f33d36f3438d78f67a6d9f7"></a>
+<p class="NDLRefMemberFunction">SparkVisualTrackerService()</p>
+<p class="NDLRefMemberDetailedDescription">Constructor </p>
+
+<a name="classegm_spark_1_1_spark_visual_tracker_service_1a5407d3b68babe80f888ddf2c3df2cbce"></a>
+<p class="NDLRefMemberFunction">void  AddSurface(ecr::RenderSurfacePtr spSurface)</p>
+<p class="NDLRefMemberDescription">Sets a surface to which the tracker will be drawn. </p>
+<p class="NDLRefMemberDetailedDescription">This function must be called for at least one surface in order to see any visual tracker output. Warnings will be sent to the log if it is not called before OnTick.</p>
+<p class="NDLRefMemberDetailedDescription">Note that the tracker statistics are always pulled from the current default render surface as reported by the ecr::RenderService object. This function controls where they are rendered to. </p>
+
+<a name="classegm_spark_1_1_spark_visual_tracker_service_1a556e6c0a9e615c8cf41157121a32bd02"></a>
+<p class="NDLRefMemberFunction">void  RemoveSurface(ecr::RenderSurfacePtr spSurface)</p>
+<p class="NDLRefMemberDescription">Removes the given surface from those receiving visual tracker output. </p>
+
+<a name="classegm_spark_1_1_spark_visual_tracker_service_1a0e737a2bfe8910170a9d2c03bbb349eb"></a>
+<p class="NDLRefMemberFunction">void  HandleMessage(<br/>const ecrInput::InputActionMessage* pMsg, <br/>efd::Category targetChannel)</p>
+<p class="NDLRefMemberDescription">Handle incoming action messages from the input service. </p>
+<p class="NDLRefMemberDetailedDescription">The service looks for key presses of the F11 key or GamePad , which toggles display. </p>
+
+<a name="classegm_spark_1_1_spark_visual_tracker_service_1a99d44e5808b424c63726d5b7aef01ef2"></a>
+<p class="NDLRefMemberFunction">virtual void  Setup(<br/>float* pRender, <br/>float* pCull, <br/>float* pFPS, <br/>efd::UInt32* pVisObjects, <br/>float maxValue)</p>
+<p class="NDLRefMemberDescription">Creates various (default) tracker pages. </p>
+<p class="NDLRefMemberDetailedDescription">You may want to derive from this class and override this function to create additional or entirely different tracker pages. </p>
+
+<a name="classegm_spark_1_1_spark_visual_tracker_service_1aaaf58f5ed30a1a8b1d2930099924fe16"></a>
+<p class="NDLRefMemberFunction">NiVisualTrackerPtr  CreateVisualTracker(<br/>const char* name, <br/>float maxValue)</p>
+<p class="NDLRefMemberDescription">Creates a new tracker page. </p>
+<p class="NDLRefMemberDetailedDescription">Afterwards <span class="NDLSystemFont"><a href="egmSpark__SparkVisualTrackerService.htm#classegm_spark_1_1_spark_visual_tracker_service_1ac20009aada4b80d14bed21edcef22454">AddTracker()</a></span> needs to be called to make the page accessible. </p>
+
+<a name="classegm_spark_1_1_spark_visual_tracker_service_1ac20009aada4b80d14bed21edcef22454"></a>
+<p class="NDLRefMemberFunction">void  AddTracker(NiVisualTrackerPtr spTracker)</p>
+<p class="NDLRefMemberDescription">Makes a tracker page accessible. </p>
+<p class="NDLRefMemberDetailedDescription">The order of <span class="NDLSystemFont"><a href="egmSpark__SparkVisualTrackerService.htm#classegm_spark_1_1_spark_visual_tracker_service_1ac20009aada4b80d14bed21edcef22454">AddTracker()</a></span> calls determines the order in which the pages are presented to the user. </p>
+
+<a name="classegm_spark_1_1_spark_visual_tracker_service_1a5b7a0a7f387c72b90c7616af8654e77c"></a>
+<p class="NDLRefMemberFunction">void  RemoveTracker(NiVisualTrackerPtr spTracker)</p>
+<p class="NDLRefMemberDescription">Removes a page from the list of active trackers. </p>
+
+<a name="classegm_spark_1_1_spark_visual_tracker_service_1a3fded087c889b0be27d5ca351bd43649"></a>
+<p class="NDLRefMemberFunction">void  NextTracker()</p>
+<p class="NDLRefMemberDescription">Shows the next tracker in the list of all accessible trackers. </p>
+<p class="NDLRefMemberDetailedDescription">If the end is reached it will hide the tracker display. If the display is hidden before calling this function the first page will be displayed. </p>
+
+<a name="classegm_spark_1_1_spark_visual_tracker_service_1ad030697c8423d0f9847930b1fafa653f"></a>
+<p class="NDLRefMemberFunction">void  AddPerformanceTimerToTracker(<br/>NiVisualTracker* pTracker, <br/><span class="NDLSystemFont"><a href="egmSpark__PerformanceTimer.htm">PerformanceTimer</a></span>* pPerfTimer)</p>
+<p class="NDLRefMemberDescription">Adds a performance timer to a given tracker page. </p>
+<p class="NDLRefMemberDetailedDescription">As a result the tracker will visualize the time measured by the performance timer.</p>
+<p class="NDLRefMemberDetailedDescription">A timer can be added multiple times to one or multiple tracker pages. </p>
+
+<a name="classegm_spark_1_1_spark_visual_tracker_service_1aff784ea0845821799c577291a72171e7"></a>
+<p class="NDLRefMemberFunction">void  AddPerformanceTimerCounterToTracker(<br/>NiVisualTracker* pTracker, <br/><span class="NDLSystemFont"><a href="egmSpark__PerformanceTimer.htm">PerformanceTimer</a></span>* pPerfTimer)</p>
+<p class="NDLRefMemberDescription">Adds a performance timer to a given tracker page. </p>
+<p class="NDLRefMemberDetailedDescription">As a result the tracker will visualize the number of time intervals (the number of starts and stops) the timer measured since last frame. This is for example useful if a timer measure a particular piece of code which is being executed by multiple instances of a class.</p>
+<p class="NDLRefMemberDetailedDescription">A timer can be added multiple times to one or multiple tracker pages. </p>
+
+<a name="classegm_spark_1_1_spark_visual_tracker_service_1ab6b99ee41bee2e9e8c7adc01fbc55487"></a>
+<p class="NDLRefMemberFunction">void  AddOtherToTracker(<br/>NiVisualTracker* pTracker, <br/><span class="NDLSystemFont"><a href="egmSpark__PerformanceTimer.htm">PerformanceTimer</a></span>* pParent)</p>
+<p class="NDLRefMemberDescription">Adds a performance timer to a given tracker page. </p>
+<p class="NDLRefMemberDetailedDescription">As a result the tracker will visualize the difference between the time measured by the specified timer and the time measured by all its children. In other words it visualizes the portion not covered by the children. If the timer has no children the result should be 'identical' to a timer added via <span class="NDLSystemFont"><a href="egmSpark__SparkVisualTrackerService.htm#classegm_spark_1_1_spark_visual_tracker_service_1ad030697c8423d0f9847930b1fafa653f">AddPerformanceTimerToTracker()</a></span>.</p>
+<p class="NDLRefMemberDetailedDescription">A timer can be added multiple times to one or multiple tracker pages. </p>
+
+<a name="classegm_spark_1_1_spark_visual_tracker_service_1aa324c1b3be068982c43c3bd98d4b32c8"></a>
+<p class="NDLRefMemberFunction">void  UpdateVisualTrackers()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_spark_visual_tracker_service_1a0828fc3142b92ba04963ab693ba6ff12"></a>
+<p class="NDLRefMemberFunction">void  DestroyTrackers()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_spark_visual_tracker_service_1acbc51ff869dff9e9722e51310fd4f36a"></a>
+<p class="NDLRefMemberFunction">void  ResetTrackers()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_spark_visual_tracker_service_1a0b6a926bfe3549ad05c6eeacd0daedcf"></a>
+<p class="NDLRefMemberFunction">void  SetShowTrackers(bool show)</p>
+<p class="NDLRefMemberDescription">Sets display status of tracker graphs. </p>
+<p class="NDLRefMemberDetailedDescription">Allows to toggle the tracker from code as opposed to using the hot keys. </p>
+
+<a name="classegm_spark_1_1_spark_visual_tracker_service_1aa9db3f80089dcbc2ae4068de3f39476c"></a>
+<p class="NDLRefMemberFunction">bool  GetShowTrackers() const</p>
+<p class="NDLRefMemberFunction"></p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

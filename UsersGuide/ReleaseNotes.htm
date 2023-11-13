@@ -1,0 +1,398 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>Kickstart Release Notes</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Fresnel" />
+<meta name="Generator" content="Palimpsest by Emergent Game Technologies - http://emergent.net" />
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+    
+<link rel="stylesheet" href="../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+    </head>
+
+<!--(Begin Body)================================================================================-->
+<body lang="EN-US">
+<script src="../shared/NavScript.js" language="JavaScript1.2" type="text/javascript">
+</script><script language="JavaScript1.2" type="text/javascript">
+WriteNavLink(2);
+</script>
+
+<h1>KickStart Release Notes</h1>
+
+
+<h2>KickStart for Gamebryo LightSpeed 3.1.1</h2>
+
+<h3>2.0.4</h3>
+
+<h4>Spark Library</h4>
+
+<ul>
+    <li>Moved location from Core to Source\Core</li>
+    <li>Projectile System updates
+        <ul>
+        <li>Added &quot;Instant Hit&quot; projectile option</li>
+        <li>Added support for &quot;bullet tracers&quot; for use with instant hit projectiles</li>
+        <li>Now uses EffectsManager to spawn effects associated with projectile</li>
+        <li>support for grenades (dynamic PhysX projectiles with Continuous Collision Detection support)</li>
+        </ul>
+    </li>
+    <li>Character Controller Player State Machine
+        <ul>
+        <li>Overhauled the player state machine mechanism. </li>
+        <li>Each player state is  implemented as a model that you mix into the avatar </li>
+        <li>Added support for crouching </li>
+        <li>Added support for jumping </li>
+        <li>Improved dead-reckoning      </li>
+        <li>Added concept of Animation States </li>
+            <li>Animation States are used to play animations along with anything else that may go along with that animation</li>
+            <li>When character is put into an animation state, the state is transfered to remote clients</li>
+            <li>Animation States can be written in either Lua or C++ (Using built-in models)</li>
+        <li>Added support for TextKey handling</li>
+        <li>Now utilizes additive animation support</li>
+             <li>Hit reaction animation</li>
+             <li>aiming animations</li>
+             <li>shooting animations</li>
+        </ul>
+    </li>
+    <li>Game Objects
+        <ul>
+            <li>Elevators</li>
+            <li>Doors</li>
+            <li>"Use" triggers</li>
+            <li>Exploding barrels</li>
+        </ul>
+    </li>
+    <li>Added the AnimStateManager, which tracks the animation state and routes 
+        behaviors to specific animation state models.</li>
+    <li>Added the AimingManager, which uses additive animations to properly blend in the 
+        aim animations to the movement animations.</li>
+    <li>Added the AnimStateAPI namespace, which contains several utility methods that 
+        work with the AnimStateManager to manipulate additive and normal animation 
+        sequences</li>
+    <li>Modified the AssertDestination class to properly reset ignored items.</li>
+    <li>AttachmentBuiltInModel was added to move graphical entities to be children of 
+        other entity's scene graph hierarchies.</li>
+    <li>BaseMovementInputHandler was added to assist the LocomotionController in driving 
+        entity movement.</li>
+    <li>BuiltinModelBase was augmented with additional helper methods and documentation 
+        was cleaned up.</li>
+    <li>Updated BuiltinModelUtils::Send***Event variants to better handle immediate 
+        behaviors and Abstract models</li>
+    <li>Updated BuiltinModelUtils::CauseDamage*** variants to now have a damage type 
+        string that can be parsed in script.</li>
+    <li>Added SetInitialLinearVelocity and SetInitialAngularVelocity helpers to 
+        BuiltinModelUtils.</li>
+    <li>Added animation blending support for aiming and shooting to 
+        CharacterAnimController</li>
+    <li>Added CharacterMover and CharacterRotator builtin models to Spark, which can be 
+        augmented by SparkAPI calls.</li>
+    <li>DependencyHelper and DependencyHelperBindings have had minor API modifications 
+        and documentation cleanup</li>
+    <li>DepthTerrainMaterial and DoFPostEffect have been removed. Please see the 
+        PostEffects library for a different implementation.</li>
+    <li>Added the EffectsManager, which caches and quickly creates one-shot graphical 
+        objects. Fixes issues with frame-rate spikes on consoles when spawning and 
+        removing special effects</li>
+    <li>FileFinder was added to assist in choosing a starting xblock file.</li>
+    <li>FrameRateTracker was added to assist in rendering the frame rate to the UI in 
+        Shipping builds that do not use the visual tracker.</li>
+    <li>FreeCamera was modified to improve documentation and include the behaviors from 
+        its parent builtin model.</li>
+    <li>GamebryoSplashState was modified to clean up documentation and move certain 
+        utility methods to protected implementations.</li>
+    <li>GamepadRumble builtin model was added to support Gamepad rumble attached to an 
+        entity.</li>
+    <li>ICameraImpl added accessors for its data members and cleaned up documentation</li>
+    <li>LightSpeedExtensions added a SparkSceneGraphService to allow for wireframe mode 
+        application to all scene graph entities.</li>
+    <li>LightSpeedExtensions added utility methods to manipulate the maximum frame rate.</li>
+    <li>LocomotionController added properties to manage text keys, layered animations, 
+        and blend ratios, as well as utility methods and behaviors for enabling and 
+        disabling locomotion.</li>
+    <li>LocomotionHandler was removed.</li>
+    <li>MathHelpers was refactored to add further helper functions and clean up 
+        documentation</li>
+    <li>MRT_ColorDepthMaterial was removed.</li>
+    <li>OverTheShoulder camera was modified to improve documentation</li>
+    <li>ParticleEffect was modified to allow the user to customize bounds updating</li>
+    <li>PhysXCharacterController wass modified to support jumping, crouching, and 
+        standing.</li>
+    <li>PhysXEntityMover was added to allow kinematic physX entities to respond to 
+        network events from the host.</li>
+    <li>PhysXHelperService was modified to add support for radial forces as well as 
+        helper methods to access underlying PhysX API information.</li>
+    <li>PhysXProps built-in model added properties for adjusting additional PhysX data.</li>
+    <li>PostEffect, PostEffectBuiltinModels, PostEffectService, and PostProcessTarget 
+        have been removed. See the PostEffect library for an alternate implementation.</li>
+    <li>PreloaderState was heavily refactored to better handle how and when to preload 
+        entities.</li>
+    <li>ProjectileWeapon was modified to improve documentation and add utility methods 
+        for accessing data.</li>
+    <li>ScreenText was added to assist in putting up frame rate text.</li>
+    <li>SequenceSynchronizer was added to assist in synchronizing animations on entities 
+        in networked games.</li>
+    <li>Shatterable was added to enable objects to play different animations when 
+        damaged.</li>
+    <li>SparkAnimationService was modified to better handle playing animation sequences 
+        in networked games.</li>
+    <li>SparkAPIBindings was added to provide a series of useful utility methods to 
+        script.</li>
+    <li>SparkEvents were modified to propagate damage type and PhysX indices to 
+        collision, damage, and death events.</li>
+    <li>Additional events were added to SparkEvents to facilitate changes to locomotion 
+        and animation service.</li>
+    <li>SparkLocomotionBindings was removed.</li>
+    <li>SparkMainService had several redundant utility methods removed.</li>
+    <li>SparkPostEffectBindings was stripped of content.</li>
+    <li>SparkStateMachine was added to allow state-specific behaviors to be invoked.</li>
+    <li>SparkTerrain was added to enable passing the terrain's fog property to all scene 
+        graphs.</li>
+    <li>SparkUtilBindings was removed.</li>
+    <li>Additional trackers were added to SparkVisualTracker service.</li>
+    <li>TerrainLastShaderSortProcessor was added to ensure that terrain is rendered 
+        last. This helps performance by reducing the number of pixels that are drawn 
+        using terrain's expensive shader.</li>
+    <li>TextKeyHandler was added to assist in text key replication issues.</li>
+    <li>UIManager had several utility methods added.</li>
+    <li>WalkableCharacter controller was removed.</li>
+    <li>Added additional properties to the Weapon builtin model to improve the 
+        represenation of guns and ammo.</li>
+    <li>WeaponHolder was modified to work with the AimingManager and had several 
+        properties added to assist in this integration.</li>
+</ul>
+
+<h4>PostEffects Library</h4>
+
+<ul>
+    <li>Added the new Source\PostEffects library for manipulating fullscreen effects, 
+        which is only dependent on core LightSpeed classes.</li>
+    <li>Added Color Correction, Bloom, and Depth-of-Field effects.</li>
+</ul>
+
+<h4>AlphaGame</h4>
+
+<ul>
+    <li>Alpha Game will now create some required entities if they weren't already added 
+        to the scene: a PhysX scene, a free camera, an ambient light, and a sound scene.</li>
+    <li>Removed logic to manipulate the cursor position</li>
+</ul>
+
+<h4>Multiplayer Game</h4>
+
+<ul>
+    <li>Multiplayer game has been removed in favor of the new Daydreamer application.</li>
+</ul>
+
+<h4>DayDreamer</h4>
+
+<ul>
+    <li>Added the new Daydreamer application, built on top of Multiplayer game.</li>
+    <li>Be sure to update asset web metadata before running DayDreamer for the first time.
+        This is done automatically when building in Visual Studio or can be done manually via
+        DayDreamer\Application\Data\RegenAssetWeb.bat.</li>
+    <li>The console versions of Daydreamer do not properly set up the multiplayer 
+        networking on consoles. This manifests itself as multiplayer synchronization 
+        failures. A fix for this will be available shortly via Subversion update.</li>
+</ul>
+
+
+<h2>Ignite for Gamebryo LightSpeed 3.1</h2>
+
+<h3>2.0.3</h3>
+
+<h4>Spark Library</h4>
+
+<ul>
+    <li>Updated Spark project to remove the dependency on the SPARK_PATH environment 
+        variable. SPARK_PATH is now only used to setup the Toolbench plugin that allows 
+        a new .gsl file to select the SparkLibrary as a dependency.</li>
+    <li>Added more documentation to code.</li>
+    <li>Added LevelService and DependencyHelper</li>
+    <li>Added a new logging destination called AssertDestination.</li>
+</ul>
+
+<h4>MultiplayerGame</h4>
+
+<ul>
+    <li>Updated MultiplayerGame to run agains the new Spark functionality (2.0.3)</li>
+    <li>Moved PS3 project file for MPGMatchmaker to correspond to the project files for 
+        other platforms</li>
+    <li>Removed spurious error messages</li>
+</ul>
+
+<h4>AlphaGame</h4>
+
+<ul>
+    <li>Updated AlphaGame to run against the new Spark functionality (2.0.3).</li>
+    <li>Updated all art and the block file to use a scale of 1 meter instead of 1 inch</li>
+    <li>Reorganized data to correspond with Toolbench default settings wherever possible</li>
+    <li>Removed spurious error messages.</li>
+    <li>Added error handling to help the user get a block file running more easily. 
+        Reduced the number of instances where the user is faced with a black screen.</li>
+    <li>Fixed error at startup with complaint about UI.</li>
+    <li>Fixed crash on exit related to UI cleanup.</li>
+</ul>
+
+<h3>2.0.2</h3>
+
+<h4>Spark Library</h4>
+
+<ul>
+    <li>Changed SparkMainService to automatically initialize UIManager, which uses 
+        NiUserInterface to create menus.</li>
+    <li>Fixed an initialization bug that was preventing logging from appearing in the 
+        Toolbench window. The RapidIterationService handles creation and registration of 
+        the LogService, so LogService does not have to be explicitly created and 
+        registered by Spark.</li>
+    <li>Added a simple menu that uses the UIManager to display menu entries and lets the 
+        user easily setup callback methods when a menu item is selected.</li>
+    <li>Added the FilteredAssetLocator that will take an asset location response, filter 
+        the content of the response, and forward the response to the proper place.</li>
+</ul>
+
+<h4>MultiplayerGame</h4>
+
+<ul>
+    <li>Added a configuration property called &quot;GameType&quot; in the config.ini file. This 
+        enables a user to start the game in single player or multiplayer modes.</li>
+    <li>Fixed config.ini bug where the PS3 was looking in the wrong place for Enums. 
+        With this error, the application would not log properly.</li>
+    <li>Fixed a bug where logging would not appear in Toolbench when Toolbench was 
+        connected.</li>
+    <li>Utilized the new Spark classes FilteredAssetLocator and UIMenu.</li>
+</ul>
+
+<h4>AlphaGame</h4>
+
+<ul>
+    <li>Updated AlphaGame to run against the new Spark functionality (2.0.2) and 
+        LightSpeed 3.1. AlphaGame supports PC, Xbox360, and PS3.</li>
+    <li>Fixed config.ini bug where the Xbox360 was looking in the wrong place for Enums. 
+        With this error, the application would not log properly.</li>
+    <li>Fixed a bug where logging would not appear in Toolbench when Toolbench was 
+        connected.</li>
+</ul>
+
+<h3>2.0.1</h3>
+
+<h4>Spark Library</h4>
+
+<ul>
+    <li>Upgraded existing functionality and added new functionality to support the 
+        forthcoming MultiplayerGame and LightSpeed 3.1. Spark supports PC, Xbox360, and 
+        PS3.</li>
+</ul>
+
+<h4>MultiplayerGame</h4>
+
+<ul>
+    <li>Released MultiplayerGame as an example of how to use LightSpeed networking. 
+        MultiplayerGame currently is supported on PC, Xbox360, and PS3.</li>
+</ul>
+
+<h4>AlphaGame</h4>
+
+<ul>
+    <li>Updated AlphaGame to run against the new Spark functionality (2.0.1) and 
+        LightSpeed 3.1. AlphaGame supports PC, Xbox360, and PS3.</li>
+</ul>
+
+<h2>Ignite for Gamebryo LightSpeed 3.0</h2>
+
+<h3>1.0.2</h3>
+
+<h4>AlphaGame</h4>
+
+<ul>
+    <li>Added support for Xbox360, PS3, and Wii. PS3 Developers please read
+    <a href="https://pulse.emergent.net/index.php?showtopic=3241" class="external text"
+    title="https://pulse.emergent.net/index.php?showtopic=3241" rel="nofollow">this post</a> 
+        on the forum.</li>
+    <li>Graphics assets and Asset Web tagging are now set up to support multiplatform. 
+        Lower-resolution assets provided for Wii.</li>
+    <li>Updates to the AlphaGame.block level file. New enemy type, new gameplay 
+        elements. During a WIN scenario we now switch cameras to a close-up cut camera.</li>
+    <li>AlphaGame now reduces its CPU load when it loses focus. This helps with rapid 
+        iteration since Toolbench will run better.</li>
+    <li>General bug fixes and performance improvements.</li>
+    <li>For Visual Studio 2008: The libraries specified in the LightSpeed-Wwise 
+        integration property sheets may need to be changed. If AlphaGame will build but 
+        crashes when you launch it, go to the property sheets 
+        in&nbsp;%LIGHTSPEED_WWISE_PATH%\Build\Win32\VC90\Property Sheets, and change the 
+        AdditionalLibraryDirectories from $(WWISESDK)\Win32\&lt;Version&gt;\lib to 
+        $(WWISESDK)\Win32\&lt;Version&gt;(StaticCRT)\lib. For example, 
+        $(WWISESDK)\Win32\Debug\lib would change to 
+        $(WWISESDK)\Win32\Debug(StaticCRT\lib.</li>
+    <li>Bug: AlphaGame will not build and deploy if there are spaces in the path.</li>
+    <li>Bug: The Wwise Integration does not handle rapid iteration of the bank files. To 
+        fix this, edit&nbsp;%LIGHTSPEED_WWISE_PATH%\Source\epgmWwiseService\AudioService.cpp. 
+        You will change line 366 (in AudioService::HandleAssetChange) from this:</li>
+</ul>
+
+<pre>pAssetService-&gt;AssetLocate(
+     assetId, efd::kMSGID_AssetLocatorRequest, IAssetLocatorService::ALS_LOCAL_ONLY);</pre>
+
+<dl>
+    <dd>to this:</dd>
+</dl>
+
+<pre>pAssetService-&gt;AssetLocate(
+     assetId, m_catAssetLocate, IAssetLocatorService::ALS_LOCAL_ONLY);</pre>
+
+<dl>
+    <dd>Note that the background music will stop playing upon rapid iteration of the 
+        sound bank file because the play event happens when the application starts but 
+        is not sent again after the reload.</dd>
+</dl>
+
+<h4>Spark Library</h4>
+
+<ul>
+    <li>Added support for Xbox360, PS3, and Wii. PS3 Developers please read
+    <a href="https://pulse.emergent.net/index.php?showtopic=3241" class="external text"
+    title="https://pulse.emergent.net/index.php?showtopic=3241" rel="nofollow">this post</a> 
+        on the forum.</li>
+    <li>Improved SparkTickable model. This version handles multiple starts/stops, a 
+        different initial delay than on subsequence ticks, and more.</li>
+    <li>Added OnInit and OnShutdown to the GameState class, called at the appropriate 
+        times. If you add a GameState to the GameStateService after the service has been 
+        initialized, its OnInit is called immediately. Otherwise, it is called when 
+        GameStateService initializes.</li>
+    <li>General bug fixes and performance improvements.</li>
+    <li><i>Bug</i>: Spark will not build if there are spaces in the path.</li>
+    <li><i>Bug</i>: MovementHandler does not get updated when a kfm file changes</li>
+</ul>
+<dl>
+    <dd>There is a bug in Gamebryo LightSpeed where no messages are sent to inform 
+        subscribers that an actor (kfm) file has changed. To work around this problem, 
+        add the following lines to MovementHandler::Update() in MovementHandler.cpp on 
+        line 136 (below the check for m_spActorManager).</dd>
+</dl>
+
+<pre>egmAnimation::pAnimationService =
+    m_pServiceManager-&gt;GetSystemServiceAs&lt;egmAnimation::AnimationService&gt;();
+if (m_spActorManager&nbsp;!=
+    m_pAnimationService -&gt;GetActorManager(m_pOwningEntity-&gt;GetEntityID()))
+{
+    ResetAnimationData();
+    InitializeAnimationData();
+}
+</pre>
+
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

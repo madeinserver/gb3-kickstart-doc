@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::PostEffectsStep</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::PostEffectsStep</p>
+<p class="NDLRefParentage">: public NiRenderStep</p>
+
+
+<p class="NDLRefHeaderFile">&lt;PostEffectsStep.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_post_effects_step.gif" alt="Inheritance graph for egmSpark::PostEffectsStep"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::PostEffectsStep</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">The <span class="NDLSystemFont">PostEffectsStep</span> contains a set of <span class="NDLSystemFont"><a href="egmSpark__PostEffect.htm">PostEffect</a></span> instances that it renders in sequence. </p>
+<p class="NDLNormal">Effects are added to the step by their constructors.</p>
+<p class="NDLNormal">After creating an <span class="NDLSystemFont">PostEffectsStep</span> using the <span class="NDLSystemFont"><a href="egmSpark__PostEffectsManager.htm">PostEffectsManager</a></span>, insert it into your render frame after the main render step you want to apply post effects to, then set their output targets so that your main render step now outputs to your <span class="NDLSystemFont"><a href="egmSpark__PostEffectsStep.htm#classegm_spark_1_1_post_effects_step_1a3012c0709d07843d43b685adbe8aa21f">PostEffectsStep::GetInputTarget()</a></span>, and your post effect step now outputs to the main render step's original target. </p>
+
+<a name="friend_members"></a>
+<p class="NDLRefHead1">Friend Members</p>
+
+
+<a name="classegm_spark_1_1_post_effects_step_1a18154123f67a46df8ff41ecd0a51ae4e"></a>
+<p class="NDLRefMemberFunction">friend class  PostEffectsManager()</p>
+<p class="NDLRefMemberFunction"></p>
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_post_effects_step_1a3012c0709d07843d43b685adbe8aa21f"></a>
+<p class="NDLRefMemberFunction">NiRenderTargetGroup*  GetInputTarget()</p>
+<p class="NDLRefMemberDescription">This returns the render target which previous render steps must use to feed the post effect step. </p>
+
+<a name="classegm_spark_1_1_post_effects_step_1acd90a24ee3d53b55d4d5d1726dc52fda"></a>
+<p class="NDLRefMemberFunction">void  DirtyOrder()</p>
+<p class="NDLRefMemberDescription">Indicates that the sort order of effects has changed. </p>
+<p class="NDLRefMemberDetailedDescription">Usually only called by <span class="NDLSystemFont"><a href="egmSpark__PostEffect.htm#classegm_spark_1_1_post_effect_1a72e519b58e1d3a790008eff8a19c1b28">PostEffect::SetOrder()</a></span>. </p>
+
+<a name="classegm_spark_1_1_post_effects_step_1a9d47647d2630236614f74f7cf84844b5"></a>
+<p class="NDLRefMemberFunction">void  SetAutoBuffers(<br/>efd::UInt32 iBuffer0, <br/>efd::UInt32 iBuffer1)</p>
+<p class="NDLRefMemberDescription">Manually sets the internal ping-pong buffer for post effects. </p>
+<p class="NDLRefMemberDetailedDescription">These are the buffers automatically selected for Early and Final passes. By default these are <span class="NDLSystemFont"><a href="egmSpark__PostEffectsManager.htm#classegm_spark_1_1_post_effects_manager_1ae6adbbe568febcc2e85f032deb150c04">PostEffectsManager::k_bufferDefault0</a></span>/1. Note that iBuffer0 may share a rendered texture as the input buffer, but iBuffer1 may not.</p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription"><span class="NDLSystemFont"><a href="egmSpark__PostEffectsStep.htm#classegm_spark_1_1_post_effects_step_1a5816fcfcc4189ecc6989d39a26f0c9b1">SetInputBuffer()</a></span></p>
+<p class="NDLRefMemberDetailedDescription"><span class="NDLSystemFont"><a href="egmSpark__PostEffectsManager.htm">PostEffectsManager</a></span></p></p>
+
+<a name="classegm_spark_1_1_post_effects_step_1a5816fcfcc4189ecc6989d39a26f0c9b1"></a>
+<p class="NDLRefMemberFunction">void  SetInputBuffer(efd::UInt32 iBufferIn)</p>
+<p class="NDLRefMemberDescription">Manually sets the input render target. </p>
+<p class="NDLRefMemberDetailedDescription">By default this is <span class="NDLSystemFont"><a href="egmSpark__PostEffectsManager.htm#classegm_spark_1_1_post_effects_manager_1a3d986520db534f17f07f7afecf322e8d">PostEffectsManager::k_bufferInput</a></span>. Note that this may share a texture with auto buffer 0, but not with auto buffer 1. </p>
+<p class="NDLRefMemberDetailedDescription"><span class="NDLSystemFont"><a href="egmSpark__PostEffectsStep.htm#classegm_spark_1_1_post_effects_step_1a9d47647d2630236614f74f7cf84844b5">SetAutoBuffers()</a></span></p>
+<p class="NDLRefMemberDetailedDescription"><span class="NDLSystemFont"><a href="egmSpark__PostEffectsManager.htm">PostEffectsManager</a></span></p>
+<a name="nirenderstep_interface"></a>
+<p class="NDLRefHead1">NiRenderStep interface</p>
+
+
+<a name="classegm_spark_1_1_post_effects_step_1a00a00d121b57ec8f1a26342f3aacf35e"></a>
+<p class="NDLRefMemberFunction">virtual void  PerformRendering()</p>
+<p class="NDLRefMemberDescription">The final output of this render step will go to this render target. </p>
+
+<a name="classegm_spark_1_1_post_effects_step_1af8484da88f7131bc93ef3eb2a8b56418"></a>
+<p class="NDLRefMemberFunction">virtual bool  SetOutputRenderTargetGroup(NiRenderTargetGroup* pkOutputRenderTargetGroup)</p>
+<p class="NDLRefMemberDescription">The final output of this render step will go to this render target. </p>
+
+<a name="classegm_spark_1_1_post_effects_step_1a45d5cb66b2b1b547aedd220f51790eaf"></a>
+<p class="NDLRefMemberFunction">virtual NiRenderTargetGroup*  GetOutputRenderTargetGroup()</p>
+<p class="NDLRefMemberDescription">The final output of this render step will go to this render target. </p>
+
+<a name="classegm_spark_1_1_post_effects_step_1a459361df0f61db277416f691f24c80d7"></a>
+<p class="NDLRefMemberFunction">virtual unsigned int  GetNumObjectsDrawn() const</p>
+<p class="NDLRefMemberDescription">The final output of this render step will go to this render target. </p>
+
+<a name="classegm_spark_1_1_post_effects_step_1a370815fae551994c70bb5a3ca4dbb006"></a>
+<p class="NDLRefMemberFunction">virtual float  GetCullTime() const</p>
+<p class="NDLRefMemberDescription">The final output of this render step will go to this render target. </p>
+
+<a name="classegm_spark_1_1_post_effects_step_1a3ccf33c1ef87d3f01de854f91b1f5620"></a>
+<p class="NDLRefMemberFunction">virtual float  GetRenderTime() const</p>
+<p class="NDLRefMemberDescription">The final output of this render step will go to this render target. </p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::CharacterControllerHitReport</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::CharacterControllerHitReport</p>
+<p class="NDLRefParentage">: public NxUserControllerHitReport</p>
+
+
+<p class="NDLRefHeaderFile">&lt;PhysXCharacterController.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_character_controller_hit_report.gif" alt="Inheritance graph for egmSpark::CharacterControllerHitReport"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::CharacterControllerHitReport</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">Character controller hit report class</p>
+<ul>
+<li>Handles the pushing of objects that the character runs into. </li></ul>
+<p class="NDLNormal">
+<ul>
+<li>Sends Touch events</li>
+<li>Used by the <span class="NDLSystemFont"><a href="egmSpark__PhysXCharacterController.htm">PhysXCharacterController</a></span> builtin model </li></ul></p>
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_character_controller_hit_report_1ae50e44cb781f258987a27a81aebae2cb"></a>
+<p class="NDLRefMemberFunction">CharacterControllerHitReport()</p>
+<p class="NDLRefMemberDescription">Constructor. </p>
+
+<a name="classegm_spark_1_1_character_controller_hit_report_1a078ae6f0d2f70ade08666463ae4c99d8"></a>
+<p class="NDLRefMemberFunction">void  SetScene(NxScene* pScene)</p>
+<p class="NDLRefMemberDescription">Sets the PhysX scene that applies to this hit report. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pScene</span></td>
+    <td>The new scene to set. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_character_controller_hit_report_1af3b60561fb34a5a03e9242e857b655ec"></a>
+<p class="NDLRefMemberFunction">void  SetOwner(NxController* pController)</p>
+<p class="NDLRefMemberDescription">Sets the PhysX character controller that is pushing the object. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pController</span></td>
+    <td>The new owner to set. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_character_controller_hit_report_1a414ab7d1fa397d8602d6a6d7cbce4cde"></a>
+<p class="NDLRefMemberFunction">void  SetPushMultiplier(efd::Float32 multiplier)</p>
+<p class="NDLRefMemberDescription">Sets a factor which is multiplied by the force coefficient to weaken or strengthen it. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">multiplier</span></td>
+    <td>The new multiplier to set. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_character_controller_hit_report_1a6d111c05bd7cec426f95ef4ce879a1ae"></a>
+<p class="NDLRefMemberFunction">void  SetEntityID(egf::EntityID id)</p>
+<p class="NDLRefMemberDescription">Sets the entity ID of the object that is pushing another object. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">id</span></td>
+    <td>The pushing entity's ID. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_character_controller_hit_report_1ae4ddcccddc805768a637a14b2e121ebd"></a>
+<p class="NDLRefMemberFunction">virtual NxControllerAction  onShapeHit(const NxControllerShapeHit& hit)</p>
+<p class="NDLRefMemberDescription">This is called when a touch event occurs between the character that owns this object and a dynamic PhysX actor. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">hit</span></td>
+    <td>The PhysX actor that was hit. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The action that was taken, i.e. whether the object was pushed or not. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_character_controller_hit_report_1ab31d3ef9fb98614cc10a979f37bb6c90"></a>
+<p class="NDLRefMemberFunction">virtual NxControllerAction  onControllerHit(const NxControllersHit& hit)</p>
+<p class="NDLRefMemberDescription">This is called when a touch event occurs between the character that owns this object and another character. </p>
+<p class="NDLRefMemberDetailedDescription">The default implementation does nothing. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">hit</span></td>
+    <td>The character that was hit. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The action that was taken, i.e. whether the object was pushed or not. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

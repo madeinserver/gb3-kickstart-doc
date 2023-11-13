@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::MuzzleFlashManager</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::MuzzleFlashManager</p>
+<p class="NDLRefParentage">: public IBase</p>
+
+
+<p class="NDLRefHeaderFile">&lt;MuzzleFlash.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_muzzle_flash_manager.gif" alt="Inheritance graph for egmSpark::MuzzleFlashManager"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::MuzzleFlashManager</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">This muzzle flash manager enables weapons to have multiple muzzle flash effects active at one time. </p>
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_muzzle_flash_manager_1ac1e21363e440fa74c5c895940d9b46b7"></a>
+<p class="NDLRefMemberFunction">MuzzleFlashManager()</p>
+<p class="NDLRefMemberDescription">Constructor. </p>
+
+<a name="classegm_spark_1_1_muzzle_flash_manager_1a4f1381d773fb164b72089368f805eee7"></a>
+<p class="NDLRefMemberFunction">virtual ~MuzzleFlashManager()</p>
+<p class="NDLRefMemberDescription">Destructor. </p>
+
+<a name="classegm_spark_1_1_muzzle_flash_manager_1a63cd3c00959b3a768dc473dc3eb255a2"></a>
+<p class="NDLRefMemberFunction">virtual efd::Bool  Setup(<br/>const efd::AssetID& assetID, <br/>efd::UInt32 maxFlashes, <br/>NiNode* pAttachTo)</p>
+<p class="NDLRefMemberDescription">Sets up a bank of effects by cloning the scene graph of the passed in asset ID and then attaches them to the passed in node. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">assetID</span></td>
+    <td>The asset ID to clone from. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">maxFlashes</span></td>
+    <td>The maximum number of effects that can be played at the same time. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pAttachTo</span></td>
+    <td>The scene graph node to attach the effects to. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_muzzle_flash_manager_1af6ba76350a718dc98bca6ec92a144b33"></a>
+<p class="NDLRefMemberFunction">virtual void  DoMuzzleFlash()</p>
+<p class="NDLRefMemberDescription">Spawns an effect from the pool that was previously set up. </p>
+
+<a name="classegm_spark_1_1_muzzle_flash_manager_1a7b6ac6a0f27e7b8aac6f45cdbe26ab11"></a>
+<p class="NDLRefMemberFunction">virtual void  StopMuzzleFlash()</p>
+<p class="NDLRefMemberDescription">Stops all playing effects. </p>
+
+<a name="classegm_spark_1_1_muzzle_flash_manager_1af821bfd5361cc3fde34fb0254ff6d0e6"></a>
+<p class="NDLRefMemberFunction">virtual void  Update()</p>
+<p class="NDLRefMemberDescription">Called each frame to update the effects. </p>
+
+<a name="classegm_spark_1_1_muzzle_flash_manager_1a23de0cc9c21d6235467e77610b4118e2"></a>
+<p class="NDLRefMemberFunction">virtual void  SetScale(efd::Float32 scale)</p>
+<p class="NDLRefMemberDescription">Sets the scale of all effects. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">scale</span></td>
+    <td>The new scale factor. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_muzzle_flash_manager_1a449ed2f2d07875c357a4173ee87e54fd"></a>
+<p class="NDLRefMemberFunction">virtual void  SetLooping(efd::Bool looping)</p>
+<p class="NDLRefMemberDescription">Sets the looping behavior of all effects. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">looping</span></td>
+    <td>True to loop, false to play once and stop. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

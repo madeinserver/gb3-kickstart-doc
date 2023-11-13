@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::BeamWeapon</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::BeamWeapon</p>
+<p class="NDLRefParentage">: public <span class="NDLSystemFont"><a href="egmSpark__Weapon.htm">egmSpark::Weapon</a></span></p>
+
+
+<p class="NDLRefHeaderFile">&lt;BeamWeapon.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_beam_weapon.gif" alt="Inheritance graph for egmSpark::BeamWeapon"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::BeamWeapon</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">Implementation of a "beam" weapon. </p>
+<p class="NDLNormal">The idea is that the weapon shoots a limited length beam that does damage to things that it touches. Could be used for lasers or perhaps flame thrower style weapons </p>
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_beam_weapon_1a65d6445c893e283efd8c5644f86a6a78"></a>
+<p class="NDLRefMemberFunction">BeamWeapon()</p>
+<p class="NDLRefMemberDetailedDescription">Constructor </p>
+
+<a name="classegm_spark_1_1_beam_weapon_1ab1fe9d5f12aa40d9dccefc19b1f2c488"></a>
+<p class="NDLRefMemberFunction">virtual bool  FireWeapon(<br/>const efd::Point3& firePos, <br/>const efd::Point3& rotation)</p>
+<p class="NDLRefMemberDescription">Fires the weapon from a position along the rotation vector one time. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">firePos</span></td>
+    <td>The position to fire from. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">rotation</span></td>
+    <td>The vector to fire along. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if the function was successful. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_beam_weapon_1a72f77318b6f5ff0a9bc732720dcd4625"></a>
+<p class="NDLRefMemberFunction">virtual void  StartFiring()</p>
+<p class="NDLRefMemberDescription">Start firing the weapon. </p>
+<p class="NDLRefMemberDetailedDescription">The weapon will use its fire interval to continually fire until StopFiring is called. </p>
+
+<a name="classegm_spark_1_1_beam_weapon_1a89366eac2d521e2fd24c51e453187a32"></a>
+<p class="NDLRefMemberFunction">virtual void  StopFiring()</p>
+<p class="NDLRefMemberDescription">Called after StartFiring to halt continuous fire mode. </p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::ScreenTextureClick::Element</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::ScreenTextureClick::Element</p>
+
+
+<p class="NDLRefHeaderFile">&lt;ScreenTextureClick.h&gt;</p>
+
+
+
+<a name="public_attributes"></a>
+<p class="NDLRefHead1">Public Attributes</p>
+
+
+<a name="structegm_spark_1_1_screen_texture_click_1_1_element_1a929a6d40b5c84a821fcd6cd30260402f"></a>
+<p class="NDLRefMemberFunction">efd::utf8string  m_textureName</p>
+<p class="NDLRefMemberDescription">Name of the texture file to load. </p>
+
+<a name="structegm_spark_1_1_screen_texture_click_1_1_element_1afca77f1821c0ba2b7f314e678b4db8cd"></a>
+<p class="NDLRefMemberFunction"><span class="NDLSystemFont"><a href="egmSpark__ScreenTextureClick.htm#classegm_spark_1_1_screen_texture_click_1ae4cad13aba45d3ea642c42a4a92b01ef">PositionType</a></span>  m_alignment</p>
+<p class="NDLRefMemberDescription">Specifies how to position the texture. </p>
+
+<a name="structegm_spark_1_1_screen_texture_click_1_1_element_1a163e41e69ea7a73206361f6419edf0c0"></a>
+<p class="NDLRefMemberFunction">efd::Point2  m_position</p>
+<p class="NDLRefMemberDescription">The position of the texture on the screen. </p>
+
+<a name="structegm_spark_1_1_screen_texture_click_1_1_element_1ab64b5b4cde9b6f26c205594546fe33db"></a>
+<p class="NDLRefMemberFunction">efd::Point2  m_size</p>
+<p class="NDLRefMemberDescription">Rendered size of texture. </p>
+
+<a name="structegm_spark_1_1_screen_texture_click_1_1_element_1a1b76fb3038bf813a50f53f14ead27517"></a>
+<p class="NDLRefMemberFunction">efd::Point2  m_textureSize</p>
+<p class="NDLRefMemberDescription">Actual size of texture. </p>
+
+<a name="structegm_spark_1_1_screen_texture_click_1_1_element_1a3263e905a6b5f8883bf6c88acf74435b"></a>
+<p class="NDLRefMemberFunction">NiMeshScreenElements*  m_pScreenElement</p>
+<p class="NDLRefMemberDescription">The screen element used to draw the texture. </p>
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="structegm_spark_1_1_screen_texture_click_1_1_element_1a0e78f9f66eb2dfe7ce8a1a72f315bca8"></a>
+<p class="NDLRefMemberFunction">Element(<br/>const efd::utf8string& textureName, <br/><span class="NDLSystemFont"><a href="egmSpark__ScreenTextureClick.htm#classegm_spark_1_1_screen_texture_click_1ae4cad13aba45d3ea642c42a4a92b01ef">PositionType</a></span> alignment = posCenter, <br/>const efd::Point2& size = UseTextureSize, <br/>const efd::Point2& position = efd::Point2(0, 0))</p>
+<p class="NDLRefMemberDescription">Define a texture element to add to the <span class="NDLSystemFont"><a href="egmSpark__ScreenTextureClick.htm">ScreenTextureClick</a></span>. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">textureName</span></td>
+    <td>Full path to a texture file. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">alignment</span></td>
+    <td>The element should be centered on the screen. If this parameter is not posAbsolute then the position parameter above is used as an offset from the absolute center. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">size</span></td>
+    <td>Width and height of the element. You may use szScreen for either dimension to cause that dimension to be stretched to fill the screen, or, szTexture to make it the same size as the texture in that dimension. If both dimensions are set to szScreen (i.e. UseScreenSize) then the texture's aspect ratio will be kept the same as the original. There are two constants, UseTextureSize and UseScreenSize that set both dimensions to either szScreen or szTexture. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">position</span></td>
+    <td>X and Y coordinates for positioning the element. Positive values are relative to the left or top side of the screen and negative values are relative to the right or bottom side of the screen. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="structegm_spark_1_1_screen_texture_click_1_1_element_1ab7ecb60a78654e0a970aefc375ed67f3"></a>
+<p class="NDLRefMemberFunction">virtual ~Element()</p>
+<p class="NDLRefMemberDescription">Destructor. </p>
+
+<a name="structegm_spark_1_1_screen_texture_click_1_1_element_1aa564bf1444411d7b7dcda11c60adaec4"></a>
+<p class="NDLRefMemberFunction">virtual void  SetSize(<br/>efd::Float32 scale, <br/>const efd::Point2& screenSize)</p>
+<p class="NDLRefMemberDescription">Scale and possibly reposition the texture element. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">scale</span></td>
+    <td>Multiplier for size. I.e. 0.95 means scale to 95% of normal size. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">screenSize</span></td>
+    <td>Current screen (window) size. For scaling to screen size. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

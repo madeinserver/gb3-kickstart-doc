@@ -1,0 +1,881 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::OverTheShoulderCamera</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::OverTheShoulderCamera</p>
+<p class="NDLRefParentage">: public <span class="NDLSystemFont"><a href="egmSpark__SimpleCamera.htm">egmSpark::SimpleCamera</a></span></p>
+
+
+<p class="NDLRefHeaderFile">&lt;OverTheShoulderCamera.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_over_the_shoulder_camera.gif" alt="Inheritance graph for egmSpark::OverTheShoulderCamera"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::OverTheShoulderCamera</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">The most typical use case of this camera is a third person camera which looks over the shoulder of the subject (hence the name). </p>
+<p class="NDLNormal">However the camera's use is in no way restricted to a 'shoulder' or a human character for that matter.</p>
+<p class="NDLNormal">This camera has the concept of a camera "subject" on which it is 'mounted' and moves along with. The camera itself can be offset from the mount point in negative viewing direction. Imagine a camera fixed to the end of a stick, looking down the stick. Some other point on the stick is connected to a mount point around which it pivots. The offset to the mount point is defined by a minimum and a maximum. Most times the camera will be offset by the maximum. It will move closer if geometry forces it to because it would otherwise obstruct the view.</p>
+<p class="NDLNormal">The controller's input stick rotates the camera's stick around the mount point.</p>
+<p class="NDLNormal">The camera has a single subject entity at any given time.</p>
+<p class="NDLNormal">Some of the properties are defined in the model SparkOverTheShoulderCameraSubject. In order to be able to define these properties the subject's entity therefore must mixin SparkOverTheShoulderCameraSubject. Otherwise the respective properties will be set to their defaults. </p>
+
+<a name="construction_and_destruction"></a>
+<p class="NDLRefHead1">Construction and Destruction</p>
+
+
+<a name="classegm_spark_1_1_over_the_shoulder_camera_1af97eb5741b40440c9297ac6322fb639a"></a>
+<p class="NDLRefMemberFunction">OverTheShoulderCamera()</p>
+<p class="NDLRefMemberDescription">Constructor. </p>
+
+<a name="classegm_spark_1_1_over_the_shoulder_camera_1acf83e12c6a3a5a660b78afa7e83e1e17"></a>
+<p class="NDLRefMemberFunction">virtual ~OverTheShoulderCamera()</p>
+<p class="NDLRefMemberDescription">Destructor. </p>
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_over_the_shoulder_camera_1a8c19e6c22ea104806e290ca23e5f2cc7"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetFOV() const</p>
+<p class="NDLRefMemberDescription">Get the camera's current field of view. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The field of view. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_over_the_shoulder_camera_1a7ccf944b15cc9d316a70ae1885efb98f"></a>
+<p class="NDLRefMemberFunction">efd::Point3  GetSubjectCameraMountPointOffset(const efd::Point3& defaultValue) const</p>
+<p class="NDLRefMemberDescription">Get the offset of the camera's mount point from the subject's position. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">defaultValue</span></td>
+    <td>Value to return if there is no value set on the Entity </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The offset. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_over_the_shoulder_camera_1a8105f6752b208b869bd76cef1448d2f1"></a>
+<p class="NDLRefMemberFunction">efd::Point3  GetSubjectCameraMountPointOffsetBackup(const efd::Point3& defaultValue) const</p>
+<p class="NDLRefMemberDescription">Get the offset of the camera's secondary mount point from the subject's position. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">defaultValue</span></td>
+    <td>Value to return if there is no value set on the Entity </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The offset. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_over_the_shoulder_camera_1a4c36672ee14c533b9b76d4de627df785"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetCameraDistanceMaximum() const</p>
+<p class="NDLRefMemberDescription">Returns the maximum distance between the camera mount point and the camera. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The maximum distance. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_over_the_shoulder_camera_1a88aa0e4a7ee4f4a50fdea7ff1e2ab882"></a>
+<p class="NDLRefMemberFunction">void  SetCameraDistanceMaximum(efd::Float32 newMaximum)</p>
+<p class="NDLRefMemberDescription">Sets the maximum distance between the camera mount point and the camera. </p>
+<p class="NDLRefMemberDetailedDescription">This is also the distance used if no obstacles are in the way to dictate otherwise.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">newMaximum</span></td>
+    <td>The maximum distance to be used. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_over_the_shoulder_camera_1ac66e56979d090dc3f2b1ec8e30a31af0"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetCameraDistanceMinimum() const</p>
+<p class="NDLRefMemberDescription">Returns the minimum distance between the camera mount point and the camera. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The minimum distance. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_over_the_shoulder_camera_1a0649cd5a91c0bdb01a3ff43bfaa26699"></a>
+<p class="NDLRefMemberFunction">void  SetCameraDistanceMinimum(efd::Float32 newMinimum)</p>
+<p class="NDLRefMemberDescription">Sets the minimum distance between the camera mount point and the camera. </p>
+<p class="NDLRefMemberDetailedDescription">This is as close as the camera will move to the mount point in order to avoid obstacles between the mount point and itself.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">newMinimum</span></td>
+    <td>The minimum distance to be used. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_over_the_shoulder_camera_1a78fe85e140cf0a26006e20584222b971"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetCameraDistanceZoom() const</p>
+<p class="NDLRefMemberDescription">Returns the zoom distance. </p>
+<p class="NDLRefMemberDetailedDescription">That's the (target) distance between the camera mount point and the camera when the camera is in zoom mode. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The zoom distance. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_over_the_shoulder_camera_1ac4f719c6f6b9520399e2705a862f2289"></a>
+<p class="NDLRefMemberFunction">void  SetCameraDistanceZoom(efd::Float32 newZoomDistance)</p>
+<p class="NDLRefMemberDescription">Sets the desired distance between mount point and camera when the camera is in zoom mode. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">newZoomDistance</span></td>
+    <td>The zoom distance to be used. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_over_the_shoulder_camera_1a2c1aea41fdd9720d4dce250ecb17134a"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetZoomTransitionRate() const</p>
+<p class="NDLRefMemberDescription">Sets the zoom transition rate. </p>
+<p class="NDLRefMemberDetailedDescription">The transition rate to and from zoom determines how long it takes to change into zoom mode or out of it. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The zoom transition rate in transitions per second. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_over_the_shoulder_camera_1a03506cb087c9661d6438fd3bb3bc7a60"></a>
+<p class="NDLRefMemberFunction">void  SetZoomTransitionRate(efd::Float32 transitionsPerSecond)</p>
+<p class="NDLRefMemberDescription">Gets the zoom transition rate. </p>
+<p class="NDLRefMemberDetailedDescription">The transition rate to and from zoom determines how long it takes to change into zoom mode or out of it. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">transitionsPerSecond</span></td>
+    <td>The zoom transition rate in transitions per second. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_over_the_shoulder_camera_1a47e8caf7ff6aaeb4efd800e06c834247"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetZoomFOV() const</p>
+<p class="NDLRefMemberDescription">Gets the camera's field of view while in zoom mode. </p>
+<p class="NDLRefMemberDetailedDescription">The FOV while not in zoom mode is read from the camera's FOV default property which is shared with other camera types. Value is returned in degrees. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The camera's field of view while in zoom mode. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_over_the_shoulder_camera_1a27deb14bc14ff50ad38a3ce51efabc0f"></a>
+<p class="NDLRefMemberFunction">void  SetZoomFOV(efd::Float32 fovWhenZoomed)</p>
+<p class="NDLRefMemberDescription">Sets the camera's field of view while in zoom mode. </p>
+<p class="NDLRefMemberDetailedDescription">The FOV while not in zoom mode is read from the camera's FOV default property which is shared with other camera types. Value is specified in degrees. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">fovWhenZoomed</span></td>
+    <td>The camera's new field of view while in zoom mode. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_over_the_shoulder_camera_1a057f1ab1ceeb71bea073d7c701eae75a"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetRotationRateHeadingInitial() const</p>
+<p class="NDLRefMemberDescription">Gets the maximum possible rotation rate of the camera right after the player starts rotating. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The maximum rotation rate in degrees per second. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_over_the_shoulder_camera_1ae510d4fd8e5973a6d0c34675dbce63cb"></a>
+<p class="NDLRefMemberFunction">void  SetRotationRateHeadingInitial(efd::Float32 initialRateInDegreesPerSecond)</p>
+<p class="NDLRefMemberDescription">Sets the maximum possible rotation rate of the camera right after the player starts rotating. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">initialRateInDegreesPerSecond</span></td>
+    <td>The new maximum rotation rate in degrees per second. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_over_the_shoulder_camera_1a33a5b2b68f59cf9b9faca318717fd99f"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetRotationRateHeadingMax() const</p>
+<p class="NDLRefMemberDescription">Gets the maximum rotation speed in horizontal direction while the camera is not in zoom mode. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The maximum rotation speed in degrees per second. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_over_the_shoulder_camera_1a33661b62653cb07b1dad187a3b805c5d"></a>
+<p class="NDLRefMemberFunction">void  SetRotationRateHeadingMax(efd::Float32 maxRateInDegreesPerSecond)</p>
+<p class="NDLRefMemberDescription">Sets the maximum rotation speed in horizontal direction while the camera is not in zoom mode. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">maxRateInDegreesPerSecond</span></td>
+    <td>The new maximum rotation speed in degrees per second. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_over_the_shoulder_camera_1aa41ae07611ecdcfd82c4f2c9bcfd3b5b"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetRotationRateHeadingAcceleration() const</p>
+<p class="NDLRefMemberDescription">Gets how much faster the camera can turn this second than last while accelerating. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>the rotation rate heading acceleration in degrees per second. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_over_the_shoulder_camera_1afb97fb27e00e0137d8d6abfaaf591946"></a>
+<p class="NDLRefMemberFunction">void  SetRotationRateHeadingAcceleration(efd::Float32 accelerationInDegreesPerSecond)</p>
+<p class="NDLRefMemberDescription">Sets how much faster the camera can turn this second than last while accelerating. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">accelerationInDegreesPerSecond</span></td>
+    <td>the new rotation rate heading acceleration in degrees per second. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_over_the_shoulder_camera_1a13bbc32fa11e84d44e43be45a05438e6"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetRotationRatePitchMax() const</p>
+<p class="NDLRefMemberDescription">Gets the maximum rotation speed in vertical direction while the camera is not in zoom mode. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The rotation rate pitch maximum in degrees per second. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_over_the_shoulder_camera_1af9a4e047aaca1b32041347f3ce994c72"></a>
+<p class="NDLRefMemberFunction">void  SetRotationRatePitchMax(efd::Float32 maxRateInDegreesPerSecond)</p>
+<p class="NDLRefMemberDescription">Gets the maximum rotation speed in vertical direction while the camera is not in zoom mode. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">maxRateInDegreesPerSecond</span></td>
+    <td>The new rotation rate pitch maximum in degrees per second. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_over_the_shoulder_camera_1aa7852268597a3180733a2fb7eb640ce6"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetZoomRotationRateMultiplierHeading() const</p>
+<p class="NDLRefMemberDescription">Gets the zoom rotation rate multiplier for heading. </p>
+<p class="NDLRefMemberDetailedDescription">This determines how zoom affects the horizontal rotation speed. Intended to be smaller than 1, meaning the camera rotates slower when zoomed in. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The multiplier for heading. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_over_the_shoulder_camera_1a4aca7978c800b9acf180940028e2e652"></a>
+<p class="NDLRefMemberFunction">void  SetZoomRotationRateMultiplierHeading(efd::Float32 multiplier)</p>
+<p class="NDLRefMemberDescription">Sets the zoom rotation rate multiplier for heading. </p>
+<p class="NDLRefMemberDetailedDescription">This determines how zoom affects the horizontal rotation speed. Intended to be smaller than 1, meaning the camera rotates slower when zoomed in. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">multiplier</span></td>
+    <td>The new multiplier for heading. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_over_the_shoulder_camera_1a3c58c7450033d0c5a129458c80a7787f"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetZoomRotationRateMultiplierPitch() const</p>
+<p class="NDLRefMemberDescription">Gets the zoom rotation rate multiplier for pitch. </p>
+<p class="NDLRefMemberDetailedDescription">This defines how zoom affects the vertical rotation speed. Intended to be smaller than 1, meaning the camera rotates slower when zoomed in. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The multiplier for pitch. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_over_the_shoulder_camera_1a55602a23bf8a0bd5aa3046f9c77a2584"></a>
+<p class="NDLRefMemberFunction">void  SetZoomRotationRateMultiplierPitch(efd::Float32 multiplier)</p>
+<p class="NDLRefMemberDescription">Sets the zoom rotation rate multiplier for pitch. </p>
+<p class="NDLRefMemberDetailedDescription">This defines how zoom affects the vertical rotation speed. Intended to be smaller than 1, meaning the camera rotates slower when zoomed in. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">multiplier</span></td>
+    <td>The new multiplier for pitch. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_over_the_shoulder_camera_1a873895a15058d7d586e600c2e4ba6cf4"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetPitchInitial() const</p>
+<p class="NDLRefMemberDescription">Gets the initial camera pitch (up/down angle) before the player changes it. </p>
+<p class="NDLRefMemberDetailedDescription">In degrees. 0 is straight forward. Negative is down, positive is up. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The initial pitch in degrees. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_over_the_shoulder_camera_1afb0db3385987be70b869bac795144e32"></a>
+<p class="NDLRefMemberFunction">void  SetPitchInitial(efd::Float32 inDegreesRelativeToGroundPlane)</p>
+<p class="NDLRefMemberDescription">Sets the initial camera pitch (up/down angle) before the player changes it. </p>
+<p class="NDLRefMemberDetailedDescription">In degrees. 0 is straight forward. Negative is down, positive is up. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">inDegreesRelativeToGroundPlane</span></td>
+    <td>The new initial pitch in degrees. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_over_the_shoulder_camera_1a9a5eb2e87a50ce6ab0da71eaa44a2b08"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetPitchUpMax() const</p>
+<p class="NDLRefMemberDescription">Gets the steepest angle at which the camera can look up. </p>
+<p class="NDLRefMemberDetailedDescription">Value is returned in degrees. Zero is straight forward, negative is down and positive is up. Can be close to but not quite 90 degrees. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The current maximum up pitch in degrees. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_over_the_shoulder_camera_1ad302068c7a318b0df50da4e5a9f6f2c8"></a>
+<p class="NDLRefMemberFunction">void  SetPitchUpMax(efd::Float32 inDegreesRelativeToGroundPlane)</p>
+<p class="NDLRefMemberDescription">Sets the steepest angle at which the camera can look up. </p>
+<p class="NDLRefMemberDetailedDescription">Value is specified in degrees. Zero is straight forward, negative is down and positive is up. Can be close to but not quite 90 degrees. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">inDegreesRelativeToGroundPlane</span></td>
+    <td>The new maximum up pitch in degrees. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_over_the_shoulder_camera_1a02ecd2b594a6495e301d66d0a7214fd8"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetPitchDownMax() const</p>
+<p class="NDLRefMemberDescription">Gets the steepest angle at which the camera can look down. </p>
+<p class="NDLRefMemberDetailedDescription">Value is returned in degrees. Zero is straight forward, negative is down and positive is up. Can be close to but not quite -90 degrees. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The current maximum down pitch in degrees. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_over_the_shoulder_camera_1a698a6ce3054bc1b18044a72c30557947"></a>
+<p class="NDLRefMemberFunction">void  SetPitchDownMax(efd::Float32 inNegativeDegreesRelativeToGroundPlane)</p>
+<p class="NDLRefMemberDescription">Sets the steepest angle at which the camera can look down. </p>
+<p class="NDLRefMemberDetailedDescription">Value is specified in degrees. Zero is straight forward, negative is down and positive is up. Can be close to but not quite -90 degrees. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">inNegativeDegreesRelativeToGroundPlane</span></td>
+    <td>The new maximum down pitch in degrees. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_over_the_shoulder_camera_1afcf05e6f3abde8b4e6fc7abec7652bcc"></a>
+<p class="NDLRefMemberFunction">bool  GetZoomEnabled()</p>
+<p class="NDLRefMemberDescription">Used to determine whether zooming is enabled. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if zooming is enabled. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

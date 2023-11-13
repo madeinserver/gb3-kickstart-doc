@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>Overview of ManualOcclusionService</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Fresnel" />
+<meta name="Generator" content="Palimpsest by Emergent Game Technologies - http://emergent.net" />
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+    
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+
+<!--(Begin Body)================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript">
+</script><script language="JavaScript1.2" type="text/javascript">
+WriteNavLink(2);
+</script>
+
+<h1>Overview of ManualOcclusionService</h1>
+
+<p>The ManualOcclusionService is a simple service that allows you to show or hide sets of entities
+under program control.</p>
+
+<p>Each entity that will be shown or hidden by the service must have an integer property
+<b>OcclusionRegion</b> that sets its region.  The service tracks all entities and builds lists for
+each region.  When a region is shown or hidden via the builtin functions, the service makes the
+corresponding entities visible or hidden.</p>
+
+<p>Typically you will need to set "trigger regions" in your level.  When the player enters a
+trigger region, a list of occlusion regions will be shown or hidden.</p>
+
+<h3>ManualOcclusion Lua Bindings</h3>
+
+<dl>
+    <dt> SparkManualOcclusion.HideRegion(region)</dt>
+    <dd> Makes all entities marked for a particular region non-visible. Each entity that contains
+    the property 'OcclusionRegion' with a value set to the value of the argument will have their
+    'Visible' property set to false. The intended use is for a trigger to be set between regions
+    that will call this built-in to optimize the number of objects being drawn.  'true' is returned
+    if any entities were found.</dd>
+    <dt> SparkManualOcclusion.ShowRegion(region)</dt>
+    <dd> Makes all entities marked for a particular region visible. Each entity that contains the
+    property 'OcclusionRegion' with a value set to the value of the argument will have their
+    'Visible' property set to true. The intended use is for a trigger to be set between regions
+    that will call this built-in to optimize the number of objects being drawn.  The 'region'
+    parameter is simply a number that matches the number set in the OcclusionRegion property of a
+    set of entities.  'true' is returned if any entities were found.</dd>
+</dl>
+
+
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

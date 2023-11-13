@@ -1,0 +1,342 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::PerformanceTimer</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::PerformanceTimer</p>
+
+
+<p class="NDLRefHeaderFile">&lt;PerformanceTimer.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_performance_timer.gif" alt="Inheritance graph for egmSpark::PerformanceTimer"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::PerformanceTimer</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">Allows to time one or more sections of code for profiling purposes. </p>
+<p class="NDLNormal">Furthermore it stores various properties, such as color, intended to be used as input to NiVisualTracker.</p>
+<p class="NDLNormal">Multiple performance timers can be structured hierarchically in a parent / child relationship. See <span class="NDLSystemFont"><a href="egmSpark__PerformanceTimer.htm#classegm_spark_1_1_performance_timer_1a4c6631279f654e156b3a1345166d012c">AddChild()</a></span> for more information.</p>
+<p class="NDLNormal">See SparkVisualTracker for a real world use case. </p>
+
+<a name="public_static_methods"></a>
+<p class="NDLRefHead1">Public Static Methods</p>
+
+
+<a name="classegm_spark_1_1_performance_timer_1a3112768232d3061cbababcf766fb8232"></a>
+<p class="NDLRefMemberFunction">static void  AddPerformanceTimer(<span class="NDLSystemFont">PerformanceTimer</span>* pTimer)</p>
+<p class="NDLRefMemberDescription">Adds another performance timer up to PERFORMANCE_TIMER_MAX_TIMERS. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pTimer</span></td>
+    <td>The timer to add. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_performance_timer_1a7e805ea55461f678107118adc82895e1"></a>
+<p class="NDLRefMemberFunction">static void  SetupVisualTracker(NiVisualTracker* pTracker)</p>
+<p class="NDLRefMemberDescription">Adds a graph to the Gamebryo visual tracker to show performance timer readings. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pTracker</span></td>
+    <td>The visual tracker to add the graph to. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_performance_timer_1a79ef6e3f5d1d623fcb9c150977e9cb49"></a>
+<p class="NDLRefMemberFunction">static void  ResetTimers()</p>
+<p class="NDLRefMemberDescription">Resets all performance timers. </p>
+
+<a name="classegm_spark_1_1_performance_timer_1ab66ca16f28f7b596aeab9308083d1d2f"></a>
+<p class="NDLRefMemberFunction">static void  Finalize(efd::ServiceManager* pServiceManager)</p>
+<p class="NDLRefMemberDescription">Finalizes all timers and their child timers. </p>
+<p class="NDLRefMemberDetailedDescription">This should be called at the end of a frame so that the amount of time not spent inside a child timer can be calculated. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pServiceManager</span></td>
+    <td>A pointer to the service manager. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_performance_timer_1ae20d2ab39d533503cf70a6f2bb9dea56"></a>
+<p class="NDLRefMemberFunction">static NiColor  GetColor(efd::UInt32 index)</p>
+<p class="NDLRefMemberDescription">Gets the graph line color used to visualize a timer. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">index</span></td>
+    <td>The index of the timer to get the color for. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The graph line color. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_performance_timer_1a468104f4426db46b4ba316fc132e0cd5"></a>
+<p class="NDLRefMemberFunction">virtual ~PerformanceTimer()</p>
+<p class="NDLRefMemberDescription">Destructor. </p>
+
+<a name="classegm_spark_1_1_performance_timer_1a0fcb4d2a49e2f3f54e121bbac2f4aacb"></a>
+<p class="NDLRefMemberFunction">PerformanceTimer(const char* name)</p>
+<p class="NDLRefMemberDescription">Constructor. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">name</span></td>
+    <td>The name of the timer. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_performance_timer_1a062f6e5c6aed4aa07dae61ecd479e431"></a>
+<p class="NDLRefMemberFunction">void  Start()</p>
+<p class="NDLRefMemberDescription">Starts the timing interval of the given performance timer. </p>
+<p class="NDLRefMemberDetailedDescription">Every use of this macro needs to be followed by exactly one use of <span class="NDLSystemFont">PERFORMANCE_TIMER_STOP()</span>. </p>
+<p class="NDLRefMemberDetailedDescription">See <span class="NDLSystemFont">PERFORMANCE_TIMER_START()</span></p>
+
+<a name="classegm_spark_1_1_performance_timer_1abebfddb6183e38ddaa336b1751ae942b"></a>
+<p class="NDLRefMemberFunction">void  Stop()</p>
+<p class="NDLRefMemberDescription">Stops the timing interval of the given performance timer. </p>
+<p class="NDLRefMemberDetailedDescription">See <span class="NDLSystemFont">PERFORMANCE_TIMER_START()</span>. </p>
+<p class="NDLRefMemberDetailedDescription">See <span class="NDLSystemFont">PERFORMANCE_TIMER_STOP()</span></p>
+
+<a name="classegm_spark_1_1_performance_timer_1a4c6631279f654e156b3a1345166d012c"></a>
+<p class="NDLRefMemberFunction">void  AddChild(<span class="NDLSystemFont">PerformanceTimer</span>* pChild)</p>
+<p class="NDLRefMemberDescription">Makes one performance timer the child of another. </p>
+<p class="NDLRefMemberDetailedDescription">Note, any timer can only have at most one parent.</p>
+<p class="NDLRefMemberDetailedDescription">Multiple performance timers can be structured hierarchically. A parent will know the entire time it was active as well as the accumulative time its children were active and therefore also the difference. This is useful when digging deeper and deeper into the code to find performance bottlenecks. Note, a service performance timer can be added as a child to a regular performance timer. For example:</p>
+<p class="NDLRefMemberDetailedDescription">Global scope: <span class="NDLSystemFont">PERFORMANCE_TIMER(AllServices)</span>; //Declares a regular performance timer. <span class="NDLSystemFont">SERVICE_PERFORMANCE_TIMER(CameraService)</span>; //Declares a service performance timer.</p>
+<p class="NDLRefMemberDetailedDescription">Inside a function: <span class="NDLSystemFont">PerformanceTimer</span>& allServices = <span class="NDLSystemFont">GET_PERFORMANCE_TIMER(AllServices)</span>; allServices.AddChild(&<span class="NDLSystemFont">GET_SERVICE_PERFORMANCE_TIMER(CameraService)</span>); </p>
+
+<a name="classegm_spark_1_1_performance_timer_1a7ce4b82cab0b8c0b7b4a5c205aeefa56"></a>
+<p class="NDLRefMemberFunction">float*  GetFrameTimePtr()</p>
+<p class="NDLRefMemberDescription">Provides access to the total amount of time that has passed while this timer was active during the current frame. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>A pointer to the frame time. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_performance_timer_1ab78efa9f8195ec43544e885c5a3ab721"></a>
+<p class="NDLRefMemberFunction">const char*  GetName()</p>
+<p class="NDLRefMemberDescription">Returns the name of the timer. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The name. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_performance_timer_1a7766cd5cb4f38159591d3908c42834e8"></a>
+<p class="NDLRefMemberFunction">float*  GetOtherFrameTimePtr()</p>
+<p class="NDLRefMemberDescription">Provides access to the amount of time that has passed while this timer was active during the current frame which was not measured by one of its child timers. </p>
+<p class="NDLRefMemberDetailedDescription">In other words, time that is unaccounted for by a more fine-grained timer. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>A pointer to the other frame time. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_performance_timer_1a5f50ffbe1c4053d106b2e67086a9febf"></a>
+<p class="NDLRefMemberFunction">efd::UInt32*  GetHitCountPtr()</p>
+<p class="NDLRefMemberDescription">Provides access to the hit counter total, which counts the number of times the timer was started. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>A pointer to the total hit count. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_performance_timer_1ae24b56dc48e4c87afa33ffbecc16e3b9"></a>
+<p class="NDLRefMemberFunction">bool  IsParent()</p>
+<p class="NDLRefMemberDescription">Checks whether this timer has any children. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if the timer has children. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

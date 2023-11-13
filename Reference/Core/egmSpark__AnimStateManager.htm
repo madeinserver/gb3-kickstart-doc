@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::AnimStateManager</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::AnimStateManager</p>
+<p class="NDLRefParentage">: public <span class="NDLSystemFont"><a href="egmSpark__IBuiltinModelBase.htm">egmSpark::IBuiltinModelBase</a></span></p>
+
+
+<p class="NDLRefHeaderFile">&lt;AnimStateManager.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_anim_state_manager.gif" alt="Inheritance graph for egmSpark::AnimStateManager"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::AnimStateManager</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">The <span class="NDLSystemFont">AnimStateManager</span> tracks the current animation state and is responsible for forwarding on specific behaviors to the current animation state. </p>
+<p class="NDLNormal">It also manages the current animation sets for the various states.</p>
+<p class="NDLNormal">
+<p class="NDLNormal">: To use this, you are required to mix it into a built-in model that you call <span class="NDLSystemFont"><a href="../Namespaces/SparkAPI.htm#namespace_spark_a_p_i_1af5c39d56a83a08ab15ae7485077080f3">SparkAPI.RegisterAnimStateManager</a></span> on!!</p>
+<p class="NDLNormal">: Lua code can interface with the <span class="NDLSystemFont">AnimStateManager</span> through <span class="NDLSystemFont"><a href="../Namespaces/AnimStateAPI.htm">AnimStateAPI</a></span> calls. </p></p>
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_anim_state_manager_1a9d230266434bb18ab1d58ce12f85320d"></a>
+<p class="NDLRefMemberFunction">AnimStateManager()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_anim_state_manager_1ad124f27cf7b142d9e69618efa166c096"></a>
+<p class="NDLRefMemberFunction">virtual ~AnimStateManager()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_anim_state_manager_1a20ac1933131432ffac37d08cff55eb02"></a>
+<p class="NDLRefMemberFunction">virtual void  OnRemoved()</p>
+<p class="NDLRefMemberDescription">An override of egf::IBuiltinModel::OnRemoved that unregisters the model from the <span class="NDLSystemFont"><a href="egmSpark__BuiltinUpdateService.htm">BuiltinUpdateService</a></span>. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Derived classes should call this base class method if they override this method. Typically you should call this method as the last step of any override implementation. </p></p>
+
+<a name="classegm_spark_1_1_anim_state_manager_1af04c9ad9e33d69435c1bf93b458c0bf1"></a>
+<p class="NDLRefMemberFunction">virtual void  OnAssetsLoaded()</p>
+<p class="NDLRefMemberDescription">Called once the OnAssetsLoaded entity lifecycle completes. </p>
+
+<a name="classegm_spark_1_1_anim_state_manager_1a150cf0e8f98ff1bd2442b2f749df638d"></a>
+<p class="NDLRefMemberFunction">virtual void  OnReplicaAssetsLoaded()</p>
+<p class="NDLRefMemberDescription">Called once the OnReplicaAssetsLoaded entity lifecycle completes for a replicated entity. </p>
+
+<a name="classegm_spark_1_1_anim_state_manager_1a02969d35492b5f7617ebd41cb9758b1f"></a>
+<p class="NDLRefMemberFunction">virtual efd::Bool  SetAnimState(const efd::utf8string& animState)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_anim_state_manager_1a9fb7a0580c5d3b0e0a64f9995f63f24e"></a>
+<p class="NDLRefMemberFunction">virtual efd::Bool  CallAnimState(const efd::utf8string& animState)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_anim_state_manager_1a7d334cbe152d0f6ec5cdae15bbf52b2a"></a>
+<p class="NDLRefMemberFunction">virtual efd::Bool  PopAnimState()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_anim_state_manager_1a605a1689d4bb5a39d985c36f2f1a5926"></a>
+<p class="NDLRefMemberFunction">virtual void  ClearAnimStates()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_anim_state_manager_1add117e0e02112ebc35374e2a83d1d05b"></a>
+<p class="NDLRefMemberFunction">virtual efd::Bool  ActivateAnimState(const efd::utf8string& state)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_anim_state_manager_1a8ec631ae66977026372bd063a142da83"></a>
+<p class="NDLRefMemberFunction">virtual const egf::FlatModel*  GetMasterAnimSet()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_anim_state_manager_1a505bf0767e1a3148ddf600e3108254a9"></a>
+<p class="NDLRefMemberFunction">virtual const egf::FlatModel*  GetMasterAnimSet(<br/>const efd::utf8string& stance, <br/>efd::Bool autoReturnGlobalMaster = false)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_anim_state_manager_1a158adb33ab206efa7b6d741564904a90"></a>
+<p class="NDLRefMemberFunction">virtual const egf::FlatModel*  GetLocomotionAnimSet(<br/>const efd::utf8string& stance, <br/>const efd::utf8string& type)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_anim_state_manager_1ae9e6d0a5f9d4278e070d3f080525f6a5"></a>
+<p class="NDLRefMemberFunction">virtual const egf::FlatModel*  GetIdleAnimSet()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_anim_state_manager_1a3007adf04507ba6ada8a61df588370e8"></a>
+<p class="NDLRefMemberFunction">virtual efd::Bool  GetLocomotionSeqData(<br/>const efd::utf8string& stance, <br/>const efd::utf8string& type, <br/><span class="NDLSystemFont"><a href="egmSpark__LocomotionAnims.htm">LocomotionAnims</a></span>& data)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_anim_state_manager_1a3300f97d96db5768c94b9892ce455a71"></a>
+<p class="NDLRefMemberFunction">virtual void  GetCurrentStance(efd::utf8string& stance)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_anim_state_manager_1ac80ec3fb4d9dd889eabd1e0506fa4065"></a>
+<p class="NDLRefMemberFunction">NiActorManager::SequenceID  GetSequenceID(egf::PropertyID propertyID)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_anim_state_manager_1a726434aec1dbe9fb5e2d8ebc990f9987"></a>
+<p class="NDLRefMemberFunction">NiActorManager::SequenceID  GetSequenceID(const efd::utf8string& propertyName)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_anim_state_manager_1ad88f7f844a24d19194c4c36d8178c317"></a>
+<p class="NDLRefMemberFunction">efd::Bool  GetSequenceName(<br/>egf::PropertyID propertyID, <br/>efd::utf8string& sequenceName)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_anim_state_manager_1a4c7e93120ed139493e419e32284ef0e6"></a>
+<p class="NDLRefMemberFunction">efd::Bool  GetSequenceName(<br/>const efd::utf8string& propertyName, <br/>efd::utf8string& sequenceName)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_anim_state_manager_1aaf70220faed5bc97655cc12ff907c5cd"></a>
+<p class="NDLRefMemberFunction">efd::Bool  GetLocomotionSequenceName(<br/>egf::PropertyID propertyID, <br/>efd::utf8string& sequenceName)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_anim_state_manager_1a17b5ae86cac766531a6c7aa1ec4f8f2f"></a>
+<p class="NDLRefMemberFunction">efd::Bool  GetLocomotionSequenceName(<br/>const efd::utf8string& propertyName, <br/>efd::utf8string& sequenceName)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_anim_state_manager_1ac714a88529cb7ba4fa01420cb790a1cf"></a>
+<p class="NDLRefMemberFunction">void  SetStance(efd::DataStream* pStream)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_anim_state_manager_1aec2ba832f5073dbd0a035425b33ef6eb"></a>
+<p class="NDLRefMemberFunction">void  SetLocomotionType(const efd::utf8string& locomotionType)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_anim_state_manager_1a796fdf399e98d52e4d9086ac2c898d07"></a>
+<p class="NDLRefMemberFunction">void  SetAnimState(efd::DataStream* pStream)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_anim_state_manager_1a8e86b4962fc2cf8b67aaa877a6c13b39"></a>
+<p class="NDLRefMemberFunction">void  GetAnimState(efd::utf8string& animState)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_anim_state_manager_1a8e4449665789a4f3e4a6b5642474bc83"></a>
+<p class="NDLRefMemberFunction">efd::Bool  GetAimingSequenceIDs(<br/>NiActorManager::SequenceID& aimUpId, <br/>NiActorManager::SequenceID& aimDownId)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_anim_state_manager_1a7ffe7b9387305fba8472910d31673551"></a>
+<p class="NDLRefMemberFunction">efd::Bool  GetShootSequenceID(NiActorManager::SequenceID& shootId)</p>
+<p class="NDLRefMemberFunction"></p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::EffectsManager</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::EffectsManager</p>
+<p class="NDLRefParentage">: public ISystemService</p>
+
+
+<p class="NDLRefHeaderFile">&lt;EffectsManager.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_effects_manager.gif" alt="Inheritance graph for egmSpark::EffectsManager"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::EffectsManager</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">A service for directly loading and spawning KFM, NIF, and audio files without using an entity. </p>
+<p class="NDLNormal">These graphical assets are cached for enhanced performance. This class will likely be deprecated in a future version of Kickstart. </p>
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_effects_manager_1a31d6f5851783ff0906f38477cdb08558"></a>
+<p class="NDLRefMemberFunction">EffectsManager()</p>
+<p class="NDLRefMemberDetailedDescription">Constructor </p>
+
+<a name="classegm_spark_1_1_effects_manager_1a665e8b639e83ac4b892597d7f966e36c"></a>
+<p class="NDLRefMemberFunction">virtual efd::Bool  CacheKFMEffect(const efd::utf8string& modelName)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_effects_manager_1a5c948951aec00694e06ed3ede8959387"></a>
+<p class="NDLRefMemberFunction">virtual void  DestroyCache(const efd::utf8string& modelName)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_effects_manager_1a5608a11eee34778e1704eb0d82471671"></a>
+<p class="NDLRefMemberFunction">virtual void  DestroyAllCaches()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_effects_manager_1a776a2071531e0882420d1230b052fb89"></a>
+<p class="NDLRefMemberFunction">virtual <span class="NDLSystemFont"><a href="egmSpark__BaseEffect.htm">BaseEffect</a></span>*  SpawnEffect(<br/>const efd::utf8string& modelName, <br/>const efd::Point3& position, <br/>const efd::Point3& rotation = efd::Point3::ZERO)</p>
+<p class="NDLRefMemberFunction"></p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

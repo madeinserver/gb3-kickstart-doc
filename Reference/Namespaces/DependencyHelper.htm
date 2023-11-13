@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>DependencyHelper Namespace</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">DependencyHelper Namespace</p>
+
+
+
+
+
+<a name="private_methods"></a>
+<p class="NDLRefHead1">Private Methods</p>
+
+
+<a name="namespace_dependency_helper_1ae39027b8f5587f2c34cd16a25d2db0ec"></a>
+<p class="NDLRefMemberFunction">egf::EntityID  CreateEntityIfDoesntExist(<br/>efd::utf8string modelToCheck, <br/>efd::utf8string modelToCreate, <br/>efd::Bool issueWarning = false)</p>
+<p class="NDLRefMemberDescription">Creates an entity if no similar entity already exists. </p>
+<p class="NDLRefMemberDetailedDescription">Checks for any existing entity that mixes in the specified check model and if no match is found then it creates the specified create entity. </p>
+<p class="NDLRefMemberDetailedDescription">Script Binding</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">modelToCheck</span></td>
+    <td>The model to check for previously existing versions. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">modelToCreate</span></td>
+    <td>The model to create if no instance of the check entity exists. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">issueWarning</span></td>
+    <td>If true, an error will be logged if modelToCheck doesn't already exist.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The entity ID of the entity, either the existing entity that was found or the entity that was just created. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_dependency_helper_1a407b536968e6bbc12ebc2ab13b8d965d"></a>
+<p class="NDLRefMemberFunction">egf::EntityID  EnsureActiveCamera(efd::utf8string modelToCreate)</p>
+<p class="NDLRefMemberDescription">Ensures that an active camera entity exists. </p>
+<p class="NDLRefMemberDetailedDescription">First it checks for an existing camera and if none is found it creates a camera entity of the given model type. </p>
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">modelToCreate</span></td>
+    <td>The model to create if there is not already an active camera.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The entity ID of the camera, either the existing camera that was found or the camera that was just created. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

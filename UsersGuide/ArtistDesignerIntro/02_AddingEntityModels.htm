@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>Adding Entity Models</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Fresnel" />
+<meta name="Generator" content="Palimpsest by Emergent Game Technologies - http://emergent.net" />
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+    
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+
+<!--(Begin Body)================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript">
+</script><script language="JavaScript1.2" type="text/javascript">
+WriteNavLink(2);
+</script>
+
+<h1>Adding Entity Models</h1>
+
+<p>You have the option to override model properties when you create entity instances in your world.
+But, if you want something that can serve as a game object template (for example, if you plan to
+re-use a game object in many levels and/or games), you will want to create an entity model. In this
+section, we'll investigate how to add a model (or preset) to Alpha Game.</p>
+
+<p><b>Note</b>: Gamebryo LightSpeed uses the term <i>model</i> and <i>entity model</i> to define a
+template of constructs that may or may not include a physical 3D model. The term does not refer to
+only 3D vertex data. It refers to any properties or game play constructs created in EMT that define
+the overall entity and its behavior.</p>
+
+<h3>Tutorial at-a-Glance</h3>
+
+<ul>
+    <li><a href="01_RapidIteration.htm">Intro to Rapid Iteration - Modifying AlphaGame</a></li>
+    <li>Adding Entity Models<b> <-- You are Here</b></li>
+    <li><a href="03_AddingPropstotheLevel.htm">Adding Props to the Level</a></li>
+    <li><a href="04_CreatingABlockFile.htm">Creating a New Block file</a></li>
+    <li><a href="05_RunningANewBlockFile.htm">Running a New Block file with AlphaGame</a></li>
+</ul>
+
+<h3>Adding a new entity model</h3>
+
+<ol>
+    <li> If it is not already open, go ahead and open the Alpha Game solution file:
+    <i>&lt;AlphaGame&gt;</i>\Application\Data\AlphaGame.gsl.<br />When you double-click this file
+    in Windows Explorer, it opens within Toolbench.</li>
+    <li> In the Game Solution View, expand the tree below the Solution node and then double-click
+    the Alpha Game EMT project (AlphaGame.emtproj).</li>
+    <li> Now go ahead and double-click the "EntityModels" node to see all of the presets and models
+    that are contained within the project.</li>
+    <li> Double-click the preset called "FloorSection02-4Squares." (The blue diamond beside the
+    entity means that it is a preset; a green diamond means that it is a model.) In the entity
+    relationship diagram that displays, you can see that this preset mixes in the "Mesh" model,
+    which is part of the from the Standard Model Library. You can also see that the Mesh model's
+    asset is set to a NIF file.
+        <div class="FigureContainer">
+            <img alt="" src="Spark_art_design_expand_alpha_emt_models.png" border="0" />
+            <p class="FigureCaption">Figure 1</p>
+        </div>
+    </li>
+    <li> Now that you've had a quick look at a model, let's go ahead and create a new one. In the
+    Game Solution View, right-click the AlphaGame.emtproj node and select <b>Add &gt;
+    New Model</b>.<br />The model is created in the Game Solution View and it appears within the
+    entity diagram.</li>
+    <li> If it is not already selected, click your new model in the diagram.</li>
+    <li> In the Game Solution View, scroll down to the Standard Model Library EMT project
+    (StandardModelLibrary.emtproj) and expand the tree so that you can see the models.</li>
+    <li> Find the Mesh model in the list of Standard Model Library models, left-click on it, and
+    drag it into the window above your new model.  You have now mixed in the Mesh model to your new
+    model.</li>
+    <li> In the Entity Model Editor View, expand the <b>Mixin Properties</b> section and then,
+    under the "Mesh" model heading, click the Browse button beside the NifAsset property.<br />
+    You can use "cube.nif", within <i>&lt;AlphaGame&gt;</i>\Application\Data\Graphics\. Or, if you
+    have other NIF files that you want to use, copy them anywhere under the
+    <i>&lt;AlphaGame&gt;</i>\Application\Data\ folder.
+        <div class="FigureContainer">
+            <img alt="" src="Spark_art_design_add_nif_asset.png" border="0" />
+            <p class="FigureCaption">Figure 2</p>
+        </div>
+    </li>    
+    <li>From the Toolbench menu, select <b>File &gt; Save All</b>.</li>
+</ol>
+
+<p>You have just created a new entity model that you can now place in World Builder. If you want to import multiple NIF files or actors, you can use the Model Factory to automatically create and name multiple presets for you.</p>
+
+<h3>Moving on...</h3>
+
+<p>Now that you've walked through the steps to create an entity model, let's examine how we include instances of entity models in the world. See <a href="03_AddingPropstotheLevel.htm"> Adding Props to the Level</a>.</p>
+
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

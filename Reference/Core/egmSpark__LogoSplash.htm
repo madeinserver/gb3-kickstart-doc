@@ -1,0 +1,331 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::LogoSplash</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::LogoSplash</p>
+<p class="NDLRefParentage">: public <span class="NDLSystemFont"><a href="egmSpark__ScreenTextureClick.htm">egmSpark::ScreenTextureClick</a></span></p>
+
+
+<p class="NDLRefHeaderFile">&lt;LogoSplash.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_logo_splash.gif" alt="Inheritance graph for egmSpark::LogoSplash"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::LogoSplash</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">The <span class="NDLSystemFont">LogoSplash</span> class loads a texture file, creates a screen space textured quad and renders the logo. </p>
+<p class="NDLNormal">If interpolators are provided they can be used to change the size and alpha of the quad so that the image is scaled or faded in/out over time. </p>
+
+<a name="public_static_methods"></a>
+<p class="NDLRefHead1">Public Static Methods</p>
+
+
+<a name="classegm_spark_1_1_logo_splash_1a17aa90c04acd2b02293ed36adbfc5fd6"></a>
+<p class="NDLRefMemberFunction">static NiFloatInterpolator*  GrowSize()</p>
+<p class="NDLRefMemberDescription">Creates a size interpolator that grows over its duration. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The newly created interpolator. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_logo_splash_1aafe891ae27439dbcb1a0c3448f8d12cd"></a>
+<p class="NDLRefMemberFunction">static NiFloatInterpolator*  FadeInOutAlpha()</p>
+<p class="NDLRefMemberDescription">Creates an alpha interpolator that fades in, then out. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The newly created interpolator. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_logo_splash_1a4436879fc728e1b39741f1891ca30890"></a>
+<p class="NDLRefMemberFunction">static NiFloatInterpolator*  ConstInterpolator(efd::Float32 value)</p>
+<p class="NDLRefMemberDescription">Creates an interpolator that always returns the given value. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">value</span></td>
+    <td>Constant value the interpolator should return. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The newly created interpolator. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_logo_splash_1aa64918838cb01445652c2945afe3bddf"></a>
+<p class="NDLRefMemberFunction">LogoSplash(<br/>const efd::utf8string& texname, <br/>efd::Bool skippable = true, <br/>const efd::Point2& size = UseScreenSize, <br/>efd::Float32 duration = 5.0)</p>
+<p class="NDLRefMemberDescription">Constructor. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">texname</span></td>
+    <td>Path to logo image, any texture format is good. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">skippable</span></td>
+    <td>User can interrupt (once all loading is done) </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">size</span></td>
+    <td>Size of the texture element. See <span class="NDLSystemFont"><a href="egmSpark__ScreenTextureClick.htm">ScreenTextureClick</a></span> for default values. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">duration</span></td>
+    <td>(default 5.0) Total duration of sequence </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_logo_splash_1a289c8d3cb9120fc2c650c0758f777ad3"></a>
+<p class="NDLRefMemberFunction">~LogoSplash()</p>
+<p class="NDLRefMemberDescription">Destructor. </p>
+
+<a name="classegm_spark_1_1_logo_splash_1a81874748d57430ce1663a72b76ccbfc9"></a>
+<p class="NDLRefMemberFunction">void  SetSizeInterpolator(NiFloatInterpolator* pSize)</p>
+<p class="NDLRefMemberDescription">Overrides the size interpolator. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">All interpolators are owned by the <span class="NDLSystemFont">LogoSplash</span> class and will be deleted when the splash screen is destroyed or the interpolator is changed again..</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pSize</span></td>
+    <td>The new size interpolator to use. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_logo_splash_1add09f92d9ac3d3ad5577e51ce0bdb7ee"></a>
+<p class="NDLRefMemberFunction">void  SetAlphaInterpolator(NiFloatInterpolator* pAlpha)</p>
+<p class="NDLRefMemberDescription">Overrides the size interpolator. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">All interpolators are owned by the <span class="NDLSystemFont">LogoSplash</span> class and will be deleted when the splash screen is destroyed or the interpolator is changed again..</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pAlpha</span></td>
+    <td>The new alpha interpolator to use. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_logo_splash_1aebaa94cd8bb1c488d9e09b5bf33e40d2"></a>
+<p class="NDLRefMemberFunction">virtual void  OnInit(efd::ServiceManager* pServiceManager)</p>
+<p class="NDLRefMemberDescription">An event function which is called when the click is initialized. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pServiceManager</span></td>
+    <td>A pointer to the service manager. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_logo_splash_1af6f5df9d9939127c7f2333d957f00394"></a>
+<p class="NDLRefMemberFunction">virtual efd::Bool  IsDrawing() const</p>
+<p class="NDLRefMemberDescription">Tests whether the splash screen is currently drawing or not. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if the splash screen is drawing. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_logo_splash_1a4ead3a7d32403e364fe10d4dde7380c0"></a>
+<p class="NDLRefMemberFunction">virtual efd::Bool  Abort(efd::Bool force = false)</p>
+<p class="NDLRefMemberDescription">Aborts the splash screen before the duration has elapsed. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">force</span></td>
+    <td>Normally only skippable splash screens will be aborted, but if true is passed, then all splash screens will be aborted. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_logo_splash_1a6808bbc36cfc415b0b0bccfd5329a2ef"></a>
+<p class="NDLRefMemberFunction">virtual efd::Bool  IsDone() const</p>
+<p class="NDLRefMemberDescription">Used to determine whether the duration for showing the splash screen has elapsed. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if the splash screen is complete. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

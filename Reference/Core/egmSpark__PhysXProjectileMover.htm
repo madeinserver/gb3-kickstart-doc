@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::PhysXProjectileMover</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::PhysXProjectileMover</p>
+<p class="NDLRefParentage">: public <span class="NDLSystemFont"><a href="egmSpark__IBuiltinModelBase.htm">egmSpark::IBuiltinModelBase</a></span></p>
+
+
+<p class="NDLRefHeaderFile">&lt;PhysXProjectileMover.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_phys_x_projectile_mover.gif" alt="Inheritance graph for egmSpark::PhysXProjectileMover"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::PhysXProjectileMover</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">Utilizes a Kinematic physX actor to move a projectile through a physX scene. </p>
+<p class="NDLNormal">Sends a collision event when a collision occurs. User can create the physX actor via properties set in EMT or WB</p>
+<p class="NDLNormal">
+<p class="NDLNormal">Projectiles are not replicated. Instead, when a projectile is fired, an event is sent to the clients to create the projectile and simulate it locally. </p></p>
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_phys_x_projectile_mover_1a5c0e420b445275e09110f9f530462b57"></a>
+<p class="NDLRefMemberFunction">PhysXProjectileMover()</p>
+<p class="NDLRefMemberDescription">Constructor. </p>
+
+<a name="classegm_spark_1_1_phys_x_projectile_mover_1ae088dda4bfbbc731ab7982985b740a08"></a>
+<p class="NDLRefMemberFunction">void  SetEnableGravity(bool bEnableGravity)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_phys_x_projectile_mover_1a198cb68d07666b5786166e4dbc390bfa"></a>
+<p class="NDLRefMemberFunction">bool  GetEnableGravity()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_phys_x_projectile_mover_1a6f93ad95fee7d5bace3ac7524963b6bc"></a>
+<p class="NDLRefMemberFunction">NxActor*  GetNxActor()</p>
+<p class="NDLRefMemberFunction"></p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

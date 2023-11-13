@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::MuzzleFlash</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::MuzzleFlash</p>
+<p class="NDLRefParentage">: public MemObject</p>
+
+
+<p class="NDLRefHeaderFile">&lt;MuzzleFlash.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_muzzle_flash.gif" alt="Inheritance graph for egmSpark::MuzzleFlash"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::MuzzleFlash</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">Implementation of a single muzzle flash effect. </p>
+<p class="NDLNormal">The <span class="NDLSystemFont">MuzzleFlash</span> effect used by this class is assumed to be self contained within a SceneGraph (aka NIF) file. That is, it contains animation, particles, etc that begin and end within the single animation provided within a NIF file. The effect should NOT be looping.</p>
+<p class="NDLNormal">NOTE: Muzzle flashes are defined as Entity Models but are never spawned as such. Instead the Entity Model is solely used to cache the NIF file in the SceneGraph service. (See SparkPreloader model) </p>
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_muzzle_flash_1aca529770811785787cc67e88b220b47a"></a>
+<p class="NDLRefMemberFunction">MuzzleFlash(NiAVObject* pObject)</p>
+<p class="NDLRefMemberDescription">Constructor. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pObject</span></td>
+    <td>The root of the effect scene graph. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_muzzle_flash_1afc9277320e2fad00306661a6f4589444"></a>
+<p class="NDLRefMemberFunction">virtual ~MuzzleFlash()</p>
+<p class="NDLRefMemberDescription">Destructor. </p>
+
+<a name="classegm_spark_1_1_muzzle_flash_1ade147161c17c4da1971873d999ca7f47"></a>
+<p class="NDLRefMemberFunction">void  DoFlash()</p>
+<p class="NDLRefMemberDescription">Makes the effect scene graph visible and restarts its animations. </p>
+
+<a name="classegm_spark_1_1_muzzle_flash_1a9f026fe64e9b276642eb841023b1ffed"></a>
+<p class="NDLRefMemberFunction">void  StopFlash()</p>
+<p class="NDLRefMemberDescription">Hides the effect sene graph. </p>
+
+<a name="classegm_spark_1_1_muzzle_flash_1ab48d4a7bb9a39e386acf8acbee124e94"></a>
+<p class="NDLRefMemberFunction">void  Update()</p>
+<p class="NDLRefMemberDescription">Called each frame to update the effect. </p>
+
+<a name="classegm_spark_1_1_muzzle_flash_1ab0f1d52d4fb149acc0e6d95acc7608aa"></a>
+<p class="NDLRefMemberFunction">void  SetScale(efd::Float32 scale)</p>
+<p class="NDLRefMemberDescription">Sets the size of the effect. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">scale</span></td>
+    <td>The scale factor. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_muzzle_flash_1aa7bd5f2665202fa0ae32421c6e769439"></a>
+<p class="NDLRefMemberFunction">void  SetLooping(bool looping)</p>
+<p class="NDLRefMemberDescription">Determines whether the effect will play continuously in a loop. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">looping</span></td>
+    <td>True to loop the effect, false to play it just once. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_muzzle_flash_1aa2cf4985aea78457a705b15fe76d1912"></a>
+<p class="NDLRefMemberFunction">NiAVObject*  GetAVObject()</p>
+<p class="NDLRefMemberDescription">Provides access to the NiAVObject that is the root of the effect's scene graph. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The root of the effect scene. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

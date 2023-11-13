@@ -1,0 +1,170 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::PhysXCharacterControllerData</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::PhysXCharacterControllerData</p>
+
+
+<p class="NDLRefHeaderFile">&lt;PhysXCharacterController.h&gt;</p>
+
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">Helper class used by the <span class="NDLSystemFont"><a href="egmSpark__PhysXCharacterController.htm">PhysXCharacterController</a></span> for dealing with multiple stances. </p>
+<p class="NDLNormal">(Crouch& Stand for now) </p>
+
+<a name="public_attributes"></a>
+<p class="NDLRefHead1">Public Attributes</p>
+
+
+<a name="classegm_spark_1_1_phys_x_character_controller_data_1aa8cefe6724551fd602113a49371e92b2"></a>
+<p class="NDLRefMemberFunction">egfPhysX::EntityActorDataPtr  m_spEntityActorData</p>
+<p class="NDLRefMemberDescription">An EntityActorData object which relates the PhysX actor to an entity. </p>
+
+<a name="classegm_spark_1_1_phys_x_character_controller_data_1a9a233b1cc713db652e39e8e3048ae0b4"></a>
+<p class="NDLRefMemberFunction">NxController*  m_pController</p>
+<p class="NDLRefMemberDescription">The PhysX character controller managed by this object. </p>
+
+<a name="classegm_spark_1_1_phys_x_character_controller_data_1a9223d4cc75189d0d6cce5ce9790413f0"></a>
+<p class="NDLRefMemberFunction">efd::Float32  m_radius</p>
+<p class="NDLRefMemberDescription">The radius of the PhysX character. </p>
+
+<a name="classegm_spark_1_1_phys_x_character_controller_data_1a3a2c3a4b638c473f3854fb94568aa37e"></a>
+<p class="NDLRefMemberFunction">efd::Float32  m_height</p>
+<p class="NDLRefMemberDescription">The height of the PhysX character. </p>
+
+<a name="classegm_spark_1_1_phys_x_character_controller_data_1a3e629452d6795544537dfa391d596985"></a>
+<p class="NDLRefMemberFunction">efd::Float32  m_positionOffset</p>
+<p class="NDLRefMemberDescription">An offset to the position in the up direction. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">The up direction can be changed via the <span class="NDLSystemFont"><a href="egmSpark__MathHelpers.htm#classegm_spark_1_1_math_helpers_1adaa46be8fa4f90f33aedc35b4610ed99">MathHelpers::SetYUp</a></span> function. </p></p>
+
+<a name="classegm_spark_1_1_phys_x_character_controller_data_1ae420d4f5c10b446c0c0cfa847bb640ea"></a>
+<p class="NDLRefMemberFunction"><span class="NDLSystemFont"><a href="egmSpark__CharacterControllerHitReport.htm">CharacterControllerHitReport</a></span>  m_controllerHit</p>
+<p class="NDLRefMemberDescription">The character controller hit report object. </p>
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_phys_x_character_controller_data_1af1a737a913d14dbe6dc0af8e56dc5b55"></a>
+<p class="NDLRefMemberFunction">PhysXCharacterControllerData()</p>
+<p class="NDLRefMemberDescription">Constructor. </p>
+
+<a name="classegm_spark_1_1_phys_x_character_controller_data_1a5923ff551867aa849567b2c1cc364d9c"></a>
+<p class="NDLRefMemberFunction">efd::Bool  IsValid()</p>
+<p class="NDLRefMemberDescription">Queries whether this data object has been initialized by setting the PhysX character controller. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if m_pController has been set. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_character_controller_data_1a1b5e59f9bb0f1b1a932207e85d5cd294"></a>
+<p class="NDLRefMemberFunction">efd::Point3  GetPositionOffset()</p>
+<p class="NDLRefMemberDescription">Builds a vector that has value of m_positionOffset packed into the up component. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<p class="NDLRefMemberDetailedDescription">The up direction can be changed via the <span class="NDLSystemFont"><a href="egmSpark__MathHelpers.htm#classegm_spark_1_1_math_helpers_1adaa46be8fa4f90f33aedc35b4610ed99">MathHelpers::SetYUp</a></span> function. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The newly created vector. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_character_controller_data_1a7e5d088a1bc421e6bca00b6bdcb02e22"></a>
+<p class="NDLRefMemberFunction">NxActor*  GetActor()</p>
+<p class="NDLRefMemberDescription">A convenience function to get the PhysX actor from the currently set PhysX character controller. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The character's PhysX actor, or NULL if it does not exist or if m_pController is NULL. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_character_controller_data_1a3679afdf736715cf8edb53b2dc23e9e2"></a>
+<p class="NDLRefMemberFunction">void  Disable()</p>
+<p class="NDLRefMemberDescription">Disables collision and interaction with the actor and moves it far away from the origin so it cannot be seen. </p>
+
+<a name="classegm_spark_1_1_phys_x_character_controller_data_1acd9459ce1d4aabdd53a74d4127e123d3"></a>
+<p class="NDLRefMemberFunction">void  Enable()</p>
+<p class="NDLRefMemberDescription">Enables collision and interaction with the actor. </p>
+
+<a name="classegm_spark_1_1_phys_x_character_controller_data_1a81568c32b33f9f84e2aa62024895e665"></a>
+<p class="NDLRefMemberFunction">void  Destroy()</p>
+<p class="NDLRefMemberDescription">Destroys the controller after disabling collision and setting its user data to NULL. </p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

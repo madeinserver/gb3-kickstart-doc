@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::ParticleEffect</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::ParticleEffect</p>
+<p class="NDLRefParentage">: public <span class="NDLSystemFont"><a href="egmSpark__IBuiltinModelBase.htm">egmSpark::IBuiltinModelBase</a></span></p>
+
+
+<p class="NDLRefHeaderFile">&lt;ParticleEffect.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_particle_effect.gif" alt="Inheritance graph for egmSpark::ParticleEffect"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::ParticleEffect</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal"><span class="NDLSystemFont">ParticleEffect</span> built-in model implementation. </p>
+<p class="NDLNormal">This built-in model is used in conjunction with particle effects that are embedded within NIF files. The model implements useful functionality like the ability to destroy the entity when an effect is done. You may also specify an effect lifetime which will abort the effect after a period of time. </p>
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_particle_effect_1aed0eaec9ae827c757e70857a5173102c"></a>
+<p class="NDLRefMemberFunction">ParticleEffect()</p>
+<p class="NDLRefMemberDetailedDescription">Constructor </p>
+
+<a name="classegm_spark_1_1_particle_effect_1a2886d487e095d9a2dcc6d28e1e27eef7"></a>
+<p class="NDLRefMemberFunction">void  OnStartEmitter(efd::DataStream* pStream)</p>
+<p class="NDLRefMemberDescription">Behavior which handles requests to start the emitter. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pStream</span></td>
+    <td>The data stream that contains any parameters for this event handler. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_particle_effect_1a5d63c23d1f4f8f1392caca5c4e95fe57"></a>
+<p class="NDLRefMemberFunction">void  OnStopEmitter(efd::DataStream* pStream)</p>
+<p class="NDLRefMemberDescription">Behavior which handles requests to stop the emitter. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pStream</span></td>
+    <td>The data stream that contains any parameters for this event handler. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_particle_effect_1ac69f295a8bb9ccb28b82cb77ae9b9731"></a>
+<p class="NDLRefMemberFunction">void  SetDestroyWhenDone(bool bRemoveWhenDone)</p>
+<p class="NDLRefMemberDescription">Sets whether the effect will be destroyed when it is done playing. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">bRemoveWhenDone</span></td>
+    <td>True to destroy the particle system entity when the effect is done playing. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

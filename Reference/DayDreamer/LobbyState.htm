@@ -1,0 +1,643 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>LobbyState</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">LobbyState</p>
+<p class="NDLRefParentage">: public GameState</p>
+
+
+<p class="NDLRefHeaderFile">&lt;LobbyState.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/class_lobby_state.gif" alt="Inheritance graph for LobbyState"/>
+  <p class="FigureCaption">Inheritance graph for LobbyState</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">Create a Lobby state that:</p>
+<ul>
+<li>determines who the host is (just reads a config)</li>
+<li>creates a net lib</li>
+<li>creates or joins a channel manager</li>
+<li>based on host verse not tells the Loading state what block file to load. </li></ul>
+
+<a name="public_types"></a>
+<p class="NDLRefHead1">Public Types</p>
+<a name="class_lobby_state_1a426b3422d39b44e1d16f1f4d09dc8328"></a>
+<p class=NDLRefHead2>LobbyState::Substates</p>
+
+
+
+
+<!--(Table)=========================================================-->
+<div class="ReferenceTable">
+<table>
+  <thead>
+	<tr>
+        <th>Name</th>
+	    <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_Invalid</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_PreLobby</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_PreLobby_CurrentOptionsRequested</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_PreLobby_OptionsChangeRequested</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_PreLobby_OptionsIdle</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_PreLobby_PlayerAvatarDataRequested</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_PreLobby_PlayerAvatarChangeRequested</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_PreLobby_PlayerAvatarIdle</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_PreLobby_Host_InternetStartConnectRequested</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_PreLobby_Host_LANStartConnectRequested</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_PreLobby_Host_LANStartConnectWaiting</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_PreLobby_Host_CreateGameRequested</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_PreLobby_Host_CreateGameConnectToSelf</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_PreLobby_Host_CreateGameWaiting</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_PreLobby_Host_GameCreated</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_PreLobby_Peer_InternetConnectRequested</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_PreLobby_Peer_LANConnectRequested</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_PreLobby_Peer_LANConnectJoinWaiting</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_PreLobby_Peer_DirectConnectRequested</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_PreLobby_Peer_DirectConnectFindMatch</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_PreLobby_Peer_StartFindMatch</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_PreLobby_Peer_UpdatingMatchList</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_PreLobby_Peer_HostConnectRequested</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_PreLobby_Peer_HostConnectWaiting</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_PreLobby_Peer_OnHostConnected</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_PreLobby_Peer_OnHostNotConnected</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_PreLobby_Peer_MatchJoinWaiting</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_PreLobby_Peer_OnMatchJoined</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_PreLobby_Peer_OnMatchNotJoined</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_InLobby</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_InLobby_Idle</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_InLobby_ReadyRequested</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_InLobby_TeamChangeRequested</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_InLobby_LeaveLobbyRequested</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_InLobby_Host_GameLaunchRequested</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_InLobby_Host_LobbyDisbandRequested</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_InGame</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_InGame_LoadingPercentRequested</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_InGame_OnMatchEnded</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_PostGame</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_PostGame_PlayerResultsRequested</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_GameRulesRequested</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_GameRulesChangeRequested</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_MapDataRequested</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_MapChangeRequested</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kSubstate_HostDisconnectWaiting</span></td>
+    <td>&nbsp;</td>
+</tr>
+
+  </tbody>
+</table>
+</div>
+
+<a name="class_lobby_state_1affebf8cb98f2fdf81333c4a0fc89cabb"></a>
+<p class=NDLRefHead2>LobbyState::GameRole</p>
+
+
+
+
+<!--(Table)=========================================================-->
+<div class="ReferenceTable">
+<table>
+  <thead>
+	<tr>
+        <th>Name</th>
+	    <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">kGameRole_Invalid</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kGameRole_Host</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kGameRole_Peer</span></td>
+    <td>&nbsp;</td>
+</tr>
+
+  </tbody>
+</table>
+</div>
+
+<a name="class_lobby_state_1a333b65df147e37cb51729dc853a3bc17"></a>
+<p class=NDLRefHead2>LobbyState::GameType</p>
+
+
+
+
+<!--(Table)=========================================================-->
+<div class="ReferenceTable">
+<table>
+  <thead>
+	<tr>
+        <th>Name</th>
+	    <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">kGameType_Invalid</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kGameType_LAN</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kGameType_Internet</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kGameType_Direct</span></td>
+    <td>&nbsp;</td>
+</tr>
+
+  </tbody>
+</table>
+</div>
+
+
+
+<a name="class_lobby_state_1a4f933b0adb3cd2694965895b6d427371"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="LobbyState__SubstateTransition.htm">SubstateTransition</a></span>&gt;  SubstateTransitionPtr</p>
+<p class="NDLRefMemberFunction"></p>
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="class_lobby_state_1a4f0fb26768d41c8a5e81e9ce323a39c6"></a>
+<p class="NDLRefMemberFunction">LobbyState(efd::ServiceManager* pServiceManager)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1a3a5326e3b5dfcd2d7e10fb2234d3c3b9"></a>
+<p class="NDLRefMemberFunction">~LobbyState()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1a295b29f2e5d43e718fbcd44092cc1a06"></a>
+<p class="NDLRefMemberFunction">void  HandleNetIDAssigned(<br/>const efd::AssignNetIDMessage* pAssignNetIDMessage, <br/>efd::Category targetChannel)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1a60b4b113478e05774bebfe3d104fd4e4"></a>
+<p class="NDLRefMemberFunction">void  ClearNetServiceConfiguration()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1af27d5a8f4f0dc0b21a3175e2db19dba7"></a>
+<p class="NDLRefMemberFunction">void  ClearChannelManagerConfiguration()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1af2c5017122a1b9a7d8db06047ff73f47"></a>
+<p class="NDLRefMemberFunction">void  ConfigureAsHost(efd::Bool isMatchmakingEnabled)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1ac82b8cb3bd9e7156091a2becd70bd0ae"></a>
+<p class="NDLRefMemberFunction">void  DeconfigureAsHost(efd::Bool isMatchmakingEnabled)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1a067f808f2d61d6dd0152ef494c8c0531"></a>
+<p class="NDLRefMemberFunction">void  ConfigureAsPeer(efd::Bool isMatchmakingEnabled)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1af092352a9f8972da57553233de90aa61"></a>
+<p class="NDLRefMemberFunction">void  DeconfigureAsPeer(efd::Bool isMatchmakingEnabled)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1a0091a400a18ea5612a62031e5082bf6b"></a>
+<p class="NDLRefMemberFunction">efd::Bool  RegisterLanMatchmaker()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1a588b116d19ed72678429132c15170b61"></a>
+<p class="NDLRefMemberFunction">void  MakeLANMatchKey(efd::utf8string& lanMatchKey)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1a1ebdd5f8fa7e959ec05060a7a1c737e0"></a>
+<p class="NDLRefMemberFunction">efd::Bool  CreateMatch()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1a6f5e50dcf956ab0f3e1a8415969917ce"></a>
+<p class="NDLRefMemberFunction">efd::Bool  DestroyMatch()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1a2b53f940064eb95b035ef8afaa43316d"></a>
+<p class="NDLRefMemberFunction">efd::Bool  FindMatch()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1a2f473144933939ea31952ff4b135a4e7"></a>
+<p class="NDLRefMemberFunction">efd::Bool  ConnectHost(const efd::utf8string& hostMoniker)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1a918a9bce357fe2d82afff25caff0e168"></a>
+<p class="NDLRefMemberFunction">efd::Bool  DisconnectHost()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1ab7d179fe3ec77917730c056793caa587"></a>
+<p class="NDLRefMemberFunction">void  SetGameRole(<span class="NDLSystemFont"><a href="LobbyState.htm#class_lobby_state_1affebf8cb98f2fdf81333c4a0fc89cabb">GameRole</a></span> gameRole)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1a420daf33dbad576bacefce952ce21cfa"></a>
+<p class="NDLRefMemberFunction"><span class="NDLSystemFont"><a href="LobbyState.htm#class_lobby_state_1affebf8cb98f2fdf81333c4a0fc89cabb">GameRole</a></span>  GetGameRole() const</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1ac395c73ac23620235c05d2db53a6a623"></a>
+<p class="NDLRefMemberFunction">void  SetGameType(<span class="NDLSystemFont"><a href="LobbyState.htm#class_lobby_state_1a333b65df147e37cb51729dc853a3bc17">GameType</a></span> gameType)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1ac8d8cc9386aff776188501e5df3f1045"></a>
+<p class="NDLRefMemberFunction"><span class="NDLSystemFont"><a href="LobbyState.htm#class_lobby_state_1a333b65df147e37cb51729dc853a3bc17">GameType</a></span>  GetGameType() const</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1a6148ae35c621254df285d91f23ec41cf"></a>
+<p class="NDLRefMemberFunction">efd::Bool  CreateGame()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1a5b69c6745f264471d8bdbb5eb7523cf5"></a>
+<p class="NDLRefMemberFunction">efd::Bool  FindGame()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1a5b29f5c8d5c6cc3e123918f9c8c01e8d"></a>
+<p class="NDLRefMemberFunction">virtual bool  Begin()</p>
+<p class="NDLRefMemberDescription">Creates the network service, and the channel manager if I'm the host. </p>
+
+<a name="class_lobby_state_1ae407eb585d9bab2cbdeda0267220c014"></a>
+<p class="NDLRefMemberFunction">virtual bool  Suspend()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1af22e9618a63bc2d5cd87ce9e8be2b59c"></a>
+<p class="NDLRefMemberFunction">virtual bool  Resume()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1a3111b656280f4675a70d652a1ed4fd10"></a>
+<p class="NDLRefMemberFunction">void  OnTick(efd::TimeType time)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1a8d044f0cf54f176a80b15c055298d429"></a>
+<p class="NDLRefMemberFunction">void  HandleLoadRequest()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1a534e52bb82717b23ecf14e7af08b9791"></a>
+<p class="NDLRefMemberFunction">void  End()</p>
+<p class="NDLRefMemberDescription">Tells the Loading state what block file to load. </p>
+<p class="NDLRefMemberDetailedDescription">This simulates the players having chosen a level to play while in the lobby. </p>
+
+<a name="class_lobby_state_1a78a759a110dbf9800410f1d83ad1e7be"></a>
+<p class="NDLRefMemberFunction">void  SetAdvertisedState(const efd::utf8string advertisedState)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1a632e8d25e5b8b37bece1c723710d50ea"></a>
+<p class="NDLRefMemberFunction">void  SetupInputListeners()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1a4faf79fa0f49ef3fff788e2a90181207"></a>
+<p class="NDLRefMemberFunction">void  OnFSCommand(<br/>const char* pCommand, <br/>const char* pArgs)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1a00e2337279327736844147d9efb8045a"></a>
+<p class="NDLRefMemberFunction">void  HandleAssetLocatorResponse(<br/>const efd::AssetLocatorResponse* pMessage, <br/>efd::Category targetChannel)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1aa1e59f5fec3e7be940fda5f9571705cc"></a>
+<p class="NDLRefMemberFunction"><span class="NDLSystemFont"><a href="../MPGMatchmaker/MPGMatchmaker.htm">MPGMatchmaker</a></span>*  GetMatchmaker() const</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1aed45db060e17f447e67d6009300ac88f"></a>
+<p class="NDLRefMemberFunction">void  SetupReplicationChannels()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1a44eabcf16dd59d4c81634832b3cce43d"></a>
+<p class="NDLRefMemberFunction">void  Substate_PreLobby(<br/>efd::Bool isNewState, <br/>const efd::utf8string& substateArgs)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1a25b1e903814730c883b3af318f188e65"></a>
+<p class="NDLRefMemberFunction">void  Substate_PreLobby_CurrentOptionsRequested(<br/>efd::Bool isNewState, <br/>const efd::utf8string& substateArgs)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1ae30d9a99ff51794d61f427ef7131acca"></a>
+<p class="NDLRefMemberFunction">void  Substate_PreLobby_OptionsChangeRequested(<br/>efd::Bool isNewState, <br/>const efd::utf8string& substateArgs)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1a7d3369ba3b1d9a16d58e905d8542d031"></a>
+<p class="NDLRefMemberFunction">void  Substate_PreLobby_OptionsIdle(<br/>efd::Bool isNewState, <br/>const efd::utf8string& substateArgs)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1a02b5bb60ad541ffa16a3aceb68d835ea"></a>
+<p class="NDLRefMemberFunction">void  Substate_PreLobby_PlayerAvatarDataRequested(<br/>efd::Bool isNewState, <br/>const efd::utf8string& substateArgs)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1a54b325b8bdee5298a8f03325398e4f03"></a>
+<p class="NDLRefMemberFunction">void  Substate_PreLobby_PlayerAvatarChangeRequested(<br/>efd::Bool isNewState, <br/>const efd::utf8string& substateArgs)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1a6c92f788cac9d06eb8c749ba49791cad"></a>
+<p class="NDLRefMemberFunction">void  Substate_PreLobby_PlayerAvatarIdle(<br/>efd::Bool isNewState, <br/>const efd::utf8string& substateArgs)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1abeddbddbbffb9e762debb4956f80ca42"></a>
+<p class="NDLRefMemberFunction">void  Substate_PreLobby_Host_InternetStartConnectRequested(<br/>efd::Bool isNewState, <br/>const efd::utf8string& substateArgs)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1a2e9f17e018aa87261fdc8323e008da61"></a>
+<p class="NDLRefMemberFunction">void  Substate_PreLobby_Host_LANStartConnectRequested(<br/>efd::Bool isNewState, <br/>const efd::utf8string& substateArgs)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1abe714058cd1fab6d1af4137a9a2520e8"></a>
+<p class="NDLRefMemberFunction">void  Substate_PreLobby_Host_CreateGameRequested(<br/>efd::Bool isNewState, <br/>const efd::utf8string& substateArgs)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1a404990861503918f75ba802d9b65aa82"></a>
+<p class="NDLRefMemberFunction">void  Substate_PreLobby_Host_CreateGameConnectToSelf(<br/>efd::Bool isNewState, <br/>const efd::utf8string& substateArgs)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1a453ccbdeb3b1b174488b28ae45acf22e"></a>
+<p class="NDLRefMemberFunction">void  Substate_PreLobby_Host_CreateGameWaiting(<br/>efd::Bool isNewState, <br/>const efd::utf8string& substateArgs)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1adfa9b66932350462286d23996d3fbb02"></a>
+<p class="NDLRefMemberFunction">void  Substate_PreLobby_Host_GameCreated(<br/>efd::Bool isNewState, <br/>const efd::utf8string& substateArgs)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1aa295c80bbf040eb4bcea89efd82873f1"></a>
+<p class="NDLRefMemberFunction">void  Substate_PreLobby_Peer_InternetConnectRequested(<br/>efd::Bool isNewState, <br/>const efd::utf8string& substateArgs)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1a46d9ff2b7183cf27473d8c2a35c92598"></a>
+<p class="NDLRefMemberFunction">void  Substate_PreLobby_Peer_LANConnectRequested(<br/>efd::Bool isNewState, <br/>const efd::utf8string& substateArgs)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1aafb12e958412b7451b1831d30161e0b8"></a>
+<p class="NDLRefMemberFunction">void  Substate_PreLobby_Peer_DirectConnectRequested(<br/>efd::Bool isNewState, <br/>const efd::utf8string& substateArgs)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1a14cd582aea1fc88ee1349fe5c67c3724"></a>
+<p class="NDLRefMemberFunction">void  Substate_PreLobby_Peer_StartFindMatch(<br/>efd::Bool isNewState, <br/>const efd::utf8string& substateArgs)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1ad0cef336a7a40d41c2ddbbade3c75083"></a>
+<p class="NDLRefMemberFunction">void  Substate_PreLobby_Peer_HostConnectRequested(<br/>efd::Bool isNewState, <br/>const efd::utf8string& substateArgs)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1adee80292177a0dde5b65937a55523241"></a>
+<p class="NDLRefMemberFunction">void  Substate_PreLobby_Peer_HostConnectWaiting(<br/>efd::Bool isNewState, <br/>const efd::utf8string& substateArgs)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1a6526b20d1f9229e7fab32d10202b1254"></a>
+<p class="NDLRefMemberFunction">void  Substate_PreLobby_Peer_OnHostConnected(<br/>efd::Bool isNewState, <br/>const efd::utf8string& substateArgs)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1aaaf6b84a6a875fb6c2ec0ef2b5c9677a"></a>
+<p class="NDLRefMemberFunction">void  Substate_PreLobby_Peer_OnHostNotConnected(<br/>efd::Bool isNewState, <br/>const efd::utf8string& substateArgs)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1a50ad705bef194e70f9c06c22deb9b246"></a>
+<p class="NDLRefMemberFunction">void  Substate_PreLobby_Peer_MatchJoinWaiting(<br/>efd::Bool isNewState, <br/>const efd::utf8string& substateArgs)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1abffb851ac1537613a37add448d3f3252"></a>
+<p class="NDLRefMemberFunction">void  Substate_PreLobby_Peer_OnMatchJoined(<br/>efd::Bool isNewState, <br/>const efd::utf8string& substateArgs)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1a5c8c1c925723960ddab6c0da3cf2e26c"></a>
+<p class="NDLRefMemberFunction">void  Substate_PreLobby_Peer_OnMatchNotJoined(<br/>efd::Bool isNewState, <br/>const efd::utf8string& substateArgs)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1a54f995a111b8bb51ab0ce85cdc56a3e5"></a>
+<p class="NDLRefMemberFunction">void  Substate_InLobby(<br/>efd::Bool isNewState, <br/>const efd::utf8string& substateArgs)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1a25d4519efa7637b567e6ab88bf959f55"></a>
+<p class="NDLRefMemberFunction">void  Substate_InLobby_Idle(<br/>efd::Bool isNewState, <br/>const efd::utf8string& substateArgs)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1a25ce3dc6272b13066882b04cbe75ee7e"></a>
+<p class="NDLRefMemberFunction">void  Substate_InLobby_ReadyRequested(<br/>efd::Bool isNewState, <br/>const efd::utf8string& substateArgs)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1ac47139608baf1b9cceb7eaaccd29b4db"></a>
+<p class="NDLRefMemberFunction">void  Substate_InLobby_TeamChangeRequested(<br/>efd::Bool isNewState, <br/>const efd::utf8string& substateArgs)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1a58f5ec49f233c1ec0cac0440fe6e5490"></a>
+<p class="NDLRefMemberFunction">void  Substate_InLobby_LeaveLobbyRequested(<br/>efd::Bool isNewState, <br/>const efd::utf8string& substateArgs)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1af36bdd2048c60cc06c9382b3b852a7a4"></a>
+<p class="NDLRefMemberFunction">void  Substate_InLobby_Host_GameLaunchRequested(<br/>efd::Bool isNewState, <br/>const efd::utf8string& substateArgs)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1a3931094979c992c20c87e19c69b8634e"></a>
+<p class="NDLRefMemberFunction">void  Substate_InLobby_Host_LobbyDisbandRequested(<br/>efd::Bool isNewState, <br/>const efd::utf8string& substateArgs)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1a8cc700c3af959d1ea157b84c6dd11668"></a>
+<p class="NDLRefMemberFunction">void  Substate_InGame(<br/>efd::Bool isNewState, <br/>const efd::utf8string& substateArgs)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1a6a53e55e3566d0d93052b357ca75bd1e"></a>
+<p class="NDLRefMemberFunction">void  Substate_InGame_LoadingPercentRequested(<br/>efd::Bool isNewState, <br/>const efd::utf8string& substateArgs)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1aaf613169491f6e1436232806f9bb9297"></a>
+<p class="NDLRefMemberFunction">void  Substate_InGame_OnMatchEnded(<br/>efd::Bool isNewState, <br/>const efd::utf8string& substateArgs)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1af03264ba6805e38d07a05e805173531a"></a>
+<p class="NDLRefMemberFunction">void  Substate_PostGame(<br/>efd::Bool isNewState, <br/>const efd::utf8string& substateArgs)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1af482daf594d784535ea5c4b261be0a7c"></a>
+<p class="NDLRefMemberFunction">void  Substate_PostGame_PlayerResultsRequested(<br/>efd::Bool isNewState, <br/>const efd::utf8string& substateArgs)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1a545bdadca749e36224c6a0ba63db4051"></a>
+<p class="NDLRefMemberFunction">void  Substate_GameRulesRequested(<br/>efd::Bool isNewState, <br/>const efd::utf8string& substateArgs)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1a0088e946df9b4263a84f27be1bd87c12"></a>
+<p class="NDLRefMemberFunction">void  Substate_GameRulesChangeRequested(<br/>efd::Bool isNewState, <br/>const efd::utf8string& substateArgs)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1aa04f58ca332ee4873ac9fe979bc30cc2"></a>
+<p class="NDLRefMemberFunction">void  Substate_MapDataRequested(<br/>efd::Bool isNewState, <br/>const efd::utf8string& substateArgs)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1acf6b97977cddccb8d4878e90d1c75c24"></a>
+<p class="NDLRefMemberFunction">void  Substate_MapChangeRequested(<br/>efd::Bool isNewState, <br/>const efd::utf8string& substateArgs)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_lobby_state_1a278e161fe112e4e3b63a198a78631703"></a>
+<p class="NDLRefMemberFunction">void  Substate_HostDisconnectWaiting(<br/>efd::Bool isNewState, <br/>const efd::utf8string& substateArgs)</p>
+<p class="NDLRefMemberFunction"></p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

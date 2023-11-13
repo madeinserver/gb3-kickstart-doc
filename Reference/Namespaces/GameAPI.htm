@@ -1,0 +1,430 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>GameAPI Namespace</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">GameAPI Namespace</p>
+
+
+
+
+
+<a name="post_effect_animations"></a>
+<p class="NDLRefHead1">Post Effect animations</p>
+
+
+<a name="namespace_game_a_p_i_1ace746a1e0823add50b76b9edf5dc3fb6"></a>
+<p class="NDLRefMemberFunction">void  PPEColorFade(<br/>efd::Color effectColor, <br/>efd::Float32 fTimeFadeIn, <br/>efd::Float32 fTimeHold, <br/>efd::Float32 fTimeFadeOut)</p>
+<p class="NDLRefMemberDescription">PPEColorFade applies a color filter temporarily. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">effectColor</span></td>
+    <td>The color for the effect </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">fTimeFadeIn</span></td>
+    <td>Time for effect to fade to new setting </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">fTimeHold</span></td>
+    <td>Time for effect to be applied before fading back to default </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">fTimeFadeOut</span></td>
+    <td>Time for effect to fade out </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_game_a_p_i_1a85d080dac59b07fa80a6966f751ef661"></a>
+<p class="NDLRefMemberFunction">void  PPESaturateFade(<br/>efd::Float32 fSaturate, <br/>efd::Float32 fTimeFadeIn, <br/>efd::Float32 fTimeHold, <br/>efd::Float32 fTimeFadeOut)</p>
+<p class="NDLRefMemberDescription">PPESaturateFade applies saturation. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">fSaturate</span></td>
+    <td></td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">fTimeFadeIn</span></td>
+    <td>Time for effect to fade to new setting </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">fTimeHold</span></td>
+    <td>Time for effect to be applied before fading back to default </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">fTimeFadeOut</span></td>
+    <td>Time for effect to fade out </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_game_a_p_i_1a0ca532c5d18919a78ed3df2433740e6a"></a>
+<p class="NDLRefMemberFunction">void  PPEBloomFade(<br/>efd::Float32 fStrength, <br/>efd::Float32 fThreshold, <br/>efd::Float32 fTimeFadeIn, <br/>efd::Float32 fTimeHold, <br/>efd::Float32 fTimeFadeOut)</p>
+<p class="NDLRefMemberDescription">PPEBloomFade applies a bloom setting. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">fStrength</span></td>
+    <td></td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">fThreshold</span></td>
+    <td></td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">fTimeFadeIn</span></td>
+    <td>Time for effect to fade to new setting </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">fTimeHold</span></td>
+    <td>Time for effect to be applied before fading back to default </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">fTimeFadeOut</span></td>
+    <td>Time for effect to fade out </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+<a name="private_methods"></a>
+<p class="NDLRefHead1">Private Methods</p>
+
+
+<a name="namespace_game_a_p_i_1a968b0a3e53e9cca82e2a93cd89f222e6"></a>
+<p class="NDLRefMemberFunction">void  ReportServiceTimes(<br/>const efd::utf8string& reportContext, <br/>efd::Bool reset)</p>
+<p class="NDLRefMemberDescription">Produce a services report to the log. </p>
+<p class="NDLRefMemberDetailedDescription">Each active service will be listed along with the absolute time and percentage time spent in each one.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">reportContext</span></td>
+    <td>Text string describing the context in which the report is being produced. This is printed to the log to help you identify what the report is covering. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">reset</span></td>
+    <td>If 'true', the service counters will be reset after generating the report. This means the next report will only list time spent since the report at which it was reset. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_game_a_p_i_1a1359a414ebdf702426bcf1ca8edf31f8"></a>
+<p class="NDLRefMemberFunction">void  AppReport(<br/>const efd::utf8string& reportContext, <br/>efd::UInt32 flags)</p>
+<p class="NDLRefMemberDescription">Produce an application-specific report to the log. </p>
+<p class="NDLRefMemberDetailedDescription">Note that the default app doesn't have an AppReport; you should implement this if you want to use it.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">reportContext</span></td>
+    <td>Text string describing the context in which the report is being produced. This is printed to the log to help you identify where the report is being produced.</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">flags</span></td>
+    <td>Application-specific flags indicating what report should be produced. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_game_a_p_i_1a58fa333d5786a86613b6e2921f0c4405"></a>
+<p class="NDLRefMemberFunction">void  QuitGame(efd::UInt32 rc)</p>
+<p class="NDLRefMemberDescription">Quit the game. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">rc</span></td>
+    <td>Return code to pass to the OS </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_game_a_p_i_1adb22151c9941d349a571a1a02bc0edd3"></a>
+<p class="NDLRefMemberFunction">void  ToggleVisualTracker()</p>
+<p class="NDLRefMemberDescription">Enable/Disable the VisualTracker. </p>
+
+<a name="namespace_game_a_p_i_1aa3cf08b76dd88d0dd5b2721b2d21d364"></a>
+<p class="NDLRefMemberFunction">efd::Bool  SystemSupportsShadows()</p>
+<p class="NDLRefMemberDescription">Return true/false depending on whether shadows are supported. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if shadows are supported </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_game_a_p_i_1aec8177917a75e5c60dfe4f9b5b04cfee"></a>
+<p class="NDLRefMemberFunction">void  SetHudAvatar(const egf::EntityID& avatarID)</p>
+<p class="NDLRefMemberDescription">Provides the avatar entity that will provide information for the HUD. </p>
+
+<a name="namespace_game_a_p_i_1a265fbeeb0b96a7ad809e72672a390e5c"></a>
+<p class="NDLRefMemberFunction">egf::EntityID  GetHudAvatar()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_game_a_p_i_1a010a8ae49ca315e5c713ab927d90fedf"></a>
+<p class="NDLRefMemberFunction">efd::utf8string  GetPlayerName(const egf::EntityID& playerID)</p>
+<p class="NDLRefMemberDescription">Returns a pointer to the player's displayable name or NULL if it's not available. </p>
+
+<a name="namespace_game_a_p_i_1acea7079706f44f00349f2e19c2fa8eaa"></a>
+<p class="NDLRefMemberFunction">efd::Color  GetAvatarHaloColor(const egf::EntityID& playerID)</p>
+<p class="NDLRefMemberDescription">Returns the halo color of the given player's avatar or black if that information can't be found. </p>
+
+<a name="namespace_game_a_p_i_1a8d81b3caa25bc216535a0a96f7754660"></a>
+<p class="NDLRefMemberFunction">void  SetSkinTextureByColor(<br/>const egf::EntityID& entityID, <br/>const efd::Color& desiredColor)</p>
+<p class="NDLRefMemberDescription">Swap skin to the closest texture to the desired color. </p>
+
+<a name="namespace_game_a_p_i_1add87c7c5904e8ee5294da35a8f1a6235"></a>
+<p class="NDLRefMemberFunction">void  UnloadEntitySets()</p>
+<p class="NDLRefMemberDescription">Unloads the current entity sets. </p>
+
+<a name="namespace_game_a_p_i_1a486068c8bf0a759d492d9aaa4ac199c8"></a>
+<p class="NDLRefMemberFunction">void  LoadBlockFile(const efd::utf8string& blockFile)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_game_a_p_i_1a8b502a926b4ad372e03da3b06b37c026"></a>
+<p class="NDLRefMemberFunction">void  EndMatch()</p>
+<p class="NDLRefMemberDescription">Ends the match in an orderly way and tells all the peers about it. </p>
+<p class="NDLRefMemberDetailedDescription">Host only. </p>
+
+<a name="namespace_game_a_p_i_1a784d009aab60b671a88414fa340aec6e"></a>
+<p class="NDLRefMemberFunction">void  LeaveMatch()</p>
+<p class="NDLRefMemberDescription">Allows a peer to notify the host that he is no longer taking part in the match. </p>
+
+<a name="namespace_game_a_p_i_1aa7146e7178f581facd5cc0d44446cbea"></a>
+<p class="NDLRefMemberFunction">void  GetGameManagerModelName(efd::utf8string& outModelName)</p>
+<p class="NDLRefMemberDescription">Looks up a model name suitable to search for the game manager. </p>
+
+<a name="namespace_game_a_p_i_1a682e76c9ac3278bf3e40885e9ae95b4f"></a>
+<p class="NDLRefMemberFunction">egf::EntityID  FindGameManager()</p>
+<p class="NDLRefMemberDescription">Returns the entity ID of the game manager. </p>
+
+<a name="namespace_game_a_p_i_1a209527f2c0ae9bfcedf3a690a2a026f0"></a>
+<p class="NDLRefMemberFunction">efd::Bool  AudioIsEnabled()</p>
+<p class="NDLRefMemberDescription">Return true/false depending on whether audio is enabled. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if audio is enabled </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_game_a_p_i_1aceb0dd0905af6ea8f3b4f8302fc230b9"></a>
+<p class="NDLRefMemberFunction">efd::Bool  MusicIsEnabled()</p>
+<p class="NDLRefMemberDescription">Return true/false depending on whether music is enabled. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if music is enabled, and audio is also enabled </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_game_a_p_i_1ad5c4553467fc236e04f56953fcebef44"></a>
+<p class="NDLRefMemberFunction">void  SetHudEnabled(efd::Bool enabled)</p>
+<p class="NDLRefMemberDescription">Enable/Disable the GFX hud. </p>
+
+<a name="namespace_game_a_p_i_1a59ec3f4a2c62eefa07fab8b5ba803bbd"></a>
+<p class="NDLRefMemberFunction">void  RemoveRemoteEntity(const egf::EntityID& entityID)</p>
+<p class="NDLRefMemberDescription">Remove the entity from all peers. </p>
+<p class="NDLRefMemberDetailedDescription">This is a workaround because the removal of remote entities is unreliable if we use unreliable message channels/replication groups. As a result, remote entities might never be removed without this.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>The entityID of the avatar to remove </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_game_a_p_i_1a37b995c3416119288fc2fc4a52fc1ae5"></a>
+<p class="NDLRefMemberFunction">void  ToggleFreeCam()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_game_a_p_i_1a6cbc6002d839ec03b04fe79101846f4d"></a>
+<p class="NDLRefMemberFunction">void  ToggleFrameRate()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_game_a_p_i_1a420091b37177f2f1fd8a5683372f2798"></a>
+<p class="NDLRefMemberFunction">void  PPEBloomOn(efd::Bool bOn)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_game_a_p_i_1aecc7e77bab6d98b3bc1ddcea01daf16d"></a>
+<p class="NDLRefMemberFunction">void  PPESaturateShift(<br/>efd::Float32 fSaturate, <br/>efd::Float32 fTimeFade)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_game_a_p_i_1a9582fc7ec5980b42fe26d63270819def"></a>
+<p class="NDLRefMemberFunction">void  PPEDOFStrengthShift(<br/>efd::Float32 fStrength, <br/>efd::Float32 fTimeFade)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_game_a_p_i_1a557d8e01338f01b747d0f10a56f14ae0"></a>
+<p class="NDLRefMemberFunction">void  PPESetDOFRanges(<br/>efd::Float32 nearBegin, <br/>efd::Float32 nearEnd, <br/>efd::Float32 farBegin, <br/>efd::Float32 farEnd)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_game_a_p_i_1addf6cfa769a2e58f14f0bbe5d39fa2dc"></a>
+<p class="NDLRefMemberFunction">void  PPEDOFDiagnostic(efd::Bool bOn)</p>
+<p class="NDLRefMemberFunction"></p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

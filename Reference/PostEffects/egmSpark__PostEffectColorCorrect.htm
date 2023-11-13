@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::PostEffectColorCorrect</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::PostEffectColorCorrect</p>
+<p class="NDLRefParentage">: public <span class="NDLSystemFont"><a href="egmSpark__PostEffect.htm">egmSpark::PostEffect</a></span></p>
+
+
+<p class="NDLRefHeaderFile">&lt;PostEffectColorCorrect.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_post_effect_color_correct.gif" alt="Inheritance graph for egmSpark::PostEffectColorCorrect"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::PostEffectColorCorrect</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">Color correction provides a few simple parameters for adjusting the color of the full screen. </p>
+<p class="NDLNormal">The three parameters are applied in order:</p>
+<p class="NDLNormal">1. Saturation</p>
+<p class="NDLNormal">2. Multiply</p>
+<p class="NDLNormal">3. Add </p>
+
+<a name="parameters"></a>
+<p class="NDLRefHead1">Parameters</p>
+
+
+<a name="classegm_spark_1_1_post_effect_color_correct_1a789eddb50ad1df67a3cf411be63d08a5"></a>
+<p class="NDLRefMemberFunction">float  m_fSaturate</p>
+<p class="NDLRefMemberDescription">Fades the screen between greyscale and colorful. </p>
+<p class="NDLRefMemberDetailedDescription">A value of 1 has no effect (normal color).</p>
+<p class="NDLRefMemberDetailedDescription">A value of 0 produces a greyscale image.</p>
+<p class="NDLRefMemberDetailedDescription">Expected range: [0,2], but larger values are acceptable, and negative values have a complementary color effect. </p>
+
+<a name="classegm_spark_1_1_post_effect_color_correct_1a7a4f2aa6912f928448cab6d164000433"></a>
+<p class="NDLRefMemberFunction">NiColor  m_kMultiply</p>
+<p class="NDLRefMemberDescription">Multiplies against the color of all pixels on the screen. </p>
+<p class="NDLRefMemberDetailedDescription">This can be used to adjust contrast, or to apply a color filter to the whole screen.</p>
+<p class="NDLRefMemberDetailedDescription">A valule of (1,1,1) has no effect.</p>
+<p class="NDLRefMemberDetailedDescription">A value of (0,0,0) produces a black screen.</p>
+<p class="NDLRefMemberDetailedDescription">A value of (1,0,0) produces a red filtered screen. </p>
+
+<a name="classegm_spark_1_1_post_effect_color_correct_1acfa1fb6cbb9767f2f3e6db45f9e1ea0f"></a>
+<p class="NDLRefMemberFunction">NiColor  m_kAdd</p>
+<p class="NDLRefMemberDescription">Adds to the color of all pixels on the screen. </p>
+<p class="NDLRefMemberDetailedDescription">Expected range: [(0,0,0),(1,1,1)], but negative values are also acceptable. </p>
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_post_effect_color_correct_1a20e1ddef7f6c597bb37c14769262b34b"></a>
+<p class="NDLRefMemberFunction">PostEffectColorCorrect(<span class="NDLSystemFont"><a href="egmSpark__PostEffectsStep.htm">PostEffectsStep</a></span>* pkStep)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_post_effect_color_correct_1add04c0bee3c2541cb6a86a4dbe6d5acc"></a>
+<p class="NDLRefMemberFunction">virtual bool  Render(NiTexture* pIn)</p>
+<p class="NDLRefMemberDescription">The virtual function Render must be implemented by every <span class="NDLSystemFont"><a href="egmSpark__PostEffect.htm">PostEffect</a></span>. </p>
+<p class="NDLRefMemberDetailedDescription">This function may render one or more full-screen passes. Render must contain one and only one final pass (see BeginFinalPass), and may not use an early pass (see BeginEarlyPass) after the final pass. </p>
+<p class="NDLRefMemberDetailedDescription"><span class="NDLSystemFont"><a href="egmSpark__PostEffect.htm#classegm_spark_1_1_post_effect_1a95e6a13b8ec9945b0948e71f86c458f0">BeginFinalPass()</a></span></p>
+<p class="NDLRefMemberDetailedDescription"><span class="NDLSystemFont"><a href="egmSpark__PostEffect.htm#classegm_spark_1_1_post_effect_1a1b207daf0558c9990c0df1b21a7ac3cf">BeginEarlyPass()</a></span></p>
+<p class="NDLRefMemberDetailedDescription"><span class="NDLSystemFont"><a href="egmSpark__PostEffect.htm#classegm_spark_1_1_post_effect_1affc010d22dc8e3a782a82af6fe3c0fc4">BeginAuxPass()</a></span></p>
+<p class="NDLRefMemberDetailedDescription"><span class="NDLSystemFont"><a href="egmSpark__PostEffect.htm#classegm_spark_1_1_post_effect_1a447207fa5df1ee39a2e1d4efc296300d">EndPass()</a></span></p>
+<p class="NDLRefMemberDetailedDescription"><span class="NDLSystemFont"><a href="egmSpark__PostEffect.htm#classegm_spark_1_1_post_effect_1abaa5a876671fbccab4e529fd3c9bd517">UseTexture()</a></span></p>
+<p class="NDLRefMemberDetailedDescription"><span class="NDLSystemFont"><a href="egmSpark__PostEffect.htm#classegm_spark_1_1_post_effect_1aa48a43d392662789e05d352584831b2d">UseMaterial()</a></span></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pIn</span></td>
+    <td>The fullscreen texture input to this post effect.</td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_post_effect_color_correct_1adc8f8f9f6f96173c1000247cd175f114"></a>
+<p class="NDLRefMemberFunction">virtual bool  Skip() const</p>
+<p class="NDLRefMemberDescription">Skip should return true if this effect pass can be skipped this frame. </p>
+<p class="NDLRefMemberDetailedDescription">This is a potential optimization; if an effect is enabled but its parameters are set in such a way that it will have no visible impact on the frame, Skip can be used to bypass its Render step automatically. The default implementation always returns false. </p>
+<p class="NDLRefMemberDetailedDescription">SetEnable() </p>
+
+<a name="classegm_spark_1_1_post_effect_color_correct_1aca4efeb160d31336bddbc5e6217aef63"></a>
+<p class="NDLRefMemberFunction">void  SetSaturate(float saturate)</p>
+<p class="NDLRefMemberFunction"></p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::ShaderHelper</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::ShaderHelper</p>
+<p class="NDLRefParentage">: public NiMemObject</p>
+
+
+<p class="NDLRefHeaderFile">&lt;ShaderHelper.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_shader_helper.gif" alt="Inheritance graph for egmSpark::ShaderHelper"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::ShaderHelper</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">A helper class used to set up the shader loading system and load shaders. </p>
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_shader_helper_1a8a17d57ea4a76a35ddc3896be9fc77ec"></a>
+<p class="NDLRefMemberFunction">bool  SetupShaderSystem(<br/>const char* apcProgramDirectories, <br/>unsigned int uiNumProgramDirectories, <br/>const char* apcShaderDirectories, <br/>unsigned int uiNumShaderDirectories)</p>
+<p class="NDLRefMemberDescription">Initializes the shader loading system. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">apcProgramDirectories</span></td>
+    <td>An array of directory paths to load shader programs from. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">uiNumProgramDirectories</span></td>
+    <td>The number of paths in the apcProgramDirectories array. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">apcShaderDirectories</span></td>
+    <td>An array of directory paths to load shader effect files from. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">uiNumShaderDirectories</span></td>
+    <td>The number of paths in the apcShaderDirectories array. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if the function succeeds, false if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_shader_helper_1a608f721a3704a1a5e249dd2a6c67097a"></a>
+<p class="NDLRefMemberFunction">bool  RunShaderParsers()</p>
+<p class="NDLRefMemberDescription">Parses all shaders that were found during initialization. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if the function succeeds, false if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_shader_helper_1a4ce6ca257fb6efaf9b129a6a5a8c2fd9"></a>
+<p class="NDLRefMemberFunction">bool  RegisterShaderLibraries()</p>
+<p class="NDLRefMemberDescription">Registers shader libraries which are responsible for loading various types of effect files such as NSB, FX, etc. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if the function succeeds, false if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

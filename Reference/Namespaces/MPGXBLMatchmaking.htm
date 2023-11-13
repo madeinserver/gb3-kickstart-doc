@@ -1,0 +1,571 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>MPGXBLMatchmaking Namespace</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">MPGXBLMatchmaking Namespace</p>
+
+
+
+
+
+<a name="private_types"></a>
+<p class="NDLRefHead1">Private Types</p>
+
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1abb263095a3c45bd46371ee3fe4702c8b"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../XBL/MPGXBLMatchmaking__Transient.htm">Transient</a></span>&gt;  TransientPtr</p>
+<p class="NDLRefMemberDescription">A SmartPointer for the <span class="NDLSystemFont"><a href="../XBL/MPGXBLMatchmaking__Transient.htm">Transient</a></span> class. </p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a71726f06ff6259dac57305373e20384f"></a>
+<p class="NDLRefMemberFunction">typedef efd::vector&lt;<span class="NDLSystemFont"><a href="../Namespaces/MPGXBLMatchmaking.htm">TransientPtr</a></span>&gt;  TransientList</p>
+<p class="NDLRefMemberDescription">A vector of <span class="NDLSystemFont"><a href="../XBL/MPGXBLMatchmaking__Transient.htm">Transient</a></span> smart pointers. </p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1ad1ea37d5e427e13c1e7f036183f38c2d"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../XBL/MPGXBLMatchmaking__TransientGroup.htm">TransientGroup</a></span>&gt;  TransientGroupPtr</p>
+<p class="NDLRefMemberDescription">A SmartPointer for the <span class="NDLSystemFont"><a href="../XBL/MPGXBLMatchmaking__TransientGroup.htm">TransientGroup</a></span> class. </p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a2b643f0fbbd0542f52bd294a50b53695"></a>
+<p class="NDLRefMemberFunction">typedef efd::list&lt;<span class="NDLSystemFont"><a href="../Namespaces/MPGXBLMatchmaking.htm">TransientGroupPtr</a></span>&gt;  TransientGroupList</p>
+<p class="NDLRefMemberDescription">A list of <span class="NDLSystemFont"><a href="../XBL/MPGXBLMatchmaking__TransientGroup.htm">TransientGroup</a></span> smart pointers. </p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1aeb643eddb87427635c004641416f600a"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../XBL/MPGXBLMatchmaking__Member.htm">Member</a></span>&gt;  MemberPtr</p>
+<p class="NDLRefMemberDescription">A SmartPointer for the <span class="NDLSystemFont"><a href="../XBL/MPGXBLMatchmaking__Member.htm">Member</a></span> class. </p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1ab74e21093b0db6e70d5ca3104ce9f214"></a>
+<p class="NDLRefMemberFunction">typedef efd::map&lt;XUID, <span class="NDLSystemFont"><a href="../Namespaces/MPGXBLMatchmaking.htm">MemberPtr</a></span>&gt;  MemberMap</p>
+<p class="NDLRefMemberDescription">A map from XUID to <span class="NDLSystemFont"><a href="../XBL/MPGXBLMatchmaking__Member.htm">Member</a></span> smart pointers. </p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1ab2bbca21c9d1abb05789c29c997f7168"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../XBL/MPGXBLMatchmaking__IStatelet.htm">IStatelet</a></span>&gt;  IStateletPtr</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a23c7f9a42213cc297b9f1426621c3203"></a>
+<p class="NDLRefMemberFunction">typedef efd::SmartPointer&lt;<span class="NDLSystemFont"><a href="../XBL/MPGXBLMatchmaking__StateletContext.htm">StateletContext</a></span>&gt;  StateletContextPtr</p>
+<p class="NDLRefMemberFunction"></p>
+<a name="private_attributes"></a>
+<p class="NDLRefHead1">Private Attributes</p>
+
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a276a0c955c7fe3efe852ccd6be9c5ebb"></a>
+<p class="NDLRefMemberFunction">efd::Bool  m_isFirstUpdate</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a63587df8409086ea78eccba94d6b66e3"></a>
+<p class="NDLRefMemberFunction">XOVERLAPPED  m_xoverlapped</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a274b7726ea2b88300fb0deada00fa009"></a>
+<p class="NDLRefMemberFunction">static const WCHAR*  ms_qosString</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1adca2334217e87faa7cd4dd50d4cdfcd3"></a>
+<p class="NDLRefMemberFunction">efd::UInt32  m_peerOrdinal</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1ab18d9196f3ee6b927fe237f2892909dc"></a>
+<p class="NDLRefMemberFunction"><span class="NDLSystemFont"><a href="../Namespaces/MPGXBLMatchmaking.htm">TransientGroupList</a></span>  m_transientGroups</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1ac79e338728176aa37ea954a4db688598"></a>
+<p class="NDLRefMemberFunction">efd::Bool  m_quit</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1aaff54932fca660c42752620fc25006db"></a>
+<p class="NDLRefMemberFunction"><span class="NDLSystemFont"><a href="../Namespaces/MPGXBLMatchmaking.htm">StateletContextPtr</a></span>  m_spContext</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a8acb0ac9ee6ed8fb78da75f358523760"></a>
+<p class="NDLRefMemberFunction">DWORD  m_userIndex</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1ad9f758fdb88f38371e1fb01427403fed"></a>
+<p class="NDLRefMemberFunction">efd::SInt16  m_port</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1aaf9516428365183999645b203a8cfe66"></a>
+<p class="NDLRefMemberFunction">DWORD  m_sessionFlags</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a9c84a2bc29dec15749bd6b9e4f27bafc"></a>
+<p class="NDLRefMemberFunction">DWORD  m_sessionMaxPublicSlots</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1afcbbd608ab285473c1308c95206cfa7b"></a>
+<p class="NDLRefMemberFunction">DWORD  m_sessionMaxPrivateSlots</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1ab844e4a5606040fc393d88f66da2bd93"></a>
+<p class="NDLRefMemberFunction">WORD  m_numProperties</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1ae802caad35724085b1deb74bf75c0983"></a>
+<p class="NDLRefMemberFunction">PXUSER_PROPERTY  m_pSearchProperties</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a5f3267744a10a66065bddf4f7ee242cb"></a>
+<p class="NDLRefMemberFunction">WORD  m_numContexts</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a3e5e01e83bc30c15ad1c97e1585b37eb"></a>
+<p class="NDLRefMemberFunction">PXUSER_CONTEXT  m_pSearchContexts</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1ae1c4515490b982851d4dd4eae38cd44d"></a>
+<p class="NDLRefMemberFunction">PXSESSION_SEARCHRESULT_HEADER  m_pSearchResults</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a89a6efcdcea370c708c1b6b785806578"></a>
+<p class="NDLRefMemberFunction">efd::Bool  m_isConnected</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a868f75b61e3148d0e1a0929186d64ca1"></a>
+<p class="NDLRefMemberFunction">DWORD  m_searchProcedureIndex</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a44d83b51213fd084fcb9ba4ff5b47b59"></a>
+<p class="NDLRefMemberFunction">DWORD  m_searchNumResults</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1aa93a18f78409263e3102e196f2dfefeb"></a>
+<p class="NDLRefMemberFunction">DWORD  m_searchResultSelection</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a8626be59156b55446bf80c4ce9608866"></a>
+<p class="NDLRefMemberFunction">efd::utf8string  m_text</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1aa795ada7d6ee9b1e1ab08e89abb295fc"></a>
+<p class="NDLRefMemberFunction">DWORD  m_cbResultsBuffer</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a7ec45ff38f72e151ec992e1b5ffd95e5"></a>
+<p class="NDLRefMemberFunction">XSESSION_LOCAL_DETAILS*  m_pSessionDetails</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a9a318939867e818904390eb8f993449d"></a>
+<p class="NDLRefMemberFunction"><span class="NDLSystemFont"><a href="../Namespaces/MPGXBLMatchmaking.htm">TransientGroupPtr</a></span>  m_spTransientGroup</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a07f9963afd720a349cecf04399f83908"></a>
+<p class="NDLRefMemberFunction">DWORD  m_userCount</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a453307427ac03cbccf5a019f1f7e77c3"></a>
+<p class="NDLRefMemberFunction">DWORD*  m_userIndexes</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a09b05762340f1ccc46793c1df97705d1"></a>
+<p class="NDLRefMemberFunction">BOOL*  m_privateSlots</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1ac232ab738cd4e0fcf2422b299cd54934"></a>
+<p class="NDLRefMemberFunction">DWORD  m_xuidCount</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a939c96b5fd03b31d919b35895fcdd185"></a>
+<p class="NDLRefMemberFunction">XUID*  m_xuids</p>
+<p class="NDLRefMemberFunction"></p>
+<a name="private_methods"></a>
+<p class="NDLRefHead1">Private Methods</p>
+
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a67e3ea48ea7b55af369151a94245229e"></a>
+<p class="NDLRefMemberFunction">BEGIN_DECLARE_STATELET(Statelet_CreateHostSession )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a8584befd5be35aefb509fbb07a4ff964"></a>
+<p class="NDLRefMemberFunction">Statelet_CreateHostSession()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1add899255ed26524d2eee683a6ba8ba45"></a>
+<p class="NDLRefMemberFunction">END_DECLARE_STATELET(Statelet_CreateHostSession )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a66726e3bc811716577674b7e5967f8ef"></a>
+<p class="NDLRefMemberFunction">BEGIN_DECLARE_STATELET(Statelet_DeleteHostSession )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1afcdcfec6e35df235ae982ad7976d91a4"></a>
+<p class="NDLRefMemberFunction">Statelet_DeleteHostSession()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a8d9bb1577a3a04bf3ae1bce39e8f8055"></a>
+<p class="NDLRefMemberFunction">END_DECLARE_STATELET(Statelet_DeleteHostSession )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a48da7de44d719c31c530b63e6576bbf8"></a>
+<p class="NDLRefMemberFunction">BEGIN_DECLARE_STATELET(Statelet_FinalHost )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a314b667bb79e6ac021fae10173a746ce"></a>
+<p class="NDLRefMemberFunction">END_DECLARE_STATELET(Statelet_FinalHost )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a999f6aa0d34e42bbe07746e3cf27c13c"></a>
+<p class="NDLRefMemberFunction">BEGIN_DECLARE_STATELET(Statelet_ProcessSessionUpdate )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a3371c8c31a79904143421d3f86c1283b"></a>
+<p class="NDLRefMemberFunction">Statelet_ProcessSessionUpdate()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a8a977a62f2a7ee7d2073dc189c488ca1"></a>
+<p class="NDLRefMemberFunction">END_DECLARE_STATELET(Statelet_ProcessSessionUpdate )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1acc2b5fc952fe16b711ca03f323a0f9ee"></a>
+<p class="NDLRefMemberFunction">BEGIN_DECLARE_STATELET(Statelet_SendUpdateSessionRequest )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a4c0bc3db0f5e70df0743aebaf46c0ae6"></a>
+<p class="NDLRefMemberFunction">END_DECLARE_STATELET(Statelet_SendUpdateSessionRequest )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a2c879c3a285a0c4e5de9402e1d69467f"></a>
+<p class="NDLRefMemberFunction">BEGIN_DECLARE_STATELET(Statelet_ServicePeers )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a51d22ac667840c3d4e1cf788c66933ca"></a>
+<p class="NDLRefMemberFunction">static void  SendRemoteMessage(<br/><span class="NDLSystemFont"><a href="../XBL/MPGXBLMatchmaking__StateletContext.htm">StateletContext</a></span>* pContext, <br/>efd::IMessage* pMessage)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1ae1e319093cc5999df72349740f327402"></a>
+<p class="NDLRefMemberFunction">Statelet_ServicePeers()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1ae9aede007ca76b542ac55b6abde4fd33"></a>
+<p class="NDLRefMemberFunction">void  Quit()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a52e71f07ab48771ab8badd47342698bb"></a>
+<p class="NDLRefMemberFunction">void  Initialize()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a58f7205402f0ab5449fff018eccd8cc0"></a>
+<p class="NDLRefMemberFunction">void  HandleChannelManagerServiceMessage(<br/>const efd::StreamMessage* pMessage, <br/>efd::Category channel)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1ab95740b32526c9a1824081fe34e7d73d"></a>
+<p class="NDLRefMemberFunction">void  HandleChannelManagerConnectionAccepted(const efd::StreamMessage* pMessage)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a4d3f190b10296f29056a0f086233db03"></a>
+<p class="NDLRefMemberFunction">void  HandleChannelManagerConnectionClosed(const efd::StreamMessage* pMessage)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1aa5e2a899aa42bdf9b4f4e89cb9941b8e"></a>
+<p class="NDLRefMemberFunction">void  HandleMessage(<br/>const efd::IMessage* pMessage, <br/>efd::Category channel)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a925caf2cd3b36fe38e5aed5b87971921"></a>
+<p class="NDLRefMemberFunction">void  HandleHelloRequestMessage(<br/>efd::UInt32 netId, <br/>const efd::IMessage* pMessage)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1aa9386cc83218466a849f23371647d24c"></a>
+<p class="NDLRefMemberFunction">void  HandleJoinSessionRequestMessage(<br/>efd::UInt32 netId, <br/>const efd::IMessage* pMessage)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1ad784bd1ed5bf30426f1e720d982a1b20"></a>
+<p class="NDLRefMemberFunction">void  HandleLeaveSessionRequestMessage(<br/>efd::UInt32 netId, <br/>const efd::IMessage* pMessage)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1ae2dfa7f88cf58b38348924873775ff48"></a>
+<p class="NDLRefMemberFunction">void  HandleUpdateSessionResponseMessage(<br/>efd::UInt32 netId, <br/>const efd::IMessage* pMessage)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a679795c295460085cffdb1411e8d060f"></a>
+<p class="NDLRefMemberFunction">void  RemoveMembersByNetID(efd::UInt32 netId)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a7f89063fa65cc4f9de56eb4595f22935"></a>
+<p class="NDLRefMemberFunction">efd::UInt32  GetNetIDByChannel(const efd::Category& channel) const</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1ade1e44e60bb14c537a68fb4075d8e73a"></a>
+<p class="NDLRefMemberFunction">END_DECLARE_STATELET(Statelet_ServicePeers )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1ae515e1c5ede0a227fbea09d68f478b22"></a>
+<p class="NDLRefMemberFunction">BEGIN_DECLARE_STATELET(Statelet_StartServicePeers )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1ad97de33b42682b0076803e501fb253e6"></a>
+<p class="NDLRefMemberFunction">Statelet_StartServicePeers(<br/>DWORD userIndex, <br/>efd::SInt16 port, <br/>DWORD sessionFlags, <br/>DWORD sessionMaxPublicSlots, <br/>DWORD sessionMaxPrivateSlots)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a60b004b2b08f92df9ac15cc169da7e18"></a>
+<p class="NDLRefMemberFunction">END_DECLARE_STATELET(Statelet_StartServicePeers )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a10d1b4278eccc6503faf7a9aab8dacfd"></a>
+<p class="NDLRefMemberFunction">BEGIN_DECLARE_STATELET(Statelet_CreatePeerSession )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1ac72a4e489d2113620e7195c07df04f35"></a>
+<p class="NDLRefMemberFunction">Statelet_CreatePeerSession()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a4ad7d3dc10691ae47f175bae93dfd6c8"></a>
+<p class="NDLRefMemberFunction">END_DECLARE_STATELET(Statelet_CreatePeerSession )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a10f8d60461c4f665b58f6e3c89a148be"></a>
+<p class="NDLRefMemberFunction">BEGIN_DECLARE_STATELET(Statelet_DeletePeerSession )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a76c13f7a67d83595830237c3c3f90c9f"></a>
+<p class="NDLRefMemberFunction">Statelet_DeletePeerSession()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a88476c5abcc314aa4f85c3d53696a264"></a>
+<p class="NDLRefMemberFunction">END_DECLARE_STATELET(Statelet_DeletePeerSession )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1adea63abb6845ef431d2104b9428c9126"></a>
+<p class="NDLRefMemberFunction">BEGIN_DECLARE_STATELET(Statelet_FinalPeer )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1ad385c5c85e6b6654cbec7c72ff24410d"></a>
+<p class="NDLRefMemberFunction">END_DECLARE_STATELET(Statelet_FinalPeer )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a0386a44c105723603141400556ba6d13"></a>
+<p class="NDLRefMemberFunction">BEGIN_DECLARE_STATELET(Statelet_FindHostSession )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1afcf439d249bf5cf0170a79a94f68eb46"></a>
+<p class="NDLRefMemberFunction">Statelet_FindHostSession()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a5ef2d2093fcbb06663631904a2897fab"></a>
+<p class="NDLRefMemberFunction">END_DECLARE_STATELET(Statelet_FindHostSession )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a2a44bd557b0ab164fc72f73bcc3fa6ba"></a>
+<p class="NDLRefMemberFunction">BEGIN_DECLARE_STATELET(Statelet_JoinHostSession )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a2455c4597a88054241ab1f539bb60f02"></a>
+<p class="NDLRefMemberFunction">END_DECLARE_STATELET(Statelet_JoinHostSession )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a14ef6a8ed041618de8d22ffaf1896c8f"></a>
+<p class="NDLRefMemberFunction">BEGIN_DECLARE_STATELET(Statelet_LeaveHostSession )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1ab57e86d1e28840bc8da868532f0b1075"></a>
+<p class="NDLRefMemberFunction">END_DECLARE_STATELET(Statelet_LeaveHostSession )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a0ddc39e4b068ed2fb97ae3405f67cee7"></a>
+<p class="NDLRefMemberFunction">BEGIN_DECLARE_STATELET(Statelet_ServiceHost )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a1946bd3527f71ffe6db5c434df52f689"></a>
+<p class="NDLRefMemberFunction">Statelet_ServiceHost()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a2aaf20315908284feefe79e52cd7a722"></a>
+<p class="NDLRefMemberFunction">void  HandleNetServiceMessage(<br/>const efd::StreamMessage* pMessage, <br/>efd::Category channel)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1af6b0047a2a7cc93b27a470e0b0c2708a"></a>
+<p class="NDLRefMemberFunction">void  HandleNetServiceConnectionEstablished(const efd::StreamMessage* pMessage)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a09c93b0dc619fffa508c41f48cd4b073"></a>
+<p class="NDLRefMemberFunction">void  NetServiceConnectionClosed(const efd::StreamMessage* pMessage)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a036a740f235a4a10a7d045f26cafdb86"></a>
+<p class="NDLRefMemberFunction">void  NetServiceConnectionFailed(const efd::StreamMessage* pMessage)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a50c7d179647605fa2fad0440819e5d24"></a>
+<p class="NDLRefMemberFunction">void  HandleHelloResponseMessage(const efd::IMessage* pMessage)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1ab72748f840d79be16bf8faf474072798"></a>
+<p class="NDLRefMemberFunction">void  HandleChannelAssignmentMessage(const efd::IMessage* pMessage)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a75792e6cf4fa4545f197d1a9b3606c7e"></a>
+<p class="NDLRefMemberFunction">void  HandleUpdateSessionRequestMessage(const efd::IMessage* pMessage)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1aee2d18d22b8a1f3ce2dc89231a61e9c6"></a>
+<p class="NDLRefMemberFunction">void  IdentifyJoiners(<br/>const <span class="NDLSystemFont"><a href="../Namespaces/MPGXBLMatchmaking.htm">TransientGroupPtr</a></span> spTransientGroup, <br/><span class="NDLSystemFont"><a href="../Namespaces/MPGXBLMatchmaking.htm">TransientGroupPtr</a></span>& spIdentifiedLocalJoiners, <br/><span class="NDLSystemFont"><a href="../Namespaces/MPGXBLMatchmaking.htm">TransientGroupPtr</a></span>& spIdentifiedRemoteJoiners)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1af83c4a306aa2efd8a3cde425b84dd33e"></a>
+<p class="NDLRefMemberFunction">void  IdentifyLeavers(<br/>const <span class="NDLSystemFont"><a href="../Namespaces/MPGXBLMatchmaking.htm">TransientGroupPtr</a></span> spTransientGroup, <br/><span class="NDLSystemFont"><a href="../Namespaces/MPGXBLMatchmaking.htm">TransientGroupPtr</a></span>& spIdentifiedLocalLeavers, <br/><span class="NDLSystemFont"><a href="../Namespaces/MPGXBLMatchmaking.htm">TransientGroupPtr</a></span>& spIdentifiedRemoteLeavers)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1ae128cac2560f38379c599e18b17f0dc5"></a>
+<p class="NDLRefMemberFunction">void  ConnectHost()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1affc779a3d7919ffa7b1117b0db95636b"></a>
+<p class="NDLRefMemberFunction">END_DECLARE_STATELET(Statelet_ServiceHost )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1addc514cb704225d9f6b35d4079791995"></a>
+<p class="NDLRefMemberFunction">BEGIN_DECLARE_STATELET(Statelet_StartFindHostSession )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a659c9833102cb9554bbb14e836cdeb5e"></a>
+<p class="NDLRefMemberFunction">Statelet_StartFindHostSession(<br/>DWORD userIndex, <br/>DWORD searchProcedureIndex, <br/>DWORD searchNumResults)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a52eab82b3e32a0d05056ba7aea095032"></a>
+<p class="NDLRefMemberFunction">END_DECLARE_STATELET(Statelet_StartFindHostSession )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a56f31221db99d0122ac5a8d27697e79a"></a>
+<p class="NDLRefMemberFunction">BEGIN_DECLARE_STATELET(Statelet_StartJoinHostSession )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a82f35979af725f66e3c2cf6016d99eb1"></a>
+<p class="NDLRefMemberFunction">END_DECLARE_STATELET(Statelet_StartJoinHostSession )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a50ed0d2d53d1d3b91237a34bb9d492db"></a>
+<p class="NDLRefMemberFunction">BEGIN_DECLARE_STATELET(Statelet_StartServiceHost )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a537ed03ddacb764caf1174d8c9c8455e"></a>
+<p class="NDLRefMemberFunction">Statelet_StartServiceHost(<br/>DWORD userIndex, <br/>DWORD searchResultSelection, <br/>efd::SInt16 port, <br/>DWORD sessionFlags)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a78bf53a735aad3b69f8f4f8e63808941"></a>
+<p class="NDLRefMemberFunction">END_DECLARE_STATELET(Statelet_StartServiceHost )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1aff2004a48d47e0bbf96266213981d48f"></a>
+<p class="NDLRefMemberFunction">BEGIN_DECLARE_STATELET(Statelet_Error )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a6193ad3d7f9b6073ecdf7ca89f19de54"></a>
+<p class="NDLRefMemberFunction">Statelet_Error(const efd::utf8string& text)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a728e0b2a230b8dbd281d5b7f99fee3b7"></a>
+<p class="NDLRefMemberFunction">END_DECLARE_STATELET(Statelet_Error )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1ad0b684ffcf2b4a5e1ed291064865e980"></a>
+<p class="NDLRefMemberFunction">BEGIN_DECLARE_STATELET(Statelet_GetSessionDetails )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a4b8d18cbb6850d64c6ef1bd86d201981"></a>
+<p class="NDLRefMemberFunction">Statelet_GetSessionDetails()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a677c921baca977ec2cde13503d3b7b75"></a>
+<p class="NDLRefMemberFunction">void  DumpSessionDetails(const XSESSION_LOCAL_DETAILS& sessionDetails)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1ab6e7393e1aa2d0128111bd7b3e8215e7"></a>
+<p class="NDLRefMemberFunction">END_DECLARE_STATELET(Statelet_GetSessionDetails )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a9381761fc0ef92b22c87f667fd151ad8"></a>
+<p class="NDLRefMemberFunction">BEGIN_DECLARE_STATELET(Statelet_JoinSessionLocal )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a8e82444ad5f49e8dda748c612fd94641"></a>
+<p class="NDLRefMemberFunction">Statelet_JoinSessionLocal(const <span class="NDLSystemFont"><a href="../Namespaces/MPGXBLMatchmaking.htm">TransientGroupPtr</a></span> spTransientGroup)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1ae30db9efbcfc9e6bdb74cf1abdc07311"></a>
+<p class="NDLRefMemberFunction">END_DECLARE_STATELET(Statelet_JoinSessionLocal )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a00b633ca08590701ba93b1612b203444"></a>
+<p class="NDLRefMemberFunction">BEGIN_DECLARE_STATELET(Statelet_JoinSessionRemote )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a8d05fe982317efc1bfc39377ca109257"></a>
+<p class="NDLRefMemberFunction">Statelet_JoinSessionRemote(const <span class="NDLSystemFont"><a href="../Namespaces/MPGXBLMatchmaking.htm">TransientGroupPtr</a></span> spTransientGroup)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1aaf8a96428c4227c6dea3e531f0db0ce6"></a>
+<p class="NDLRefMemberFunction">END_DECLARE_STATELET(Statelet_JoinSessionRemote )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a4e3ae48e2b0c1c34dc45b5b0159664d2"></a>
+<p class="NDLRefMemberFunction">BEGIN_DECLARE_STATELET(Statelet_LeaveSessionLocal )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a1adf52bf76135901df85d2105452e0dd"></a>
+<p class="NDLRefMemberFunction">Statelet_LeaveSessionLocal(const <span class="NDLSystemFont"><a href="../Namespaces/MPGXBLMatchmaking.htm">TransientGroupPtr</a></span> spTransientGroup)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1aeaa3692e12d28fad2ccd7efe50247aa4"></a>
+<p class="NDLRefMemberFunction">END_DECLARE_STATELET(Statelet_LeaveSessionLocal )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a81ef498ce28738d1a72dbe40751a640b"></a>
+<p class="NDLRefMemberFunction">BEGIN_DECLARE_STATELET(Statelet_LeaveSessionRemote )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a8c267de9fa83fba52cbb412da188e8cc"></a>
+<p class="NDLRefMemberFunction">Statelet_LeaveSessionRemote(const <span class="NDLSystemFont"><a href="../Namespaces/MPGXBLMatchmaking.htm">TransientGroupPtr</a></span> spTransientGroup)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a4997515473c5551da18531f483a870e5"></a>
+<p class="NDLRefMemberFunction">END_DECLARE_STATELET(Statelet_LeaveSessionRemote )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a585ec28172aad2de4ff08ba9025f25ac"></a>
+<p class="NDLRefMemberFunction">BEGIN_DECLARE_STATELET(Statelet_Quit )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a343f719ee2e1271445b6387da9441924"></a>
+<p class="NDLRefMemberFunction">END_DECLARE_STATELET(Statelet_Quit )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a5791e7fdc555b156e429e1039d701681"></a>
+<p class="NDLRefMemberFunction">BEGIN_DECLARE_STATELET(Statelet_Signin )</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1aeb321555c846b9306302c3dd3e428dc1"></a>
+<p class="NDLRefMemberFunction">Statelet_Signin()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="namespace_m_p_g_x_b_l_matchmaking_1a7734cf81b3aa11b3ef8bfbaba000ce08"></a>
+<p class="NDLRefMemberFunction">END_DECLARE_STATELET(Statelet_Signin )</p>
+<p class="NDLRefMemberFunction"></p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>SparkHUD Namespace</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">SparkHUD Namespace</p>
+
+
+
+
+
+<a name="private_methods"></a>
+<p class="NDLRefHead1">Private Methods</p>
+
+
+<a name="namespace_spark_h_u_d_1a6ee660def570db548c1ca4b13679bf89"></a>
+<p class="NDLRefMemberFunction">void  Show(efd::Bool show)</p>
+<p class="NDLRefMemberDescription">Enable or disable the HUD. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">show</span></td>
+    <td>True if the HUD should be visible. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_h_u_d_1abc0ec91101f47a0bb4db258863b130bd"></a>
+<p class="NDLRefMemberFunction">void  SetPlayerEntity(egf::EntityID player)</p>
+<p class="NDLRefMemberDescription">Set the player entity to check for HUD elements to update. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">player</span></td>
+    <td>entity to check for HUD elements. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_h_u_d_1af058fb55cff756683347ee494e3f31ca"></a>
+<p class="NDLRefMemberFunction">void  DrawText(<br/>const efd::utf8string& text, <br/>const efd::Point2& screenPoint, <br/>const efd::Point4& textColor = efd::Point4(1, 1, 1, 1), <br/>bool centerText = false)</p>
+<p class="NDLRefMemberDescription">Draw text. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">text</span></td>
+    <td>The text. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">screenPoint</span></td>
+    <td>The screen point. (X = 0..1, Y = 0..1) </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">textColor</span></td>
+    <td>The text color. (R = 0..1, G = 0..1, B = 0..1, A = 0..1) </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">centerText</span></td>
+    <td>true to center the text. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_h_u_d_1a84e825de204ef7072bc584eebc52c8a6"></a>
+<p class="NDLRefMemberFunction">void  Log(<br/>const efd::utf8string& text, <br/>const efd::Point4& textColor = efd::Point4(1, 1, 1, 1))</p>
+<p class="NDLRefMemberDescription">Logs information to the screen, as well as to the log file. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">text</span></td>
+    <td>The text. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">textColor</span></td>
+    <td>The text color. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_h_u_d_1ae45959cca474fa9ab7558c4afb5f7c81"></a>
+<p class="NDLRefMemberFunction">efd::Bool  ParseHUDDefinition(const efd::utf8string& filename)</p>
+<p class="NDLRefMemberDescription">Parse a HUD definition file. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">filename</span></td>
+    <td>Full path to the HUD xml file. All referenced textures are considered to be relative to this xml file.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The result of calling <span class="NDLSystemFont"><a href="../Core/egmSpark__HUDService.htm#classegm_spark_1_1_h_u_d_service_1a1cfbbf88918eee4257e9c73960084f01">egmSpark::HUDService::ParseHUDDefinition</a></span>. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

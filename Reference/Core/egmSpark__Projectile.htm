@@ -1,0 +1,326 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::Projectile</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::Projectile</p>
+<p class="NDLRefParentage">: public <span class="NDLSystemFont"><a href="egmSpark__IBuiltinModelBase.htm">egmSpark::IBuiltinModelBase</a></span></p>
+
+
+<p class="NDLRefHeaderFile">&lt;Projectile.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_projectile.gif" alt="Inheritance graph for egmSpark::Projectile"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::Projectile</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">Implements the logic behind a projectile. </p>
+<p class="NDLNormal">Note the movement is handled by a completely different built-in model. (see <span class="NDLSystemFont"><a href="egmSpark__PhysXProjectileMover.htm">PhysXProjectileMover</a></span>)</p>
+<p class="NDLNormal">The features of a projectile are: launch sounds explosion effects& sound trail effect collision handling damage handling radius damage handling </p>
+
+<a name="public_types"></a>
+<p class="NDLRefHead1">Public Types</p>
+<a name="classegm_spark_1_1_projectile_1ab2e8d7c21c875d2d6847fd53c55fca2b"></a>
+<p class=NDLRefHead2>egmSpark::Projectile::EventType</p>
+
+
+<p class="NDLRefMemberDescription">Defines some events that can happen in the lifecycle of a projectile. </p>
+
+
+<!--(Table)=========================================================-->
+<div class="ReferenceTable">
+<table>
+  <thead>
+	<tr>
+        <th>Name</th>
+	    <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">PROJECTILE_EXPLODE</span></td>
+    <td>The projectile has exploded. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">END_OF_SEQUENCE</span></td>
+    <td>Unused. </td>
+</tr>
+
+  </tbody>
+</table>
+</div>
+
+
+<a name="public_static_methods"></a>
+<p class="NDLRefHead1">Public Static Methods</p>
+
+
+<a name="classegm_spark_1_1_projectile_1a617e6b9d336f19d5b1ff3b4ea441b1bd"></a>
+<p class="NDLRefMemberFunction">static void  SimulateProjectile(<br/>const egf::FlatModel* pFlatModel, <br/>const egf::EntityID& ownerID, <br/>const efd::Point3& position, <br/>const efd::Point3& rotation)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_projectile_1aa91fe8f540ec9126ff1a92e142fb1306"></a>
+<p class="NDLRefMemberFunction">static efd::Bool  LaunchProjectile(<br/><span class="NDLSystemFont"><a href="egmSpark__FireWeaponEvent.htm">FireWeaponEvent</a></span>* pEvent, <br/>const egf::EntityID& ownerID)</p>
+<p class="NDLRefMemberFunction"></p>
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_projectile_1a16e1c85bca0de6f294fd8f739d67944c"></a>
+<p class="NDLRefMemberFunction">Projectile()</p>
+<p class="NDLRefMemberDetailedDescription">Constructor </p>
+
+<a name="classegm_spark_1_1_projectile_1a342454c8d5aecc3222b00fe05fe5ea55"></a>
+<p class="NDLRefMemberFunction">virtual void  Launch(<br/>const efd::Point3& direction, <br/>const efd::Point3& inheritedVelocity, <br/>efd::Bool bkPlayLaunchEffects = true)</p>
+<p class="NDLRefMemberDescription">Launch the projectile. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">direction</span></td>
+    <td>Direction missile should go (velocity is determined by the speed parameter) </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">inheritedVelocity</span></td>
+    <td>Usually the velocity of the object that is firing this projectile </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">bkPlayLaunchEffects</span></td>
+    <td>If true, launch effects will be spawned </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_projectile_1a7e0e2e673895c02ab3dd6b9395b07109"></a>
+<p class="NDLRefMemberFunction">virtual void  OnCollision(efd::DataStream* pStream)</p>
+<p class="NDLRefMemberDescription">Behavior called when projectile collides with something. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pStream</span></td>
+    <td>The data stream that contains any arguments used by the behavior. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_projectile_1a7c9bfb20eff25dbb26b6594e56f2daaf"></a>
+<p class="NDLRefMemberFunction">virtual void  OnExplode(efd::DataStream* pArgumentStream)</p>
+<p class="NDLRefMemberDescription">Behavior called when projectile explodes. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pArgumentStream</span></td>
+    <td>The data stream that contains any arguments used by the behavior. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_projectile_1ab46d22a1306d58c77f0c46c733a08962"></a>
+<p class="NDLRefMemberFunction">virtual void  OnDamage(efd::DataStream* pArgumentStream)</p>
+<p class="NDLRefMemberDescription">Behavior called when projectile is damaged. </p>
+<p class="NDLRefMemberDetailedDescription">Unused. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pArgumentStream</span></td>
+    <td>The data stream that contains any arguments used by the behavior. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_projectile_1a81b8dc8fe415f1d9567930ea1f109c11"></a>
+<p class="NDLRefMemberFunction">virtual void  OnLaunch(efd::DataStream* pArgumentStream)</p>
+<p class="NDLRefMemberDescription">Behavior called when projectile is launched. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pArgumentStream</span></td>
+    <td>The data stream that contains any arguments used by the behavior. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_projectile_1a68d6f32408c97fe6066b2245712114d2"></a>
+<p class="NDLRefMemberFunction">const egf::EntityID&  GetOwner()</p>
+<p class="NDLRefMemberDescription">Returns the entity that owns this projectile. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The entity ID. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_projectile_1a5b90447fc4d9dabfc920daede2e9f801"></a>
+<p class="NDLRefMemberFunction">void  SetOwner(const egf::EntityID& id)</p>
+<p class="NDLRefMemberDescription">Sets the entity that owns this projectile. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">id</span></td>
+    <td>The entity ID. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_projectile_1a5f77f7d704feb153153fef1d6cb4c3f5"></a>
+<p class="NDLRefMemberFunction">virtual efd::AsyncResult  Update(efd::TimeType timeDelta)</p>
+<p class="NDLRefMemberDescription">The Update method is called by <span class="NDLSystemFont"><a href="egmSpark__BuiltinUpdateService.htm#classegm_spark_1_1_builtin_update_service_1a7c4275972f75aa847ab6d9d5755d82f8">BuiltinUpdateService::OnTick</a></span> on every registered built-in model. </p>
+<p class="NDLRefMemberDetailedDescription">Models that do not require updating can return AsyncResult_Complete to prevent further calls. The default implementation simply returns AsyncResult_Complete.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">timeDelta</span></td>
+    <td>The amount of game time that passed since the previous tick. This is not always the time passed since the last call to Update as updating can be paused. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>Return AsyncResult_Pending to be called again on the next tick or return AsyncResult_Complete if further calls are not needed. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_projectile_1a923cee477a7c75e21daa27de926c1bf0"></a>
+<p class="NDLRefMemberFunction">virtual void  OnAssetsLoaded()</p>
+<p class="NDLRefMemberDescription">Called once the OnAssetsLoaded entity lifecycle completes. </p>
+
+<a name="classegm_spark_1_1_projectile_1a384e94e0b596e695fbaa28f5dff9a597"></a>
+<p class="NDLRefMemberFunction">virtual void  OnReplicaAssetsLoaded()</p>
+<p class="NDLRefMemberDescription">Called once the OnReplicaAssetsLoaded entity lifecycle completes for a replicated entity. </p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

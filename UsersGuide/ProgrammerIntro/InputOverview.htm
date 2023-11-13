@@ -1,0 +1,176 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>Overview of Input</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Fresnel" />
+<meta name="Generator" content="Palimpsest by Emergent Game Technologies - http://emergent.net" />
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+    
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+
+<!--(Begin Body)================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript">
+</script><script language="JavaScript1.2" type="text/javascript">
+WriteNavLink(2);
+</script>
+
+<h1>Overview of Input</h1>
+
+<p>Spark offers a simple service to provide access to input, the Spark Control Service.  It doesn't
+offer anything not offered by the Lightspeed InputService class, but it does wrapper it so that it
+is more easily accessible from both script and C++.</p>
+
+<p>The key to the Spark Control service is the actionmap.  An actionmap file defines named input
+events and associates them with key press, button press, and analog input actions.</p>
+
+<h3>Input Handling from Script</h3>
+
+<p>From script, the EMT model <b>SparkInputHandler</b> is the main interface to the Spark Control
+Service.  The <b>SparkInputHandler</b> model has several properties that you can use to configure
+the input that will be sent to the entity that mixes it in.</p>
+
+<dl>
+    <dt><b>InputsEnabled</b></dt>
+    <dd>When set in the block file or in a model default, <b>InputsEnabled</b> specifies
+    whether the input maps described start out enabled when the block file loads or
+    not. At runtime, your code should never set this value; use the <b>EnableInputs</b>
+    and <b>DisableInputs</b> behaviors instead.</dd>
+    <dt><b>NormalEventMap</b></dt>
+    <dd>The <b>NormalEventMap</b> is a list of input action names as defined in the actionmap
+    file and behavior names. When the named input action occurs, the behavior will be
+    called via the <b>SendEvent</b> function. Behaviors called via <b>SendEvent</b>
+    are queued and invoked by the Lua scheduler at the next opportunity. Usually this
+    is pretty quick, but it's not instantaneous, and if the scheduler is paused, the
+    event will not occur until the scheduler resumes.</dd>
+    <dt><b>ImmediateEventMap</b></dt>
+    <dd>The <b>ImmediateEventMap</b> is a list of input actions names as defined in the
+    actionmap file and behavior names, just like the <b>NormalEventMap</b>. However,
+    when these input actions occur, the corresponding behavior will be called via the
+    <b>CallBehavior</b> function, which calls the behavior right away and waits for
+    it to complete. Behaviors invoked via <b>CallBehavior</b> have some restrictions:
+    they must have the <b>Immediate</b> trait specified in the EMT, and they cannot
+    sleep. However, immediate calls will take place even while the scheduler is paused.
+    If you need a keystroke to be able to unpause your game, you will need to make that
+    mapping an immediate mapping.</dd>
+</dl>
+
+<p>Regardless of which method is used to call your behavior, the DataStream object passed in will
+contain some event-specific data.  All input events passed to script contain the following items:
+</p>
+
+<ul>
+    <li>String - Name of the event that has occurred</li>
+    <li>UInt32 - Type of the event. Valid types are:
+        <ul>
+            <li>SparkControl.EventTypeAction for a button or key press</li>
+            <li>SparkControl.EventTypeStick for an analog stick event</li>
+        </ul>
+    </li>
+    <li>UInt32 - Application-specific data as passed from the InputService</li>
+    <li>Float32 - Magnitude value. For a button press, 1.0 usually indicates a down press
+        and 0.0 indicates an up press, although the actionmap file can change this. For
+        stick events, the stick values usually range from -1.0 to 1.0.</li>
+    <li>If and only if the event type was SparkControl.EventTypeStick, three more Float32
+        values are passed for x, y, and z.</li>
+</ul>
+
+<p>An example Lua behavior that reads the DataStream values is below:</p>
+
+<pre>
+function OnInputEvent(selfID, strm)
+   local eventName = strm:GetString()
+   local eventType = strm:GetUInt32()
+   local appData = strm:GetUInt32()
+   local magnitude = strm:GetFloat32()
+   local x = 0.0
+   local y = 0.0
+   local z = 0.0
+   if(eventType == SparkControl.EventTypeStick) then
+      x = strm:GetFloat32()
+      y = strm:GetFloat32()
+      z = strm:GetFloat32()
+   end
+   
+   -- Your code here
+end
+</pre>
+
+<p>For some good examples of using SparkInputHandler from Lua, see the DebugHelper or
+PlayerCharacter models in AlphaGame.  DebugHelper is very simple and hooks some button press events
+up to some Lua behaviors using the Immediate call mode.  PlayerCharacter is more complex and uses
+analog stick events.  In both cases, look at the property overrides for the SparkInputHandler mixin
+and observe the input action names on the left side of the maps and the behavior names on the right
+side.
+</p>
+
+<h3>Enabling and Disabling Script Input</h3>
+
+<p>The SparkInputHandler model defines two behaviors to help control the input to your entity.
+<b>EnableInputs</b> will enable all the inputs in the <b>NormalEventMap</b> and
+<b>ImmediateEventMap</b> properties.  <b>DisableInputs</b> will disable all of them.</p>
+
+<h3>Input Handling from C++</h3>
+
+<p>C++ code can benefit from the simpler SparkControl interface as well.  The
+egmSpark::ControlService class has two functions to install C++ callbacks that handle named input
+action events:</p>
+
+<ul>
+    <li>ListenForInputActionEvent</li>
+    <li>ListenForInputStickEvent</li>
+</ul>
+
+<h3>Spark Control Builtins</h3>
+
+<p>The Spark Control Service supplies the following builtin constants and functions to Lua scripts.
+</p>
+
+<dl>
+    <dt>SparkControl.InvalidCallbackID (constant)</dt>
+    <dd>Indicates an invalid callback ID</dd>
+    <dt>SparkControl.EventTypeAction (constant)</dt>
+    <dd>Constant indicating an ACTION event type (button or keypress)</dd>
+    <dt>SparkControl.EventTypeStick (constant)</dt>
+    <dd>Constant indicating a STICK event type (analog stick)</dd>
+    <dt>SparkControl.CallbackNormal (constant)</dt>
+    <dd>Constant indicating a normal callback via SendEvent</dd>
+    <dt>SparkControl.CallbackImmediate (constant)</dt>
+    <dd>Constant indicating an immediate callback via CallBehavior</dd>
+    <dt>SparkControl.ListenForInputActionEvent(entity, eventname, behaviorname, callbacktype)</dt>
+    <dd>Function to install a behavior that will be called when the specified eventname occurs as
+    an action event (button or key press). Returns a callbackID value that can be used to cancel
+    the callback. <b>Note:</b> At this time, the ListenForInputActionEvent and
+    ListenForInputStickEvent Lua builtins do the same thing. They are not limited to just action or
+    stick events.</dd>
+    <dt>SparkControl.ListenForInputStickEvent(entity, eventname, behaviorname, callbacktype)</dt>
+    <dd>Function to install a behavior that will be called when the specified eventname occurs as a
+    stick event. Returns a callbackID value that can be used to cancel the callback. <b>Note:</b>
+    At this time, the ListenForInputActionEvent and ListenForInputStickEvent Lua builtins do the
+    same thing. They are not limited to just action or stick events.</dd>
+    <dt>SparkControl.ClearRegisteredInputEvents(entity) </dt>
+    <dd>Clear all registered input events for the specified entity</dd>
+    <dt>SparkControl.ClearRegisteredInputEvent(efd::UInt32 callbackID)</dt>
+    <dd>Clear a specific input event based on the callbackID returned from a previous call to a
+    Listen function.</dd>
+</dl>
+
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

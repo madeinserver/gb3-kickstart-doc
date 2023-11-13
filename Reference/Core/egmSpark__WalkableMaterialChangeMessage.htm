@@ -1,0 +1,91 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::WalkableMaterialChangeMessage</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::WalkableMaterialChangeMessage</p>
+<p class="NDLRefParentage">: public IMessage</p>
+
+
+<p class="NDLRefHeaderFile">&lt;WalkableMaterialChangeMessage.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_walkable_material_change_message.gif" alt="Inheritance graph for egmSpark::WalkableMaterialChangeMessage"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::WalkableMaterialChangeMessage</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">Notifies any subscribers that an entity has moved onto a surface marked with different material metadata. </p>
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_walkable_material_change_message_1aba750b20d8227db9f6b1008d98a780a8"></a>
+<p class="NDLRefMemberFunction">WalkableMaterialChangeMessage()</p>
+<p class="NDLRefMemberDetailedDescription">Construction and Destruction </p>
+
+<a name="classegm_spark_1_1_walkable_material_change_message_1a72d8f0e6c647da2976e6dbd8a653830f"></a>
+<p class="NDLRefMemberFunction">virtual ~WalkableMaterialChangeMessage()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_walkable_material_change_message_1aff61abe146d4479c66df52490db52c82"></a>
+<p class="NDLRefMemberFunction">virtual efd::ClassID  GetClassID() const</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_walkable_material_change_message_1adcf5c8dbb79a0ef1d78cfcd842a6830c"></a>
+<p class="NDLRefMemberFunction">virtual void  ToStream(efd::DataStream& stream) const</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_walkable_material_change_message_1a951e744ebb98d45146a08005715598f3"></a>
+<p class="NDLRefMemberFunction">virtual efd::Bool  FromStream(efd::DataStream& stream)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_walkable_material_change_message_1acc45d3bdffba880b5a4b2da601731cff"></a>
+<p class="NDLRefMemberFunction">egf::Entity*  GetEntity()</p>
+<p class="NDLRefMemberDescription">Retrieve the entity that has changed material. </p>
+
+<a name="classegm_spark_1_1_walkable_material_change_message_1ade7127db1514a2b87eb53b4916d40ddb"></a>
+<p class="NDLRefMemberFunction">void  SetEntity(egf::Entity* pEntity)</p>
+<p class="NDLRefMemberDescription">Set the entity reported by the message. </p>
+
+<a name="classegm_spark_1_1_walkable_material_change_message_1a94f1a78021921760e0bcd590bea5d317"></a>
+<p class="NDLRefMemberFunction">efd::utf8string  GetMaterial()</p>
+<p class="NDLRefMemberDescription">Retrieve the name of the new material the entity is standing on. </p>
+
+<a name="classegm_spark_1_1_walkable_material_change_message_1a6376de2a7941fe05582e85022c9ad664"></a>
+<p class="NDLRefMemberFunction">void  SetMaterial(efd::utf8string material)</p>
+<p class="NDLRefMemberDescription">Set the material reported by the message. </p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

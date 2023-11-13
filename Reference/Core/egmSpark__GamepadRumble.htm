@@ -1,0 +1,107 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::GamepadRumble</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::GamepadRumble</p>
+<p class="NDLRefParentage">: public <span class="NDLSystemFont"><a href="egmSpark__IBuiltinModelBase.htm">egmSpark::IBuiltinModelBase</a></span></p>
+
+
+<p class="NDLRefHeaderFile">&lt;GamepadRumble.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_gamepad_rumble.gif" alt="Inheritance graph for egmSpark::GamepadRumble"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::GamepadRumble</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">Support for rumble for gamepad controllers. </p>
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_gamepad_rumble_1a6ce2536438767cac2d0d987f35cdd91c"></a>
+<p class="NDLRefMemberFunction">GamepadRumble()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_gamepad_rumble_1a2878d8cf29a26f456143d473d08ac500"></a>
+<p class="NDLRefMemberFunction">virtual void  OnRemoved()</p>
+<p class="NDLRefMemberDescription">An override of egf::IBuiltinModel::OnRemoved that unregisters the model from the <span class="NDLSystemFont"><a href="egmSpark__BuiltinUpdateService.htm">BuiltinUpdateService</a></span>. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Derived classes should call this base class method if they override this method. Typically you should call this method as the last step of any override implementation. </p></p>
+
+<a name="classegm_spark_1_1_gamepad_rumble_1a7748defabada02291728719d89e8ae2b"></a>
+<p class="NDLRefMemberFunction">void  StartRumble(efd::DataStream* pStream)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_gamepad_rumble_1a09c454865a775fa9998eb584149aa40c"></a>
+<p class="NDLRefMemberFunction">void  StopRumble(efd::DataStream* pStream)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_gamepad_rumble_1a2f1cb3a4090682efaf7e7593a157d303"></a>
+<p class="NDLRefMemberFunction">virtual efd::AsyncResult  Update(efd::TimeType timeDelta)</p>
+<p class="NDLRefMemberDescription">The Update method is called by <span class="NDLSystemFont"><a href="egmSpark__BuiltinUpdateService.htm#classegm_spark_1_1_builtin_update_service_1a7c4275972f75aa847ab6d9d5755d82f8">BuiltinUpdateService::OnTick</a></span> on every registered built-in model. </p>
+<p class="NDLRefMemberDetailedDescription">Models that do not require updating can return AsyncResult_Complete to prevent further calls. The default implementation simply returns AsyncResult_Complete.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">timeDelta</span></td>
+    <td>The amount of game time that passed since the previous tick. This is not always the time passed since the last call to Update as updating can be paused. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>Return AsyncResult_Pending to be called again on the next tick or return AsyncResult_Complete if further calls are not needed. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_gamepad_rumble_1a6f6e5e37f84688583eebaa1996b9e0ef"></a>
+<p class="NDLRefMemberFunction">virtual void  OnPaused()</p>
+<p class="NDLRefMemberDescription">Called once the OnCreate entity lifecycle completes. </p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

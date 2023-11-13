@@ -1,0 +1,309 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::FilteredAssetLocator</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::FilteredAssetLocator</p>
+<p class="NDLRefParentage">: public IBase</p>
+
+
+<p class="NDLRefHeaderFile">&lt;FilteredAssetLocator.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_filtered_asset_locator.gif" alt="Inheritance graph for egmSpark::FilteredAssetLocator"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::FilteredAssetLocator</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal"><span class="NDLSystemFont">FilteredAssetLocator</span>. </p>
+<p class="NDLNormal">This class is makes an asset location request based on parameters passed into it and filters the asset location response based on a substring of the the path name.</p>
+<p class="NDLNormal">For example, a user can use this class to request all world files (xblock) that are in a a directory with "World" in the path. </p>
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_filtered_asset_locator_1a07790ae2d115b158bea7134104b1e3e5"></a>
+<p class="NDLRefMemberFunction">FilteredAssetLocator(efd::ServiceManager* pServiceManager)</p>
+<p class="NDLRefMemberDescription">Constructor. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pServiceManager</span></td>
+    <td>The Service Manager used to handle service location and messaging. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_filtered_asset_locator_1a2a6114fe8b4b1497a8ed51c280115d02"></a>
+<p class="NDLRefMemberFunction">virtual ~FilteredAssetLocator()</p>
+<p class="NDLRefMemberDescription">Destructor. </p>
+
+<a name="classegm_spark_1_1_filtered_asset_locator_1adf4ba44df52a74c3ce4715e9cdcc3c2a"></a>
+<p class="NDLRefMemberFunction">void  SetIncludeFilter(efd::utf8string assetIncludeFilter)</p>
+<p class="NDLRefMemberDescription">Sets the include filter to be used. </p>
+<p class="NDLRefMemberDetailedDescription">Any assets with a URL that do not contain the include filter string will be filtered out of the asset location response. An empty string means that there will be no include filtering</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">assetIncludeFilter</span></td>
+    <td>the string that must be contained by an asset's url to pass through the filter </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_filtered_asset_locator_1ade0b94bea5e892d64355e7b80f575eb3"></a>
+<p class="NDLRefMemberFunction">const efd::utf8string&  GetIncludeFilterString() const</p>
+<p class="NDLRefMemberDescription">Returns the include filter to be used in any asset location response. </p>
+<p class="NDLRefMemberDetailedDescription">Any assets with a URL that do not contain the include filter string will be filtered out of the asset location response. An empty string means that there will be no include filtering.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The include filter string </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_filtered_asset_locator_1ab7b30709990edb3447e502c0657719b2"></a>
+<p class="NDLRefMemberFunction">void  SetExcludeFilter(efd::utf8string assetExcludeFilter)</p>
+<p class="NDLRefMemberDescription">Returns the exclude filter to be used in any asset location response. </p>
+<p class="NDLRefMemberDetailedDescription">Any assets with a URL that contain the exclude filter string will be filtered out of the asset location response. An empty string means that there will be no exclude filtering.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">assetExcludeFilter</span></td>
+    <td>the string that must be contained by an asset's url to be removed by the filter </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_filtered_asset_locator_1a1dcf41e51262d2c2fcf1094acefda814"></a>
+<p class="NDLRefMemberFunction">const efd::utf8string&  GetExcludeFilterString() const</p>
+<p class="NDLRefMemberDescription">Sets the exclude filter to be used. </p>
+<p class="NDLRefMemberDetailedDescription">Any assets with a URL that contain the exclude filter string will be filtered out of the asset location response. An empty string means that there will be no exclude filtering</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The exclude filter string </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_filtered_asset_locator_1a99f195ea48379be157c04593284fab44"></a>
+<p class="NDLRefMemberFunction">efd::Bool  SetupFilteredChannel(efd::Category callbackCategory)</p>
+<p class="NDLRefMemberDescription">Sets up a callback category for requests that will be forwarded ot the callbackCategory after being filtered. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">callbackCategory</span></td>
+    <td>the category that will be used for asset location responses sent from the <span class="NDLSystemFont">FilteredAssetLocator</span> after the response from the AssetLocatorService has been filtered. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_filtered_asset_locator_1a00d240bdf7a2e8713791f524436b2d34"></a>
+<p class="NDLRefMemberFunction">void  ShutdownFilteredChannel(efd::Category callbackCategory)</p>
+<p class="NDLRefMemberDescription">Cleans up and unsubscribes from callback categories used by <span class="NDLSystemFont">FilteredAssetLocator</span> for asset requests that are filtered before being sent on the callbackCategory. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">callbackCategory</span></td>
+    <td>the category that is being used for asset location responses sent from the <span class="NDLSystemFont">FilteredAssetLocator</span> after the response from the AssetLocatorService has been filtered. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_filtered_asset_locator_1a2174a899890e2f3db23711810cc34e5b"></a>
+<p class="NDLRefMemberFunction">virtual efd::Bool  AssetLocate(<br/>efd::utf8string uri, <br/>efd::Category callback, <br/>efd::IAssetLocatorService::AssetLookupScope scope = efd::IAssetLocatorService::ALS_LOCAL_OR_REMOTE)</p>
+<p class="NDLRefMemberDescription">Lookup the physical location of an asset based on logical Asset URI value. </p>
+<p class="NDLRefMemberDetailedDescription"><span class="NDLSystemFont">FilteredAssetLocator</span> acts as a proxy to the AssetLocatorService. It makes the request, receives the response, filters the response based on its filters, then sends the filtered response to the category specified by this method.</p>
+<p class="NDLRefMemberDetailedDescription">See AssetLocatorService::AssetLocate for more details</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">uri</span></td>
+    <td>An asset URI value using either tag names or a GUID value. Assets that match the tag names or guid and pass through the filter will be returned. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">callback</span></td>
+    <td>Category that the filtered response should be received on. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">scope</span></td>
+    <td>Controls whether the lookup is allowed to be handled by a remote Asset Server.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if the locate request is successfully submitted. Otherwise return false. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_filtered_asset_locator_1a54afb3565456adc2373ff308290cce12"></a>
+<p class="NDLRefMemberFunction">void  HandleAssetLocatorResponse(<br/>const efd::AssetLocatorResponse* pMessage, <br/>efd::Category targetChannel)</p>
+<p class="NDLRefMemberDescription">Handler for asset location requests. </p>
+<p class="NDLRefMemberDetailedDescription">This handler receives the message from the AssetLocatorService, creates a new filtered AssetLocatorResponse message and sends that message on the appropriate channel using MessageService::SendImmediate</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pMessage</span></td>
+    <td>The asset location response message from the AssetLocatorService </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">targetChannel</span></td>
+    <td>The channel that is being used to send pMessage </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

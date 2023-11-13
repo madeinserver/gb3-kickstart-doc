@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>Overview of WalkableService</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Fresnel" />
+<meta name="Generator" content="Palimpsest by Emergent Game Technologies - http://emergent.net" />
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+    
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+
+<!--(Begin Body)================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript">
+</script><script language="JavaScript1.2" type="text/javascript">
+WriteNavLink(2);
+</script>
+
+<h1>Overview of WalkableService</h1>
+
+<p>The Spark Walkable service helps entities conform to walkable and non-walkable surfaces.</p>
+
+<p>This service provides the functionality necessary to make an entity to conform to the height of
+walkable surfaces or terrain and be blocked and slide around the edges of walkable surfaces,
+non-walkable surfaces and (optionally) terrain. It collects references to geometry that follows a
+naming convention identifying it as walkable or non-walkable and optionally an NiTerrain object.
+</p>
+
+<p>The service can optionally track material metadata from walk requests and associate that with
+the requesting entity such that material change notifications can be sent out when the walked-on
+material changes.</p>
+
+<p>Walkable and non-walkable surfaces are identified whenever new scenegraphs are created. The
+walkable service will inspect newly created scenegraphs and find any objects within it named
+<b>Walkable</b> or <b>NonWalkable</b> respectively. These objects are cached and recursively picked
+against to determine success.</p>
+
+<p>Terrain material can be used to limit walkability. To do so, attach a float metadata to the
+material called <b>NonWalkable</b>. The value of the metadata will be used to determine the
+walkability threshold for that material on a scale from 0 to 100. Areas where the material has a
+percent of influence above this threshold will be non-walkable.</p>
+
+<p>To associate a walkable surface with a material name, attach an NiStringExtraData called
+<b>MaterialName</b> with a value of whatever material you want change notifications to be sent for.
+Similarly, to associate a material with terrain, add a string metadata to your terrain material
+called "MaterialName" with a value of the material name.</p>
+
+<h3>Walkable Builtins</h3>
+
+<p>The Walkable service provides the following Lua builtins:</p>
+
+<dl>
+    <dt>SparkWalkable.ComputeWalk(entity, goal, result)</dt>
+    <dd>Makes an entity conform to walkable and non-walkable areas.  This built-in enables an
+    entity to conform to the height of walkables or terrain and be blocked and slide around
+    non-walkables and terrain. The goal parameter is where the entity wants to go; the result
+    parameter is an output parameter indicating where the entity should end up after being blocked
+    by non-walkables, sliding, and conforming to the height of the walkable surface.  The return
+    value is a boolean indicating whether or not any valid potential results were found.</dd>
+</dl>
+
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

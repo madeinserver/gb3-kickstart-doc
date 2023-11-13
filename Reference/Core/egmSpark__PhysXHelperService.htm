@@ -1,0 +1,1173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::PhysXHelperService</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::PhysXHelperService</p>
+<p class="NDLRefParentage">: public ISystemService</p>
+
+
+<p class="NDLRefHeaderFile">&lt;PhysXHelperService.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_phys_x_helper_service.gif" alt="Inheritance graph for egmSpark::PhysXHelperService"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::PhysXHelperService</p>
+</div>
+</p>
+
+
+<a name="public_static_methods"></a>
+<p class="NDLRefHead1">Public Static Methods</p>
+
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1a811b9f6a8d16f9f13da63f16e5cc35aa"></a>
+<p class="NDLRefMemberFunction">static <span class="NDLSystemFont">PhysXHelperService</span>*  Get()</p>
+<p class="NDLRefMemberDescription">Use to access the singleton for this service. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>A pointer to the singleton for this service. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1a221d6c11c722ae6d0a6e9c727c130b33"></a>
+<p class="NDLRefMemberFunction">static bool  AddNxRadialForce(<br/>NxActor* pkActor, <br/>const NxVec3& nxPosition, <br/>float nxMaxForce, <br/>float nxRadius, <br/>NxForceMode forceMode)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1a751fb62cc4cbcb40b1938fbe044060e1"></a>
+<p class="NDLRefMemberFunction">static bool  IsValid()</p>
+<p class="NDLRefMemberDescription">Used to test whether the <span class="NDLSystemFont">PhysXHelperService</span> has been initialized. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if the service has been initialized. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1adf9e91e993e42a9e4924e3e9e73ea491"></a>
+<p class="NDLRefMemberFunction">PhysXHelperService(efdPhysX::PhysXAllocator* pAllocator)</p>
+<p class="NDLRefMemberDescription">Constructor. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pAllocator</span></td>
+    <td>a pointer to the PhysX Allocator to use. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1aa9ff7352430486b4a58203f5e6aac463"></a>
+<p class="NDLRefMemberFunction">virtual void  SetupNxScene(const efd::utf8string& sceneName)</p>
+<p class="NDLRefMemberDescription">Initializes a PhysX scene by name. </p>
+<p class="NDLRefMemberDetailedDescription">This sets up the default collision groups as well as contact reporting. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">sceneName</span></td>
+    <td>The name of the scene to initialize. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1abfd09fe2080de24d7f38b5c6686688a3"></a>
+<p class="NDLRefMemberFunction">NxScene*  GetNxScene()</p>
+<p class="NDLRefMemberDescription">Gets the PhysX scene that is managed by this service. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The PhysX scene managed by this service. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1a9415a1582eedbe85cea65e482b0542d2"></a>
+<p class="NDLRefMemberFunction"><span class="NDLSystemFont"><a href="egmSpark__PhysXSceneHandle.htm">PhysXSceneHandle</a></span>*  GetSceneHandle(const efd::utf8string& sceneName)</p>
+<p class="NDLRefMemberDescription">Returns the PhysX scene handle of a PhysX scene by name. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">sceneName</span></td>
+    <td>The name of the scene handle to look up in the internal map. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The PhysX scene handle for the requested scene, or NULL if it does not exist. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1a9712f9e8962f2a1da0a649106d9a01ff"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetScaleFactor()</p>
+<p class="NDLRefMemberDescription">Returns the PhysX scale factor, which is a conversion to meters from the art scale. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The current PhysX scale factor. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1a6350072af5f6a8fbbc8365175c73512c"></a>
+<p class="NDLRefMemberFunction">void  SetScaleFactor(efd::Float32 factor)</p>
+<p class="NDLRefMemberDescription">Sets the PhysX scale factor, which is a conversion to meters from the art scale. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">factor</span></td>
+    <td>The new PhysX scale factor. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1aae671ad2a45a923a856bcdfa2d3bbe5b"></a>
+<p class="NDLRefMemberFunction">void  AddExplosion(<br/>const efd::Point3& position, <br/>float force, <br/>float radius)</p>
+<p class="NDLRefMemberDescription">Spawns a PhysX explosion. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">position</span></td>
+    <td>The center of the explosive force. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">force</span></td>
+    <td>The amount of force that the explosion will apply. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">radius</span></td>
+    <td>The radius of the explosion force. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1a441ede5f33582a8409d954be68b8b6ed"></a>
+<p class="NDLRefMemberFunction">bool  AddRadialForce(<br/>const egf::EntityID& entityID, <br/>const efd::Point3& position, <br/>float maxForce, <br/>float radius, <br/>NxForceMode forceMode)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1ab76e0d38f3696b011cf2137e10e3f6ae"></a>
+<p class="NDLRefMemberFunction">bool  AddRadialForce(<br/>NxActor* pkActor, <br/>const efd::Point3& position, <br/>float maxForce, <br/>float radius, <br/>NxForceMode forceMode)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1a4ee678e6637bafb707d79f4a190104c3"></a>
+<p class="NDLRefMemberFunction">bool  AddForce(<br/>const egf::EntityID& entityID, <br/>efd::UInt32 propIndex, <br/>efd::UInt32 actorIndex, <br/>const efd::Point3& force, <br/>const efd::Point3& position, <br/>NxForceMode forceMode)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1af0e995802730c3f42fac952efb7fb652"></a>
+<p class="NDLRefMemberFunction">bool  AddForce(<br/>NxActor* pActor, <br/>const efd::Point3& force, <br/>const efd::Point3& position, <br/>NxForceMode forceMode)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1abcc482833f272c412783ff8964c47505"></a>
+<p class="NDLRefMemberFunction">bool  SetLinearVelocity(<br/>const egf::EntityID& entityID, <br/>const efd::Point3& linearVelocity)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1a7b46a39e4c3180514e8354124f0a1fd9"></a>
+<p class="NDLRefMemberFunction">bool  SetAngularVelocity(<br/>const egf::EntityID& entityID, <br/>const efd::Point3& angularVelocity)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1a905be4a0494b9acb67ad78429e0c96c2"></a>
+<p class="NDLRefMemberFunction">NxVec3  GetNxGravity()</p>
+<p class="NDLRefMemberDescription">Gets the current PhysX gravitational force. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>A vector that represents the direction and magnitude of gravity. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1ab35ed66c71a204fca7818cc29d1fc183"></a>
+<p class="NDLRefMemberFunction">void  SetNxGravity(const NxVec3& gravity)</p>
+<p class="NDLRefMemberDescription">Sets the PhysX gravitational force. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>A vector that represents the new direction and magnitude for gravity. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1a89f569544595e9dccdbfd8dcd2950cd3"></a>
+<p class="NDLRefMemberFunction">void  SetGroup(<br/>NxActor* pNxActor, <br/>NxActorGroup group)</p>
+<p class="NDLRefMemberDescription">Sets a PhysX actor and the shapes it contains to be part of a new PhysX group. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pNxActor</span></td>
+    <td>The PhysX actor to add to a new group. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">group</span></td>
+    <td>The group to add the actor to. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1ac5ff8b0144a59c4957b5322becf220ac"></a>
+<p class="NDLRefMemberFunction">void  SetGroup(<br/>egf::Entity* pEntity, <br/>efd::UInt32 collisionGroup)</p>
+<p class="NDLRefMemberDescription">Sets an Entity and the PhysX actor and shapes it uses to be part of a new PhysX group. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pEntity</span></td>
+    <td>The entity to add to a new group. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">collisionGroup</span></td>
+    <td>The ID of the group to add the actor to. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1a91b0ddd7c511b6669d257916d50e6b08"></a>
+<p class="NDLRefMemberFunction">NxActor*  GetNxActor(<br/>egf::EntityID id, <br/>efd::UInt32 propIndex = 0, <br/>efd::UInt32 actorIndex = 0)</p>
+<p class="NDLRefMemberDescription">Fetches the PhysX actor used by an entity. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">id</span></td>
+    <td>The entity ID to fetch the PhysX actor for. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">propIndex</span></td>
+    <td>If the specified entity does not have a <span class="NDLSystemFont"><a href="egmSpark__PhysXCharacterController.htm">PhysXCharacterController</a></span> or a <span class="NDLSystemFont"><a href="egmSpark__PhysXProjectileMover.htm">PhysXProjectileMover</a></span> built-in model then this index is used to call ecrPhysX::PropService::GetPropAt in order to find a NiPhysXProp for this entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">actorIndex</span></td>
+    <td>If the specified entity does not have a <span class="NDLSystemFont"><a href="egmSpark__PhysXCharacterController.htm">PhysXCharacterController</a></span> or a <span class="NDLSystemFont"><a href="egmSpark__PhysXProjectileMover.htm">PhysXProjectileMover</a></span> built-in model then this index is used to call NiPhysXPropDesc::GetActorAt to find the actor description. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The PhysX actor used by the entity, or NULL if it does not use one. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1acf6dab41ee2977bfb88128f5542ccd51"></a>
+<p class="NDLRefMemberFunction">efd::Bool  GetNxActorIndices(<br/>egf::EntityID entityID, <br/>NxActor* pActor, <br/>efd::UInt32& propIndex, <br/>efd::UInt32& actorIndex)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1a6bdf137c0a52f20b84fc5a278443c8ec"></a>
+<p class="NDLRefMemberFunction">NxControllerManager*  GetControllerManager()</p>
+<p class="NDLRefMemberDescription">Returns the current PhysX controller manager which is used by this service. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The PhysX controller manager used by this service. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1af85731df26c676f95821cf3e72e8ce0b"></a>
+<p class="NDLRefMemberFunction">efd::Bool  SetDebugDraw(<br/>NxActor* pActor, <br/>efd::Bool bDebug)</p>
+<p class="NDLRefMemberDescription">Used to toggle PhysX debug visualizations for a PhysX actor. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pActor</span></td>
+    <td>The actor to toggle visualizations on. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">bDebug</span></td>
+    <td>Whether or not PhysX debug visualizations should be drawn for this actor. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if the function succeeds. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1a9d7fca6234848a8245f7289bf2b99a57"></a>
+<p class="NDLRefMemberFunction">efd::Bool  SetDebugDraw(<br/>const egf::EntityID& entityID, <br/>efd::Bool bDebug)</p>
+<p class="NDLRefMemberDescription">Used to toggle PhysX debug visualizations for an entity. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>The entity to toggle visualizations on. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">bDebug</span></td>
+    <td>Whether or not PhysX debug visualizations should be drawn for this entity. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if the function succeeds. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1a6881daf78e4639f334fae947a779b7f0"></a>
+<p class="NDLRefMemberFunction">void  SetEnableCollision(<br/>NxActor* pActor, <br/>bool bEnable)</p>
+<p class="NDLRefMemberDescription">Used to toggle PhysX collisions for a PhysX actor. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pActor</span></td>
+    <td>The actor to toggle collisions on. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">bEnable</span></td>
+    <td>Whether or not PhysX collisions should be enabled for this actor. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1ad7c1d1df8c7ff5435302d86a4db0e785"></a>
+<p class="NDLRefMemberFunction">void  SetEnableCollision(<br/>egf::Entity* pEntity, <br/>efd::Bool enable)</p>
+<p class="NDLRefMemberDescription">Used to toggle PhysX collisions for an entity. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pEntity</span></td>
+    <td>The entity to toggle collisions on. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">enable</span></td>
+    <td>Whether or not PhysX collisions should be enabled for this entity. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1a8b7c0a3f16b4af2499066429328a1843"></a>
+<p class="NDLRefMemberFunction">void  SetDebug(efd::Bool bDebug)</p>
+<p class="NDLRefMemberDescription">Used to toggle PhysX debug visualizations globally. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">bDebug</span></td>
+    <td>Whether or not PhysX debug visualizations should be enabled for the entire scene. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1ae09c927ff4d40e1eef6cd9e36a324f4c"></a>
+<p class="NDLRefMemberFunction">bool  GetDebug()</p>
+<p class="NDLRefMemberDescription">Used to test whether PhysX debug visualizations have been enabled globally. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if debug visualizations are enabled globally, false otherwise. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1aebe4e5e953b4f002ffede3316048161f"></a>
+<p class="NDLRefMemberFunction">NxPhysicsSDK*  GetNxPhysXSDK()</p>
+<p class="NDLRefMemberDescription">Gives access to the PhysX SDK object. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>A pointer to the PhysX SDK object. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1ae7753e2a0ec4fad0a02108d3dbf703fc"></a>
+<p class="NDLRefMemberFunction">bool  HasNxActor(egf::EntityID id)</p>
+<p class="NDLRefMemberDescription">Used to test whether an entity has a PhysX actor associated with it. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">id</span></td>
+    <td>The EntityID of the entity to test. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if the entity has a PhysX actor associated with it. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1a058cb2721b584396b13b962c8eb60a5b"></a>
+<p class="NDLRefMemberFunction">void  PutToSleep(const egf::EntityID& id)</p>
+<p class="NDLRefMemberDescription">Puts a specific entity to sleep, halting its PhysX calculations. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">id</span></td>
+    <td>The EntityID of the entity to put to sleep. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1a8de6dd09de131e3b15022a8e53517a1c"></a>
+<p class="NDLRefMemberFunction">void  Wakeup(const egf::EntityID& id)</p>
+<p class="NDLRefMemberDescription">Wakes up an entity that has been put to sleep, resuming its PhysX calculations. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">id</span></td>
+    <td>The EntityID of the entity to wake up. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1ae8dffe7be57ba4526b49701d40700d24"></a>
+<p class="NDLRefMemberFunction">virtual void  SetContactNotify(<br/>efd::UInt32 group1, <br/>efd::UInt32 group2, <br/>efd::Bool notify, <br/>efd::UInt32 notifyFlags = NX_NOTIFY_ON_START_TOUCH)</p>
+<p class="NDLRefMemberDescription">Sets whether notifications will be generated for contacts between objects in a particular combination of PhysX groups. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">group1</span></td>
+    <td>The ID of the first PhysX group. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">group2</span></td>
+    <td>The ID of the second PhysX group. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">notify</span></td>
+    <td>Whether or not notifications should be generated for contacts between objects in these two groups. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">notifyFlags</span></td>
+    <td>PhysX notification Flags. NX_NOTIFY_ON_START_TOUCH is used by default. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1a32c35b520d5d9221b165656164dea9a9"></a>
+<p class="NDLRefMemberFunction">bool  CastRay(<br/><span class="NDLSystemFont"><a href="egmSpark__CastRayRequest.htm">CastRayRequest</a></span>& request, <br/>efd::Point3* pCollisionPoint = NULL, <br/>efd::Point3* pCollisionNormal = NULL)</p>
+<p class="NDLRefMemberDescription">Casts a ray into the scene and passes back information about the collision that occurred, if any. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">request</span></td>
+    <td>The <span class="NDLSystemFont"><a href="egmSpark__CastRayRequest.htm">CastRayRequest</a></span> object containing information about the ray to cast. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pCollisionPoint</span></td>
+    <td>Returns the point of the collision. Can be set to NULL if you don't care. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pCollisionNormal</span></td>
+    <td>Returns the normal vector of the collision. Can be set to NULL if you don't care. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1a62b38dac726d616cd92eb3610d84beb9"></a>
+<p class="NDLRefMemberFunction">bool  CanSee(<br/>const efd::Point3& kFrom, <br/>const efd::Point3& kTo, <br/>egf::Entity* pIgnore = NULL, <br/>egf::Entity* pIgnore2 = NULL)</p>
+<p class="NDLRefMemberDescription">Used to test whether one location can be seen from another. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">kFrom</span></td>
+    <td>The location of the observer. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">kTo</span></td>
+    <td>The location being observed </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pIgnore</span></td>
+    <td>An entity to ignore in the test. Can be NULL. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pIgnore2</span></td>
+    <td>Another entity to ignore in the test. Can be NULL. True if the point at kTo can be seen from the point at kFrom. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1a1904ad3cc13bf2b0dec55c5644485375"></a>
+<p class="NDLRefMemberFunction">bool  CanSee(<br/>egf::Entity* pEntity1, <br/>egf::Entity* pEntity2)</p>
+<p class="NDLRefMemberDescription">Used to test whether one entity can be seen by another. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pEntity1</span></td>
+    <td>The observer entity. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pEntity2</span></td>
+    <td>The entity being observed. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if the second entity can be seen by the first. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1af7bc35e705acfa42a783d2557a68ebd9"></a>
+<p class="NDLRefMemberFunction">bool  GetHeight(<br/>const efd::Point3& position, <br/>efd::Float32& height)</p>
+<p class="NDLRefMemberDescription">Casts a ray down from a position to see how far from the ground it is. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">position</span></td>
+    <td>The position to cast the ray from. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">height</span></td>
+    <td>Receives the height of the position off the ground. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if there is a shape below the position, false if there is nothing. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1a16488b9b16b22d77327494aed8c8ccbb"></a>
+<p class="NDLRefMemberFunction">virtual void  OnContactNotify(<br/>NxContactPair& pair, <br/>NxU32 events)</p>
+<p class="NDLRefMemberDescription">Event function for PhysX contact notification. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pair</span></td>
+    <td>The PhysX pair of actors involved in the collision. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">events</span></td>
+    <td>PhysX flags describing the events. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1a493086d69889159c0a4cc95de9980e84"></a>
+<p class="NDLRefMemberFunction">egf::Entity*  GetEntityFromNxActor(NxActor* pNxActor)</p>
+<p class="NDLRefMemberDescription">Used to look up the entity that is associated with a particular PhysX actor. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pNxActor</span></td>
+    <td>The PhysX actor to look up the entity for. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The ID of the entity associated with the given PhysX actor, or NULL if there isn't one. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1afa3dfaa9ee20c2d4d64c7db8ad96eb00"></a>
+<p class="NDLRefMemberFunction">void  SetActorUserData(<br/>const egf::EntityID& id, <br/>void* pUserData)</p>
+<p class="NDLRefMemberDescription">Sets arbitrary user data on the PhysX actor associated with a particular entity. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">id</span></td>
+    <td>The ID of the entity to set the user data for. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pUserData</span></td>
+    <td>An arbitrary piece of data that will be held by a void pointer in the PhysX actor. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1a48070e8dd345ea390f4b187f85244160"></a>
+<p class="NDLRefMemberFunction">void  DestroyController(NxController* pController)</p>
+<p class="NDLRefMemberDescription">Destroys a PhysX controller. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pController</span></td>
+    <td>The PhysX controller to destroy. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1a0067fdd16b56e909ad859900a8aa2dd5"></a>
+<p class="NDLRefMemberFunction">efd::Bool  HasPhysXProps(egf::Entity* pEntity)</p>
+<p class="NDLRefMemberDescription">Tests whether a particular entity has a PhysX prop associated with it. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pEntity</span></td>
+    <td>The entity to test. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if the given entity has a PhysX prop associated with it. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1a79a58bb8e085a1f94590722d7911a4d2"></a>
+<p class="NDLRefMemberFunction">efd::Bool  IsSimulationEnabled()</p>
+<p class="NDLRefMemberDescription">Queries whether PhysX simulation has been enabled in the current scene. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if PhysX simulation is enabled. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1a19cad54e484514ff3e843cac0f61350a"></a>
+<p class="NDLRefMemberFunction">efd::Bool  IsSimulationEnabled(const efd::utf8string& sceneName)</p>
+<p class="NDLRefMemberDescription">Queries whether PhysX simulation has been enabled for a specific scene by name. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">sceneName</span></td>
+    <td>The name of the scene to query. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if PhysX simulation is enabled. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1abc27606a6a3a2b9155dc4eee552fde07"></a>
+<p class="NDLRefMemberFunction">void  SetEnableSimulation(efd::Bool enable)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1a386c68b491a6c339c8301fea9a071da2"></a>
+<p class="NDLRefMemberFunction">efd::Bool  DoesActorBelongToEntity(<br/>NxActor* pActor, <br/>const egf::EntityID& entity)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1a029af371b19c24318dd01c89b82b890a"></a>
+<p class="NDLRefMemberFunction">void  RaiseActorFlag(<br/>egf::Entity* pEntity, <br/>NxActorFlag flag)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1aff7015660e7d00a38f44d653a1f347da"></a>
+<p class="NDLRefMemberFunction">efd::Bool  GetDefaultSceneName(efd::utf8string& sceneName)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1a84ea7d3497fe17a46b6bf5ad996e922b"></a>
+<p class="NDLRefMemberFunction"><span class="NDLSystemFont"><a href="egmSpark__PhysXSceneHandle.htm">PhysXSceneHandle</a></span>*  GetDefaultSceneHandle()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1aa4b860f0232fa908780b6d894b0e41bc"></a>
+<p class="NDLRefMemberFunction">efd::Point3  GetCentroid(const egf::EntityID& entityID)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1a65a9f2af6ccf9b5abbd8a851b8440a81"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetMass(const egf::EntityID& entityID)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_phys_x_helper_service_1a6a5a6d213c09a54e0d8e4e75f501844f"></a>
+<p class="NDLRefMemberFunction">bool  WasShapeRemoved(NxShape* pShape) const</p>
+<p class="NDLRefMemberDescription">Determine if a PhysX shape was removed since the last time a character controller was updated. </p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::DependencyHelper</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::DependencyHelper</p>
+<p class="NDLRefParentage">: public ISystemService</p>
+
+
+<p class="NDLRefHeaderFile">&lt;DependencyHelper.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_dependency_helper.gif" alt="Inheritance graph for egmSpark::DependencyHelper"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::DependencyHelper</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">The dependency helper provides utility functions for setting up commonly used entities. </p>
+<p class="NDLNormal">By having this done automatically, it can relieve some of the burden of creating these entities from the level designer. For example, a script in the game could call this utility function to ensure the existence of a PhysXScene entity if one wasn't manually added already. </p>
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_dependency_helper_1a32844772d2b89b45466d704770ed661c"></a>
+<p class="NDLRefMemberFunction">egf::EntityID  CreateEntityIfDoesntExist(<br/>efd::utf8string modelToCheck, <br/>efd::utf8string modelToCreate, <br/>efd::Bool issueWarning)</p>
+<p class="NDLRefMemberDescription">If no entity has been created of a specified model, create an entity using another specified model. </p>
+<p class="NDLRefMemberDetailedDescription">This is primarily intended as a utility function for ensuring the existence of certain critical entities such as lights, cameras, PhysXScene, etc.</p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">if the entity model provided doesn't have its dependent data and flat model already loaded, using the returned entityID will produce an error. To ensure that the returned entityID is safe, precache the flatmodels you provide and their dependent assets</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">modelToCheck</span></td>
+    <td>the name of the entity model for which to check the simulation for any instances. Entity instances that mix in the given model are considered valid and stop the search </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">modelToCreate</span></td>
+    <td>the name of the entity model to use to create a new entity model under the condition that no instances of the modelToCheck were found </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">issueWarning</span></td>
+    <td>if true, a Err2 level warning will be logged if no entities mixing in modelToCheck are found </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>the entityID of the newly created entity or found entity </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_dependency_helper_1a888232dbdd0289dba9c8aced087df96c"></a>
+<p class="NDLRefMemberFunction">egf::EntityID  EnsureActiveCamera(efd::utf8string modelToCreate)</p>
+<p class="NDLRefMemberDescription">If there is not already an active camera of any type create one of the given type and make it active. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">modelToCreate</span></td>
+    <td>the name of the entity model to use to create a new entity model under the condition that no instances of the modelToCheck were found </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>the entityID of the newly created entity or the ID of the currently active camera </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_dependency_helper_1ab5e625e8aea7fa400813548af43ba621"></a>
+<p class="NDLRefMemberFunction">void  HandleEntityCreatedResponse(<br/>const efd::AssetLoadResponse* pMsg, <br/>efd::Category targetCategory)</p>
+<p class="NDLRefMemberDescription">Receive notification of success or failure for any entities we tried creating. </p>
+<p class="NDLRefMemberDetailedDescription">In the case of camera creation requests, set reasonable default property values as well </p>
+<a name="construction_and_destruction"></a>
+<p class="NDLRefHead1">Construction and Destruction</p>
+
+
+<a name="classegm_spark_1_1_dependency_helper_1aebdf2480236af25506f10a85e37ca292"></a>
+<p class="NDLRefMemberFunction">virtual ~DependencyHelper()</p>
+<p class="NDLRefMemberDescription">Destructor. </p>
+
+<a name="classegm_spark_1_1_dependency_helper_1a6b37c503ea955865d02bdf04e537ecbd"></a>
+<p class="NDLRefMemberFunction">DependencyHelper()</p>
+<p class="NDLRefMemberDescription">Constructor. </p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

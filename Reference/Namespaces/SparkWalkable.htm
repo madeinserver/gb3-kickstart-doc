@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>SparkWalkable Namespace</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">SparkWalkable Namespace</p>
+
+
+
+
+
+<a name="private_methods"></a>
+<p class="NDLRefHead1">Private Methods</p>
+
+
+<a name="namespace_spark_walkable_1a4ae6007b2b867b3508371f77e26314ab"></a>
+<p class="NDLRefMemberFunction">efd::Bool  ComputeWalk(<br/>egf::EntityID entity, <br/>efd::Point3 goal, <br/>efd::Point3& result)</p>
+<p class="NDLRefMemberDescription">Makes an entity conform to walkable and non-walkable areas. </p>
+<p class="NDLRefMemberDetailedDescription">This built-in enables an entity to conform to the height of walkables or terrain and be blocked and slide around non-walkables and terrain. It depends on the WalkableService to collect references to geometry that follows a naming convention marking it as walkable or non-walkable and optionally an NiTerrain object.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entity</span></td>
+    <td>ID of the entity that is trying to move </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">goal</span></td>
+    <td>the desired new position of the entity </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">result</span></td>
+    <td>return value indicating where the entity should end up after being blocked by non-walkables, sliding, and conforming to the height of the walkable surface </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>whether or not any valid potential results were found </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_walkable_1a5972fdb4e218fbbab4b656e603d952b0"></a>
+<p class="NDLRefMemberFunction">void  SetWalkAnywhere(efd::Bool walkAnywhere)</p>
+<p class="NDLRefMemberDescription">Toggles the walkability code on and off. </p>
+<p class="NDLRefMemberDetailedDescription">If WalkAnywhere is set to true, walkability will not interfere with characters' navigation. Useful for debugging.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">walkAnywhere</span></td>
+    <td>Desired state of the WalkAnywhere flag. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_walkable_1a28a078bd177ad89b80415341c08ac84f"></a>
+<p class="NDLRefMemberFunction">efd::Bool  GetWalkAnywhere()</p>
+<p class="NDLRefMemberDescription">Queries the current value of the WalkAnywhere flag (see SetWalkAnywhere). </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>State of the WalkAnywhere flag. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

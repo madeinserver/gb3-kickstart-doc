@@ -1,0 +1,149 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>Overview of MovementService</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Fresnel" />
+<meta name="Generator" content="Palimpsest by Emergent Game Technologies - http://emergent.net" />
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+    
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+
+<!--(Begin Body)================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript">
+</script><script language="JavaScript1.2" type="text/javascript">
+WriteNavLink(2);
+</script>
+
+<h1>Overview of MovementService</h1>
+
+<p>The Spark MovementService keeps track of the MovementHandlers.</p>
+
+<p>MovementHandlers are built-in models that register with the MovementService when they are
+created and unregister when they are removed.</p>
+
+<p>The MovementService calls the update method on each MovementHandler on every OnTick call of the
+service.  It also registers for actor added and removed messages sent by the AnimationService.
+When actors are added or removed, the MovementHandler for that actor, if there is one, is updated.
+</p>
+
+<p>The MovementHandler will move the actor according to the model's target mode.</p>
+
+<ul>
+    <li>TargetNone - Does not move the actor.</li>
+    <li>TargetDirection - Moves the actor based on the direction provided.</li>
+    <li>TargetPoint - Moves the actor to a specified point.</li>
+    <li>TargetEntity - Moves the actor to the position of a specified entity. The entity is tracked
+    each frame so the pursuit is smooth.</li>
+</ul>
+
+<p>The actor's idle, walking, and running animations must be specified as properties in the model.
+In addition, there are properties for handling the animation rates of walking and running to allow
+the artist to adjust the animation speeds to match the movement speed provided.  The
+MovementHandler will automatically handle the state transitions between idle, walking, and running.
+</p>
+
+<p>The movement speed can be selected by setting the target movement type.</p>
+
+<ul>
+    <li>Idle - The actor will not change position even if the target is set.</li>
+    <li>Walking - The actor will move at its walking speed as directed by the target mode.</li>
+    <li>Running - The actor will move at its running speed as directed by the target mode.</li>
+    <li>ExternalControl - The actor is under control by something outside of the Movement Service,
+    presumably an animation that the Movement Service should not change.  In the AlphaGame, this
+    type is used when the player character dies to prevent interruption of the death animation.
+    </li>
+    <li>Invalid - Invalid type, should not be used.</li>
+</ul>
+
+<p>The MovementHandler is updated by the MovementService on every tick.  The change in position or
+rotation is based on the properties set, the scale of the actor, and the amount of time passed from
+the previous tick.</p>
+
+<h3>Movement Builtins</h3>
+
+<p>The following Lua builtins are provided:</p>
+
+<dl>
+    <dt>SparkMovement.Idle (constant)</dt>
+    <dd>Idle movement type</dd>
+    <dt>SparkMovement.Walking (constant)</dt>
+    <dd>Walking movement type</dd>
+    <dt>SparkMovement.Running (constant)</dt>
+    <dd>Running movement type</dd>
+    <dt>SparkMovement.Invalid (constant)</dt>
+    <dd>Invalid movement type</dd>
+    <dt>SparkMovement.ExternalControl (constant)</dt>
+    <dd>User-controlled movement type</dd>
+    <dt>SparkMovement.TargetNone (constant) </dt>
+    <dd>Does not move the actor</dd>
+    <dt>SparkMovement.TargetDirection (constant)</dt>
+    <dd>Moves the actor in the direction provided</dd>
+    <dt>SparkMovement.TargetPoint (constant)</dt>
+    <dd>Moves the actor to a specified point</dd>
+    <dt>SparkMovement.TargetEntity (constant)</dt>
+    <dd>Moves the actor to the position of a specified entity</dd>
+    <dt>SparkMovement.GetCurrentSpeed(entity)</dt>
+    <dd>Returns the speed, in units per second, that the specified entity is moving</dd>
+    <dt>SparkMovement.GetCurrentDirection(entity)</dt>
+    <dd>Returns the direction that the specified entity is facing</dd>
+    <dt>SparkMovement.GetCurrentMovementType(entity)</dt>
+    <dd>Returns the MovementType that the specified entity is using when moving</dd>
+    <dt>SparkMovement.GetTargetPoint(entityID)</dt>
+    <dd>Returns the point towards which the specified entity is moving if using TargetPoint type
+    </dd>
+    <dt>SparkMovement.SetTargetPoint(entityID, point)</dt>
+    <dd>Sets the point to which the specified entity should go.  Note that the entity will hit the
+    target point before stopping so it will likely not be exactly on that point by the time it
+    stops.  This function also sets the target mode to TargetPoint.</dd>
+    <dt>SparkMovement.GetTargetDirection(entity)</dt>
+    <dd>Returns the direction that the specified entity is moving</dd>
+    <dt>SparkMovement.SetTargetDirection(entity, direction,relativeRotation)</dt>
+    <dd>Sets the direction that the specified entity will move.  The movement direction will be
+    based on the relative rotation provided.  If the relative rotation is not provided, then the
+    direction will be based on WORLD_UP_VECTOR and WORLD_FORWARD_VECTOR.  This function also sets
+    the target mode to TargetDirection.</dd>
+    <dt>SparkMovement.GetTargetRotation(entity)</dt>
+    <dd>Returns the rotation of the specified entity when it moves forward</dd>
+    <dt>SparkMovement.SetTargetRotation(entity, targetRotation, relativeRotation)</dt>
+    <dd>Sets the facing rotation of the specified entity.  The facing rotation will be based on the
+    relative rotation provided, or on WORLD_UP_VECTOR and WORLD_FORWARD_VECTOR if it is omitted.
+    This function also sets the target mode to TargetDirection.</dd>
+    <dt>SparkMovement.GetTargetEntityID(entity)</dt>
+    <dd>Returns the entity ID of the entity that the specified entity is following, if in
+    TargetEntity mode.</dd>
+    <dt>SparkMovement.SetTargetEntityID(entity, entityToFollow)</dt>
+    <dd>Sets the entity ID for the specified entity to follow.  This function also sets the target
+    mode to TargetEntity.</dd>
+    <dt>SparkMovement.GetTargetMovementType(entity)</dt>
+    <dd>Returns the MovementType that the specified entity should use when moving</dd>
+    <dt>SparkMovement.SetTargetMovementType(entity, type)</dt>
+    <dd>Sets the MovementType that the entity specified should use when moving</dd>
+    <dt>SparkMovement.GetTargetMode(entity)</dt>
+    <dd>Returns the targeting mode used by the specified entity</dd>
+    <dt>SparkMovement.ClearTargetMode(entity)</dt>
+    <dd>Clears all targeting information and sets the TargetMode to None for the specified entity.
+    The entity will not move after the target mode is cleared and it comes to a stop. It will only
+    move again if a new target mode is set.</dd>
+</dl>
+
+
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

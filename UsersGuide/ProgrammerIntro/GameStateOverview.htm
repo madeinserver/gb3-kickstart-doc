@@ -1,0 +1,158 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>Overview of GameStates</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Fresnel" />
+<meta name="Generator" content="Palimpsest by Emergent Game Technologies - http://emergent.net" />
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+    
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+
+<!--(Begin Body)================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript">
+</script><script language="JavaScript1.2" type="text/javascript">
+WriteNavLink(2);
+</script>
+
+<h1>Overview of GameStates</h1>
+
+<h3>Spark Game State Service</h3>
+
+<p>The Spark Game State Service manages game states for you.  Example game states are Loading,
+Paused, Play, Victory, and Defeat.  You can define your own states as well, either by using the
+base GameState class with custom parameters or by inheriting from it and customizing it.</p>
+
+<p>The Game State Service keeps track of the current active state, which is an instance of a C++
+class.  The class must be an instance of the egmSpark::GameState class (either directly or by
+inheritance).  Since GameStates are C++ classes, you do need to be a C++ programmer to define
+states.  In a future release of Spark these will be made into builtin models so they can be defined
+and implemented from EMT projects.</p>
+
+<h3>Spark GameState Class</h3>
+
+<p>The GameState class has some basic functionality built into it.  It can display a texture on the
+screen (like a "Paused" or "Game Over" bitmap); it can automatically proceed to a next state in a
+given timeout period; it can pause the scheduler and show or hide the main game renderer.  Lots of
+other functionality may be desireable, and the GameStateService can help by providing a render
+surface and doing other management.  You will need to define C++ classes that inherit from
+GameState and override various member functions to get the functionality you need.</p>
+
+<h4>GameState IDs</h4>
+
+<p>All GameState instances have a GameStateID associated with them.  Really, this is just a unique
+integer number.  Some state IDs are defined for you in GameState.h:</p>
+
+<ul>
+    <li>LoadingStateID - Game Loading</li>
+    <li>PlayingStateID - Game Playing</li>
+    <li>PausedStateID - Game Paused</li>
+    <li>GameOverStateID - Game Over</li>
+    <li>VictoryStateID - Game Over (player won)</li>
+    <li>DefeatStateID - Game Over (player lost)</li>
+</ul>
+
+<p>You can define your own state IDs.  It is recommended that you start your IDs at the value
+GameStateIDList::FirstUserStateID, which is defined to the value 100.</p>
+
+<h4>GameState Actions</h4>
+
+<p>If you are using the base GameState class functionality, or even part of it, you'll need to
+specify a list of Actions that you want your state to take when it becomes the active state.  The
+list of actions is specified by ORing together flag values into a UInt32 flag word, and either
+passing it to the constructor or calling the GameState::SetActions() function.
+</p><p>The following action flags are supported.
+</p>
+
+<ul>
+    <li>NO_ACTIONS - Don't do anything. This is ignored if it is OR'd together with other flags.
+    </li>
+    <li>PAUSE_SCHEDULER - Pause the scheduler when the state is entered. Do not specify both
+    PAUSE_SCHEDULER and UNPAUSE_SCHEDULER.</li>
+    <li>UNPAUSE_SCHEDULER - Unpause the scheduler when the state is entered. Do not specify both
+    PAUSE_SCHEDULER and UNPAUSE_SCHEDULER.</li>
+    <li>SHOW_MAIN_RENDERER - Show the main game renderer when the state is entered. Do not specify
+    both SHOW_MAIN_RENDERER and HIDE_MAIN_RENDERER.</li>
+    <li>HIDE_MAIN_RENDERER - Hide the main renderer when the state is entered. Do not specify both
+    SHOW_MAIN_RENDERER and HIDE_MAIN_RENDERER.</li>
+    <li>DISPLAY_TEXTURE - Display the texture billboard when the state is entered.</li>
+    <li>AUTO_TIMEOUT - Automatically timeout and go to the next state. This value is checked each
+    tick while the state is active. That means if you set or unset it while the state is active,
+    the change takes effect immediately.</li>
+</ul>
+
+<h4>DisplayTexture</h4>
+
+<p>The GameState class allows you to specify a texture that will be displayed centered on the
+screen while the state is active.  Specify the texture in the constructor or call the
+SetDisplayTexture() member function.</p>
+
+<h4>AutoTimeout</h4>
+
+<p>The GameState class allows you to specify time, in seconds, after which it will automatically
+proceed to a next state that you also set.  Specify the timeout value and the next state in the
+constructor or call the SetTimeout() and SetNextState() member functions.  If you do not set a next
+state, or if you set InvalidStateID as your next state, the program will exit.</p>
+
+<h4>Creating a State</h4>
+
+<p>In your C++ code, you can use EE_EXTERNAL_NEW to create a new state.  You can set the parameters
+in the constructor or call the various set functions afterwards.  For a good example, see the
+GameStateServiceEx class in AlphaGame, which extends the base GameStateService by allocating game
+states at startup.</p>
+
+<h4>States in Lua</h4>
+
+<p>Although you must currently write C++ code to create a new state, you can manipulate states from
+Lua script.  The GameStateID is your handle to the state.  If you are using the predefined
+GameStateID values, you can use them symbolically by referring to SparkState.<i>statename</i>.  If
+you are defining your own values, you can just use them as integer constants, or you could expose
+them via your own set of Lua builtins.</p>
+
+<h3>GameState Lua Builtin Guide</h3>
+
+<p>The SparkState Lua bindings provide the following functions and constants:</p>
+
+<dl>
+    <dt>SparkState.InvalidState </dt>
+    <dd>Constant indicating an invalid state. If you ChangeState to this, the game exits.</dd>
+    <dt>SparkState.LoadingState </dt>
+    <dd>Constant indicating the loading state.</dd>
+    <dt>SparkState.PlayingState </dt>
+    <dd>Constant indicating the Playing state.</dd>
+    <dt>SparkState.PausedState </dt>
+    <dd>Constant indicating the Paused state.</dd>
+    <dt>SparkState.GameOverState </dt>
+    <dd>Constant indicating the Game Over state.</dd>
+    <dt>SparkState.VictoryState </dt>
+    <dd>Constant indicating a game over state in which the player has won.</dd>
+    <dt>SparkState.DefeatState </dt>
+    <dd>Constant indicating a game over state in which the player has lost.</dd>
+    <dt>SparkState.ChangeState(newState) </dt>
+    <dd>Function which requests a change to the current state. Pass the ID of the new state.  This
+    request may fail.</dd>
+    <dt>UInt32 SparkState.CurrentState() </dt>
+    <dd>Function which returns the ID of the current state</dd>
+    <dt>String SparkState.GetStateName(state) </dt>
+    <dd>Function which returns the name of a state, given its ID</dd>
+</dl>
+
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

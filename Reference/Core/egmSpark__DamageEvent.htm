@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::DamageEvent</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::DamageEvent</p>
+<p class="NDLRefParentage">: public <span class="NDLSystemFont"><a href="egmSpark__EventHelper.htm">egmSpark::EventHelper</a></span></p>
+
+
+<p class="NDLRefHeaderFile">&lt;SparkEvents.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_damage_event.gif" alt="Inheritance graph for egmSpark::DamageEvent"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::DamageEvent</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">Standard damage event declaration. </p>
+
+<a name="public_attributes"></a>
+<p class="NDLRefHead1">Public Attributes</p>
+
+
+<a name="classegm_spark_1_1_damage_event_1af8f819b0435b00f59deccab2c785515a"></a>
+<p class="NDLRefMemberFunction"><span class="NDLSystemFont"><a href="egmSpark__EventVariable.htm">egmSpark::EventVariable</a></span>&lt;efd::Float32&gt;  m_damageAmount</p>
+<p class="NDLRefMemberDescription">How much damage to do. </p>
+
+<a name="classegm_spark_1_1_damage_event_1a46362eeaed75e25ef36019f7ba576e4c"></a>
+<p class="NDLRefMemberFunction"><span class="NDLSystemFont"><a href="egmSpark__EventVariable.htm">egmSpark::EventVariable</a></span>&lt;egf::EntityID&gt;  m_damager</p>
+<p class="NDLRefMemberDescription">What did the damage (ie: a weapon or a projectile, or could be same as causedBy). </p>
+
+<a name="classegm_spark_1_1_damage_event_1ac998c92f31ef931866c5b82cf8198429"></a>
+<p class="NDLRefMemberFunction"><span class="NDLSystemFont"><a href="egmSpark__EventVariable.htm">egmSpark::EventVariable</a></span>&lt;egf::EntityID&gt;  m_causedBy</p>
+<p class="NDLRefMemberDescription">Who caused the damager to do the damage. </p>
+<p class="NDLRefMemberDetailedDescription">(ie: Projectile's owner, for example an avatar) </p>
+
+<a name="classegm_spark_1_1_damage_event_1a8c081829fe85899a7d3f23bea74fdd96"></a>
+<p class="NDLRefMemberFunction"><span class="NDLSystemFont"><a href="egmSpark__EventVariable.htm">egmSpark::EventVariable</a></span>&lt;efd::Point3&gt;  m_damagePos</p>
+<p class="NDLRefMemberDescription">Where did damage occur. </p>
+
+<a name="classegm_spark_1_1_damage_event_1a64463e24ea972d203420adf0b958373e"></a>
+<p class="NDLRefMemberFunction"><span class="NDLSystemFont"><a href="egmSpark__EventVariable.htm">egmSpark::EventVariable</a></span>&lt;efd::Point3&gt;  m_damageDir</p>
+<p class="NDLRefMemberDescription">Which direction did the damage come from. </p>
+
+<a name="classegm_spark_1_1_damage_event_1ac21cc6e60d2de188bc96dce217ad6e2d"></a>
+<p class="NDLRefMemberFunction"><span class="NDLSystemFont"><a href="egmSpark__EventVariable.htm">egmSpark::EventVariable</a></span>&lt;egf::EntityID&gt;  m_damagee</p>
+<p class="NDLRefMemberDescription">The victim. </p>
+
+<a name="classegm_spark_1_1_damage_event_1a65b2755b8acacd531f80283b3db575c7"></a>
+<p class="NDLRefMemberFunction"><span class="NDLSystemFont"><a href="egmSpark__EventVariable.htm">egmSpark::EventVariable</a></span>&lt;egf::EntityID&gt;  m_causedByPlayer</p>
+<p class="NDLRefMemberDescription">The player who controls the avatar who caused the damage. </p>
+<p class="NDLRefMemberDetailedDescription">Not valid if not controlled by a player. </p>
+
+<a name="classegm_spark_1_1_damage_event_1a4fa4aa80626e57bba65fe263b098be8d"></a>
+<p class="NDLRefMemberFunction"><span class="NDLSystemFont"><a href="egmSpark__EventVariable.htm">egmSpark::EventVariable</a></span>&lt;efd::utf8string&gt;  m_damageType</p>
+<p class="NDLRefMemberDescription">User defined damage type. </p>
+<a name="public_static_attributes"></a>
+<p class="NDLRefHead1">Public Static Attributes</p>
+
+
+<a name="classegm_spark_1_1_damage_event_1a3a15ddb85fe7733083b1128d216c489d"></a>
+<p class="NDLRefMemberFunction">static const egf::BehaviorID  m_behaviorID</p>
+<p class="NDLRefMemberDescription">ID of the event. </p>
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_damage_event_1aaf7177ecb40480372c1f2ecca3eb4cfa"></a>
+<p class="NDLRefMemberFunction">DamageEvent()</p>
+<p class="NDLRefMemberDescription">Constructor. </p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

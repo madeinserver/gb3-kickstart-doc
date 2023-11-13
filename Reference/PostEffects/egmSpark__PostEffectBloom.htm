@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::PostEffectBloom</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::PostEffectBloom</p>
+<p class="NDLRefParentage">: public <span class="NDLSystemFont"><a href="egmSpark__PostEffect.htm">egmSpark::PostEffect</a></span></p>
+
+
+<p class="NDLRefHeaderFile">&lt;PostEffectBloom.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_post_effect_bloom.gif" alt="Inheritance graph for egmSpark::PostEffectBloom"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::PostEffectBloom</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">Bloom takes the bright pixels in this and allows their color to bleed out into the surrounding image, creating a sense of "glow". </p>
+<p class="NDLNormal">The associated shared buffers are normally created by <span class="NDLSystemFont"><a href="egmSpark__PostEffectsDefaultLibrary.htm">PostEffectsDefaultLibrary</a></span>. </p>
+<p class="NDLNormal"><span class="NDLSystemFont"><a href="egmSpark__PostEffectsDefaultLibrary.htm">PostEffectsDefaultLibrary</a></span></p>
+
+<a name="public_static_attributes"></a>
+<p class="NDLRefHead1">Public Static Attributes</p>
+
+
+<a name="classegm_spark_1_1_post_effect_bloom_1ab7ef099497084e169699f54e3eea8ee1"></a>
+<p class="NDLRefMemberFunction">static const efd::UInt32  k_bufferList[]</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_post_effect_bloom_1aab114c687fc5369c0f15c1e15a849342"></a>
+<p class="NDLRefMemberFunction">static const unsigned int  k_bufferListSize</p>
+<p class="NDLRefMemberFunction"></p>
+<a name="parameters"></a>
+<p class="NDLRefHead1">Parameters</p>
+
+
+<a name="classegm_spark_1_1_post_effect_bloom_1a0c6e357b39dfec08107a71994b2a761c"></a>
+<p class="NDLRefMemberFunction">float  m_fThreshold</p>
+<p class="NDLRefMemberDescription">Pixels brighter than this value will participate in the bloom. </p>
+<p class="NDLRefMemberDetailedDescription">Expected range: [0,1] </p>
+
+<a name="classegm_spark_1_1_post_effect_bloom_1adfca87cb3bb8f61686941b549f1e47b2"></a>
+<p class="NDLRefMemberFunction">float  m_fStrength</p>
+<p class="NDLRefMemberDescription">Controls the overall effect of the bloom. </p>
+<p class="NDLRefMemberDetailedDescription">A value of 0 will have no effect.</p>
+<p class="NDLRefMemberDetailedDescription">Expected range: [0,20], but larger values are accepted, and negative values cause a darkening instead of brightening. </p>
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_post_effect_bloom_1aaf84bbfc4811a8042ad5f8e5190e179b"></a>
+<p class="NDLRefMemberFunction">PostEffectBloom(<span class="NDLSystemFont"><a href="egmSpark__PostEffectsStep.htm">PostEffectsStep</a></span>* pStep)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_post_effect_bloom_1afff7026d6781910d7d66432826a9dbe0"></a>
+<p class="NDLRefMemberFunction">virtual bool  Render(NiTexture* pIn)</p>
+<p class="NDLRefMemberDescription">The virtual function Render must be implemented by every <span class="NDLSystemFont"><a href="egmSpark__PostEffect.htm">PostEffect</a></span>. </p>
+<p class="NDLRefMemberDetailedDescription">This function may render one or more full-screen passes. Render must contain one and only one final pass (see BeginFinalPass), and may not use an early pass (see BeginEarlyPass) after the final pass. </p>
+<p class="NDLRefMemberDetailedDescription"><span class="NDLSystemFont"><a href="egmSpark__PostEffect.htm#classegm_spark_1_1_post_effect_1a95e6a13b8ec9945b0948e71f86c458f0">BeginFinalPass()</a></span></p>
+<p class="NDLRefMemberDetailedDescription"><span class="NDLSystemFont"><a href="egmSpark__PostEffect.htm#classegm_spark_1_1_post_effect_1a1b207daf0558c9990c0df1b21a7ac3cf">BeginEarlyPass()</a></span></p>
+<p class="NDLRefMemberDetailedDescription"><span class="NDLSystemFont"><a href="egmSpark__PostEffect.htm#classegm_spark_1_1_post_effect_1affc010d22dc8e3a782a82af6fe3c0fc4">BeginAuxPass()</a></span></p>
+<p class="NDLRefMemberDetailedDescription"><span class="NDLSystemFont"><a href="egmSpark__PostEffect.htm#classegm_spark_1_1_post_effect_1a447207fa5df1ee39a2e1d4efc296300d">EndPass()</a></span></p>
+<p class="NDLRefMemberDetailedDescription"><span class="NDLSystemFont"><a href="egmSpark__PostEffect.htm#classegm_spark_1_1_post_effect_1abaa5a876671fbccab4e529fd3c9bd517">UseTexture()</a></span></p>
+<p class="NDLRefMemberDetailedDescription"><span class="NDLSystemFont"><a href="egmSpark__PostEffect.htm#classegm_spark_1_1_post_effect_1aa48a43d392662789e05d352584831b2d">UseMaterial()</a></span></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pIn</span></td>
+    <td>The fullscreen texture input to this post effect.</td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_post_effect_bloom_1a325d8a8d0fd27cd0f81484063dc94e5c"></a>
+<p class="NDLRefMemberFunction">virtual bool  Skip() const</p>
+<p class="NDLRefMemberDescription">Skip should return true if this effect pass can be skipped this frame. </p>
+<p class="NDLRefMemberDetailedDescription">This is a potential optimization; if an effect is enabled but its parameters are set in such a way that it will have no visible impact on the frame, Skip can be used to bypass its Render step automatically. The default implementation always returns false. </p>
+<p class="NDLRefMemberDetailedDescription">SetEnable() </p>
+
+<a name="classegm_spark_1_1_post_effect_bloom_1afaa99a1e8a6653c781e1bb84124fbb46"></a>
+<p class="NDLRefMemberFunction">void  SetThreshold(float threshold)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_post_effect_bloom_1aa42e8e5aef90d5bce67210cc620b46e0"></a>
+<p class="NDLRefMemberFunction">void  SetStrength(float strength)</p>
+<p class="NDLRefMemberFunction"></p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

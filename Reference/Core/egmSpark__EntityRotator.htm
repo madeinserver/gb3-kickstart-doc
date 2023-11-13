@@ -1,0 +1,785 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::EntityRotator</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::EntityRotator</p>
+<p class="NDLRefParentage">: public <span class="NDLSystemFont"><a href="egmSpark__IBuiltinModelBase.htm">egmSpark::IBuiltinModelBase</a></span></p>
+
+
+<p class="NDLRefHeaderFile">&lt;EntityRotator.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_entity_rotator.gif" alt="Inheritance graph for egmSpark::EntityRotator"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::EntityRotator</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">This builtin model implements commonly required interpolations of yaw, pitch, and roll. </p>
+<p class="NDLNormal">You may specify different rotation rates for the different angles. Currently replication has only been implemented for desired yaw. </p>
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_entity_rotator_1a722d4e72bac8fac707f7c81c3894f0bb"></a>
+<p class="NDLRefMemberFunction">EntityRotator()</p>
+<p class="NDLRefMemberDetailedDescription">Constructor </p>
+
+<a name="classegm_spark_1_1_entity_rotator_1a0344fe6833c9061b10c5f8626c16d060"></a>
+<p class="NDLRefMemberFunction">void  FaceDir2D(const efd::Point3& dir)</p>
+<p class="NDLRefMemberDescription">Causes the entity to face the given point. </p>
+<p class="NDLRefMemberDetailedDescription">This version of the function only updates the desired Yaw. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">dir</span></td>
+    <td>The point to face. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_entity_rotator_1ae4c2e6590b660f7728a8d9492027ac5b"></a>
+<p class="NDLRefMemberFunction">void  FaceDir3D(const efd::Point3& dir)</p>
+<p class="NDLRefMemberDescription">Causes the entity to face the given point. </p>
+<p class="NDLRefMemberDetailedDescription">This version of the function updates the Yaw as well as the Pitch. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">dir</span></td>
+    <td>The point to face. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_entity_rotator_1a2173f88eb6ec3078fca983b145c3b776"></a>
+<p class="NDLRefMemberFunction">void  RotateYaw(efd::Float32 direction)</p>
+<p class="NDLRefMemberDescription">Sets the current yaw angle in radians. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">direction</span></td>
+    <td>The new angle to set. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_entity_rotator_1ab7b92031b1472149a9339600da8d2f7c"></a>
+<p class="NDLRefMemberFunction">void  RotatePitch(efd::Float32 direction)</p>
+<p class="NDLRefMemberDescription">Sets the current pitch angle in radians. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">direction</span></td>
+    <td>The new angle to set. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_entity_rotator_1a634e599a1b7cb1d2f83a9334914c988b"></a>
+<p class="NDLRefMemberFunction">void  RotateRoll(efd::Float32 direction)</p>
+<p class="NDLRefMemberDescription">Sets the current roll angle in radians. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">direction</span></td>
+    <td>The new angle to set. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_entity_rotator_1a0d326fd4b220bad29200e544a5bea37c"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetYaw() const</p>
+<p class="NDLRefMemberDescription">Gets the current yaw in radians. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The current angle. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_entity_rotator_1ad080babc44423d3da02a91e00e40fe77"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetPitch() const</p>
+<p class="NDLRefMemberDescription">Gets the current pitch in radians. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The current angle. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_entity_rotator_1a87c7db5411dddd076676d8da2833a0c9"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetRoll() const</p>
+<p class="NDLRefMemberDescription">Gets the current roll in radians. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The current angle. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_entity_rotator_1a7d7cc69063d41a1f612240ecc2ca9352"></a>
+<p class="NDLRefMemberFunction">float  GetPitchPct() const</p>
+<p class="NDLRefMemberDescription">Gets the percentage of current pitch out of maximum pitch. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The current pitch percentage </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_entity_rotator_1afc232c3f6528f6e8787faf9ba747326c"></a>
+<p class="NDLRefMemberFunction">void  AddYaw(efd::Float32 delta)</p>
+<p class="NDLRefMemberDescription">Adds a radian delta to the current yaw. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">delta</span></td>
+    <td>The angle delta. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_entity_rotator_1adda32abf9d95fe939ebe6aaa4c4eea8f"></a>
+<p class="NDLRefMemberFunction">void  AddPitch(efd::Float32 delta)</p>
+<p class="NDLRefMemberDescription">Adds a radian delta to the current pitch. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">delta</span></td>
+    <td>The angle delta. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_entity_rotator_1a42a257b0973f315c02a52c52e8f473cc"></a>
+<p class="NDLRefMemberFunction">void  AddRoll(efd::Float32 delta)</p>
+<p class="NDLRefMemberDescription">Adds a radian delta to the current roll. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">delta</span></td>
+    <td>The angle delta. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_entity_rotator_1aacbb11a785ca02f2aeeba2a918876875"></a>
+<p class="NDLRefMemberFunction">void  ClearDesiredYaw()</p>
+<p class="NDLRefMemberDescription">Clears out the desired yaw, causing the entity to stop rotating towards it. </p>
+
+<a name="classegm_spark_1_1_entity_rotator_1a757244c136395d4752c1906cad495640"></a>
+<p class="NDLRefMemberFunction">void  ClearDesiredPitch()</p>
+<p class="NDLRefMemberDescription">Clears out the desired pitch, causing the entity to stop rotating towards it. </p>
+
+<a name="classegm_spark_1_1_entity_rotator_1a306269c65d7e25646a9365b4318a2e7b"></a>
+<p class="NDLRefMemberFunction">void  ClearDesiredRoll()</p>
+<p class="NDLRefMemberDescription">Clears out the desired roll, causing the entity to stop rotating towards it. </p>
+
+<a name="classegm_spark_1_1_entity_rotator_1a8c09c8cf11bdd63f3f1b1f42663d1095"></a>
+<p class="NDLRefMemberFunction">void  SetDesiredYaw(efd::Float32 yaw)</p>
+<p class="NDLRefMemberDescription">Sets the desired yaw, an angle that the entity will rotate towards. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">yaw</span></td>
+    <td>The angle in radians. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_entity_rotator_1af89418ec9ab2cd65f812946d3af20db6"></a>
+<p class="NDLRefMemberFunction">void  SetDesiredYawDegrees(const efd::Float32& yawInDegrees)</p>
+<p class="NDLRefMemberDescription">Sets the desired yaw, an angle that the entity will rotate towards. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">yawInDegrees</span></td>
+    <td>The angle in degrees. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_entity_rotator_1a55ded0bf288b48cb931a238a4be8c9eb"></a>
+<p class="NDLRefMemberFunction">void  SetDesiredPitch(efd::Float32 pitch)</p>
+<p class="NDLRefMemberDescription">Sets the desired pitch, an angle that the entity will rotate towards. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pitch</span></td>
+    <td>The angle in radians. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_entity_rotator_1a27189a3b9cfea97004930759beefea87"></a>
+<p class="NDLRefMemberFunction">void  SetDesiredRoll(efd::Float32 roll)</p>
+<p class="NDLRefMemberDescription">Sets the desired pitch, an angle that the entity will rotate towards. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">roll</span></td>
+    <td>The angle in radians. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_entity_rotator_1af96928b945431604c1dd5c95857bf3ff"></a>
+<p class="NDLRefMemberFunction">float  GetDesiredYaw() const</p>
+<p class="NDLRefMemberDescription">Returns the current desired yaw that the entity is rotating towards. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The desired yaw in radians. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_entity_rotator_1a193b1165e6e33ff4b898154d1e81a725"></a>
+<p class="NDLRefMemberFunction">float  GetDesiredYawDegrees() const</p>
+<p class="NDLRefMemberDescription">Returns the current desired yaw that the entity is rotating towards. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The desired yaw in degrees. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_entity_rotator_1ab40c47ccbd2fdddc9d203e5071ac3f95"></a>
+<p class="NDLRefMemberFunction">float  GetDesiredPitch() const</p>
+<p class="NDLRefMemberDescription">Returns the current desired pitch that the entity is rotating towards. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The desired pitch in radians. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_entity_rotator_1a530436d8d07b4d95b9f95ec2882f5ffc"></a>
+<p class="NDLRefMemberFunction">float  GetDesiredRoll() const</p>
+<p class="NDLRefMemberDescription">Returns the current desired roll that the entity is rotating towards. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The desired roll in radians. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_entity_rotator_1a4d7ac74f22f0824144740974eed64a74"></a>
+<p class="NDLRefMemberFunction">float  GetYawRate() const</p>
+<p class="NDLRefMemberDescription">Returns the current rate in change in yaw as it transitions toward the desired yaw. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The rate of change in radians. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_entity_rotator_1a1ab254718bfef52e0296e6704d09cec1"></a>
+<p class="NDLRefMemberFunction">float  GetPitchRate() const</p>
+<p class="NDLRefMemberDescription">Returns the current rate in change in pitch as it transitions toward the desired pitch. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The rate of change in radians. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_entity_rotator_1a993c0749825e9dffaf7368d5c20825f8"></a>
+<p class="NDLRefMemberFunction">float  GetRollRate() const</p>
+<p class="NDLRefMemberDescription">Returns the current rate in change in roll as it transitions toward the desired roll. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The rate of change in radians. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_entity_rotator_1a4e8f94f3434353e80f3f8acff2eafcd8"></a>
+<p class="NDLRefMemberFunction">void  SetYawRate(efd::Float32 rate)</p>
+<p class="NDLRefMemberDescription">Sets the rate in change of yaw as it transitions toward the desired yaw. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">rate</span></td>
+    <td>The rate of change in radians. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_entity_rotator_1af5637a57384b7fa5a171a10f8234dc74"></a>
+<p class="NDLRefMemberFunction">void  SetPitchRate(efd::Float32 rate)</p>
+<p class="NDLRefMemberDescription">Sets the rate in change of pitch as it transitions toward the desired pitch. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">rate</span></td>
+    <td>The rate of change in radians. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_entity_rotator_1a126110e403c03834d05c6339ff71d029"></a>
+<p class="NDLRefMemberFunction">void  SetRollRate(efd::Float32 rate)</p>
+<p class="NDLRefMemberDescription">Sets the rate in change of roll as it transitions toward the desired roll. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">rate</span></td>
+    <td>The rate of change in radians. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_entity_rotator_1ac47cec28ce34e0a98ceff8cc6e9be013"></a>
+<p class="NDLRefMemberFunction">void  ResetYaw(const efd::Matrix3& rotation)</p>
+<p class="NDLRefMemberDescription">Sets the current yaw from a 3x3 rotation matrix. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">rotation</span></td>
+    <td>The rotation matrix. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_entity_rotator_1a22e3b14e0f5ea3228a71a4a34e967288"></a>
+<p class="NDLRefMemberFunction">virtual efd::AsyncResult  PostUpdate(efd::TimeType timeDelta)</p>
+<p class="NDLRefMemberDescription">The PostUpdate method is called by <span class="NDLSystemFont"><a href="egmSpark__BuiltinUpdateService.htm#classegm_spark_1_1_builtin_update_service_1a7c4275972f75aa847ab6d9d5755d82f8">BuiltinUpdateService::OnTick</a></span> on every registered built-in model. </p>
+<p class="NDLRefMemberDetailedDescription">This method is called after all Update methods have been called. Models that do not require post updating can return AsyncResult_Complete to prevent further calls. The default implementation simply returns AsyncResult_Complete.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">timeDelta</span></td>
+    <td>The amount of game time that passed since the previous tick. This is not always the time passed since the last call to Update as updating can be paused. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>Return AsyncResult_Pending to be called again on the next tick or return AsyncResult_Complete if further calls are not needed. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_entity_rotator_1a5a33ff97370772f045442ac9933d50f5"></a>
+<p class="NDLRefMemberFunction">virtual void  OnAssetsLoaded()</p>
+<p class="NDLRefMemberDescription">Called once the OnAssetsLoaded entity lifecycle completes. </p>
+
+<a name="classegm_spark_1_1_entity_rotator_1a44e7d54707f6e636e4ec84d9fcdecbe5"></a>
+<p class="NDLRefMemberFunction">virtual void  OnReplicaAssetsLoaded()</p>
+<p class="NDLRefMemberDescription">Called once the OnReplicaAssetsLoaded entity lifecycle completes for a replicated entity. </p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

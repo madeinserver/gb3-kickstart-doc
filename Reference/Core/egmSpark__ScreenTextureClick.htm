@@ -1,0 +1,235 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::ScreenTextureClick</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::ScreenTextureClick</p>
+<p class="NDLRefParentage">: public NiViewRenderClick</p>
+
+
+<p class="NDLRefHeaderFile">&lt;ScreenTextureClick.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_screen_texture_click.gif" alt="Inheritance graph for egmSpark::ScreenTextureClick"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::ScreenTextureClick</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal"><span class="NDLSystemFont">ScreenTextureClick</span> is a wrapper class for render clicks that are drawn in screen space, like HUDs and Splash Screens. </p>
+<p class="NDLNormal">It uses the PreRender callback to update all elements before being rendered. It also adds the ability to find texture assets using the AssetLocator.</p>
+<p class="NDLNormal">Internally it contains a single render view with multiple 2D mesh elements. </p>
+
+<a name="public_types"></a>
+<p class="NDLRefHead1">Public Types</p>
+<a name="classegm_spark_1_1_screen_texture_click_1a52660745ae47d42a64929ecaa841c471"></a>
+<p class=NDLRefHead2>egmSpark::ScreenTextureClick::SizeType</p>
+
+
+<p class="NDLRefMemberDescription">Enum specifying how to interpret the texture size. </p>
+
+
+<!--(Table)=========================================================-->
+<div class="ReferenceTable">
+<table>
+  <thead>
+	<tr>
+        <th>Name</th>
+	    <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">szScreen</span></td>
+    <td>Scale texture to the screen size. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">szTexture</span></td>
+    <td>Keep the original texture size. </td>
+</tr>
+
+  </tbody>
+</table>
+</div>
+
+<a name="classegm_spark_1_1_screen_texture_click_1ae4cad13aba45d3ea642c42a4a92b01ef"></a>
+<p class=NDLRefHead2>egmSpark::ScreenTextureClick::PositionType</p>
+
+
+<p class="NDLRefMemberDescription">Enum specifying how to position the texture. </p>
+
+
+<!--(Table)=========================================================-->
+<div class="ReferenceTable">
+<table>
+  <thead>
+	<tr>
+        <th>Name</th>
+	    <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">posCenter</span></td>
+    <td>Centered, used for both vertical and horizontal. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">posLeft</span></td>
+    <td>X position relative to left edge of screen. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">posRight</span></td>
+    <td>X position relative to right edge of screen. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">posTop</span></td>
+    <td>Y position relative to top of screen. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">posBottom</span></td>
+    <td>Y position relative to bottom of screen. </td>
+</tr>
+
+  </tbody>
+</table>
+</div>
+
+
+<a name="public_static_attributes"></a>
+<p class="NDLRefHead1">Public Static Attributes</p>
+
+
+<a name="classegm_spark_1_1_screen_texture_click_1a86dac612b2ebc1f79cf00e31df9d93ed"></a>
+<p class="NDLRefMemberFunction">static const efd::Point2  UseTextureSize</p>
+<p class="NDLRefMemberDescription">A constant which can be used to construct an <span class="NDLSystemFont"><a href="egmSpark__ScreenTextureClick__Element.htm">Element</a></span> which uses the source texture size as its size on screen. </p>
+
+<a name="classegm_spark_1_1_screen_texture_click_1a5545427299ce03ddb6a0a0df04367e9e"></a>
+<p class="NDLRefMemberFunction">static const efd::Point2  UseScreenSize</p>
+<p class="NDLRefMemberDescription">A constant which can be used to construct an <span class="NDLSystemFont"><a href="egmSpark__ScreenTextureClick__Element.htm">Element</a></span> which uses the entire screen size as its size on screen. </p>
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_screen_texture_click_1a3fc79b42318b06a26860e420484f468f"></a>
+<p class="NDLRefMemberFunction">ScreenTextureClick()</p>
+<p class="NDLRefMemberDescription">Constructor. </p>
+
+<a name="classegm_spark_1_1_screen_texture_click_1a1977dd5ef0a46f946904869d75469d7f"></a>
+<p class="NDLRefMemberFunction">virtual ~ScreenTextureClick()</p>
+<p class="NDLRefMemberDescription">Destructor. </p>
+
+<a name="classegm_spark_1_1_screen_texture_click_1a4a824377cde22360592ba75efebbc9ed"></a>
+<p class="NDLRefMemberFunction">virtual void  AddTexture(<br/><span class="NDLSystemFont"><a href="egmSpark__ScreenTextureClick__Element.htm">Element</a></span>* pElement, <br/>const efd::utf8string& keyName = efd::utf8string::NullString())</p>
+<p class="NDLRefMemberDescription">Add a texture to this render click. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pElement</span></td>
+    <td>Pointer to <span class="NDLSystemFont"><a href="egmSpark__ScreenTextureClick__Element.htm">Element</a></span> to add. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">keyName</span></td>
+    <td>Application defined string to use to find this element. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_screen_texture_click_1ab3b215ef274f9d4ed34a4f09f36574fd"></a>
+<p class="NDLRefMemberFunction">void  RemoveTexture(efd::utf8string& keyName)</p>
+<p class="NDLRefMemberDescription">Removes a previously added texture by key name. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">keyName</span></td>
+    <td>The key name of the texture to remove. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_screen_texture_click_1a75da9cd0eb46d0f16844e9f66909bd8a"></a>
+<p class="NDLRefMemberFunction">void  RemoveAllTextures()</p>
+<p class="NDLRefMemberDescription">Removes all the textures that were previously added. </p>
+
+<a name="classegm_spark_1_1_screen_texture_click_1a4c624ec3498d045e376160db50c6b37c"></a>
+<p class="NDLRefMemberFunction">void  EnablePreRenderCallback(efd::Bool enable)</p>
+<p class="NDLRefMemberDescription">Enable/disable prerendering callback. </p>
+<p class="NDLRefMemberDetailedDescription">Override PreRenderCallback to handle.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">enable</span></td>
+    <td>If true, enables callbacks, false disables. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

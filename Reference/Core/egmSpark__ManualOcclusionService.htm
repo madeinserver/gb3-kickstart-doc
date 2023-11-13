@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::ManualOcclusionService</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::ManualOcclusionService</p>
+<p class="NDLRefParentage">: public ISystemService</p>
+
+
+<p class="NDLRefHeaderFile">&lt;ManualOcclusionService.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_manual_occlusion_service.gif" alt="Inheritance graph for egmSpark::ManualOcclusionService"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::ManualOcclusionService</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">Helps improve rendering performance by making regions of the world non-visible. </p>
+<p class="NDLNormal">The service listens for all entities that are created, and checks them for the presence of the 'OcclusionRegion' property. If this property is present and set to a non-zero value, then it adds the entity to a bin of entities associated with that region. When the appropriate methods are called to show or hide a region, all of the entities in that region's bin have the value of their 'Visibile' property change.</p>
+<p class="NDLNormal">The service provides built-ins to control when to hide and show regions. To use the service, add the 'OcclusionRegion' property to some entities, then create a trigger that calls the built-in. A designer is reponsible for assigning the appropriate region values to entities and setting up triggers to show and hide the appropriate regions.</p>
+<p class="NDLNormal">The service assumes that the OcclusionRegion property will not be changed during an entity's lifetime. It is intended primarily for use with static objects that are kept in memory. Removal of entities that have been added to its maps are somewhat inefficient so instead of allowing entity messages to take care of it when block files are unloaded, it is recommended that the service's maps be manually cleared first. </p>
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_manual_occlusion_service_1a6a2d443d7a111aa1057c28a4ac45c2d3"></a>
+<p class="NDLRefMemberFunction">ManualOcclusionService()</p>
+<p class="NDLRefMemberDetailedDescription">Constructor </p>
+
+<a name="classegm_spark_1_1_manual_occlusion_service_1aa9107b20f836ec614ff4bc70bca04e10"></a>
+<p class="NDLRefMemberFunction">efd::Bool  HideRegion(efd::SInt32 region)</p>
+<p class="NDLRefMemberDescription">Makes all entities marked for a particular region non-visible. </p>
+<p class="NDLRefMemberDetailedDescription">Each entity that contains the property 'OcclusionRegion' with a value set to the value of the argument will have their 'Visible' property set to false.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">region</span></td>
+    <td>identifier integer of the region to hide </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if region was previously visible and contained entities </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_manual_occlusion_service_1a9e52f4300ec161cfe1df26c3123956cc"></a>
+<p class="NDLRefMemberFunction">efd::Bool  ShowRegion(efd::SInt32 region)</p>
+<p class="NDLRefMemberDescription">Makes all entities marked for a particular region visible. </p>
+<p class="NDLRefMemberDetailedDescription">Each entity that contains the property 'OcclusionRegion' with a value set to the value of the argument will have their 'Visible' property set to true.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">region</span></td>
+    <td>identifier integer of the region to show </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>true if region was previously hidden and contained entities </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_manual_occlusion_service_1a14d08a27e7655dab36ceaf9cb23622eb"></a>
+<p class="NDLRefMemberFunction">void  ClearMaps()</p>
+<p class="NDLRefMemberDescription">Removes all entities from its mapping to avoid expensive entity removal messages. </p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

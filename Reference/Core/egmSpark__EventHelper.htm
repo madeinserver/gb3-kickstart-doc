@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::EventHelper</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::EventHelper</p>
+
+
+<p class="NDLRefHeaderFile">&lt;EventHelper.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_event_helper.gif" alt="Inheritance graph for egmSpark::EventHelper"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::EventHelper</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">The main purpose of the <span class="NDLSystemFont">EventHelper</span> class is to enable the creation of a centralized place where events and their parameters can be declared. </p>
+<p class="NDLNormal">This helper class enables Event parameters to automatically be streamed in/out of the DataStream when being sent& received. </p>
+
+<a name="public_attributes"></a>
+<p class="NDLRefHead1">Public Attributes</p>
+
+
+<a name="classegm_spark_1_1_event_helper_1a5e4cf2877bece992445b619b65d1e474"></a>
+<p class="NDLRefMemberFunction">egf::BehaviorID  m_behaviorId</p>
+<p class="NDLRefMemberDescription">The ID of the behavior for the event. </p>
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_event_helper_1a02ad99d3120fcc9dbc3911ff71f98ca1"></a>
+<p class="NDLRefMemberFunction">EventHelper(egf::BehaviorID behaviorId)</p>
+<p class="NDLRefMemberDescription">Constructor. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">behaviorId</span></td>
+    <td>The behavior ID for the event. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_event_helper_1a9bb7f6909771b791d11051c1b5e5964c"></a>
+<p class="NDLRefMemberFunction">void  AddVariable(<span class="NDLSystemFont"><a href="egmSpark__IBaseEventVariable.htm">IBaseEventVariable</a></span>* pVariable)</p>
+<p class="NDLRefMemberDescription">Adds a variable to the event. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pVariable</span></td>
+    <td>The variable to add. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_event_helper_1ae2cdb0b5225bd5630a3d5ab7ff96a2af"></a>
+<p class="NDLRefMemberFunction">void  Read(efd::DataStream* pStream)</p>
+<p class="NDLRefMemberDescription">Reads all the variables for the event from a data stream. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pStream</span></td>
+    <td>The data stream. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_event_helper_1aeb9c9d996154af3af59fd5104eeaa36f"></a>
+<p class="NDLRefMemberFunction">void  Write(efd::DataStream* pStream)</p>
+<p class="NDLRefMemberDescription">Writes all the variables for the event to a data stream. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pStream</span></td>
+    <td>The data stream. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_event_helper_1aafb046daf000773b0284032ef4ab647f"></a>
+<p class="NDLRefMemberFunction">efd::UInt32  GetParamCount()</p>
+<p class="NDLRefMemberDescription">Gets a count of the number of variables that have been added to the event. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The number of parameters. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

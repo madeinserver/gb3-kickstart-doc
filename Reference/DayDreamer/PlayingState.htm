@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>PlayingState</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">PlayingState</p>
+<p class="NDLRefParentage">: public GameState</p>
+
+
+<p class="NDLRefHeaderFile">&lt;PlayingState.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/class_playing_state.gif" alt="Inheritance graph for PlayingState"/>
+  <p class="FigureCaption">Inheritance graph for PlayingState</p>
+</div>
+</p>
+
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="class_playing_state_1a8887f9249836d64fae836f22f71bbdad"></a>
+<p class="NDLRefMemberFunction">PlayingState(efd::ServiceManager* pServiceManager)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_playing_state_1ab084f92dbfcc6f2d2253cdafef4d06be"></a>
+<p class="NDLRefMemberFunction">bool  Begin()</p>
+<p class="NDLRefMemberDescription">Hooks up the input commands. </p>
+
+<a name="class_playing_state_1aadacc5df82b48c0c7e11d3bac2313eb4"></a>
+<p class="NDLRefMemberFunction">bool  Suspend()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_playing_state_1a59f60a6575cead09ba85c5319f7a4838"></a>
+<p class="NDLRefMemberFunction">bool  Resume()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_playing_state_1a755d796d1147a80a1e976f5a7120137a"></a>
+<p class="NDLRefMemberFunction">void  OnTick(efd::TimeType time)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_playing_state_1a4bb9706768b63587763bb8e694c17541"></a>
+<p class="NDLRefMemberFunction">void  End()</p>
+<p class="NDLRefMemberDescription">Disconnects the input commands. </p>
+
+<a name="class_playing_state_1a00292a5caa86c8172786372abbb7e3c9"></a>
+<p class="NDLRefMemberFunction">virtual bool  Load()</p>
+<p class="NDLRefMemberDescription">Loads the models that are instantiated in the Play State. </p>
+<p class="NDLRefMemberDetailedDescription">Only models that are not in the block file need to be loaded. </p>
+
+<a name="class_playing_state_1a5e836efce9c0a976cee7b315dba29cd4"></a>
+<p class="NDLRefMemberFunction">void  SetupInputListeners()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_playing_state_1ac37f001ebaee6d5c27c6c8076581aa62"></a>
+<p class="NDLRefMemberFunction">void  HandleInputMessage(const ecrInput::InputActionMessage* pMsg)</p>
+<p class="NDLRefMemberDescription">Handle input messages. </p>
+
+<a name="class_playing_state_1aebe38288dbc8829ea2ca40496638531f"></a>
+<p class="NDLRefMemberFunction">void  SetHudAvatarID(egf::EntityID avatarID)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_playing_state_1a8d70f7b3a67e60f064dc67b20ce4f26c"></a>
+<p class="NDLRefMemberFunction">egf::EntityID  GetHudAvatar()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_playing_state_1ae45207cd36e0ed977ebf2a1f22a4a46b"></a>
+<p class="NDLRefMemberFunction">virtual void  ShowDebugMenu()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_playing_state_1ab492cff31f809346905263ba07f8b942"></a>
+<p class="NDLRefMemberFunction">virtual <span class="NDLSystemFont"><a href="GameDebugMenu.htm">GameDebugMenu</a></span>*  GetDebugMenu()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_playing_state_1a49c5006702ce312ff022485eea753711"></a>
+<p class="NDLRefMemberFunction">void  DisableDebugHelperControls()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_playing_state_1a8dfc38af9e660aa3cdf65548b0fa9bcd"></a>
+<p class="NDLRefMemberFunction">void  EnableDebugHelperControls()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_playing_state_1a9cab2a0de6b584f6580dc1c8c104030f"></a>
+<p class="NDLRefMemberFunction">void  DisableLocalAvatarControls()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_playing_state_1aa78fef93f8934ad5b5e6e5697816b836"></a>
+<p class="NDLRefMemberFunction">void  EnableLocalAvatarControls()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_playing_state_1a69e4499a320c4b03332e6cbccd3ab83d"></a>
+<p class="NDLRefMemberFunction">void  DisableLocalCameraControls()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_playing_state_1a811e35f8d1aed6f193aee062cc38db5d"></a>
+<p class="NDLRefMemberFunction">void  EnableLocalCameraControls()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_playing_state_1a6aaba5a4f693e19aa02349c3f939e62f"></a>
+<p class="NDLRefMemberFunction">void  EnableHUD(efd::Bool enable)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_playing_state_1a8aa52e0e5648398e2d800c17c189b91f"></a>
+<p class="NDLRefMemberFunction">void  SetCameraInvertX(efd::Bool bOn)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_playing_state_1ada15ddf514a87c56c6eb2ad7efbb14c1"></a>
+<p class="NDLRefMemberFunction">void  SetCameraInvertY(efd::Bool bOn)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="class_playing_state_1ae9292b61f8cad1470e4703718f7e7b81"></a>
+<p class="NDLRefMemberFunction">void  ToggleFrameRate()</p>
+<p class="NDLRefMemberFunction"></p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

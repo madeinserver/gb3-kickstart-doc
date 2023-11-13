@@ -1,0 +1,212 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>SparkState Namespace</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">SparkState Namespace</p>
+
+
+
+
+
+<a name="private_methods"></a>
+<p class="NDLRefHead1">Private Methods</p>
+
+
+<a name="namespace_spark_state_1a741e057422e7690ddff759391ebf03b6"></a>
+<p class="NDLRefMemberFunction">efd::Bool  CallState(const efd::utf8string& newState)</p>
+<p class="NDLRefMemberDescription">Sets the game state machine's current state by name. </p>
+<p class="NDLRefMemberDetailedDescription">Calls a new state, clearing out the stack of states. All previous states on the stack will end. </p>
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">newState</span></td>
+    <td>the name of the state to switch to.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>whether the given state argument was recognized as a valid state and the transition was made successfully. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_state_1a814d3d3e79801082c18f69b5a143c23a"></a>
+<p class="NDLRefMemberFunction">efd::Bool  PushState(const efd::utf8string& newState)</p>
+<p class="NDLRefMemberDescription">Sets the game state machine's current state by name. </p>
+<p class="NDLRefMemberDetailedDescription">Pushes the new state onto the state stack, suspending the previous state. </p>
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">newState</span></td>
+    <td>the name of the state to switch to.</td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>whether the given state argument was recognized as a valid state and the transition was made successfully. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_state_1ac552c55536cefffb7330c0c9c5ae98ea"></a>
+<p class="NDLRefMemberFunction">efd::Bool  PopState()</p>
+<p class="NDLRefMemberDescription">Sets the game state machine's current state by name. </p>
+<p class="NDLRefMemberDetailedDescription">Pops the current state off of the state stack, resuming the previous state. </p>
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>whether the given state argument was recognized as a valid state and the transition was made successfully. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_state_1ad1eacf3cd2767004f607f6b31f60a5f7"></a>
+<p class="NDLRefMemberFunction">efd::utf8string  CurrentState()</p>
+<p class="NDLRefMemberDescription">Returns the current game state. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_state_1a9ded5a60970b4020611713ef50c3e56b"></a>
+<p class="NDLRefMemberFunction">void  PauseScheduler(efd::Bool pause)</p>
+<p class="NDLRefMemberDescription">Pause or unpause the scheduler. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pause</span></td>
+    <td>The pause. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="namespace_spark_state_1ad5fce0cd0463a1d9ad5826393e762dc5"></a>
+<p class="NDLRefMemberFunction">void  EnableRender(efd::Bool enable)</p>
+<p class="NDLRefMemberDescription">Enable or disable the main render surface. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Script Binding.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">enable</span></td>
+    <td>The enable. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

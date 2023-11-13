@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::IBehaviorInvoker</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::IBehaviorInvoker</p>
+<p class="NDLRefParentage">: public MemObject</p>
+
+
+<p class="NDLRefHeaderFile">&lt;SparkBuiltinModelHelper.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_i_behavior_invoker.gif" alt="Inheritance graph for egmSpark::IBehaviorInvoker"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::IBehaviorInvoker</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">Base class for wrapping all behavior calls. </p>
+<p class="NDLNormal">It allows you to use macros to tie behavior IDs to C++ class member methods. </p>
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_i_behavior_invoker_1a3725c18082cc74555876e2c449f9248a"></a>
+<p class="NDLRefMemberFunction">IBehaviorInvoker()</p>
+<p class="NDLRefMemberDescription">Constructor. </p>
+
+<a name="classegm_spark_1_1_i_behavior_invoker_1af0aeafa9f65ac046e296e0f0eae6595d"></a>
+<p class="NDLRefMemberFunction">virtual ~IBehaviorInvoker()</p>
+<p class="NDLRefMemberDescription">Destructor. </p>
+
+<a name="classegm_spark_1_1_i_behavior_invoker_1a1d4b9e33754ae6eaecd4b2da004366c0"></a>
+<p class="NDLRefMemberFunction">virtual void  Invoke(<br/><span class="NDLSystemFont"><a href="egmSpark__IBuiltinModelBase.htm">IBuiltinModelBase</a></span>* pThis, <br/>efd::DataStream* i_pArgumentStream) = 0</p>
+<p class="NDLRefMemberDescription">Invoke a behavior call. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pThis</span></td>
+    <td>The built-in model that is invoking this behavior. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">i_pArgumentStream</span></td>
+    <td>Arguments for the call stored in a stream. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

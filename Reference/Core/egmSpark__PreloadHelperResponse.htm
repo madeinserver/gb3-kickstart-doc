@@ -1,0 +1,199 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::PreloadHelperResponse</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::PreloadHelperResponse</p>
+<p class="NDLRefParentage">: public IMessage</p>
+
+
+<p class="NDLRefHeaderFile">&lt;PreloadHelperResponse.h&gt;</p>
+
+<p class="NDLRefHeaderFile" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_preload_helper_response.gif" alt="Inheritance graph for egmSpark::PreloadHelperResponse"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::PreloadHelperResponse</p>
+</div>
+</p>
+
+
+<a name="construction_and_destruction"></a>
+<p class="NDLRefHead1">Construction and Destruction</p>
+
+
+<a name="classegm_spark_1_1_preload_helper_response_1acc1628279b954888942e896e3b0cffd8"></a>
+<p class="NDLRefMemberFunction">PreloadHelperResponse()</p>
+<p class="NDLRefMemberDescription">Default constructor. </p>
+
+<a name="classegm_spark_1_1_preload_helper_response_1ae2b228f9baf9020604d72d5c6e722cdb"></a>
+<p class="NDLRefMemberFunction">PreloadHelperResponse(<span class="NDLSystemFont"><a href="../Namespaces/egmSpark.htm#namespaceegm_spark_1a4e51dc997a7eb7cd350c18e5d9db6ea6">PreloadGroupPtr</a></span> spPreloadGroup)</p>
+<p class="NDLRefMemberDescription">Constructor. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">spPreloadGroup</span></td>
+    <td>The preload group that contains the list of items to preload. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_preload_helper_response_1a7d3b0d8b6be5bcdf090355affe86136d"></a>
+<p class="NDLRefMemberFunction">virtual ~PreloadHelperResponse()</p>
+<p class="NDLRefMemberDescription">Destructor. </p>
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_preload_helper_response_1a36f4ec1d801b888eded8543a7bf9e9cf"></a>
+<p class="NDLRefMemberFunction">efd::UInt32  GetItemCount() const</p>
+<p class="NDLRefMemberDescription">Get the number of load items represented by this message. </p>
+<p class="NDLRefMemberDetailedDescription">This number will be at least one (for the flat model requested), but may be more if there was a cascade of assets loaded on behalf of that flat model.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>Number of items preloaded. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_preload_helper_response_1aaac4c58e8578bb0875afc553067811d8"></a>
+<p class="NDLRefMemberFunction">const efd::utf8string&  GetURN(efd::UInt32 index = 0) const</p>
+<p class="NDLRefMemberDescription">Get the response URN provided by the requester or cascaded from earlier loads. </p>
+<p class="NDLRefMemberDetailedDescription">Requester's URN is at index zero.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">index</span></td>
+    <td>The item index. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>utf8string URN. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_preload_helper_response_1ade4c063fe51f1d1e0510adb2e9039c80"></a>
+<p class="NDLRefMemberFunction">const efd::Category&  GetResponseCategory() const</p>
+<p class="NDLRefMemberDescription">Get the response Category provided by the requester. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>Category response category. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_preload_helper_response_1aa3ebafc2b2ee4adf7ff56f654023706d"></a>
+<p class="NDLRefMemberFunction">efd::AssetLoadResponse::AssetLoadResult  GetResult(efd::UInt32 index = 0) const</p>
+<p class="NDLRefMemberDescription">Get the AssetLoadResult for this Response for the specified item index. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">index</span></td>
+    <td>The item index. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>AssetLoadResult the result of the load. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

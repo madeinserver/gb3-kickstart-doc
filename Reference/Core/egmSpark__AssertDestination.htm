@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::AssertDestination</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::AssertDestination</p>
+<p class="NDLRefParentage">: public ILogDestination</p>
+
+
+<p class="NDLRefHeaderFile">&lt;AssertDestination.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_assert_destination.gif" alt="Inheritance graph for egmSpark::AssertDestination"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::AssertDestination</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">A log destination that will display an assert dialog when anything is logged to it. </p>
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_assert_destination_1a1d07de3bfb6f48754e951f258220a190"></a>
+<p class="NDLRefMemberFunction">AssertDestination(const efd::utf8string& name)</p>
+<p class="NDLRefMemberDescription">Constructor. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">name</span></td>
+    <td>The unique name of this log destination. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_assert_destination_1a54a3ba2c3375e530f396fdd2cfc19cb3"></a>
+<p class="NDLRefMemberFunction">void  ResetIgnoredAsserts()</p>
+<p class="NDLRefMemberDescription">Reset the list of asserts to ignore. </p>
+<p class="NDLRefMemberDetailedDescription">If the user selects "ignore all" it will disable all further assert dialogs for future error messages with the same file name pointer and line number. .</p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">If file name and line number tracking is not enabled then all asserts will be treated as coming from the same source and ignoring one will ignore all. </p></p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

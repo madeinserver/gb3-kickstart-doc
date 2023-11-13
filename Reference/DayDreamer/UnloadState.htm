@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>UnloadState</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">UnloadState</p>
+<p class="NDLRefParentage">: public LoadingState</p>
+
+
+<p class="NDLRefHeaderFile">&lt;UnloadState.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/class_unload_state.gif" alt="Inheritance graph for UnloadState"/>
+  <p class="FigureCaption">Inheritance graph for UnloadState</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">A state for unloading any blocks loaded by a LoadingState. </p>
+<p class="NDLNormal">When <span class="NDLSystemFont"><a href="LoadingStateEx.htm">LoadingStateEx</a></span> is created it adds an unloading state. </p>
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="class_unload_state_1a1263223fae66fe4d2ff985a3b82647ef"></a>
+<p class="NDLRefMemberFunction">UnloadState(efd::ServiceManager* pServiceManager)</p>
+<p class="NDLRefMemberDetailedDescription">Constructor </p>
+
+<a name="class_unload_state_1a0cb23ace799fb136ba4d30721e995b10"></a>
+<p class="NDLRefMemberFunction">void  SetWaitForUnload(bool shouldWait)</p>
+<p class="NDLRefMemberDescription">Specify whether this state should wait for the block unloading to complete before exiting the state. </p>
+<p class="NDLRefMemberDetailedDescription">If not waiting, the state will pop itself as soon as all block unloads have been requested. </p>
+
+<a name="class_unload_state_1a4a7cd9aa3016cee38582f35a705c6cc8"></a>
+<p class="NDLRefMemberFunction">void  SetQuitWhenFinished(bool shouldQuit)</p>
+<p class="NDLRefMemberDescription">If WaitForUnload is set then when unloading is complete we check the QuitWhenFinished setting to determine if we should exit the process. </p>
+
+<a name="class_unload_state_1a431968eed738b31dc90138d143b19bde"></a>
+<p class="NDLRefMemberFunction">void  SetBlockFiles(efd::list&lt;efd::AssetID&gt;& blockFiles)</p>
+<p class="NDLRefMemberDescription">Set the block files used by this state. </p>
+<p class="NDLRefMemberDetailedDescription">These blocks will all be unloaded when this state is activated </p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

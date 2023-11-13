@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::BaseMovementInputHandler</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::BaseMovementInputHandler</p>
+<p class="NDLRefParentage">: public <span class="NDLSystemFont"><a href="egmSpark__IBuiltinModelBase.htm">egmSpark::IBuiltinModelBase</a></span></p>
+
+
+<p class="NDLRefHeaderFile">&lt;BaseMovementInputHandler.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_base_movement_input_handler.gif" alt="Inheritance graph for egmSpark::BaseMovementInputHandler"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::BaseMovementInputHandler</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">A built-in model that takes user input and updates the locomotion controller. </p>
+<p class="NDLNormal">In addition, events are sent to the entity to indicate when movement begins and ends.</p>
+<p class="NDLNormal">Supports basic movement including running, walking, stopping, and strafing in all directions. </p>
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_base_movement_input_handler_1a63610b8bd5fe20da8b75d29ef24e05ac"></a>
+<p class="NDLRefMemberFunction">BaseMovementInputHandler()</p>
+<p class="NDLRefMemberDetailedDescription">Constructor </p>
+
+<a name="classegm_spark_1_1_base_movement_input_handler_1a494cc5b1a202da40edc79e21420ac08a"></a>
+<p class="NDLRefMemberFunction">virtual void  OnMoveLeft(efd::DataStream* pStream)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_base_movement_input_handler_1a32dd7d77726ec7566d0f6768560d0e9b"></a>
+<p class="NDLRefMemberFunction">virtual void  OnMoveRight(efd::DataStream* pStream)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_base_movement_input_handler_1aaba1a5471950e4b511b73d682b53ec52"></a>
+<p class="NDLRefMemberFunction">virtual void  OnMoveForward(efd::DataStream* pStream)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_base_movement_input_handler_1ab3c55e8ed57a3701ba51a7942433534c"></a>
+<p class="NDLRefMemberFunction">virtual void  OnMoveBack(efd::DataStream* pStream)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_base_movement_input_handler_1a74a88cfc45b3d8485aa0e5f620f5758c"></a>
+<p class="NDLRefMemberFunction">virtual void  OnMoveStick(efd::DataStream* pStream)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_base_movement_input_handler_1aaf1031029745328ffba8e71d44c8a706"></a>
+<p class="NDLRefMemberFunction">virtual void  OnCameraStick(efd::DataStream* pStream)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_base_movement_input_handler_1aac5a4d6b61d5d3ccdfef029cd3744f98"></a>
+<p class="NDLRefMemberFunction">virtual void  SetEnabled(efd::Bool enabled)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_base_movement_input_handler_1a618da124ca5edd0043c7036aa030f677"></a>
+<p class="NDLRefMemberFunction">virtual efd::Bool  GetEnabled()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_base_movement_input_handler_1a8ada0c3f33938685d79bcd4d12879df2"></a>
+<p class="NDLRefMemberFunction">virtual void  OnEnableInput(efd::DataStream* pStream)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_base_movement_input_handler_1aa1f4d424778de00fdd6e9e070f4cfb8b"></a>
+<p class="NDLRefMemberFunction">virtual void  OnDisableInput(efd::DataStream* pStream)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_base_movement_input_handler_1a4ca7fb079689d791b63895afee2a4361"></a>
+<p class="NDLRefMemberFunction">virtual efd::AsyncResult  Update(efd::TimeType timeDelta)</p>
+<p class="NDLRefMemberDescription">The Update method is called by <span class="NDLSystemFont"><a href="egmSpark__BuiltinUpdateService.htm#classegm_spark_1_1_builtin_update_service_1a7c4275972f75aa847ab6d9d5755d82f8">BuiltinUpdateService::OnTick</a></span> on every registered built-in model. </p>
+<p class="NDLRefMemberDetailedDescription">Models that do not require updating can return AsyncResult_Complete to prevent further calls. The default implementation simply returns AsyncResult_Complete.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">timeDelta</span></td>
+    <td>The amount of game time that passed since the previous tick. This is not always the time passed since the last call to Update as updating can be paused. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>Return AsyncResult_Pending to be called again on the next tick or return AsyncResult_Complete if further calls are not needed. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

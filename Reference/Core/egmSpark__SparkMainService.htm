@@ -1,0 +1,645 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::SparkMainService</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::SparkMainService</p>
+<p class="NDLRefParentage">: public ISystemService</p>
+
+
+<p class="NDLRefHeaderFile">&lt;SparkMainService.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_spark_main_service.gif" alt="Inheritance graph for egmSpark::SparkMainService"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::SparkMainService</p>
+</div>
+</p>
+
+
+<a name="public_types"></a>
+<p class="NDLRefHead1">Public Types</p>
+<a name="classegm_spark_1_1_spark_main_service_1a965faa775c7f0669ae013734f5d68b08"></a>
+<p class=NDLRefHead2>egmSpark::SparkMainService::eGameType</p>
+
+
+
+<p class="NDLRefMemberDetailedDescription">Game type mode that the Spark library is currently set as. </p>
+
+<!--(Table)=========================================================-->
+<div class="ReferenceTable">
+<table>
+  <thead>
+	<tr>
+        <th>Name</th>
+	    <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">GT_SINGLE_PLAYER</span></td>
+    <td>Game is operating in single player mode. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">GT_MULTIPLAYER_HOST</span></td>
+    <td>Game is operating as a multiplayer host. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">GT_MULTIPLAYER_CLIENT</span></td>
+    <td>Game is operating as a multiplayer client. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">GT_UNKNOWN</span></td>
+    <td>Game mode has not yet been set. </td>
+</tr>
+
+  </tbody>
+</table>
+</div>
+
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_spark_main_service_1aba533affb2cec94646f887d799cb745f"></a>
+<p class="NDLRefMemberFunction">SparkMainService(<br/>int argC, <br/>char ** pArgV)</p>
+<p class="NDLRefMemberDescription">Constructor. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">argC</span></td>
+    <td>The number of command line arguments that were passed in. </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pArgV</span></td>
+    <td>An array of pointers to character strings containing the command line arguments that were passed in. The size of the array is equal to argC. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_spark_main_service_1a9c1f5f33df2065176b52f03ba6d63020"></a>
+<p class="NDLRefMemberFunction">virtual ~SparkMainService()</p>
+<p class="NDLRefMemberDescription">Destructor. </p>
+
+<a name="classegm_spark_1_1_spark_main_service_1a335c714ee274a506ea9f0a30cf792ec3"></a>
+<p class="NDLRefMemberFunction">virtual efd::SInt32  Go()</p>
+<p class="NDLRefMemberDescription">Run the program and return. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The internally set error code (zero by default, but it can be changed by passing a new value into QuitGame) or -1 if it fails. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_spark_main_service_1aeeb1b7a5d946be7afb2847a0a26b400a"></a>
+<p class="NDLRefMemberFunction">void  ResetFrameRateCalc()</p>
+<p class="NDLRefMemberDescription">Reset the variables by which we calculate the running frame rate. </p>
+<p class="NDLRefMemberDetailedDescription">The total number of frames and the total time will be reset to zero. </p>
+
+<a name="classegm_spark_1_1_spark_main_service_1af4a22d7d9946e286bc6549687509fb1b"></a>
+<p class="NDLRefMemberFunction">efd::UInt32  GetTotalFrames() const</p>
+<p class="NDLRefMemberDescription">Get the total number of frames since the last reset. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The number of frames. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_spark_main_service_1a48f5be4cc731ab93df4f335215ad9be4"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetAccumRunTime() const</p>
+<p class="NDLRefMemberDescription">Get the total run time since the last reset. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>the run time. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_spark_main_service_1a22888501f1e3ab97ca1f92edee052ca2"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetFrameRate() const</p>
+<p class="NDLRefMemberDescription">Get the accumulated frame rate. </p>
+<p class="NDLRefMemberDetailedDescription">This is basically just <span class="NDLSystemFont"><a href="egmSpark__SparkMainService.htm#classegm_spark_1_1_spark_main_service_1af4a22d7d9946e286bc6549687509fb1b">GetTotalFrames()</a></span> / <span class="NDLSystemFont"><a href="egmSpark__SparkMainService.htm#classegm_spark_1_1_spark_main_service_1a48f5be4cc731ab93df4f335215ad9be4">GetAccumRunTime()</a></span>. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The frame rate. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_spark_main_service_1a62f7f842e69d49592c35c3e279c6b0a8"></a>
+<p class="NDLRefMemberFunction">virtual void  ReportServiceTimes(const efd::utf8string& reportContext) const</p>
+<p class="NDLRefMemberDescription">Produce a services report to the log. </p>
+<p class="NDLRefMemberDetailedDescription">Each active service will be listed along with the absolute time and percentage time spent in each one.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">reportContext</span></td>
+    <td>Text string describing the context in which the report is being produced. This is printed to the log to help you identify where the report is being generated. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_spark_main_service_1a0660db3538e4376fbd8703f070593f96"></a>
+<p class="NDLRefMemberFunction">virtual void  ResetServiceTimes()</p>
+<p class="NDLRefMemberDescription">Reset service time calculations. </p>
+<p class="NDLRefMemberDetailedDescription">All service times will be reset to zero. </p>
+
+<a name="classegm_spark_1_1_spark_main_service_1a17be4ba55cd3580b818e059e686d56f7"></a>
+<p class="NDLRefMemberFunction">virtual void  QuitGame(efd::UInt32 rc)</p>
+<p class="NDLRefMemberDescription">Quit the game. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">rc</span></td>
+    <td>Return code to pass to the OS. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_spark_main_service_1aff2afd75f5a79b793796c6e72e94ef35"></a>
+<p class="NDLRefMemberFunction">virtual void  GetMachineTimeStamp(<br/>char* timeStampBuffer, <br/>efd::UInt32 bufferSize) const</p>
+<p class="NDLRefMemberDescription">Get a timestamp for logging purposes. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">timeStampBuffer</span></td>
+    <td>Buffer to hold the timestamp. Max length of any timestamp (including null terminator) is 36 characters on current platforms.</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">bufferSize</span></td>
+    <td>Size of the buffer. If the buffer is too short the timestamp will be truncated. The buffer is guaranteed to be null-terminated. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_spark_main_service_1ac485a13fbf537587a9bd068ba6bb98d7"></a>
+<p class="NDLRefMemberFunction">virtual void  AppReport(<br/>const efd::utf8string& reportContext, <br/>efd::UInt32 flags) const</p>
+<p class="NDLRefMemberDescription">Platform-specific memory report. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">reportContext</span></td>
+    <td>Text string describing the context in which the report is being produced. This is printed to the log to help you identify where the report is being generated.</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">flags</span></td>
+    <td>Application-specific flags to customize the report. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_spark_main_service_1a2aeb26861224bc53589ab381d0edc59f"></a>
+<p class="NDLRefMemberFunction">virtual const char*  GetSolutionConfigName() const</p>
+<p class="NDLRefMemberDescription">Return a string identifying this solution configuration and platform. </p>
+<p class="NDLRefMemberDetailedDescription">Example: "DEBUG" or "RELEASE". The platform-specific override may be implemented to give additional information (like "DEBUG WIN32" or "RELEASE PS3").</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The configuration string. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_spark_main_service_1ac24a839b1089f77649671003a4734fd2"></a>
+<p class="NDLRefMemberFunction">void  ToggleVisualTracker()</p>
+<p class="NDLRefMemberDescription">Enable/Disable the Visual Tracker interface. </p>
+
+<a name="classegm_spark_1_1_spark_main_service_1aae57136ccda63984dec5ee9bf2913155"></a>
+<p class="NDLRefMemberFunction">virtual const char*  GetPlatformTag() const</p>
+<p class="NDLRefMemberDescription">Get the platform tag for the current platform. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The platform tag. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_spark_main_service_1a620150734044e428afca7cf716ce3487"></a>
+<p class="NDLRefMemberFunction">virtual efd::Bool  GetShadowsEnabled() const</p>
+<p class="NDLRefMemberDescription">Determine whether the current running system supports shadows. </p>
+<p class="NDLRefMemberDetailedDescription">If a system has disabled shadows, either in the config file or globally, this will return false.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if shadows are enabled, false otherwise. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_spark_main_service_1a08c3905b971715ab5782a212c9d1aa2d"></a>
+<p class="NDLRefMemberFunction">virtual efd::Bool  GetAudioEnabled() const</p>
+<p class="NDLRefMemberDescription">Determine whether the audio is enabled in the current system. </p>
+<p class="NDLRefMemberDetailedDescription">If a system has disabled audio in the config file, this will return false. Note that if audio is disabled, music will not work either.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if audio is enabled, false otherwise. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_spark_main_service_1ab68aea36973268fb7e6574d788199c8e"></a>
+<p class="NDLRefMemberFunction">virtual efd::Bool  GetMusicEnabled() const</p>
+<p class="NDLRefMemberDescription">Determine whether the music is enabled in the current system. </p>
+<p class="NDLRefMemberDetailedDescription">If a system has disabled music in the config file, this will return false. Note that if audio is disabled, music will not work either.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if music is enabled, false otherwise. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_spark_main_service_1a5a6a2f7dc045ee6b31e2ec1de3b51015"></a>
+<p class="NDLRefMemberFunction">virtual efd::Bool  GetRapidIterationEnabled() const</p>
+<p class="NDLRefMemberDescription">Determine whether Rapid Iteration is enabled in the current system. </p>
+<p class="NDLRefMemberDetailedDescription">If a system has disabled RI in the config file, this will return false.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if Rapid Iteration is enabled, false otherwise. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_spark_main_service_1a7d931b2cfc6eeded0d8d96c3c4096645"></a>
+<p class="NDLRefMemberFunction">virtual void  Destroy()</p>
+<p class="NDLRefMemberDescription">Destroys the service manager. </p>
+
+<a name="classegm_spark_1_1_spark_main_service_1a3898e0789697f8f32cd9ee7592a65f96"></a>
+<p class="NDLRefMemberFunction">virtual void  SetupUIRendering()</p>
+<p class="NDLRefMemberDescription">Creates a <span class="NDLSystemFont"><a href="egmSpark__UIManager.htm">UIManager</a></span> object to enable UI rendering. </p>
+
+<a name="classegm_spark_1_1_spark_main_service_1a8adc2b98b33dd041ac96e3d78eea29ba"></a>
+<p class="NDLRefMemberFunction">virtual void  SetAsSinglePlayer()</p>
+<p class="NDLRefMemberDescription">Sets up the game for single player mode by setting this instance as the server. </p>
+
+<a name="classegm_spark_1_1_spark_main_service_1ae3b150b6539cd7d6c1e99fb192f0290b"></a>
+<p class="NDLRefMemberFunction">virtual void  SetAsMultiplayerHost(efd::Category viewEventChannel)</p>
+<p class="NDLRefMemberDescription">Sets up the game to be a multiplayer host by setting this instance as the server and configuring the view event channel to use for network data. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">viewEventChannel</span></td>
+    <td>The channel to use. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_spark_main_service_1a67b3a0946dbd12d396355ed0bd701ed8"></a>
+<p class="NDLRefMemberFunction">virtual void  SetAsMultiplayerClient(efd::Category viewEventChannel)</p>
+<p class="NDLRefMemberDescription">Sets up the game to be a multiplayer client by setting this instance as a client and configuring the view event channel to use for network data. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">viewEventChannel</span></td>
+    <td>The channel to use. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_spark_main_service_1adb3d2cf4f68ab0cca5772865f8df59ee"></a>
+<p class="NDLRefMemberFunction">virtual <span class="NDLSystemFont"><a href="egmSpark__SparkMainService.htm#classegm_spark_1_1_spark_main_service_1a965faa775c7f0669ae013734f5d68b08">eGameType</a></span>  GetGameType()</p>
+<p class="NDLRefMemberDescription">Queries whether the game is operating in single player, multiplayer host, or multiplayer client mode. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The current game type. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_spark_main_service_1a55ff8d52811f47bf13ac6b802f930368"></a>
+<p class="NDLRefMemberFunction">virtual efd::Category  GetViewEventChannel()</p>
+<p class="NDLRefMemberDescription">Returns the current view event channel that is being used for network data. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The channel. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+<a name="public_static_methods"></a>
+<p class="NDLRefHead1">Public Static Methods</p>
+
+
+<a name="classegm_spark_1_1_spark_main_service_1ae6d3a00ae30768c5dd0f691995d84955"></a>
+<p class="NDLRefMemberFunction">static <span class="NDLSystemFont">SparkMainService</span>*  GetSingletonPtr()</p>
+<p class="NDLRefMemberDescription">Gets a pointer to the service singleton. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The singleton pointer. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

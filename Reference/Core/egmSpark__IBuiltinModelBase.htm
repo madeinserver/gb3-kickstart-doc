@@ -1,0 +1,532 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::IBuiltinModelBase</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::IBuiltinModelBase</p>
+<p class="NDLRefParentage">: public IBuiltinModelImpl</p>
+
+
+<p class="NDLRefHeaderFile">&lt;BuiltinModelBase.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_i_builtin_model_base.gif" alt="Inheritance graph for egmSpark::IBuiltinModelBase"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::IBuiltinModelBase</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal"><span class="NDLSystemFont">IBuiltinModelBase</span> class for built-in models contained within the spark library Includes utility and helper functions. </p>
+<p class="NDLNormal">Features of this class:</p>
+<ul>
+<li>breaks out OnEndLifeCycle and calls virtual functions for each kind of life cycle</li>
+<li>implements mechanism for binding built-in model behaviors to events</li>
+<li>implements templated factory mechanism </li></ul>
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_i_builtin_model_base_1afd8ac2703ed2c1f4f5ffcd8b313e2ed0"></a>
+<p class="NDLRefMemberFunction">IBuiltinModelBase()</p>
+<p class="NDLRefMemberDescription">Constructor. </p>
+
+<a name="classegm_spark_1_1_i_builtin_model_base_1a1026a23de489310715014f628430bf28"></a>
+<p class="NDLRefMemberFunction">virtual efd::AsyncResult  Update(efd::TimeType timeDelta)</p>
+<p class="NDLRefMemberDescription">The Update method is called by <span class="NDLSystemFont"><a href="egmSpark__BuiltinUpdateService.htm#classegm_spark_1_1_builtin_update_service_1a7c4275972f75aa847ab6d9d5755d82f8">BuiltinUpdateService::OnTick</a></span> on every registered built-in model. </p>
+<p class="NDLRefMemberDetailedDescription">Models that do not require updating can return AsyncResult_Complete to prevent further calls. The default implementation simply returns AsyncResult_Complete.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">timeDelta</span></td>
+    <td>The amount of game time that passed since the previous tick. This is not always the time passed since the last call to Update as updating can be paused. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>Return AsyncResult_Pending to be called again on the next tick or return AsyncResult_Complete if further calls are not needed. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_i_builtin_model_base_1ac7bfa712be61ba2b2fddf33a2059fbc2"></a>
+<p class="NDLRefMemberFunction">virtual efd::AsyncResult  PostUpdate(efd::TimeType timeDelta)</p>
+<p class="NDLRefMemberDescription">The PostUpdate method is called by <span class="NDLSystemFont"><a href="egmSpark__BuiltinUpdateService.htm#classegm_spark_1_1_builtin_update_service_1a7c4275972f75aa847ab6d9d5755d82f8">BuiltinUpdateService::OnTick</a></span> on every registered built-in model. </p>
+<p class="NDLRefMemberDetailedDescription">This method is called after all Update methods have been called. Models that do not require post updating can return AsyncResult_Complete to prevent further calls. The default implementation simply returns AsyncResult_Complete.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">timeDelta</span></td>
+    <td>The amount of game time that passed since the previous tick. This is not always the time passed since the last call to Update as updating can be paused. </td>
+</tr>
+<tr>
+    <td><em>Return Value</em></td>
+    <td>Return AsyncResult_Pending to be called again on the next tick or return AsyncResult_Complete if further calls are not needed. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_i_builtin_model_base_1aebca76870c8d295cc1f5b3d79556b43b"></a>
+<p class="NDLRefMemberFunction">virtual void  OnActorAddedMessage()</p>
+<p class="NDLRefMemberDescription">If the owning entity is an Actor, this is called after the owning entity is added to the AnimationService. </p>
+<p class="NDLRefMemberDetailedDescription">The default implementation does nothing. </p>
+
+<a name="classegm_spark_1_1_i_builtin_model_base_1afe75c5793697d07bcea253f8be21fdc0"></a>
+<p class="NDLRefMemberFunction">virtual void  OnActorRemovedMessage()</p>
+<p class="NDLRefMemberDescription">If the owning entity is an Actor, this is called after the owning entity is removed from the AnimationService. </p>
+<p class="NDLRefMemberDetailedDescription">The default implementation does nothing. </p>
+
+<a name="classegm_spark_1_1_i_builtin_model_base_1a2a8df238a0a64958e909556cd0c94489"></a>
+<p class="NDLRefMemberFunction">egf::Entity*  GetEntity() const</p>
+<p class="NDLRefMemberDescription">Helper function to access the owning entity pointer. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The owning entity. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_i_builtin_model_base_1aa39ef64562b94b63f7c63d27b836240f"></a>
+<p class="NDLRefMemberFunction">NiNode*  GetNode()</p>
+<p class="NDLRefMemberDescription">Get the scene graph node corresponding to the root of the owned entity cast to an NiNode. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The node. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_i_builtin_model_base_1a260a46325f4102df536372acfe92e82d"></a>
+<p class="NDLRefMemberFunction">NiAVObject*  GetAVObject()</p>
+<p class="NDLRefMemberDescription">Get the scene graph node corresponding to the root of the owned entity. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The entity root node. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_i_builtin_model_base_1a45bbbe83aaf43b3a525468e0f6191d23"></a>
+<p class="NDLRefMemberFunction">void  DestroyEntity()</p>
+<p class="NDLRefMemberDescription">Helper method to destroy the entity that owns this built-in model. </p>
+
+<a name="classegm_spark_1_1_i_builtin_model_base_1a4bba0390b04bece952ca85070a392938"></a>
+<p class="NDLRefMemberFunction">efd::Bool  IsOwner()</p>
+<p class="NDLRefMemberDescription">Checks whether the built-in model's entity is the owned entity. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if the entity is owned, false if it is attached to a replicated entity. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+<a name="public_static_methods"></a>
+<p class="NDLRefHead1">Public Static Methods</p>
+
+
+<a name="classegm_spark_1_1_i_builtin_model_base_1a2f36245cd87b6fc77c4138e62472b288"></a>
+<p class="NDLRefMemberFunction">template &lt;class BuiltinModelClass  &gt; static egf::IBuiltinModel*  Factory()</p>
+<p class="NDLRefMemberDescription">Create an instance of the Built-in Model specified by the template parameter. </p>
+<p class="NDLRefMemberDetailedDescription">This template can be used in calls to FlatModelManager::RegisterBuiltinModelFactory as the built-in model factory function.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>the built-in model instance </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+<a name="common_entity_property_accessor_methods"></a>
+<p class="NDLRefHead1">Common entity property accessor methods</p>
+
+<p class="NDLRefMemberDescription">These methods provide simple accessors for getting or setting common properties from the Positionable standard model on the owning entity.</p>
+
+<a name="classegm_spark_1_1_i_builtin_model_base_1a1e68ba8e35960bfa623632cd654c606b"></a>
+<p class="NDLRefMemberFunction">efd::Point3  GetPosition() const</p>
+<p class="NDLRefMemberDescription">Get the "Position" property from the owning entity. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The position. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_i_builtin_model_base_1afc7396a4b5eea9650f4158ea8a5366cc"></a>
+<p class="NDLRefMemberFunction">efd::Point3  GetEulerRotation() const</p>
+<p class="NDLRefMemberDescription">Get the "Rotation" property from the owning entity. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The rotation angles. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_i_builtin_model_base_1ac215d1d9cbb4cf80b233fb8ec29d710f"></a>
+<p class="NDLRefMemberFunction">efd::Matrix3  GetRotation() const</p>
+<p class="NDLRefMemberDescription">Get the "Rotation" property from the owning entity converted into matrix form. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The rotation matrix. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_i_builtin_model_base_1af714cca630efdbde0d903a19ba5febff"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetScale() const</p>
+<p class="NDLRefMemberDescription">Get the "Scale" property from the owning entity. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The scale. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_i_builtin_model_base_1ad351a07683a6740ca6146d0bef210ba1"></a>
+<p class="NDLRefMemberFunction">void  SetPosition(const efd::Point3& position)</p>
+<p class="NDLRefMemberDescription">Set the "Position" property on the owning entity. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">position</span></td>
+    <td>The new position. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_i_builtin_model_base_1a702d1c357fce5bbc69edf3aa843af5ed"></a>
+<p class="NDLRefMemberFunction">void  SetEulerRotation(const efd::Point3& rotation)</p>
+<p class="NDLRefMemberDescription">Set the "Rotation" property on the owning entity. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">rotation</span></td>
+    <td>The new rotation. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_i_builtin_model_base_1a510a97e47bc83ad8413c91b2bbce0620"></a>
+<p class="NDLRefMemberFunction">void  SetRotation(const efd::Matrix3& rotation)</p>
+<p class="NDLRefMemberDescription">Set the "Rotation" property on the owning entity by converting the matrix to a Euler rotation. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">rotation</span></td>
+    <td>The new rotation. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_i_builtin_model_base_1a2ca6329b3773ef6ed747f535ac5773a3"></a>
+<p class="NDLRefMemberFunction">void  SetScale(efd::Float32 scale)</p>
+<p class="NDLRefMemberDescription">Set the "Scale" property on the owning entity. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">scale</span></td>
+    <td>The new scale. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+<a name="lifecycle_handler_methods"></a>
+<p class="NDLRefHead1">Lifecycle Handler Methods</p>
+
+<p class="NDLRefMemberDescription">Entity Life Cycles are broken out into virtual function calls for built-in models.</p>
+<p class="NDLRefMemberDescription">
+<p class="NDLRefMemberDescription">These are not behaviors and are not required to be setup as behaviors in the EMT tool. If there is a behavior associated with these lifecycles the behavior will be called first and these methods are called once the behavior completes. </p>
+<p class="NDLRefMemberDescription">The default implementations of these methods do nothing, if you override these there is no need to call the base class function. </p></p>
+
+<a name="classegm_spark_1_1_i_builtin_model_base_1a1be30987e942bb110ac77ee84b4e3168"></a>
+<p class="NDLRefMemberFunction">virtual void  OnCreate()</p>
+<p class="NDLRefMemberDescription">Called once the OnCreate entity lifecycle completes. </p>
+
+<a name="classegm_spark_1_1_i_builtin_model_base_1abd17c96737c14773dd25df5e4786a5f2"></a>
+<p class="NDLRefMemberFunction">virtual void  OnDestroy()</p>
+<p class="NDLRefMemberDescription">Called once the OnDestroy entity lifecycle completes. </p>
+
+<a name="classegm_spark_1_1_i_builtin_model_base_1a76a00325bd4f2dbfde3c141e7dd9441e"></a>
+<p class="NDLRefMemberFunction">virtual void  OnAssetsLoaded()</p>
+<p class="NDLRefMemberDescription">Called once the OnAssetsLoaded entity lifecycle completes. </p>
+
+<a name="classegm_spark_1_1_i_builtin_model_base_1a5bf6aa77ec3f039adecad9afd0807471"></a>
+<p class="NDLRefMemberFunction">virtual void  OnReplicaAssetsLoaded()</p>
+<p class="NDLRefMemberDescription">Called once the OnReplicaAssetsLoaded entity lifecycle completes for a replicated entity. </p>
+
+<a name="classegm_spark_1_1_i_builtin_model_base_1ae0e0b824b47d46d3587326a3317dbd05"></a>
+<p class="NDLRefMemberFunction">virtual void  OnEntitySetFinished()</p>
+<p class="NDLRefMemberDescription">Called once the OnEntitySetFinished entity lifecycle completes. </p>
+
+<a name="classegm_spark_1_1_i_builtin_model_base_1ac5a658f65d037a985e49f60e968c2d4c"></a>
+<p class="NDLRefMemberFunction">virtual void  OnDiscovery()</p>
+<p class="NDLRefMemberDescription">Called once the OnDiscovery entity lifecycle completes for a replicated entity. </p>
+
+<a name="classegm_spark_1_1_i_builtin_model_base_1a063dcb59ac8891ec7e1158556cc1aa99"></a>
+<p class="NDLRefMemberFunction">virtual void  OnFinalLoss()</p>
+<p class="NDLRefMemberDescription">Called once the OnFinalLoss entity lifecycle completes for a replicated entity. </p>
+
+<a name="classegm_spark_1_1_i_builtin_model_base_1a421604ce90bade8abddb5a52e5e5079f"></a>
+<p class="NDLRefMemberFunction">virtual void  OnPaused()</p>
+<p class="NDLRefMemberDescription">Called once the OnCreate entity lifecycle completes. </p>
+
+<a name="classegm_spark_1_1_i_builtin_model_base_1ae5bff8e14b8aa97427046ff6e737382c"></a>
+<p class="NDLRefMemberFunction">virtual void  OnResumed()</p>
+<p class="NDLRefMemberDescription">Called once the OnCreate entity lifecycle completes. </p>
+<a name="debug-only_methods"></a>
+<p class="NDLRefHead1">Debug-only methods</p>
+
+
+<a name="classegm_spark_1_1_i_builtin_model_base_1ac1f412badfbae07fd8b194e73b08a98f"></a>
+<p class="NDLRefMemberFunction">int  m_nBuiltinNum</p>
+<p class="NDLRefMemberDescription">Return the total number of built-in models ever allocated when this built-in model was created. </p>
+<p class="NDLRefMemberDetailedDescription">Used for debugging purposes only. </p>
+
+<a name="classegm_spark_1_1_i_builtin_model_base_1a522c8475ab8a4795fca8fd4797afbfa2"></a>
+<p class="NDLRefMemberFunction">int  GetBuiltinNum()</p>
+<p class="NDLRefMemberDescription">Return the total number of built-in models ever allocated when this built-in model was created. </p>
+<p class="NDLRefMemberDetailedDescription">Used for debugging purposes only. </p>
+
+<a name="classegm_spark_1_1_i_builtin_model_base_1aec71c610789aa115ecdded341f089641"></a>
+<p class="NDLRefMemberFunction">static int  GetAllocatedBuiltinCount()</p>
+<p class="NDLRefMemberDescription">Return the number of allocated built-in models. </p>
+<p class="NDLRefMemberDetailedDescription">Used in debugging to help ensure all built-in models are freed properly. </p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

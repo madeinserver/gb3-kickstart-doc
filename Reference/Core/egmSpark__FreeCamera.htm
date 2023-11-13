@@ -1,0 +1,643 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::FreeCamera</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::FreeCamera</p>
+<p class="NDLRefParentage">: public <span class="NDLSystemFont"><a href="egmSpark__SimpleCamera.htm">egmSpark::SimpleCamera</a></span></p>
+
+
+<p class="NDLRefHeaderFile">&lt;FreeCamera.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_free_camera.gif" alt="Inheritance graph for egmSpark::FreeCamera"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::FreeCamera</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal"><span class="NDLSystemFont">FreeCamera</span> class is a camera intended for use when debugging. </p>
+<p class="NDLNormal">It supports unrestricted free movement. </p>
+
+<a name="construction_and_destruction"></a>
+<p class="NDLRefHead1">Construction and Destruction</p>
+
+
+<a name="classegm_spark_1_1_free_camera_1aed70d29620975876aba65cf1daa63274"></a>
+<p class="NDLRefMemberFunction">FreeCamera()</p>
+<p class="NDLRefMemberDescription">Constructor. </p>
+
+<a name="classegm_spark_1_1_free_camera_1a84365a82802af6e1362802a0184cf8d9"></a>
+<p class="NDLRefMemberFunction">virtual ~FreeCamera()</p>
+<p class="NDLRefMemberDescription">Destructor. </p>
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_free_camera_1ac60b22117353321c7e3489ca727d75f6"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetFOV() const</p>
+<p class="NDLRefMemberDescription">Get the camera's current field of view. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The field of view. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_free_camera_1ac08f8897a8375c8f83e9b117f8abc2e8"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetZoomTransitionRate() const</p>
+<p class="NDLRefMemberDescription">Gets the current transition rate. </p>
+<p class="NDLRefMemberDetailedDescription">The transition rate to and from zoom determines how long it takes to change into zoom moder or out of it. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The transition rate in transitions per second. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_free_camera_1a7cd67d7039f5703d4c15ab18bbef1e2f"></a>
+<p class="NDLRefMemberFunction">void  SetZoomTransitionRate(efd::Float32 transitionsPerSecond)</p>
+<p class="NDLRefMemberDescription">Sets the transition rate. </p>
+<p class="NDLRefMemberDetailedDescription">The transition rate to and from zoom determines how long it takes to change into zoom moder or out of it. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">transitionsPerSecond</span></td>
+    <td>The transition rate in transitions per second. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_free_camera_1a371ec80f3eeee74a2481aa7a7a496a9a"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetZoomFOV() const</p>
+<p class="NDLRefMemberDescription">Gets the camera's field of view while in zoom mode. </p>
+<p class="NDLRefMemberDetailedDescription">The FOV while not in zoom mode is read from the camera's FOV default property which is shared with other camera types. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The field of view in degrees. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_free_camera_1a06233edf665f5c8de6abb57ed7758468"></a>
+<p class="NDLRefMemberFunction">void  SetZoomFOV(efd::Float32 fovWhenZoomed)</p>
+<p class="NDLRefMemberDescription">Sets the camera's field of view while in zoom mode. </p>
+<p class="NDLRefMemberDetailedDescription">The FOV while not in zoom mode is read from the camera's FOV default property which is shared with other camera types. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">fovWhenZoomed</span></td>
+    <td>The field of view in degrees. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_free_camera_1a96e27114971c90f12a750e0740031ef7"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetRotationRateHeadingInitial() const</p>
+<p class="NDLRefMemberDescription">Gets the maximum possible rotation rate of the camera right after the player starts rotating. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>the rotation rate in degrees per second. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_free_camera_1aa37d63d3cbba192e56045d6cbf774331"></a>
+<p class="NDLRefMemberFunction">void  SetRotationRateHeadingInitial(efd::Float32 initialRateInDegreesPerSecond)</p>
+<p class="NDLRefMemberDescription">Sets the maximum possible rotation rate of the camera right after the player starts rotating. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">initialRateInDegreesPerSecond</span></td>
+    <td>the rotation rate in degrees per second. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_free_camera_1ac1602a1ff17120301466b67e3f31d2aa"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetRotationRateHeadingMax() const</p>
+<p class="NDLRefMemberDescription">Gets the maximum rotation speed in horizontal direction while the camera is not in zoom mode. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The rotation speed in degrees per second. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_free_camera_1a24c892ea962c1bcc562319723f894b53"></a>
+<p class="NDLRefMemberFunction">void  SetRotationRateHeadingMax(efd::Float32 maxRateInDegreesPerSecond)</p>
+<p class="NDLRefMemberDescription">Sets the maximum rotation speed in horizontal direction while the camera is not in zoom mode. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">maxRateInDegreesPerSecond</span></td>
+    <td>The rotation speed in degrees per second. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_free_camera_1a8b6955eb02daa69db89a7a8f823f2087"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetRotationRateHeadingAcceleration() const</p>
+<p class="NDLRefMemberDescription">Gets the rotation rate heading accelration. </p>
+<p class="NDLRefMemberDetailedDescription">This defines how much faster the camera can turn this second than last while accelerating. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The rotation rate heading acceleration in degrees per second. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_free_camera_1ac7a41ed9d83e704d50e74af26fe20158"></a>
+<p class="NDLRefMemberFunction">void  SetRotationRateHeadingAcceleration(efd::Float32 accelerationInDegreesPerSecond)</p>
+<p class="NDLRefMemberDescription">Sets the rotation rate heading accelration. </p>
+<p class="NDLRefMemberDetailedDescription">This defines how much faster the camera can turn this second than last while accelerating. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">accelerationInDegreesPerSecond</span></td>
+    <td>The rotation rate heading acceleration in degrees per second. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_free_camera_1a994d06396f184b76589c75b806e22e96"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetRotationRatePitchMax() const</p>
+<p class="NDLRefMemberDescription">Gets maximum rotation speed in vertical direction while the camera is not in zoom mode. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The maximum rotation speed in degrees per second. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_free_camera_1a87af000efea7f578aca7058f06487c75"></a>
+<p class="NDLRefMemberFunction">void  SetRotationRatePitchMax(efd::Float32 maxRateInDegreesPerSecond)</p>
+<p class="NDLRefMemberDescription">Gets maximum rotation speed in vertical direction while the camera is not in zoom mode. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">maxRateInDegreesPerSecond</span></td>
+    <td>The maximum rotation speed in degrees per second. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_free_camera_1ae2aab959f13a55199f3f9ea723cbb2f2"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetZoomRotationRateMultiplierHeading() const</p>
+<p class="NDLRefMemberDescription">Gets the zoom rotation rate multiplier heading. </p>
+<p class="NDLRefMemberDetailedDescription">This defines how zoom affects the horizontal rotation speed. Intended to be smaller than 1, meaning the camera rotates slower when zoomed in. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The current value. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_free_camera_1adaa103320f569e1c27841441defe34e0"></a>
+<p class="NDLRefMemberFunction">void  SetZoomRotationRateMultiplierHeading(efd::Float32 multiplier)</p>
+<p class="NDLRefMemberDescription">Sets the zoom rotation rate multiplier heading. </p>
+<p class="NDLRefMemberDetailedDescription">This defines how zoom affects the horizontal rotation speed. Intended to be smaller than 1, meaning the camera rotates slower when zoomed in. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">multiplier</span></td>
+    <td>The new value. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_free_camera_1a580daaa366fb75d642a3403ac5cf1e86"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetZoomRotationRateMultiplierPitch() const</p>
+<p class="NDLRefMemberDescription">Gets the zoom rotation rate multiplier pitch. </p>
+<p class="NDLRefMemberDetailedDescription">This defines how zoom affects the vertical rotation speed. Intended to be smaller than 1, meaning the camera rotates slower when zoomed in. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The current value. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_free_camera_1aa1525e9b7b3eaa2ec8be6d9a22888a4e"></a>
+<p class="NDLRefMemberFunction">void  SetZoomRotationRateMultiplierPitch(efd::Float32 multiplier)</p>
+<p class="NDLRefMemberDescription">Sets the zoom rotation rate multiplier pitch. </p>
+<p class="NDLRefMemberDetailedDescription">This defines how zoom affects the vertical rotation speed. Intended to be smaller than 1, meaning the camera rotates slower when zoomed in. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">multiplier</span></td>
+    <td>The new value. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_free_camera_1a0de29e6347b25e1cd0d952b9ccb9d7f0"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetPitchInitial() const</p>
+<p class="NDLRefMemberDescription">Gets the initial camera pitch (up/down angle) before the player changes it. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The initial camera pitch in degrees. 0 is straight forward. Negative is down, positive is up. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_free_camera_1ac56e06e72268e3091966cb5ae102b775"></a>
+<p class="NDLRefMemberFunction">void  SetPitchInitial(efd::Float32 inDegreesRelativeToGroundPlane)</p>
+<p class="NDLRefMemberDescription">Sets the initial camera pitch (up/down angle) before the player changes it. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">inDegreesRelativeToGroundPlane</span></td>
+    <td>The initial camera pitch in degrees. 0 is straight forward. Negative is down, positive is up. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_free_camera_1ac076b4fced8398ca65dce29f6a4096d9"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetPitchUpMax() const</p>
+<p class="NDLRefMemberDescription">Gets the steepest angle at which the camera can look up. </p>
+<p class="NDLRefMemberDetailedDescription">Can be close to, but not equal to, 90 degrees. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>the pitch up max in degrees. 0 is straight forward. Negative is down, positive is up. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_free_camera_1a1b269eee9b410078aa1d7b4053f44d86"></a>
+<p class="NDLRefMemberFunction">void  SetPitchUpMax(efd::Float32 inDegreesRelativeToGroundPlane)</p>
+<p class="NDLRefMemberDescription">Sets the steepest angle at which the camera can look up. </p>
+<p class="NDLRefMemberDetailedDescription">Can be close to, but not equal to, 90 degrees.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">inDegreesRelativeToGroundPlane</span></td>
+    <td>the pitch up max in degrees. 0 is straight forward. Negative is down, positive is up. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_free_camera_1a10fdc5c5b811ee0b6b6c85830d1015ea"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetPitchDownMax() const</p>
+<p class="NDLRefMemberDescription">Gets the steepest angle at which the camera can look down. </p>
+<p class="NDLRefMemberDetailedDescription">Can be close to, but not equal to, 90 degrees. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>the pitch down max in degrees. 0 is straight forward. Negative is down, positive is up. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_free_camera_1ac164d1c3c5ffdc9d5a832196d89ac774"></a>
+<p class="NDLRefMemberFunction">void  SetPitchDownMax(efd::Float32 inNegativeDegreesRelativeToGroundPlane)</p>
+<p class="NDLRefMemberDescription">Sets the steepest angle at which the camera can look down. </p>
+<p class="NDLRefMemberDetailedDescription">Can be close to, but not equal to, 90 degrees. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">inNegativeDegreesRelativeToGroundPlane</span></td>
+    <td>the pitch down max in degrees. 0 is straight forward. Negative is down, positive is up. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

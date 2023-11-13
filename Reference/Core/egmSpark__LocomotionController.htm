@@ -1,0 +1,355 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::LocomotionController</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::LocomotionController</p>
+<p class="NDLRefParentage">: public <span class="NDLSystemFont"><a href="egmSpark__IBuiltinModelBase.htm">egmSpark::IBuiltinModelBase</a></span></p>
+
+
+<p class="NDLRefHeaderFile">&lt;LocomotionController.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_locomotion_controller.gif" alt="Inheritance graph for egmSpark::LocomotionController"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::LocomotionController</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal"><span class="NDLSystemFont">LocomotionController</span> is in charge of animating the character when it is moving. </p>
+<p class="NDLNormal">Automatically uses strafing animations if the object is facing a different direction than it is moving. (if they are defined)</p>
+<p class="NDLNormal">
+<p class="NDLNormal">: The <span class="NDLSystemFont">LocomotionController</span> uses the desired velocity property to along with the currently facing direction and the movement mode, to determine which animation to play. (Works the same way on both owned and replicated entities) </p></p>
+
+<a name="public_types"></a>
+<p class="NDLRefHead1">Public Types</p>
+<a name="classegm_spark_1_1_locomotion_controller_1a97d63a116bbe1dc3dc13ffce58b071c2"></a>
+<p class=NDLRefHead2>egmSpark::LocomotionController::eLocomotionMode</p>
+
+
+
+
+<!--(Table)=========================================================-->
+<div class="ReferenceTable">
+<table>
+  <thead>
+	<tr>
+        <th>Name</th>
+	    <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">LM_IDLE</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">LM_WALK</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">LM_RUN</span></td>
+    <td>&nbsp;</td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">LM_INVALID</span></td>
+    <td>&nbsp;</td>
+</tr>
+
+  </tbody>
+</table>
+</div>
+
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_locomotion_controller_1ab2a5529086eb9153641c1bc4f0199aeb"></a>
+<p class="NDLRefMemberFunction">LocomotionController()</p>
+<p class="NDLRefMemberDescription">Constructor. </p>
+
+<a name="classegm_spark_1_1_locomotion_controller_1ac2b1f562d6cf55aa8bccee3a5af36c7b"></a>
+<p class="NDLRefMemberFunction">virtual void  Idle()</p>
+<p class="NDLRefMemberDescription">Puts <span class="NDLSystemFont">LocomotionController</span> into idle mode (ie: not moving,& playing idle animation). </p>
+
+<a name="classegm_spark_1_1_locomotion_controller_1adde04b33cfc589944365645f77f150b6"></a>
+<p class="NDLRefMemberFunction">virtual void  Walk()</p>
+<p class="NDLRefMemberDescription">Puts <span class="NDLSystemFont">LocomotionController</span> into walk mode. </p>
+
+<a name="classegm_spark_1_1_locomotion_controller_1a5a57b674974bd2f7fe164dc3fe3ff383"></a>
+<p class="NDLRefMemberFunction">virtual void  Run()</p>
+<p class="NDLRefMemberDescription">Puts <span class="NDLSystemFont">LocomotionController</span> into run mode. </p>
+
+<a name="classegm_spark_1_1_locomotion_controller_1a74fb4ee9b1fe42ac94418e6c8ab2bf4f"></a>
+<p class="NDLRefMemberFunction">virtual void  Disable(efd::Bool allowMovement)</p>
+<p class="NDLRefMemberDescription">You can disable the locomotion controller with this function. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">allowMovement</span></td>
+    <td>True to enable movement, false to disable. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_locomotion_controller_1ac4946bd282a373a73f451fb0394ccd5d"></a>
+<p class="NDLRefMemberFunction">virtual void  Enable()</p>
+<p class="NDLRefMemberDescription">You can enable the locomotion controller with this function. </p>
+
+<a name="classegm_spark_1_1_locomotion_controller_1a0d85bcbedac2bce98ca868dddf4824a4"></a>
+<p class="NDLRefMemberFunction">virtual void  SetDesiredMoveDir(const efd::Point3& direction)</p>
+<p class="NDLRefMemberDescription">Sets desired movement direction. </p>
+<p class="NDLRefMemberDetailedDescription">The direction that the character is moving will transition toward this value over time. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">direction</span></td>
+    <td>The new desired direction. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_locomotion_controller_1a8cb676a3c5d6e14e3663fdf5b5baa0e2"></a>
+<p class="NDLRefMemberFunction">efd::Point3  GetDesiredMoveDir()</p>
+<p class="NDLRefMemberDescription">Gets desired movement direction. </p>
+<p class="NDLRefMemberDetailedDescription">The direction that the character is moving will transition toward this value over time. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>direction The current desired direction. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_locomotion_controller_1aa65af203a6efb4998da16ccb4da3249b"></a>
+<p class="NDLRefMemberFunction"><span class="NDLSystemFont"><a href="egmSpark__LocomotionController.htm#classegm_spark_1_1_locomotion_controller_1a97d63a116bbe1dc3dc13ffce58b071c2">eLocomotionMode</a></span>  GetLocomotionMode()</p>
+<p class="NDLRefMemberDescription">Gets the current locomotion mode, for example whether the character is walking, running, idle, etc. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The current mode. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_locomotion_controller_1a31f1cb240ec20066c4a3c1bc69bd91a8"></a>
+<p class="NDLRefMemberFunction"><span class="NDLSystemFont"><a href="egmSpark__LocomotionController.htm#classegm_spark_1_1_locomotion_controller_1a97d63a116bbe1dc3dc13ffce58b071c2">eLocomotionMode</a></span>  GetDesiredLocomotionMode()</p>
+<p class="NDLRefMemberDescription">Gets the desired locomotion mode, for example whether the character is walking, running, idle, etc. </p>
+<p class="NDLRefMemberDetailedDescription">This may not match the current locomotion mode as transitions between modes can take time. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The current desired mode. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_locomotion_controller_1afb71915e25e8adf5c47900e0413e27d3"></a>
+<p class="NDLRefMemberFunction">void  SetDesiredLocomotionMode(<span class="NDLSystemFont"><a href="egmSpark__LocomotionController.htm#classegm_spark_1_1_locomotion_controller_1a97d63a116bbe1dc3dc13ffce58b071c2">eLocomotionMode</a></span> mode)</p>
+<p class="NDLRefMemberDescription">Sets the desired locomotion mode, for example whether the character is walking, running, idle, etc. </p>
+<p class="NDLRefMemberDetailedDescription">This may not match the current locomotion mode as transitions between modes can take time. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">mode</span></td>
+    <td>The new desired mode. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_locomotion_controller_1a9e107a235344d3566acef2ef9fd6b914"></a>
+<p class="NDLRefMemberFunction">virtual void  OnEnableLocomotion(efd::DataStream* pStream)</p>
+<p class="NDLRefMemberDescription">An event function that is invoked when locomotion is enabled. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pStream</span></td>
+    <td>The data stream that contains any arguments passed into this event. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_locomotion_controller_1ad50dfb46f8ea15a807e1debf6a30f80d"></a>
+<p class="NDLRefMemberFunction">virtual void  OnDisableLocomotion(efd::DataStream* pStream)</p>
+<p class="NDLRefMemberDescription">An event function that is invoked when locomotion is disabled. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pStream</span></td>
+    <td>The data stream that contains any arguments passed into this event. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_locomotion_controller_1a83a8c2f418aebf961f4ab3655c32198f"></a>
+<p class="NDLRefMemberFunction">virtual void  OnLocomotionTextKey(efd::DataStream* pStream)</p>
+<p class="NDLRefMemberDescription">An event function that is invoked when an animation text key related to locomotion is detected. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pStream</span></td>
+    <td>The data stream that contains any arguments passed into this event. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_locomotion_controller_1aa80047b8bed402677229e2b1e13f887f"></a>
+<p class="NDLRefMemberFunction">virtual void  StopAnimating()</p>
+<p class="NDLRefMemberDescription">Stops all currently playing animations on the character which are managed by the locomotion controller. </p>
+
+<a name="classegm_spark_1_1_locomotion_controller_1ad251e6bf4213bb284d52c8e3eefbd00e"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetRunSpeed()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_locomotion_controller_1a5e46cb54c28ee686218aaa54e82b9c5f"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetWalkSpeed()</p>
+<p class="NDLRefMemberFunction"></p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

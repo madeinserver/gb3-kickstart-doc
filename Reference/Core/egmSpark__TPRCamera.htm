@@ -1,0 +1,248 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::TPRCamera</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::TPRCamera</p>
+<p class="NDLRefParentage">: public <span class="NDLSystemFont"><a href="egmSpark__SimpleCamera.htm">egmSpark::SimpleCamera</a></span></p>
+
+
+<p class="NDLRefHeaderFile">&lt;TPRCamera.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_t_p_r_camera.gif" alt="Inheritance graph for egmSpark::TPRCamera"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::TPRCamera</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal"><span class="NDLSystemFont">TPRCamera</span> class - gameplay camera. </p>
+<p class="NDLNormal">This camera has the concept of a camera "subject" on which it is focused, making it a third-person camera. It follows as the subject moves. The input stick rotates the camera around the subject and moves closer and farther away. Control events are automatically installed with the control service; while this is easier to use, it's a bit less flexible than using Lua scripts like the <span class="NDLSystemFont"><a href="egmSpark__SimpleCamera.htm">SimpleCamera</a></span>.</p>
+<p class="NDLNormal">The camera has a single subject entity at any given time. The camera translates toward and away from the subject along a rail that is calculated at runtime. The shape of the rail is determined by a hinge on the horizon (tunable) such that, normally, the top edge of the camera's field of view is aligned with hinge regardless of the distance from the camera to the subject. The rail has a near-subject camera stop point that sets the minimum distance from the camera to the subject. The camera stop point exists on a ring that is a given height (tunable) above the subject's ground point and a given distance (tunable) from the subject's vertical center line. The rail has a far-subject camera stop point that is determined by the maximum camera-hinge-subject angle (tunable).</p>
+<p class="NDLNormal">Regardless of translation the camera always rotates towards a focus point that is a given height (tunable) above the subject's ground point. Having a focus point separate from the near-subject camera stop point allows some variety in the close-in perspective:</p>
+<p class="NDLNormal">When the focus point and near-subject camera stop point are the same, the camera appears to simply zoom into the subject along the rail with the horizon locked at the hinge. That is, the hinge will appear to be fixed on the screen and no terrain beyond the hinge will be visible.</p>
+<p class="NDLNormal">When the focus point is above the near-subject camera stop point, the horizon appears to flare up gradually as the camera gets closer to the subject and the camera will be pointed upwards when it hits the camera stop point.</p>
+<p class="NDLNormal">When the focus point is below the near-subject camera stop point, the horizon appears to close in as the camera gets closer to the subject and the camera will be pointed downwards when it hits the camera stop point.</p>
+<p class="NDLNormal">In order for a camera to properly view an entity the entity's model must mix in the SparkCameraSubject model and provide values for the properties defined in that model. </p>
+
+<a name="construction_and_destruction"></a>
+<p class="NDLRefHead1">Construction and Destruction</p>
+
+
+<a name="classegm_spark_1_1_t_p_r_camera_1a5432ab83700d0a9804016709684ad9eb"></a>
+<p class="NDLRefMemberFunction">TPRCamera()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_t_p_r_camera_1a4883eccc43229f3a22cfb385c6a29531"></a>
+<p class="NDLRefMemberFunction">virtual ~TPRCamera()</p>
+<p class="NDLRefMemberFunction"></p>
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_t_p_r_camera_1ae423b82229391152f37f91a1cf897564"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetHorizonRadius() const</p>
+<p class="NDLRefMemberDescription">Get the current horizon radius. </p>
+<p class="NDLRefMemberDetailedDescription">The horizon radius determines the distance to the horizon hinge from the camera's current position. The horizon hinge will be tangent to the circle defined by this radius intersecting at the center of the camera's current field of view. </p>
+
+<a name="classegm_spark_1_1_t_p_r_camera_1a2cff9dc5c5e33b81f16b562a098dd5f0"></a>
+<p class="NDLRefMemberFunction">void  SetHorizonRadius(efd::Float32 horizonRadius)</p>
+<p class="NDLRefMemberDescription">Set the current horizon radius. </p>
+<p class="NDLRefMemberDetailedDescription">The horizon radius determines the distance to the horizon hinge from the camera's current position. The horizon hinge will be tangent to the circle defined by this radius intersecting at the center of the camera's current field of view.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">horizonRadius</span></td>
+    <td>The new horizon radius. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_t_p_r_camera_1a40f624f3f2d421c6673b2513a5082dbd"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetAltitudeLimit() const</p>
+<p class="NDLRefMemberDescription">Get the current altitude limit. </p>
+<p class="NDLRefMemberDetailedDescription">The altitude limit is the maximum camera-hinge-subject angle, in degrees. You can use this to tune the maximum camera-subject distance. (Or, the maximum camera-ground distance.) </p>
+
+<a name="classegm_spark_1_1_t_p_r_camera_1aec28877d1360daf87ca1bb9393e0abbb"></a>
+<p class="NDLRefMemberFunction">void  SetAltitudeLimit(efd::Float32 altitudeLimit)</p>
+<p class="NDLRefMemberDescription">Set the current altitude limit. </p>
+<p class="NDLRefMemberDetailedDescription">The altitude limit is the maximum camera-hinge-subject angle, in degrees. You can use this to tune the maximum camera-subject distance. (Or, the maximum camera-ground distance.)</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">altitudeLimit</span></td>
+    <td>The new altitude limit. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_t_p_r_camera_1a65e23e85d1f74e8012b57b8ede23a5ff"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetDefaultDistanceFromStop() const</p>
+<p class="NDLRefMemberDescription">Get the default distance from stop. </p>
+<p class="NDLRefMemberDetailedDescription">This is the initial distance from the camera to the subject's camera stop point when a camera acquires a new subject. </p>
+
+<a name="classegm_spark_1_1_t_p_r_camera_1ae7f42de8d9091df4225affbf51cb2c76"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetFOV() const</p>
+<p class="NDLRefMemberDescription">Get the camera's Field of View. </p>
+
+<a name="classegm_spark_1_1_t_p_r_camera_1a6601e97dcb3a1cbc7f5b2c7e0d11c6a8"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetSubjectCameraFocusHeightAdjust(efd::Float32 defaultValue) const</p>
+<p class="NDLRefMemberDescription">Get the focus height adjustment to use with the current camera subject. </p>
+<p class="NDLRefMemberDetailedDescription">The focus height adjustment determines the height of the camera's focus above the subject's ground point along the vertical centerline.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">defaultValue</span></td>
+    <td>Value to return if there is no value set on the entity </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_t_p_r_camera_1ae0649cf9db77b2775aa53a75c96578b5"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetSubjectCameraFocusHorizAdjust(efd::Float32 defaultValue) const</p>
+<p class="NDLRefMemberDescription">Get the focus horizontal adjustment to use with the current camera subject. </p>
+<p class="NDLRefMemberDetailedDescription">This adjustment determines the left-right offset of the camera's focus from the subject's vertical centerline. Positive values offset to the right.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">defaultValue</span></td>
+    <td>Value to return if there is no value set on the entity </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_t_p_r_camera_1a60737faeec8a423be1374d61775b5b08"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetSubjectCameraStopHeightAdjust(efd::Float32 defaultValue) const</p>
+<p class="NDLRefMemberDescription">Get the camera stop offset adjustment to use with the current camera subject. </p>
+<p class="NDLRefMemberDetailedDescription">This value determines the height of the camera stop point ring above the subject's ground point along the vertical centerline.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">defaultValue</span></td>
+    <td>Value to return if there is no value set on the Entity </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_t_p_r_camera_1a3334e0707c92032a9d56dac0aa0eb841"></a>
+<p class="NDLRefMemberFunction">efd::Float32  GetSubjectCameraStopOffsetAdjust(efd::Float32 defaultValue) const</p>
+<p class="NDLRefMemberDescription">Get the camera stop offset adjustment. </p>
+<p class="NDLRefMemberDetailedDescription">This value determines the radius of the camera stop point ring around the subject's vertical centerline.</p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">defaultValue</span></td>
+    <td>Value to return if there is no value set on the Entity </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

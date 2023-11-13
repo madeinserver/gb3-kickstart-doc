@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>Overview of HUDService</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Fresnel" />
+<meta name="Generator" content="Palimpsest by Emergent Game Technologies - http://emergent.net" />
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+    
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+
+<!--(Begin Body)================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript">
+</script><script language="JavaScript1.2" type="text/javascript">
+WriteNavLink(2);
+</script>
+
+<h1>Overview of HUDService</h1>
+
+<p>The Spark HUD Service is responsible for parsing the HUD definition file and rendering the
+gameplay HUD elements.</p>
+
+<p>The service reads an XML file which contains HUD elements describing the visual components to be
+managed by the service. This information is then used to prepare render steps for the NiRenderFrame
+of the currently active RenderSurface.</p>
+
+<p>As the service is ticked it monitors the elapsed service manager time to determine when to
+perform render frame changes according to the HUD element descriptions.  The primary HUD elements
+are Texture elements.</p>
+
+<p>Texture elements describe textured HUD components displayed during gameplay. There are
+attributes for size, position and alignment. A texture element can also be associated with a Player
+entity property via the "property" attribute so that the texture can be dynamically changed based
+on the value of the entity property.</p>
+
+<p>The AlphaGame HUD file is in AlphaGame\Application\GameStates\Data\hud.xml:</p>
+
+<pre>
+&lt;?xml version=&quot;1.0&quot;&nbsp;?&gt;
+&lt;HUD&gt;
+    &lt;!-- valid texture element attributes are: 
+        name(required unique) 
+        filename(required) 
+        alignH('left'(default), 'center', 'right')
+        alignV('top'(default), 'center', 'bottom')
+        xOffset(defaults 0)
+        yOffset(defaults 0)
+        width(defaults -1(use texture size))
+        height(defaults -1(use texture size))
+        property(optional)
+        maxPropertyValue(optional)
+    --&gt;
+    &lt;Texture name=&quot;healthBar&quot; filename=&quot;HealthBar.tga&quot; alignH=&quot;right&quot; alignV=&quot;top&quot; yOffset=&quot;4&quot; xOffset=&quot;-4&quot; width=&quot;114&quot; height=&quot;24&quot; property=&quot;Health&quot; maxPropertyValue=&quot;100.0&quot;/&gt;
+
+    &lt;Texture name=&quot;healthFrame&quot; filename=&quot;HealthFrame.tga&quot; alignH=&quot;right&quot; alignV=&quot;top&quot; yOffset=&quot;0&quot; xOffset=&quot;0&quot;/&gt;
+
+&lt;/HUD&gt;
+</pre>
+
+<h3>HUD Builtins</h3>
+
+<p>The HUD service supplies the following Lua builtins:</p>
+
+<dl>
+    <dt>SparkHUD.Show(show) </dt>
+    <dd>Show or hide the HUD based on the boolean parameter</dd>
+    <dt>SparkHUD.SetPlayerEntity(player) </dt>
+    <dd>Tell the HUD service which entity represents the player. The HUD service can track
+    properties of the player entity, like health.</dd>
+    <dt>SparkHUD.ParseHUDDefinition(filename)</dt>
+    <dd>Parse the specified HUD definition XML file.</dd>
+</dl>
+
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

@@ -1,0 +1,348 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::PhysXKinematicController</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::PhysXKinematicController</p>
+<p class="NDLRefParentage">: public MemObject</p>
+
+
+<p class="NDLRefHeaderFile">&lt;PhysXKinematicController.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_phys_x_kinematic_controller.gif" alt="Inheritance graph for egmSpark::PhysXKinematicController"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::PhysXKinematicController</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">Responsible for moving Kinematic actors in an efficient manner. </p>
+<p class="NDLNormal">Includes callback to <span class="NDLSystemFont"><a href="egmSpark__IPhysXKinematicCollisionCallback.htm">IPhysXKinematicCollisionCallback</a></span></p>
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_phys_x_kinematic_controller_1abe6cb1bc2a35e90c0a872c34a57b8040"></a>
+<p class="NDLRefMemberFunction">PhysXKinematicController()</p>
+<p class="NDLRefMemberDescription">Constructor. </p>
+
+<a name="classegm_spark_1_1_phys_x_kinematic_controller_1a5d96ac68518ce93f7111fe9a7ad7df9f"></a>
+<p class="NDLRefMemberFunction">virtual ~PhysXKinematicController()</p>
+<p class="NDLRefMemberDescription">Destructor. </p>
+
+<a name="classegm_spark_1_1_phys_x_kinematic_controller_1a24590b00e0ae29fa53d59b6c8fe0eecb"></a>
+<p class="NDLRefMemberFunction">void  Setup(<br/><span class="NDLSystemFont"><a href="../Namespaces/egmSpark.htm#namespaceegm_spark_1ae3c74b1a1e3fbf165d2ff598aaf21cfa">PhysXSceneHandlePtr</a></span> spSceneHandle, <br/>NxActor* pActor, <br/><span class="NDLSystemFont"><a href="egmSpark__IPhysXKinematicCollisionCallback.htm">IPhysXKinematicCollisionCallback</a></span>* pCallback)</p>
+<p class="NDLRefMemberDescription">Setup the <span class="NDLSystemFont">PhysXKinematicController</span> for a given scene. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">spSceneHandle</span></td>
+    <td>Pointer to NiPhysXScene </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pActor</span></td>
+    <td>Pointer to NxActor to move through physX scene </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pCallback</span></td>
+    <td>Class to call back to when collisions occur </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_kinematic_controller_1a982a22a13c1cc0708d9f5c2bfafe5540"></a>
+<p class="NDLRefMemberFunction">void  SetPosition(const efd::Point3& pos)</p>
+<p class="NDLRefMemberDescription">Sets the position of the PhysX Actor in global coordinates scaled by the PhysX scale factor. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">pos</span></td>
+    <td>The new position. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_kinematic_controller_1ab946189df6a4dce6be0cf66cdb3125b6"></a>
+<p class="NDLRefMemberFunction">efd::Point3  GetPosition()</p>
+<p class="NDLRefMemberDescription">Sets the position of the PhysX Actor. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The new position. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_kinematic_controller_1a1e2a29eefcc448a0d903523dffb24d37"></a>
+<p class="NDLRefMemberFunction">void  DoStaticSweep(const efd::Point3& kDest)</p>
+<p class="NDLRefMemberDescription">Performs a collision sweep of static objects from the current position to the destination. </p>
+<p class="NDLRefMemberDetailedDescription">For performance reasons, it's good to do this once for static objects, and then have the move function do sweeps of dynamic objects only. </p>
+<p class="NDLRefMemberDetailedDescription">if you do not call this function, the Move function will do tests for both static and dynamic objects ever frame. </p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">kDest</span></td>
+    <td>The destination point. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_kinematic_controller_1a35d5ff11a200e8d22f48eb7f7c7adb7b"></a>
+<p class="NDLRefMemberFunction">virtual void  Move(efd::TimeType delta)</p>
+<p class="NDLRefMemberDescription">Moves the PhysX Actor given the current desired velocity. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">delta</span></td>
+    <td>The amount of time that has passed since the last call to this function. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_kinematic_controller_1a3d0adb7cbbbecbcef746e327b87ccc68"></a>
+<p class="NDLRefMemberFunction">NxActor*  GetActor()</p>
+<p class="NDLRefMemberDescription">Gets a pointer to the PhysX Actor. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The actor. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_kinematic_controller_1aeed40963e6a4c35246b3b200ee71f0a9"></a>
+<p class="NDLRefMemberFunction">void  SetVelocity(const efd::Point3& desiredVelocity)</p>
+<p class="NDLRefMemberDescription">Sets the desired velocity of the PhysX Actor. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">desiredVelocity</span></td>
+    <td>The desired velocity. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_kinematic_controller_1a87176175fe2a707a2ed3a06f7c7241dc"></a>
+<p class="NDLRefMemberFunction">efd::Point3  GetVelocity()</p>
+<p class="NDLRefMemberDescription">Gets the current linear velocity of the PhysX Actor. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The current velocity. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_kinematic_controller_1a2102cba23b7feb0e307ef11d05989c34"></a>
+<p class="NDLRefMemberFunction">void  SetEnableGravity(bool enableGravity)</p>
+<p class="NDLRefMemberDescription">Enables or disables the abillity of gravity to affect this PhysX Actor. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>The current velocity. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_kinematic_controller_1aba8708267dc90b4081787ee135b15184"></a>
+<p class="NDLRefMemberFunction">void  SetGravityScaler(efd::Float32 scaler)</p>
+<p class="NDLRefMemberDescription">Sets a scaler that is multiplied with the gravitational force affecting this PhysX Actor. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">scaler</span></td>
+    <td>The new gravity scaler </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_phys_x_kinematic_controller_1a7b3c5a0291273433fabc270fce5951df"></a>
+<p class="NDLRefMemberFunction">bool  GetEnableGravity()</p>
+<p class="NDLRefMemberDescription">Queries whether gravity can affect this PhysX Actor. </p>
+<p class="NDLRefMemberDetailedDescription"></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><em>Return Value</em></td>
+    <td>True if gravity is enabled. </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

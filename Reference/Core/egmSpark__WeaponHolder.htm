@@ -1,0 +1,207 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::WeaponHolder</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::WeaponHolder</p>
+<p class="NDLRefParentage">: public <span class="NDLSystemFont"><a href="egmSpark__IBuiltinModelBase.htm">egmSpark::IBuiltinModelBase</a></span></p>
+
+
+<p class="NDLRefHeaderFile">&lt;WeaponHolder.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_weapon_holder.gif" alt="Inheritance graph for egmSpark::WeaponHolder"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::WeaponHolder</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">Handles the storage and manipulation of weapons. </p>
+<p class="NDLNormal">In addition, this model supports the aiming and firing of weapons as well. This class interfaces directly with the <span class="NDLSystemFont"><a href="egmSpark__Weapon.htm">Weapon</a></span> built-in model (which is an entity that gets attached to the WeaponHolder's owning entity</p>
+<p class="NDLNormal">
+<p class="NDLNormal">Only right hand weapon is currently implemented </p></p>
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_weapon_holder_1a9c548a017c6ffd93b279c9f79eb579b9"></a>
+<p class="NDLRefMemberFunction">WeaponHolder()</p>
+<p class="NDLRefMemberDescription">Constructor. </p>
+
+<a name="classegm_spark_1_1_weapon_holder_1a7faea245b45dd831bbbe4d37d1ec8480"></a>
+<p class="NDLRefMemberFunction">virtual void  OnRTriggerUp(efd::DataStream* pArgumentStream)</p>
+<p class="NDLRefMemberDescription">Behavior activated when trigger is released for weapon in Right hand Stops firing the weapon. </p>
+
+<a name="classegm_spark_1_1_weapon_holder_1a445932b69aefe848694dc4b5780ebd06"></a>
+<p class="NDLRefMemberFunction">virtual void  OnRTriggerDown(efd::DataStream* pArgumentStream)</p>
+<p class="NDLRefMemberDescription">Behavior activated when trigger is pressed for weapon in Right hand Starts firing the weapon. </p>
+
+<a name="classegm_spark_1_1_weapon_holder_1ae0f50447484dde78f734ab5b3b252577"></a>
+<p class="NDLRefMemberFunction">virtual void  EnableInput(efd::DataStream* pArgumentStream)</p>
+<p class="NDLRefMemberDescription">Behaviors to enable& disable input. </p>
+
+<a name="classegm_spark_1_1_weapon_holder_1a057c4f2a58b9e93cae87b04cf2979b1c"></a>
+<p class="NDLRefMemberFunction">virtual void  DisableInput(efd::DataStream* pArgumentStream)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_weapon_holder_1ae061195703200c823b38b5620cb12450"></a>
+<p class="NDLRefMemberFunction">virtual void  OnFireWeapon(efd::DataStream* pArgumentStream)</p>
+<p class="NDLRefMemberDescription">Behavior sent from the <span class="NDLSystemFont"><a href="egmSpark__Weapon.htm">Weapon</a></span> telling the weapon holder to fire a projectile from the weapon for this entity. </p>
+
+<a name="classegm_spark_1_1_weapon_holder_1ae7eaaf4421be5da0fc2de511b4df665e"></a>
+<p class="NDLRefMemberFunction">virtual void  AddAmmo(efd::DataStream* pArgumentStream)</p>
+<p class="NDLRefMemberDescription">Behavior that adds ammo to the weapon with the same ammo type. </p>
+
+<a name="classegm_spark_1_1_weapon_holder_1a82272281c67c294c035113d9e1f6d9b3"></a>
+<p class="NDLRefMemberFunction">virtual void  DetachRightWeapon()</p>
+<p class="NDLRefMemberDescription">Detaches weapon from right hand. </p>
+
+<a name="classegm_spark_1_1_weapon_holder_1a93769bcc0b6662e7ba00413f7e0fd9a9"></a>
+<p class="NDLRefMemberFunction">virtual efd::Point3  GetFireDirection(const efd::Point3& muzzlePos)</p>
+<p class="NDLRefMemberDescription">Returns a direction vector pointing in direction that the projectile should fire. </p>
+
+<a name="classegm_spark_1_1_weapon_holder_1a6bbe817216472f707c0e98f3197a8f09"></a>
+<p class="NDLRefMemberFunction">virtual void  SetEnabled(efd::Bool enabled)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_weapon_holder_1aeceb2f81be8148bfea054468f0a61057"></a>
+<p class="NDLRefMemberFunction">virtual bool  GetEnabled()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_weapon_holder_1ae7ea8d574d0327e82ff94e13d7954b14"></a>
+<p class="NDLRefMemberFunction">virtual void  OnWeaponFired(egf::EntityID entityID)</p>
+<p class="NDLRefMemberDescription"><span class="NDLSystemFont"><a href="egmSpark__Weapon.htm">Weapon</a></span> calls this every time it has fired. </p>
+
+<a name="classegm_spark_1_1_weapon_holder_1ae1b030756004b83301494412a188f4ab"></a>
+<p class="NDLRefMemberFunction">efd::utf8string  GetRightWeaponModel() const</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_weapon_holder_1a73fa88f683f6d9ae5ed11edd12d4072b"></a>
+<p class="NDLRefMemberFunction">void  SetRightWeaponModel(const efd::utf8string& modelName)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_weapon_holder_1a01c1b2e37a16cf60415faad9e24e3049"></a>
+<p class="NDLRefMemberFunction">efd::Bool  NextRightWeapon()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_weapon_holder_1af747ca82d48b6fd96dfe3e357c357087"></a>
+<p class="NDLRefMemberFunction">efd::Bool  PrevRightWeapon()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_weapon_holder_1a0b7894037991722b4603814f658a7ff3"></a>
+<p class="NDLRefMemberFunction">efd::UInt32  GetWeaponCount()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_weapon_holder_1aeebccb71d87cbda15e7dc38ac841e75d"></a>
+<p class="NDLRefMemberFunction">egf::EntityID  GetWeapon(efd::UInt32 index)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_weapon_holder_1ab0d12cc5e6ebac3c6d4cc7dc148139c2"></a>
+<p class="NDLRefMemberFunction">efd::Bool  SetRightWeaponFromIndex(efd::SInt32 index)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_weapon_holder_1a438b4da456c4578ad5a252ee0b064358"></a>
+<p class="NDLRefMemberFunction">void  SetRightWeaponIndex(const efd::SInt32& index)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_weapon_holder_1af9854586ef2702d5c5476f4252e35b35"></a>
+<p class="NDLRefMemberFunction">efd::SInt32  GetRightWeaponIndex() const</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_weapon_holder_1af93141557bd7330c8c71cc4d1773e950"></a>
+<p class="NDLRefMemberFunction"><span class="NDLSystemFont"><a href="egmSpark__Weapon.htm">Weapon</a></span>*  GetWeaponByAmmoType(const efd::utf8string& ammoType)</p>
+<p class="NDLRefMemberDescription">Returns first weapon in the WeaponHolder's inventory that uses the passed ammo type. </p>
+
+<a name="classegm_spark_1_1_weapon_holder_1a6577d45fd199e71348efa9d6d676a9fd"></a>
+<p class="NDLRefMemberFunction">efd::Bool  CanAddAmmo(const efd::utf8string& ammoType)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_weapon_holder_1ae3fccf6101d9d21cfe7406dd59cd47fd"></a>
+<p class="NDLRefMemberFunction">efd::Bool  CanFillClip()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_weapon_holder_1a5ce6e2ecc45f52ca9ec80d61f4f3aa10"></a>
+<p class="NDLRefMemberFunction">void  OnDetachWeapon(efd::DataStream* pStream)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_weapon_holder_1a3e0aa08ab2255d679655c02dcadc96f4"></a>
+<p class="NDLRefMemberFunction">void  OnStartFiring(efd::DataStream* pStream)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_weapon_holder_1a8ddcdc18eab2ad1e30a39f38aa55cd2d"></a>
+<p class="NDLRefMemberFunction">void  OnStopFiring(efd::DataStream* pStream)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_weapon_holder_1ac49a05096e0afda78b332c077b995ed9"></a>
+<p class="NDLRefMemberFunction">void  OnAnimSetChanged(efd::DataStream* pDataStream)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_weapon_holder_1ac6d4d1c4c7268609cf71b9413ef6ba4c"></a>
+<p class="NDLRefMemberFunction">void  SetAimingEnable(const efd::Bool& enabled)</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_weapon_holder_1aef11ff4be071b91b498f3565fa8aa6e2"></a>
+<p class="NDLRefMemberFunction">efd::Bool  GetAimingEnable() const</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_weapon_holder_1a417c94bf65646a8404d577aabc9f12c7"></a>
+<p class="NDLRefMemberFunction">efd::Bool  IsAiming() const</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_weapon_holder_1ac2a485264cdfd2e11213d130cf412861"></a>
+<p class="NDLRefMemberFunction">virtual void  PlayFireWeaponAnim()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_weapon_holder_1a41409facba41b17064310c3201ffa16f"></a>
+<p class="NDLRefMemberFunction">egf::EntityID&  GetCurrentWeapon()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_weapon_holder_1a473a61ef4098b4be211eaffaa16c0541"></a>
+<p class="NDLRefMemberFunction">virtual void  SetAimTarget(const egf::EntityID& target)</p>
+<p class="NDLRefMemberDescription">Rotates the character and adjusts the aim direction to have character aim at the target. </p>
+<p class="NDLRefMemberDetailedDescription">This is typically used by an AI. </p>
+
+<a name="classegm_spark_1_1_weapon_holder_1a94671602fe65c234808e83b83eb23917"></a>
+<p class="NDLRefMemberFunction">virtual egf::EntityID  GetAimTarget() const</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_weapon_holder_1af42fa7b4ab01c772a92cae0a6c5b49a1"></a>
+<p class="NDLRefMemberFunction">virtual void  ClearAimTarget()</p>
+<p class="NDLRefMemberFunction"></p>
+
+<a name="classegm_spark_1_1_weapon_holder_1ac19264e79ae51aaf87b30475a05e3128"></a>
+<p class="NDLRefMemberFunction">virtual efd::Point3  GetMuzzlePosition()</p>
+<p class="NDLRefMemberFunction"></p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

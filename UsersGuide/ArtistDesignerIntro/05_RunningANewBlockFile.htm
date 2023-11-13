@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>Running a New Block File</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Fresnel" />
+<meta name="Generator" content="Palimpsest by Emergent Game Technologies - http://emergent.net" />
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+    
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+
+<!--(Begin Body)================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript">
+</script><script language="JavaScript1.2" type="text/javascript">
+WriteNavLink(2);
+</script>
+
+<h1>Running a New Block File</h1>
+
+<p>In the previous step in this tutorial, we created a new level and added some entities to it. We
+can now point the Alpha Game executable at this level. To do this, we'll modify the Alpha Game
+configuration file.</p>
+
+<p><b>Note</b>: For a .block file to work with Alpha Game, it must contain a SparkCamera and a
+PlayerCharacter. That means that the SparkCamera model must be mixed into an entity in the
+.block file, and the PlayerCharacter model must be either instantiated as an entity or mixed into
+an entity in the .block file.</p>
+
+<h3>Tutorial at-a-Glance</h3>
+
+<ul>
+    <li><a href="01_RapidIteration.htm">Intro to Rapid Iteration - Modifying AlphaGame</a></li>
+    <li><a href="02_AddingEntityModels.htm">Adding Entity Models</a></li>
+    <li><a href="03_AddingPropstotheLevel.htm">Adding Props to the Level</a></li>
+    <li><a href="04_CreatingABlockFile.htm">Creating a New Block file</a></li>
+    <li>Running a New Block file with AlphaGame<b> <-- You are Here</b></li>
+</ul>
+
+<h3>Running Alpha Game with your new level</h3>
+
+<ol>
+    <li>On your workstation, we recommend that you make a copy of the Alpha Game configuration
+        file:<br />
+        <i>&lt;AlphaGame&gt;</i>\Application\win32\Config.ini</li>
+    <li>Save this copy, perhaps using an obvious name like "Config_ORIGINAL.ini".</li>
+    <li>Open Config.ini in a text editor and locate the following section:<br />
+        [Game]<br />
+        InitialWorld = urn:emergent-world:AlphaGame.</li>
+    <li>Change the InitialWorld parameter as follows:<br />
+        [Game]<br />
+        InitialWorld = urn:emergent-world:<i>&lt;YourLevelName&gt;</i>.<br />
+        For example:<br />
+        [Game]<br />
+        InitialWorld = urn:emergent-world:My New Level.</li>
+    <li>Save the file.</li>
+    <li>Run Alpha Game by double-clicking its executable:
+        <i>&lt;AlphaGame&gt;</i>\Application\win32\AlphaGame_Release_<i>&lt;VC80 or
+        VC90&gt;</i>.exe</li>
+</ol>
+    
+    
+<p>Obviously, this is a simplification. But you get the idea: Create entity models, add instances
+of those models in levels, separate game levels into unique .block files.</p>
+
+<h3>Moving on...</h3>
+
+<p>This concludes the Kickstart tutorial for artists and designers. You have learned the basics of
+how to rapidly iterate on a game, how to add entity models and instantiate them in your game world,
+and how to create and view levels within a running application.</p>
+
+<p>For further reading, we suggest that you check out the product documentation. It gets installed
+along with Gamebryo LightSpeed.</p>
+
+<p>If you'd like to discuss Kickstart, we encourage you to check out the
+<a href="https://pulse.emergent.net/index.php?showforum=51|Emergent">Labs Forum</a>.</p>
+
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>

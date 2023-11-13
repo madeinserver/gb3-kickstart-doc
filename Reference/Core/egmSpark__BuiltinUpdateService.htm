@@ -1,0 +1,141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+ "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+
+<title>egmSpark::BuiltinUpdateService</title>
+<!--(Begin Meta)================================================================================-->
+
+<meta http-equiv="Content-Type" content="text/html; charset=us-ascii" />
+<meta name="Originator" content="Expedition" />
+<meta name="Generator" content="DoxyConvert by Emergent Game Technologies - http://emergent.net" />
+
+<meta name="Last-Updated" content="%lastupdated%" />
+
+<!--(End Meta)==================================================================================-->
+    
+<!--(Begin Links)===============================================================================-->
+
+<link rel="stylesheet" href="../../shared/Emergent.css" type="text/css" />
+
+<!--(End Links)=================================================================================-->
+
+</head>
+  
+<!--(Body)======================================================================================-->
+<body lang="EN-US">
+<script src="../../shared/NavScript.js" language="JavaScript1.2" type="text/javascript"></script>
+<script language="JavaScript1.2" type="text/javascript">WriteNavLink(2);</script>
+
+<p class="NDLRefHeadClassTitle">egmSpark::BuiltinUpdateService</p>
+<p class="NDLRefParentage">: public ISystemService</p>
+
+
+<p class="NDLRefHeaderFile">&lt;BuiltinUpdateService.h&gt;</p>
+
+<p class="NDLRefHead1" style="text-align: center; ">
+<div class="FigureContainer">
+  <img src="./images/classegm_spark_1_1_builtin_update_service.gif" alt="Inheritance graph for egmSpark::BuiltinUpdateService"/>
+  <p class="FigureCaption">Inheritance graph for egmSpark::BuiltinUpdateService</p>
+</div>
+</p>
+
+<p class="NDLRefHead1">Description</p>
+<p class="NDLNormal">The Spark <span class="NDLSystemFont">BuiltinUpdateService</span> keeps track of the majority of builtin-models in the Spark libary. </p>
+<p class="NDLNormal">Spark Built-in models register with the <span class="NDLSystemFont">BuiltinUpdateService</span> when they are created and unregister when they are removed.</p>
+<p class="NDLNormal">The <span class="NDLSystemFont">BuiltinUpdateService</span> calls the update method on each Builtin model on every OnTick call of the service. It also registers for actor added and removed messages sent by the AnimationService. When actors are added or removed, the builtin models for that actor, are notified </p>
+
+<a name="public_methods"></a>
+<p class="NDLRefHead1">Public Methods</p>
+
+
+<a name="classegm_spark_1_1_builtin_update_service_1aa93f55c379dc7e167465b5e265cf4d20"></a>
+<p class="NDLRefMemberFunction">BuiltinUpdateService()</p>
+<p class="NDLRefMemberDescription">Constructor. </p>
+
+<a name="classegm_spark_1_1_builtin_update_service_1aa410471ba51f0efd8a923a0a7969ade9"></a>
+<p class="NDLRefMemberFunction">void  RegisterBuiltinModel(<br/>const egf::EntityID& entityID, <br/><span class="NDLSystemFont"><a href="egmSpark__IBuiltinModelBase.htm">IBuiltinModelBase</a></span>* pBuiltinModel)</p>
+<p class="NDLRefMemberDescription">Registers a <span class="NDLSystemFont"><a href="egmSpark__IBuiltinModelBase.htm">IBuiltinModelBase</a></span> derived built-in model for the given owning entity with the with the <span class="NDLSystemFont">BuiltinUpdateService</span>. </p>
+<p class="NDLRefMemberDetailedDescription">Registration is required in order to have the various extended methods on the built-in model (such as Update, PostUpdate, or actor add/remove notifications) invoked. Multiple built-in models from the same entity can be registered.</p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Built-in models derived from <span class="NDLSystemFont"><a href="egmSpark__IBuiltinModelBase.htm">IBuiltinModelBase</a></span> will automatically call this method during <span class="NDLSystemFont"><a href="egmSpark__IBuiltinModelBase.htm#classegm_spark_1_1_i_builtin_model_base_1a96c5884fb71bbaf43a676e07962cdd2d">IBuiltinModelBase::OnEndLifecycle</a></span> at the completion of the OnCreate lifecycle.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>the entityID of the built-in model's owning entity </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pBuiltinModel</span></td>
+    <td>the built-in model being registered </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_builtin_update_service_1ac3af027bc8bfc902023bd84c1ea7af44"></a>
+<p class="NDLRefMemberFunction">void  UnregisterBuiltinModel(<br/>const egf::EntityID& entityID, <br/><span class="NDLSystemFont"><a href="egmSpark__IBuiltinModelBase.htm">IBuiltinModelBase</a></span>* pBuiltinModel)</p>
+<p class="NDLRefMemberDescription">Unregisters the given built-in model instance on the specified owning entity from the <span class="NDLSystemFont">BuiltinUpdateService</span>. </p>
+<p class="NDLRefMemberDetailedDescription">
+<p class="NDLRefMemberDetailedDescription">Built-in models derived from <span class="NDLSystemFont"><a href="egmSpark__IBuiltinModelBase.htm">IBuiltinModelBase</a></span> will automatically call this method during <span class="NDLSystemFont"><a href="egmSpark__IBuiltinModelBase.htm#classegm_spark_1_1_i_builtin_model_base_1a834817ec000c43508aa0714636dc7163">IBuiltinModelBase::OnRemoved</a></span> when the owning entity is removed from the EntityManager.</p></p>
+<!--(Table)=====================================================================================-->
+<div class="ReferenceTable">
+    <table>
+        <thead>
+            <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>  
+<tr>
+    <td><span class="NDLSystemFont">entityID</span></td>
+    <td>the entityID of the IBuiltinModelBase's owning entity </td>
+</tr>
+<tr>
+    <td><span class="NDLSystemFont">pBuiltinModel</span></td>
+    <td>The built-in model to unregister </td>
+</tr>
+
+        </tbody>
+    </table>
+</div>
+
+
+
+<a name="classegm_spark_1_1_builtin_update_service_1ab4510ce643ed43d509876e267ef10735"></a>
+<p class="NDLRefMemberFunction">void  PauseEntity(const egf::EntityID& entityID)</p>
+<p class="NDLRefMemberDescription">Pauses all registered built-in models for this entity. </p>
+<p class="NDLRefMemberDetailedDescription">These built-in models will not call Update() or PostUpdate() as long as the entity is paused. </p>
+
+<a name="classegm_spark_1_1_builtin_update_service_1a3c27682a04156450fdd05588b8937e27"></a>
+<p class="NDLRefMemberFunction">void  ResumeEntity(const egf::EntityID& entityID)</p>
+<p class="NDLRefMemberDescription">Resumes all registered built-in models for this entity. </p>
+<p class="NDLRefMemberDetailedDescription">These built-in models will start calling Update() and PostUpdate() again </p>
+
+<a name="classegm_spark_1_1_builtin_update_service_1a76a4727d0cce2736731b7cef62ed6b65"></a>
+<p class="NDLRefMemberFunction">void  SetPaused(efd::Bool isPaused)</p>
+<p class="NDLRefMemberDescription">Pause or resume the entire <span class="NDLSystemFont">BuiltinUpdateService</span>. </p>
+<p class="NDLRefMemberDetailedDescription">When paused, no built-in models will have their update or post update functions called. </p>
+
+<a name="classegm_spark_1_1_builtin_update_service_1a31539386323786fdbf27552fb0d1c11f"></a>
+<p class="NDLRefMemberFunction">void  ClearAll()</p>
+<p class="NDLRefMemberFunction"></p>
+ 
+<!--kadov_tag{{<placeholder id="footer">}}-->
+
+</body>
+
+</html>
